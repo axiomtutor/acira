@@ -473,7 +473,7 @@ def _(mo):
         r"""
         Just to show you that groups are not *just* about numbers, I'll include this geometric example.
 
-        Let $T = \triangle ABC$ be an equilateral triangle.  
+        Let $T = \triangle ABC$ be an equilateral triangle, with vertices labeled counter-clockwise in the order $A,B,C$.
 
         Consider the symmetry of rotating the triangle about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$.  Let us call this symmetry $R_{120^\circ}$.
 
@@ -893,9 +893,69 @@ def _(mo):
 
         Let us now extend this example by adding some further symmetries: The reflections.
 
-        That is to say, let $s_A$ refer to the reflection of the triangle $T$ about the line that passes through vertex $A$ and the center of the triangle.  Likewise define $s_B$ and $s_C$
+        That is to say, let $s_A$ refer to the reflection of the triangle $T$ about the line that passes through vertex $A$ and the center of the triangle.  Likewise define $s_B$ and $s_C$.
+
+        Note that $s_A$ leaves the vertex $A$ fixed, and sends $B$ to $C$, and sends $C$ to $B$.  Likewise for the remaining reflections.
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Now define $G = \{R_{0^\circ}, R_{120^\circ}, R_{240^\circ}, s_A,s_B,s_C\}$ and let the operation $\circ:G^2 \to G$ be defined by composition of symmetries.
+
+        1. Show that $s_A \circ R_{0^\circ} = s_A = R_{0^\circ} \circ s_A$.
+
+            Also show that $s_A \circ s_A = R_{0^\circ}$ and $s_A\circ s_B = R_{120^\circ}$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Hint: For this exercise, we will take it for granted that the composition of symmetries is a symmetry.  And to show that any two symmetries are equal, we just have to demonstrate that they move the vertices of $T$ in the same way.
+
+        For example, consider demonstrating 
+
+        $$s_A\circ s_B = R_{120^\circ}$$ 
+
+        We need to show that the symmetry on the left, and the symmetry on the right, both send vertex $A$ to the same vertex.  
+
+        I'll give one such demonstration, for guidance.  Let's show that $s_A\circ s_B$ sends $A$ to $B$, and then show that $R_{120^\circ}$ does the same thing.
+
+        $$(s_A\circ s_B)(A) = s_A(s_B(A)) = s_A(C) = B $$
+
+        Next, it is immediate that $R_{120^\circ}(A)=B$.
+
+        You should then show that each of these symmetries sends $B$ to $C$, and that each sends $C$ to $A$.  This will conclude the proof the equality.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        2. Show that $(G,\circ)$ is a group.  We take it for granted that function composition is associative, so there is no need to prove this (unless you just want to for exercise).
+  
+            You should give a convincing argument that $\circ$ really is an operation on $G$ -- in particular, you should argue that for any two $x,y\in G$ we have $x\circ y\in G$.
+
+            You should identify the identity element.  And you should find the inverse of each element.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""3. Show that $(G,\circ)$ is not commutative.""")
     return
 
 
@@ -1484,7 +1544,9 @@ def _(mo):
 
     For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
 
-    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses rings and fields.  
+    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses orders.
+
+    A text on discrete mathematics would probably be accessible, but may or may not have content about orders.  A text on orders and lattices will have relevant content, but may be more advanced than a student needs for the current topic.  
 
     ---
 
@@ -2515,7 +2577,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## 0003 Rings and Fields""")
+    mo.md(r"""## 0003: Rings and Fields""")
     return
 
 
@@ -2682,8 +2744,9 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## 0004: Orders""")
     return
 
 
