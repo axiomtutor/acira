@@ -2750,6 +2750,138 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $X$ be a nonempty set and $\preceq\subseteq X^2$ a relation on $X$.  We say that $\preceq$ is a **partial order** if it is reflexive, symmetric, and transitive.  
+
+    We call $(X,\preceq)$ a **partiall ordered set** or **poset** for short.  
+
+    If $\preceq$ is a partial order, then we define the **corresponding strict partial order, $\prec$** by 
+
+    $$ a\prec b \text{ if and only if } a\preceq b \text{ and } a\ne b, \quad \forall a,b\in X $$
+
+    For a poset $(X,\preceq)$ and elements $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$, then we say that $a$ and $b$ are **incommensurable**.  If no two elements in $X$ are incommensurable, then we say that $\preceq$ is a **total order** and $(X,\preceq)$ a **totally ordered set**.
+    """), kind="success")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""In all that follows, assume $(X,\preceq)$ is a poset and $\prec$ the corresponding strict partial order.""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.callout(mo.md(r"""
+    Order theorem 1
+
+    `Strict order properties`
+
+    ---
+
+    $\prec$ is irreflexive, asymmetric, and transitive.
+    """), kind="danger")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""*Proof*:  """)
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
 @app.cell
 def _():
     return
