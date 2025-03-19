@@ -615,7 +615,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
     I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
@@ -891,7 +891,9 @@ def _(mo):
         r"""
         Consider the geometric example of the group of rotations, given earlier.
 
-        Show that this group is *not* commutative.  
+        Let us now extend this example by adding some further symmetries: The reflections.
+
+        That is to say, let $s_A$ refer to the reflection of the triangle $T$ about the line that passes through vertex $A$ and the center of the triangle.  Likewise define $s_B$ and $s_C$
         """
     )
     return
@@ -1052,14 +1054,32 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
         1. `h` fails to have an identity.  One would naturally think that $0$ is an identity for this operation, and yet $0\oplus 2 = 0$.
-        2. 
+
+        Parts (2.) through (4.) are TODO.
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        ## Solution 7
+
+        """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""We just need two elements which do not commute.  These """)
     return
 
 
@@ -1077,127 +1097,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        We next augment the group structure so that we have a representation of the *interaction* between addition and multiplication.
-
-        We call this augmented structure a ring.  As before, we start with examples and then give the abstract definition.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        The integers $\Bbb Z$ with the operations of $+$ and $\times$, is a ring.  This is because the integers with $+$ forms a *commutative* group, and there is an identity for $\times$ (which is 1), *and* because multiplication distributes over addition.
-
-        $$ a(b+c) = ab+ac, \quad \forall a,b,c\in \Bbb Z $$
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.callout(mo.md(r"""
-    Let $R$ be a nonempty set with two operations, $+, \times:R^2\to R$.  
-
-    We say that **$\times$ distributes over $+$** if $\forall a,b,c\in R$ we have 
-
-    $$ a\times (b+c) = (a\times b)+(a\times c) $$
-
-    We say that $(R,+,\times)$ is a **ring** if the following conditions are met.
-
-    1. Both $+$ and $\times$ are associative.
-    2. $(R,+)$ is a commutative group with identity $0\in R$.
-    3. There is an identity $1\in R$ for the multiplication operation.
-    4. $\times$ distributes over $+$.
-
-    We say that the ring $(R,+,\times)$ is a **commutative ring** if its operation $\times$ is commutative."""), kind="success")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        Note that $(\Bbb Z,\times)$ does not form a group.  Nor does $(\Bbb Z\smallsetminus \{0\}, \times)$.
-
-        We don't require a condition like this, for $(\Bbb Z,+,\times)$ to qualify as a ring.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        It is easy enough to see that square matrices form a ring, where $+$ and $\times$ are defined by matrix addition and multiplication.  
-
-        The student is invited to confirm that, for each $n\ge 1$, the triple $(\Bbb Z^{n\times n}, +, \times)$ is a ring.  
-
-        The functions are associative operations, $+$ forms a commutative group, there is a multiplicative identity (what is it?), and multiplication distributes over addition.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        Let $X$ be a nonempty set, $G$ the set of bijective functions $f:X\to X$.  
-
-        You showed in a previous exercise that $(G,\circ)$ is a group.  You are invited to now show that, if $|X|>2$ then $(G,\circ)$ is not a commutative group.  
-
-        You can then infer that, no matter what operation we might give by $\ast$, the triple $(G,\circ,\ast)$ will never form a ring.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
     mo.md(r"""## Fields""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""If a structure is a ring, but moreover the multiplication operation forms a group (excepting 0), then we call this restricted kind of ring a field.""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""For example, because $(\Bbb Q,+,\times)$ is a ring, but also $(\Bbb Q\smallsetminus\{0\},\times)$ is a commutative group (you should check this), then therefore $(\Bbb Q,+,\times)$ is a field.""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        Because square matrices do not necessarily form a group under multiplication (excepting 0), then these do not necessarily form a field.  
-
-        It can be interesting to consider just the square *invertible* matrices.  This would certainly ensure that every matrix has a multiplicative inverse.  
-
-        However, even that does not provide a field.  This is because invertible matrices still do not commute.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.callout(mo.md(r"""
-    Let $(F,+,\times)$ be a ring with additive identity 0.
-
-    If $(F\smallsetminus \{0\},+,\times)$ is a commutative group, then $(F,+,\times)$ is a **field**.
-    """), kind="success")
     return
 
 
@@ -1304,6 +1204,126 @@ def _(mo):
         The operations are defined by $0+0=0$ and $0\times 0=0$.
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        We next augment the group structure so that we have a representation of the *interaction* between addition and multiplication.
+
+        We call this augmented structure a ring.  As before, we start with examples and then give the abstract definition.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The integers $\Bbb Z$ with the operations of $+$ and $\times$, is a ring.  This is because the integers with $+$ forms a *commutative* group, and there is an identity for $\times$ (which is 1), *and* because multiplication distributes over addition.
+
+        $$ a(b+c) = ab+ac, \quad \forall a,b,c\in \Bbb Z $$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $R$ be a nonempty set with two operations, $+, \times:R^2\to R$.  
+
+    We say that **$\times$ distributes over $+$** if $\forall a,b,c\in R$ we have 
+
+    $$ a\times (b+c) = (a\times b)+(a\times c) $$
+
+    We say that $(R,+,\times)$ is a **ring** if the following conditions are met.
+
+    1. Both $+$ and $\times$ are associative.
+    2. $(R,+)$ is a commutative group with identity $0\in R$.
+    3. There is an identity $1\in R$ for the multiplication operation.
+    4. $\times$ distributes over $+$.
+
+    We say that the ring $(R,+,\times)$ is a **commutative ring** if its operation $\times$ is commutative."""), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Note that $(\Bbb Z,\times)$ does not form a group.  Nor does $(\Bbb Z\smallsetminus \{0\}, \times)$.
+
+        We don't require a condition like this, for $(\Bbb Z,+,\times)$ to qualify as a ring.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        It is easy enough to see that square matrices form a ring, where $+$ and $\times$ are defined by matrix addition and multiplication.  
+
+        The student is invited to confirm that, for each $n\ge 1$, the triple $(\Bbb Z^{n\times n}, +, \times)$ is a ring.  
+
+        The functions are associative operations, $+$ forms a commutative group, there is a multiplicative identity (what is it?), and multiplication distributes over addition.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $X$ be a nonempty set, $G$ the set of bijective functions $f:X\to X$.  
+
+        You showed in a previous exercise that $(G,\circ)$ is a group.  You are invited to now show that, if $|X|>2$ then $(G,\circ)$ is not a commutative group.  
+
+        You can then infer that, no matter what operation we might give by $\ast$, the triple $(G,\circ,\ast)$ will never form a ring.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""If a structure is a ring, but moreover the multiplication operation forms a group (excepting 0), then we call this restricted kind of ring a field.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""For example, because $(\Bbb Q,+,\times)$ is a ring, but also $(\Bbb Q\smallsetminus\{0\},\times)$ is a commutative group (you should check this), then therefore $(\Bbb Q,+,\times)$ is a field.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Because square matrices do not necessarily form a group under multiplication (excepting 0), then these do not necessarily form a field.  
+
+        It can be interesting to consider just the square *invertible* matrices.  This would certainly ensure that every matrix has a multiplicative inverse.  
+
+        However, even that does not provide a field.  This is because invertible matrices still do not commute.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(F,+,\times)$ be a ring with additive identity 0.
+
+    If $(F\smallsetminus \{0\},+,\times)$ is a commutative group, then $(F,+,\times)$ is a **field**.
+    """), kind="success")
     return
 
 
@@ -1437,7 +1457,7 @@ def _(mo):
 
         Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
 
-        But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.  
+        But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.
         """
     )
     return
@@ -1459,6 +1479,24 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.callout(mo.md(r"""
+    I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
+
+    For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
+
+    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses rings and fields.  
+
+    ---
+
+    I recommend spending at least an hour on a problem, before looking at its solution.  This recommendation is specifically for these problems, because they are meant to be easy.  For harder problems, like in the homeworks, you might need to spend several hours or days on them.
+
+    If you have to look at the solution of a problem, treat it as a problem that you did not solve correctly.  Therefore, if you look at the solution, then this does not count toward the 5 problems that you successfully solve on your own.  
+    """), kind="info")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""## Exercise 1""")
     return
 
@@ -1471,7 +1509,7 @@ def _(mo):
 
         1. Irreflexive: $\forall a\in X$ we have $a\not\prec a$.
         2. Asymmetric: $\forall a,b\in X,$ if we have $a\prec b$ then $a\not\prec b$.
-        3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.  
+        3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.
         """
     )
     return
@@ -1503,7 +1541,7 @@ def _(mo):
 
         For $a,b\in X$ show that $a\not\preceq b$ is NOT equivalent to $b\prec a$.  
 
-        But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.  
+        But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.
         """
     )
     return
@@ -1561,7 +1599,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Reasoning intuitive (which we will make rigorous later), since $\frac {-1}n \to 0$ and since $\frac 1 n\to 0$, then therefore $\frac{\cos n}n \to 0$.  """)
+    mo.md(r"""Reasoning intuitive (which we will make rigorous later), since $\frac {-1}n \to 0$ and since $\frac 1 n\to 0$, then therefore $\frac{\cos n}n \to 0$.""")
     return
 
 
@@ -1664,7 +1702,7 @@ def _(mo):
 
         Consider for example the subset of rational numbers $(1,2)$.  Clearly, in some sense, the number 2 is *still* the "best" upper bound.  
 
-        However, technically it is not the maximum of the set.  
+        However, technically it is not the maximum of the set.
         """
     )
     return
@@ -1720,7 +1758,7 @@ def _(mo):
 
         This set has an upper bound, like for instance 2.  
 
-        However, it has no *least* upper bound.  If you select any upper bound $\alpha\in UB_L$, we can aways find a $\beta \in UB_L$ such that $\beta < \alpha$.  
+        However, it has no *least* upper bound.  If you select any upper bound $\alpha\in UB_L$, we can aways find a $\beta \in UB_L$ such that $\beta < \alpha$.
         """
     )
     return
@@ -1736,9 +1774,29 @@ def _(mo):
 
         Mathematics becomes much simpler and more convenient if, whenever a nonempty subset is bounded above, it has a supremum.  
 
-        We will discuss this idea more, after we've introduced the concept of an "ordered field".  
+        We will discuss this idea more, after we've introduced the concept of an "ordered field".
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
+
+    For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
+
+    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses similar topics.  
+
+    As a rough guide: A textbook on discrete mathematics might be relatively introductory, but may not have enough content specifically about orders.  A textbook on orders and lattices will definitely contain relevant information, but may be more advanced than the student needs.
+
+    ---
+
+    I recommend spending at least an hour on a problem, before looking at its solution.  This recommendation is specifically for these problems, because they are meant to be easy.  For harder problems, like in the homeworks, you might need to spend several hours or days on them.
+
+    If you have to look at the solution of a problem, treat it as a problem that you did not solve correctly.  Therefore, if you look at the solution, then this does not count toward the 5 problems that you successfully solve on your own.  
+    """), kind="info")
     return
 
 
@@ -1772,7 +1830,7 @@ def _(mo):
         r"""
         Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty subset.
 
-        Show that if $A$ has a maximum and $\alpha=\max(A)$, then it follows that $\alpha=\sup(A)$.  
+        Show that if $A$ has a maximum and $\alpha=\max(A)$, then it follows that $\alpha=\sup(A)$.
         """
     )
     return
@@ -1834,7 +1892,7 @@ def _(mo):
 
         Intuitively, we understand that $\text{Im}(g) \subseteq (0,1]$.  
 
-        Moreover, these bounds are "tight", in the sense that $1$ is the supremum of $g$ (in fact, its maximum!) and $0$ is its infimum (but not its minimum).  
+        Moreover, these bounds are "tight", in the sense that $1$ is the supremum of $g$ (in fact, its maximum!) and $0$ is its infimum (but not its minimum).
         """
     )
     return
@@ -1865,7 +1923,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""In short, the definitions above, all amount to: Apply the usual ideas of bounds, to $\text{Im}(f)$.  """)
+    mo.md(r"""In short, the definitions above, all amount to: Apply the usual ideas of bounds, to $\text{Im}(f)$.""")
     return
 
 
@@ -1960,7 +2018,7 @@ def _(mo):
         The function $\sup_{a\in A}f_{(\cdot,x)}$ is a function of $B$.  For an argument $b\in B$, its image is computed by:  
 
         * "fixing" $b$, which is to say, forming $f$ applied to $b$, and then
-        * taking the supremum over all possibilities for $a\in A$.  
+        * taking the supremum over all possibilities for $a\in A$.
         """
     )
     return
@@ -1974,7 +2032,7 @@ def _(mo):
 
         For example, consider $f(a,b) = \frac{a}b$ for $a,b\in\Bbb Q$ and $b\ne 0$.  
 
-        The function $\sup_{y\in \Bbb Q} f_{(x,\cdot)}$ exists for the argument $a=0$.  That is because the image of $\sup_{y\in\Bbb Q}f_{(x,\cdot)}$ is just the set $\{0\}$, which has supremum equal to 0.  
+        The function $\sup_{y\in \Bbb Q} f_{(x,\cdot)}$ exists for the argument $a=0$.  That is because the image of $\sup_{y\in\Bbb Q}f_{(x,\cdot)}$ is just the set $\{0\}$, which has supremum equal to 0.
         """
     )
     return
@@ -2047,7 +2105,7 @@ def _(mo):
         r"""
         Let $(X,\preceq)$ be a poset and $A$ a nonempty set.  Let $f,g:A \to X$ be two function, for which $\sup(f)$ and $\sup(g)$ both exist.
 
-        Show that if $f\preceq g$ then $\sup f\preceq \sup g$.  
+        Show that if $f\preceq g$ then $\sup f\preceq \sup g$.
         """
     )
     return
@@ -2067,7 +2125,7 @@ def _(mo):
 
         Show that if $f$ is bounded, then so is $f_{(a,\cdot)}$.
 
-        Note: You might think that we have not defined what it means for a two-variable function to be "bounded"!  But we have!  The definitions given above, in fact, are sufficient for each of the terms here to be well-defined.  
+        Note: You might think that we have not defined what it means for a two-variable function to be "bounded"!  But we have!  The definitions given above, in fact, are sufficient for each of the terms here to be well-defined.
         """
     )
     return
