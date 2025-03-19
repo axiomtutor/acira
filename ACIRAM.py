@@ -1648,18 +1648,134 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
-    Let $(X,\preceq)$ be a poset, and $A,B$ any two nonempty sets.  Let $f:A\times B\to X$ a function.  
+    Let $A,B,C$ any three nonempty sets.  Let $f:A\times B\to C$ a function.  
 
-    If $c\in A$ we define the function $f_c: B\to X$ by 
+    If $a'\in A$ we define the function $f_{a'}: B\to X$ by 
 
-    $$ f_c(d) = f(c,d), \quad \forall d \in B $$
+    $$ f_{a'}(b) = f(a',b), \quad \forall b \in B $$
 
-    We call $f_c$ the **partial function, $f$ applied to $c$**.  
+    We call $f_{a'}$ the **partial function, $f$ applied to $a'$**.  
 
-    If $d\in B$ we define $f_d:A\to X$ by
+    If $b'\in B$ we define $f_{b'}:A\to X$ by
 
-    $$ f_d(c) = f(c,d), \quad \forall c\in A $$
+    $$ f_{b'}(a) = f(a,b'), \quad \forall a\in A $$
+
+    which is the **partial function, $f$ applied to $b$**.  
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset, and $A,B$ two nonemtpy sets.  Let $f:A\times B\to X$ be a function.
+
+    In what follows, if we assume that all suprema exist, then we define the **supremum of $f$ over $A$** to be the *function* $\sup_{a\in A} f$.  It is given by the equation 
+
+    $$ \left(\sup_{a\in A} f\right)(x) = \sup(f_x), \quad \forall x\in B $$
+
+    That is to say, for each $x\in B$, the function $\sup_{a\in A}f$ takes the value $\sup(f_x)$.
+
+    The **supremum of $f$ over $B$** is 
+
+    $$ \left(\sup_{b\in B}\right)(x) = \sup(f_x), \quad \forall x\in A $$
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        It may help to understand this intuitively.  
+
+        The function $\sup_{a\in A}f$, for an argument $x\in B$, is computed by:  
+
+        * "fixing" $x$, and then
+        * taking the supremum over all possibilities for $a\in A$.  
+        """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""It is also worth appreciating that it is possible for $\sup_{a\in A} f$ to exist for some $x\in B$ but not for others.  """)
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
     return
 
 
