@@ -1660,7 +1660,31 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Here we define some notions for functions of two variables.  
+        There is a similar trend when writing inequalities regarding two functions.  We say that $f\preceq g$ if and only if their images stand in the same order, $f(x)\preceq g(x)$, everywhere in their shared domain. 
+
+        The rigorous statement of this is below.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A$ a nonempty set.  Let $f,g:A\to X$ be two functions.
+
+    We define $f\preceq g$ to hold if 
+
+    $$ f(a)\preceq g(a), \quad \forall a\in A $$
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Next we define some notions for functions of two variables.  
 
         The first few notions define what it means to "keep one variable fixed".
         """
@@ -1761,33 +1785,58 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Having now established all of the above, we are in a position to define stacked suprema and infima of functions.""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A,B$ two nonempty sets.  Let $f:A\times B\to X$ be a function.
+
+    If all of the suprema and infima involved exist, we define
+
+    \begin{align*}
+    \sup_{a\in A}\sup_{b\in B} f &= \sup_{a\in A}\left(\sup_{b\in B} f_{(x,\cdot)}\right) 
+    \end{align*}
+
+    and in a similar, obvious fashion, define each of 
+
+    $$\sup_{b\in B}\sup_{a\in A}f,\quad \inf_{a\in A}\inf_{b\in B}f,\quad  \inf_{b\in B}\inf_{a\in A}f$$ 
+
+    """), kind="success")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 1""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Give an example function $f:A\to \Bbb Q$ where $A$ is a bounded set, but $f$ is unbounded.""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 2""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq)$ be a poset and $A$ a nonempty set.  Let $f,g:A \to X$ be two function, for which $\sup(f)$ and $\sup(g)$ both exist.
+
+        Show that if $f\preceq g$ then $\sup f\preceq \sup g$.  
+        """
+    )
     return
 
 
