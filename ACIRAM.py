@@ -1197,6 +1197,8 @@ def _(mo):
 
     3. $\preceq$ is transitive.
 
+    When we want to emphasize the pair which is the set and its partial order, we say that $(X,\preceq)$ is a **partially ordered set**.  We say that $(X,\preceq)$ is a **poset** for short.  
+
     If $\preceq$ is a partial order, then we define the corresponding **strict partial order** $\prec$ by 
 
     $$ a\prec b \Leftrightarrow a\prec b\land a\ne b, \quad \forall a,b\in X $$
@@ -1236,6 +1238,8 @@ def _(mo):
     For any $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$, then we say $a$ and $b$ are **incommensurable**.
 
     If no two elements of $X$ are incommensurable then we say that $\preceq$ is a **total order** on $X$.  
+
+    We also say, in this case, that $(X,\preceq)$ is a **totally ordered set**.
     """), kind="success")
     return
 
@@ -1339,6 +1343,103 @@ def _(mo):
         $$ \frac{-1}{n} \le \frac{\cos n}n \le \frac 1 n $$
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Reasoning intuitive (which we will make rigorous later), since $\frac {-1}n \to 0$ and since $\frac 1 n\to 0$, then therefore $\frac{\cos n}n \to 0$.  """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The above motivation discusses the bounds on a function.
+
+        There will be many kinds of bounds that we discuss in real analysis:  Bounds on a set, bounds on a sequence, bounds on functions, and bounds on sequences of functions.  
+
+        The most fundamental concept is the bound on a set, so we begin there.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset.
+
+    Let $A\subseteq X$ be a nonempty subset, and $\alpha\in X$.  We say that $\alpha$ is an **upper bound on $A$** if 
+
+    $$ \forall b\in A, \quad b\preceq \alpha $$
+
+    We say that $\alpha$ is a **lower bound on $A$** if 
+
+    $$ \forall b\in A,\quad \alpha\preceq b $$
+
+    We denote the set of all upper bounds on $A$ by the notation $UB_A$.
+
+    $$ UB_A = \{\alpha\in X: \forall b\in A, \ b\preceq \alpha\} $$
+
+    and the set of lower bounds $LB_A$ is 
+
+    $$ LB_A = \{\alpha\in X: \forall b\in A \ \alpha\preceq b\} $$
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        An upper bound is a good way to "summarize" where a set is, using a single number.  
+
+        However, there is a somewhat obvious deficiency.  For any given set, say of rational numbers, if an upper bound exists then infinitely many upper bounds exist.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Consider, for example, the set of all rational numbers between 1 and 2.
+
+        The number 3 is an upper bound, but so is 4.  And so is 5.  And so is 6, and so on.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Clearly the "best" upper bound is the one nearest to the set.
+
+        In the example of the interval $[1,2]$ taken in the rational numbers, the number 2 is the "best" upper bound.
+
+        This is the maximum of the set $[1,2]$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset, and $A\subseteq X$ a nonempty subset.  Let $\alpha\in X$.
+
+    If $\alpha\in A \cap UB_A$ then $\alpha$ is the **maximum of $A$**.  
+
+    In this case, we write 
+
+    $$ \alpha = \max(A) $$
+
+    """), kind="success")
     return
 
 
