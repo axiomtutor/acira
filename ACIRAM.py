@@ -1294,6 +1294,35 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""# Lesson 0005: Bounds""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Throughout real analysis, bounds will be important. 
+
+        To motivate this, consider the task of determining the limit of a sequence like 
+
+        $$ a_n = \frac{\cos nx}{n} $$
+
+        From a previous calculus course, I assume the student intuits that we should expect 
+
+        $$ \lim_{n\to\infty} a_n = 0 $$
+        """
+    )
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""# Reference Section""")
     return
 
