@@ -1445,6 +1445,226 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(
+        r"""
+        The concept of a maximum is very useful, but it also has a deficiency.  
+
+        Consider for example the subset of rational numbers $(1,2)$.  Clearly, in some sense, the number 2 is *still* the "best" upper bound.  
+
+        However, technically it is not the maximum of the set.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        So how else can we characterize the notion of the "best" upper bound?
+
+        In the example of the set of rationals $(1,2)$, the best upper bound is 2.  This also is the *least* of all the upper bounds on this set.
+
+        Therefore we define the notion of the "least upper bound".
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty subset.  Let $\alpha\in X$.
+
+    If $\alpha = \min(UB_A)$ then we say that $\alpha$ is the **supremum** (or **least upper bound**) of $A$.
+
+    If $\alpha = \max(LB_A)$ then we say that $\alpha$ is the **infimum** (or **greatest lower bound**) of $A$.  
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        But notice that, even with this expanded notion of the "best" upper bound (or lower bound), still not every set has a best upper bound.
+
+        To demonstrate, consider the set 
+
+        $$ L = \{x\in \Bbb Q: 0\le x, \text{ and } 0\le x^2 \le 2\} $$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        We will not prove the following claims, but they are still useful as motivation.
+
+        This set $L$ can be thought of as the set of rationals in the interval $[0,\sqrt 2)$.  
+
+        This set has an upper bound, like for instance 2.  
+
+        However, it has no *least* upper bound.  If you select any upper bound $\alpha\in UB_L$, we can aways find a $\beta \in UB_L$ such that $\beta < \alpha$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        This is precisely the reason for the invention of the real numbers.
+
+        The rational numbers have the short-coming that some nonempty sets bounded above do *not* have a least upper bound.  That is to say, they do not have any "best" upper bound.
+
+        Mathematics becomes much simpler and more convenient if, whenever a nonempty subset is bounded above, it has a supremum.  
+
+        We will discuss this idea more, after we've introduced the concept of an "ordered field".  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 1""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty subset.  
+
+        Show that if $Y$ is finite, then $Y$ has a maximum and minimum.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 2""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty subset.
+
+        Show that if $A$ has a maximum and $\alpha=\max(A)$, then it follows that $\alpha=\sup(A)$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq )$ be a poset and $A\subseteq B\subseteq X$ all nonempty subsets.
+
+        Show that, if $\sup A$ and $\sup B$ exist, then 
+
+        $$ \sup A \preceq \sup B $$
+
+        Also state and prove a corresponding theorem for infima.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Lesson 0005: Bounds of Functions""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The most useful notion of a bound on a function, as we will see later in the course, is that the function's *values* stay bounded.
+
+        In effect, this means that the image of the function is a bounded *set*.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        For example, the function $f(x) = x$ is bounded if its domain is $[-1,1]$.  
+
+        But it is unbounded if its domain is $\Bbb R$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A$ any nonempty set.  Let $f: A\to X$ be a function.
+
+    Define the **image of $f$** by 
+
+    $$\text{Im}(f) = \{y\in X: \exists b\in A,\ f(b) = y\} $$
+
+    We say that $f$ is a **bounded function** if $\text{Im}(f)$ is a bounded set.
+
+    If $\alpha = \sup(\text{Im}(f))$ exists, we say that the **supremum of $f$** is $\alpha$.  
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Here we define some notions for functions of two variables.  
+
+        The first few notions define what it means to "keep one variable fixed" and take supremum of what results.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset, and $A,B$ any two nonempty sets.  Let $f:A\times B\to X$ a function.  
+
+    If $c\in A$ we define the function $f_c: B\to X$ by 
+
+    $$ f_c(d) = f(c,d), \quad \forall d \in B $$
+
+    We call $f_c$ the **partial function, $f$ applied to $c$**.  
+
+    If $d\in B$ we define $f_d:A\to X$ by
+
+    $$ f_d(c) = f(c,d), \quad \forall c\in A $$
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""# Reference Section""")
     return
 
