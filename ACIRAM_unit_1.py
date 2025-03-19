@@ -126,9 +126,9 @@ def _(mo):
 
         * A reference text.
         * Lectures, for pedagogy.
-        * End of lecture exercises, for basic familiarization.
-        * End of chapter homeworks, for more challenging project-based learning.
-        * Exams, for self-assessment.
+        * End of lecture exercises, for basic familiarization. (Easy.)
+        * End of chapter homeworks, for more challenging project-based learning. (Medium to hard difficulty.)
+        * Exams, for self-assessment.  (No hard problems, but the challenge is to organize and internalize the large )
         """
     )
     return
@@ -173,10 +173,11 @@ def _(mo):
         I recommend completing each lesson in the following order.
 
         1. Read the lesson in the pedagogy section (i.e. the main section of the noteboook), and watch the corresponding lecture.
-        2. Do the exercises at the end of the lesson.
-        3. Read the corresponding reference section (toward the end of the notebook).
-        4. At the end of each chapter, do the homework.
-        5. At the end of each unit, do the exam.
+        2. Prove all of the theorems and claims in this section.
+        3. Do the exercises at the end of the lesson.
+        4. Read the corresponding reference section (toward the end of the notebook).
+        5. At the end of each chapter, do the homework.
+        6. At the end of each unit, do the exam.
         """
     )
     return
@@ -614,6 +615,24 @@ def _(mo):
     return
 
 
+@app.cell
+def _(mo):
+    mo.callout(mo.md(r"""
+    I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
+
+    For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
+
+    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses group theory.  
+
+    ---
+
+    I recommend spending at least an hour on a problem, before looking at its solution.  This recommendation is specifically for these problems, because they are meant to be easy.  For harder problems, like in the homeworks, you might need to spend several hours or days on them.
+
+    If you have to look at the solution of a problem, treat it as a problem that you did not solve correctly.  Therefore, if you look at the solution, then this does not count toward the 5 problems that you successfully solve on your own.  
+    """), kind="info")
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## Exercise 1""")
@@ -648,11 +667,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let $(G,\ast)$ be a group and $e\in G$ an identity element.  
+        Prove that, for any group, its identity is unqiue.  That is to say, let $e$ be the group identity and $x\in G$ an element with the identity property.  Prove that $e=x$.
 
-        Show that $e$ is the unique element with the identity property.  That is to say, show that for all $x\in G$, if $x$ has the identity property then $x=e$.  
-
-        Also let $a\in G$ and $a^{-1}\in G$ its inverse element.  Show that $a^{-1}$ is the unique element with the property of the inverse of $a$.  That is to say, show that for all $b\in G$, if $b$ has the property of the inverse of $a$ then $b=a^{-1}$.
+        Also prove that, if $x$ is a group element, then its inverse is unique.  That is to say, if $x^{-1}$ is its inverse and $y$ is an inverse of $x$, then $x^{-1} = y$.
         """
     )
     return
@@ -661,6 +678,18 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Show that, for any group elements, $(ab)^{-1} = b^{-1}a^{-1}$.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 4""")
     return
 
 
@@ -707,7 +736,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Exercise 4""")
+    mo.md(r"""## Exercise 5""")
     return
 
 
@@ -736,7 +765,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Exercise 5""")
+    mo.md(r"""## Exercise 6""")
     return
 
 
@@ -845,6 +874,190 @@ def _(mo):
         1. Explain which group condition `h` fails above.
         2. Write an example representation of a group with numbers 0 through 4 and use addition mod 4.  Is this a group?
         3. (Challenge): Write an example, `g2`, where `g2.group` is a set of functions from {1,2,3} to itself.  Make it such that `gs.isGroup()` evaluates to `True`.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 7""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Consider the geometric example of the group of rotations, given earlier.
+
+        Show that this group is *not* commutative.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        ## Solution 1
+
+        1. The function $\times:(\Bbb Q\smallsetminus \{0\})\times(\Bbb Q\smallsetminus \{0\}) \to \Bbb Q\smallsetminus \{0\}$ is an *operation*, since the product of two nonzero rationals is a nonzero rational.
+
+        Multiplication of rational numbers is *associative*.
+
+        There is a multiplicative *identity*, which is 1.  That is because for any $x\in \Bbb Q\smallsetminus\{0\}$ we have 
+
+        $$ 1\times x = x\times 1 = x $$
+
+        And finally, each nonzero rational has a multiplicative *inverse*.  In particular, if $x\in\Bbb Q$ is a rational number, then it is $x=\frac p q$ for both integers, $p\ne 0 \ne q$.  Therefore its inverse is $\frac q p$, which is a rational because $p,q$ are integers and $p\ne 0$.  This is because 
+
+        $$ \frac p q\cdot \frac q p = \frac{pq}{pq} = 1 $$
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Solutions for parts (2.) to (4.) are TODO.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Solution 2""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""This proof is in the reference section.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Solution 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""This proof is in the reference section.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Solution 4""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""This proof is in the reference section.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Solution 5""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        1. Suppose $G$ is commutative, so that if $a,b\in G$ then $ab=ba$.  Then
+
+        $$ (ab)b^{-1} = (ba)b^{-1} $$ 
+
+        But then by associativity, $(ab)b^{-1} = a(bb^{-1}) = ae = a$ where $e\in G$ is the group identity.
+
+        And by associativity, we can ignore parentheses to write $(ba)b^{-1} = bab^{-1}$.
+
+        Therefore 
+
+        $$ a = bab^{-1} $$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        For the converse, suppose that for any $a,b\in G$ we have $a = bab^{-1}$.  Then 
+
+        $$ ab = bab^{-1}b $$
+
+        and skipping the details about associativity and cancellation (since we've seen them once already), this simplifies to 
+
+        $$ ab = ba $$
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        2. Suppose $G$ is commutative and $a,b\in G$, and $m\in \Bbb Z$.
+
+        If $m=0$ then everything trivially reduces to $e$, so the equation holds in this case.
+
+        If $m>0$ then 
+
+        \begin{align*}
+        a^m b^m &= \overbrace{a\ast a\ast\cdots \ast a}^m \ast \overbrace{b\ast b\ast \cdots \ast b}^m
+         \\
+        &= \overbrace{(a\ast b) \ast (a\ast b)\ast\cdots \ast (a\ast b)}^m \\
+        &= (ab)^m
+        \end{align*}
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        If $m<0$ then 
+
+        \begin{align*}
+        a^m b^m &= \overbrace{a^{-1}\ast a^{-1}\ast\cdots \ast a^{-1}}^m \ast \overbrace{b^{-1}\ast b^{-1}\ast \cdots \ast b^{-1}}^{-m}
+         \\
+        &= \overbrace{(a^{-1}\ast b^{-1}) \ast (a^{-1}\ast b^{-1})\ast\cdots \ast (a^{-1}\ast b^{-1})}^{-m} \\
+        &= \overbrace{(ab)^{-1}\ast (ab)^{-1}\ast\cdots\ast (ab)^{-1}}^{-m} \\
+        &= (ab)^m
+        \end{align*}
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Solution 6""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        1. `h` fails to have an identity.  One would naturally think that $0$ is an identity for this operation, and yet $0\oplus 2 = 0$.
+        2. 
         """
     )
     return
@@ -1840,23 +2053,43 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq)$ be a poset, $A, B$ two nonempty sets, and $f:A\times B\to X$ a function.  Also let $a\in A$.  
+
+        Show that if $f$ is bounded, then so is $f_{(a,\cdot)}$.
+
+        Note: You might think that we have not defined what it means for a two-variable function to be "bounded"!  But we have!  The definitions given above, in fact, are sufficient for each of the terms here to be well-defined.  
+        """
+    )
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 4""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $(X,\preceq)$ be a poset, $A,B$ two nonempty sets, $f:A\times B\to X$ a function.  
+
+        Show that, if the suprema exist,
+
+        $$ \sup_{a\in A}\sup_{b\in B} f = \sup_{b\in B}\sup_{a\in A} f $$
+        """
+    )
     return
 
 
