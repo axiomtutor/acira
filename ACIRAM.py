@@ -15,7 +15,7 @@ def _(mo):
     mo.md(
         r"""
         # A Course in Real Analysis ... in Marimo!
-        ## Chapter 1: The Axioms of the Real Numbers
+        ## Unit 1: The Axioms of the Real Numbers
         ### by Axiom Tutor
         """
     )
@@ -1650,15 +1650,17 @@ def _(mo):
     mo.callout(mo.md(r"""
     Let $A,B,C$ any three nonempty sets.  Let $f:A\times B\to C$ a function.  
 
-    If $a'\in A$ we define the function $f_{a'}: B\to X$ by 
+    If $a'\in A$ we define the function $f_{(a',\cdot)}: B\to X$ by 
 
-    $$ f_{a'}(b) = f(a',b), \quad \forall b \in B $$
+    $$ f_{(a',\cdot)}(b) = f(a',b), \quad \forall b \in B $$
 
-    We call $f_{a'}$ the **partial function, $f$ applied to $a'$**.  
+    We call $f_{(a',\cdot)}$ the **partial function, $f$ applied to $a'$**. 
 
-    If $b'\in B$ we define $f_{b'}:A\to X$ by
+    Note that the location of the dot helps to indicate which variable is fixed and which continues to "vary".
 
-    $$ f_{b'}(a) = f(a,b'), \quad \forall a\in A $$
+    If $b'\in B$ we define $f_{\cdot,b'}:A\to X$ by
+
+    $$ f_{(\cdot,b')}(a, ) = f(a,b'), \quad \forall a\in A $$
 
     which is the **partial function, $f$ applied to $b$**.  
     """), kind="success")
