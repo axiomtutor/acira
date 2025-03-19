@@ -1595,13 +1595,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        The most useful notion of a bound on a function, as we will see later in the course, is that the function's *values* stay bounded.
-
-        In effect, this means that the image of the function is a bounded *set*.
-        """
-    )
+    mo.md(r"""The most useful notion of a bound on a function, as we will see later in the course, is that the function's *values* stay bounded.""")
     return
 
 
@@ -1633,6 +1627,11 @@ def _(mo):
     return
 
 
+@app.cell
+def _():
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
@@ -1642,10 +1641,18 @@ def _(mo):
 
     $$\text{Im}(f) = \{y\in X: \exists b\in A,\ f(b) = y\} $$
 
-    We say that $f$ is a **bounded function** if $\text{Im}(f)$ is a bounded set.
+    For $\alpha\in X$ we say that **$\alpha$ is an upper bound of $f$** if $\alpha\in UB_{\text{Im}(f)}$.  We say that **$\alpha$ is a lower bound of $f$** if $\alpha\in LB_{\text{Im}(f)}$.  We say that $f$ is a **bounded function** if $\text{Im}(f)$ is a bounded set.
 
-    If $\alpha = \sup(\text{Im}(f))$ exists, we say that the **supremum of $f$** is $\alpha$.  
+    If $\alpha = \sup(\text{Im}(f))$ exists, we say that the **supremum of $f$** is $\alpha$.  In this case, we write $\sup(f) = \alpha$.  
+
+    If $\alpha=\inf(\text{Im}(f))$ exists, we say that the **infimum of $f$** is $\alpha$.  In this case, we write $\inf(f)=\alpha$.  
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In short, the definitions above, all amount to: Apply the usual ideas of bounds, to $\text{Im}(f)$.  """)
     return
 
 
@@ -1655,7 +1662,7 @@ def _(mo):
         r"""
         Here we define some notions for functions of two variables.  
 
-        The first few notions define what it means to "keep one variable fixed" and take supremum of what results.
+        The first few notions define what it means to "keep one variable fixed".
         """
     )
     return
@@ -1672,7 +1679,7 @@ def _(mo):
 
     We call $f_{(a',\cdot)}$ the **partial function, $f$ applied to $a'$**. 
 
-    Note that the location of the dot helps to indicate which variable is fixed and which continues to "vary".
+    Note that dot is in the coordinate of the variable, and $a'$ is "fixed".
 
     If $b'\in B$ we define $f_{(\cdot,b')}:A\to X$ by
 
@@ -1685,18 +1692,24 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""Next we discuss what it means to keep a variable fixed, and take the supremum over the other variable.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.callout(mo.md(r"""
-    Let $(X,\preceq)$ be a poset, and $A,B$ two nonemtpy sets.  Let $f:A\times B\to X$ be a function.
+    Let $(Z,\preceq)$ be a poset, and $A,B$ two nonemtpy sets.  Let $f:A\times B\to Z$ be a function.
 
-    In what follows, if we assume that all suprema exist, then we define the **supremum of $f$ over $A$** to be the *function* $\sup_{a\in A} f$.  It is given by the equation 
+    In what follows, if we assume that all suprema exist, then we define the **supremum of $f$ over $A$** to be the *function* $\sup_{a\in A} f_{(\cdot,x)}:B\to Z$.  It is given by the equation 
 
-    $$ \left(\sup_{a\in A} f\right)(x) = \sup(f_{(\cdot,x)}), \quad \forall x\in B $$
-
-    That is to say, for each $x\in B$, the function $\sup_{a\in A}f$ takes the value $\sup(f_{(\cdot,x)})$.
+    $$ \left(\sup_{a\in A} f_{(\cdot,x)}\right)(b) = \sup(f_{(\cdot,b)}), \quad \forall b\in B $$
 
     The **supremum of $f$ over $B$** is 
 
-    $$ \left(\sup_{b\in B}\right)(x) = \sup(f_{(x,\cdot)}), \quad \forall x\in A $$
+    $$ \left(\sup_{b\in B}f_{(x,\cdot)}\right)(a) = \sup(f_{(a,\cdot)}), \quad \forall a\in A $$
+
+    Note that, in this notation, the character $x$ is purely "formal".  It is does not refer to any object, and is there only to visually mark which coordinate is being held fixed as the supremum "ranges over" the coordinate with the dot.
     """), kind="success")
     return
 
@@ -1707,9 +1720,9 @@ def _(mo):
         r"""
         It may help to understand this intuitively.  
 
-        The function $\sup_{a\in A}f$, for an argument $x\in B$, is computed by:  
+        The function $\sup_{a\in A}f_{(\cdot,x)}$ is a function of $B$.  For an argument $b\in B$, its image is computed by:  
 
-        * "fixing" $x$, and then
+        * "fixing" $b$, which is to say, forming $f$ applied to $b$, and then
         * taking the supremum over all possibilities for $a\in A$.  
         """
     )
@@ -1718,7 +1731,33 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""It is also worth appreciating that it is possible for $\sup_{a\in A} f$ to exist for some arguments $x\in B$ but not for others.  """)
+    mo.md(
+        r"""
+        It is also worth appreciating that it is possible for $\sup_{a\in A} f_{(\cdot,x)}$ to exist for some arguments $b\in B$ but not for others.  
+
+        For example, consider $f(a,b) = \frac{a}b$ for $a,b\in\Bbb Q$ and $b\ne 0$.  
+
+        The function $\sup_{y\in \Bbb Q} f_{(x,\cdot)}$ exists for the argument $a=0$.  That is because the image of $\sup_{y\in\Bbb Q}f_{(x,\cdot)}$ is just the set $\{0\}$, which has supremum equal to 0.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        However, for any other argument, $\sup_{y\in\Bbb Q}f_{(x,\cdot)}$ does not exist.  Let us just consider the argument $a=1$, for concreteness.  
+
+        The function $f_{(1,\cdot)}:\Bbb Q\smallsetminus \{0\} \to \Bbb Q$ is given by 
+
+        $$ f_{(1,\cdot)}(y) = \frac 1 y $$
+
+        Therefore we know that $\text{Im}(f_{(1,\cdot)})$ is unbounded above.  So $\sup(f_{(1,\cdot)})$ does not exist.
+
+        Therefore $\sup_{y\in \Bbb Q}f_{(x,\cdot)}$ does not exist for argument $a=1$.  Equivalently, we may say: $\left(\sup_{y\in\Bbb Q} f_{(x,\cdot)}\right)(1)$ is undefined.
+        """
+    )
     return
 
 
