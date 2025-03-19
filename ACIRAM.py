@@ -1306,7 +1306,7 @@ def _(mo):
 
         To motivate this, consider the task of determining the limit of a sequence like 
 
-        $$ a_n = \frac{\cos nx}{n} $$
+        $$ a_n = \frac{\cos n}{n} $$
 
         From a previous calculus course, I assume the student intuits that we should expect 
 
@@ -1316,8 +1316,29 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        But proving this directly, because of how complicated $\cos n$ can be with integer arguments, would be hard or even impossible.
+
+        However, with bounds, it is rather easy!
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        We know that $-1\le \cos x \le 1$ for every $x\in \Bbb R$.  This acts as a bound on $\cos n$.  
+
+        In particular, it implies 
+
+        $$ \frac{-1}{n} \le \frac{\cos n}n \le \frac 1 n $$
+        """
+    )
     return
 
 
