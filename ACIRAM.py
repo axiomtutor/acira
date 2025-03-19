@@ -1106,7 +1106,7 @@ def _(mo):
         r"""
         The field properties contain what we will need to know about the algebraic operations of $+$ and $\times$ for the real numbers.
 
-        We now proceed likewise, to describe how the $\le$ relation on the real numbers will behave.  
+        We now proceed likewise, to describe how the $\le$ relation on the real numbers will behave.
         """
     )
     return
@@ -1140,7 +1140,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Of course, all the same could just as well be said for the rational numbers, so this too is partially ordered by its standard ordering $\le$.  """)
+    mo.md(r"""Of course, all the same could just as well be said for the rational numbers, so this too is partially ordered by its standard ordering $\le$.""")
     return
 
 
@@ -1166,7 +1166,7 @@ def _(mo):
         r"""
         One can readily check that this is also reflexive, anti-symmetric, and transitive.
 
-        *Reflexive*: For any $A\in Y$ we have $A\subseteq A$ and therefore $A\preceq A$.  
+        *Reflexive*: For any $A\in Y$ we have $A\subseteq A$ and therefore $A\preceq A$.
         """
     )
     return
@@ -1174,13 +1174,13 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""*Anti-symmetric*: Let $A,B\in Y$.  If $A\subseteq B$ and $B\subseteq A$ it follows by basic set theory that $A=B$.  """)
+    mo.md(r"""*Anti-symmetric*: Let $A,B\in Y$.  If $A\subseteq B$ and $B\subseteq A$ it follows by basic set theory that $A=B$.""")
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""*Transitive*:  Let $A,B,C\in Y$.  Assume $A\subseteq B$ and $B\subseteq C$.  Then, again by basic set theory, $A\subseteq C$.  """)
+    mo.md(r"""*Transitive*:  Let $A,B,C\in Y$.  Assume $A\subseteq B$ and $B\subseteq C$.  Then, again by basic set theory, $A\subseteq C$.""")
     return
 
 
@@ -1196,7 +1196,70 @@ def _(mo):
     2. $\preceq$ is anti-symmetric.
 
     3. $\preceq$ is transitive.
+
+    If $\preceq$ is a partial order, then we define the corresponding **strict partial order** $\prec$ by 
+
+    $$ a\prec b \Leftrightarrow a\prec b\land a\ne b, \quad \forall a,b\in X $$
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        But there is something that the subset relation lacks, which we want in an order on numbers.  
+
+        For concreteness, let's discuss $X=\{a,b,c\}$ and 
+
+        \begin{align*}
+          Y &= \mathcal P(X) \\
+          & = \{\emptyset, \{a\}, \{b\}, \{c\},\\
+          & \quad \{a,b\}, \{a,c\},\{b,c\},\{a,b,c\}\}
+        \end{align*}
+
+        We use the partial order discussed earlier, $U\preceq V \Leftrightarrow U\subseteq V$ for each $U,V\in Y$.  
+
+        Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $\preceq$ be a partial order on $X$.
+
+    For any $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$, then we say $a$ and $b$ are **incommensurable**.
+
+    If no two elements of $X$ are incommensurable then we say that $\preceq$ is a **total order** on $X$.  
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 1""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        If $\preceq$ is a partial order on $X$, show that the corresponding strict partial order $\prec$ is
+
+        1. Irreflexive: $\forall a\in X$ we have $a\not\prec a$.
+        2. Asymmetric: $\forall a,b\in X,$ if we have $a\prec b$ then $a\not\prec b$.
+        3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.  
+        """
+    )
+    return
+
+
+@app.cell
+def _():
     return
 
 
