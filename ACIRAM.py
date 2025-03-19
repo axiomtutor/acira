@@ -1221,6 +1221,8 @@ def _(mo):
         We use the partial order discussed earlier, $U\preceq V \Leftrightarrow U\subseteq V$ for each $U,V\in Y$.  
 
         Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
+
+        But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.  
         """
     )
     return
@@ -1258,8 +1260,35 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 2""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Find all possible partial orders on the set $\{a,b,c\}$.  Of those partial orders, decide which are total orders.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $\preceq$ be a partial order on the set $X$, and $\prec$ the corresponding strict partial order.  
+
+        For $a,b\in X$ show that $a\not\preceq b$ is NOT equivalent to $b\prec a$.  
+
+        But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.  
+        """
+    )
     return
 
 
