@@ -1619,6 +1619,22 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(
+        r"""
+        Also consider the function $g:\Bbb N\to \Bbb Q$ defined by 
+
+        $$ g(n) = \frac 1n $$
+
+        Intuitively, we understand that $\text{Im}(g) \subseteq (0,1]$.  
+
+        Moreover, these bounds are "tight", in the sense that $1$ is the supremum of $g$ (in fact, its maximum!) and $0$ is its infimum (but not its minimum).  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.callout(mo.md(r"""
     Let $(X,\preceq)$ be a poset and $A$ any nonempty set.  Let $f: A\to X$ be a function.
 
@@ -1648,7 +1664,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
-    Let $A,B,C$ any three nonempty sets.  Let $f:A\times B\to C$ a function.  
+    Let $A,B,C$ be any three nonempty sets.  Let $f:A\times B\to C$ a function.  
 
     If $a'\in A$ we define the function $f_{(a',\cdot)}: B\to X$ by 
 
@@ -1658,9 +1674,9 @@ def _(mo):
 
     Note that the location of the dot helps to indicate which variable is fixed and which continues to "vary".
 
-    If $b'\in B$ we define $f_{\cdot,b'}:A\to X$ by
+    If $b'\in B$ we define $f_{(\cdot,b')}:A\to X$ by
 
-    $$ f_{(\cdot,b')}(a, ) = f(a,b'), \quad \forall a\in A $$
+    $$ f_{(\cdot,b')}(a) = f(a,b'), \quad \forall a\in A $$
 
     which is the **partial function, $f$ applied to $b$**.  
     """), kind="success")
@@ -1674,13 +1690,13 @@ def _(mo):
 
     In what follows, if we assume that all suprema exist, then we define the **supremum of $f$ over $A$** to be the *function* $\sup_{a\in A} f$.  It is given by the equation 
 
-    $$ \left(\sup_{a\in A} f\right)(x) = \sup(f_x), \quad \forall x\in B $$
+    $$ \left(\sup_{a\in A} f\right)(x) = \sup(f_{(\cdot,x)}), \quad \forall x\in B $$
 
-    That is to say, for each $x\in B$, the function $\sup_{a\in A}f$ takes the value $\sup(f_x)$.
+    That is to say, for each $x\in B$, the function $\sup_{a\in A}f$ takes the value $\sup(f_{(\cdot,x)})$.
 
     The **supremum of $f$ over $B$** is 
 
-    $$ \left(\sup_{b\in B}\right)(x) = \sup(f_x), \quad \forall x\in A $$
+    $$ \left(\sup_{b\in B}\right)(x) = \sup(f_{(x,\cdot)}), \quad \forall x\in A $$
     """), kind="success")
     return
 
@@ -1700,9 +1716,9 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""It is also worth appreciating that it is possible for $\sup_{a\in A} f$ to exist for some $x\in B$ but not for others.  """)
+    mo.md(r"""It is also worth appreciating that it is possible for $\sup_{a\in A} f$ to exist for some arguments $x\in B$ but not for others.  """)
     return
 
 
