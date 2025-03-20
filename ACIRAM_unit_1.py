@@ -2766,13 +2766,13 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""In all that follows, assume $(X,\preceq)$ is a poset and $\prec$ the corresponding strict partial order.""")
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
     Order theorem 1
@@ -2786,9 +2786,27 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""*Proof*:  """)
+    mo.md(
+        r"""
+        *Proof*:  Let $a\in X$, then $a = a$, so we cannot have $a\prec a$ by definition.  Therefore $\prec$ is irreflexive.
+
+        Let $a,b\in X$ and assume $a\prec b$.  Therefore $a\preceq b$ and $a\ne b$ by definition.  
+
+        Assume for contradiction that $b\prec a$, so therefore $b\preceq a$.  By the anti-symmetry of $\preceq$ we have $a=b$, a contradiction.  
+
+        Therefore $b\not\prec a$ and this shows that $\prec$ is asymmetric.
+
+        Finally, for $a,b,c\in X$ assume $a\prec b$ and $b\prec c$.  Then $a\preceq b$ and $b\preceq c$ by definition, and then by transitivity of $\preceq$ we have $a\preceq c$.  
+
+        Assume for contradiction that $a=c$.  Then $a\preceq b$ and $b\preceq a$, and then by the anti-symmetry of $\preceq$ we have $a=b$.  But by definition of $a\prec b$ we have $a\ne b$, a contradiction.
+
+        Therefore $a\ne c$, which shows $a\prec c$.  In turn, this shows $\prec$ is transitive.
+
+        $\Box$
+        """
+    )
     return
 
 
