@@ -1967,13 +1967,13 @@ def _(mo):
 
     Define the **image of $f$** by 
 
-    $$\text{Im}(f) = \{y\in X: \exists b\in A,\ f(b) = y\} $$
+    $$\text{Im}(f) = \{f(b): b\in A\} $$
 
     For $\alpha\in X$ we say that **$\alpha$ is an upper bound of $f$** if $\alpha\in UB_{\text{Im}(f)}$.  We say that **$\alpha$ is a lower bound of $f$** if $\alpha\in LB_{\text{Im}(f)}$.  We say that $f$ is a **bounded function** if $\text{Im}(f)$ is a bounded set.
 
-    If $\alpha = \sup(\text{Im}(f))$ exists, we say that the **supremum of $f$** is $\alpha$.  In this case, we write $\sup(f) = \alpha$.  
+    If $\alpha=\max(\text{Im}(f))$ we say that $\alpha$ is the **maximum of $f$**.  If $\alpha=\min(\text{Im}(f))$ we say that $\alpha$ is the **minimum of $f$**.
 
-    If $\alpha=\inf(\text{Im}(f))$ exists, we say that the **infimum of $f$** is $\alpha$.  In this case, we write $\inf(f)=\alpha$.  
+    If $\alpha = \sup(\text{Im}(f))$ exists, we say that the **supremum of $f$** is $\alpha$.  In this case, we write $\sup(f) = \alpha$.  If $\alpha=\inf(\text{Im}(f))$ exists, we say that the **infimum of $f$** is $\alpha$.  In this case, we write $\inf(f)=\alpha$.  
     """), kind="success")
     return
 
@@ -2208,13 +2208,27 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Lesson 0006: Ordered Fields""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(F,+,\times)$ be a field and $(F,\preceq)$ a totally ordered set.
+
+    We say that $\preceq$ is **compatible with addition** if 
+
+    $$ a\preceq b \quad \Rightarrow \quad a+c\preceq b+c, \quad \forall a,b,c\in F $$
+
+    We say that $\preceq$ is **compatible with multiplication** if
+
+    $$ a\preceq b \quad \Rightarrow \quad ac\preceq bc, \quad \forall a,b,c\in F \text{ and } 0\preceq c $$
+
+    We say that $(F,+,\times,\preceq)$ is an **ordered field** if $\preceq$ is compatible with both addition and multiplication.
+    """), kind="success")
     return
 
 
@@ -2955,18 +2969,150 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## 0006: Bounds of Functions""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, assume $(X,\preceq)$ is a poset.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $A$ be a nonempty set and $f,g:A\to X$ two functions.  Let $\alpha\in X$.  
+
+    Define the **image of $f$** as $\text{Im}(f) = \{f(b): b\in A\}$.
+
+    We write that $f\preceq g$ if 
+
+    $$ f(b) \preceq g(b), \quad \forall b\in A $$
+
+    Let $\alpha\in X$.  
+
+    * If $\alpha$ is an **upper bound of $f$** if $\alpha\in UB_{\text{Im}(f)}$ and likewise define a **lower bound of $f$**.  If $\text{Im}(f)$ is bounded then we say that $f$ is **bounded**.  
+    * If $\alpha=\max(\text{Im}(f))$ then $\alpha$ is the **maximum of $f$**, and likewise for the **minimum**.
+    * If $\alpha=\sup(\text{Im}(f))$ then $\alpha$ is the **supremum of $f$**, and likewise for the **infimum**.  
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $A,B$ be two nonempty sets and $f:A\times B\to X$ a function.  Let $c'\in A, d'\in B$.  
+
+    We define **the partial function, $f$ applied to $c'$**, to be $f_{(c',\cdot)}: B\to X$.  It is given by  
+
+    $$ f_{(c',\cdot)}(y) = f(c',y), \quad \forall y\in B $$
+
+    and likewise for $f_{(\cdot,d')}:A\to X$.  
+
+    We define **the supremum of $f$ over $A$** to be the function $\sup_{a\in A}f_{(\cdot, x)}$.  It is given by 
+
+    $$ \left(\sup_{a\in A}f_{(\cdot,x)}\right)(c) = \sup \left(f_{(\cdot,c)}\right) $$
+
+    Its domain is the subset of $B$ for which this supremum exists.
+
+    Likewise for **the supremum of $f$ over $B$**, the function $\sup_{b\in B} f_{(x,\cdot)}:A\to X$.  
+
+    And we define 
+
+    $$ \sup_{a\in A}\sup_{b\in B} = \sup_{a\in A}\left(\sup_{b\in B}f_{(x,\cdot)}\right) $$
+
+    and 
+
+    $$ \sup_{b\in B}\sup_{a\in A} = \sup_{b\in B}\left(\sup_{a\in B}f_{(\cdot,x)}\right) $$
+
+    And likewiise for the definitions of corresponding concepts involving the infima.
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Bounds of functions theorem 1
+
+    `Sup function order`
+
+    ---
+
+    Let $A$ be a nonempty set and $f,g : A\to X$ be two functions.  
+
+    If $f\preceq g$ then $\sup(f) \preceq \sup(g)$.
+
+    """), kind="danger")
     return
 
 
 @app.cell
-def _():
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: We only need to show that $\sup(g)$ is an upper bound on $\text{Im}(f)$.  Let $b\in A$.
+
+        Then $f(b)\preceq g(b)\preceq \sup(g)$.
+
+        $\Box$
+        """
+    )
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Bounds of functions theorem 2
+
+    `Stacked sup order`
+
+    ---
+
+    Let $A,B$ be two nonempty sets, and $f:A\times B\to X$ a function.
+
+    If $\sup_{a\in A}\sup_{b\in B}f$ exists, then 
+
+    $$ \sup_{a\in A}\sup_{b\in B}f = \sup_{b\in B}\sup_{a\in A}f $$
+
+    and 
+
+    $$\inf_{a\in A}\inf_{b\in B}f = \inf_{b\in B}\inf_{a\in A}f $$
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  For any $c\in A, d\in B$ we have 
+
+        $$ f(c,d) \preceq \sup_{b\in B}f_{(x,\cdot)} $$
+
+        Now fix $d$ and then, $f_{(\cdot, d)} \preceq \sup_{b\in B}f_{(x,\cdot)}$ as an inequality of functions sharing the same domain, $A$.  Because of the `Sup function order` theorem, then 
+
+        $$ \sup_{a\in A}f_{(\cdot,d)} \preceq \sup_{a\in A}\sup_{b\in B} f_{(x,\cdot)} $$
+
+        Since this is true for an arbitrary $d\in B$, we have that $\sup_{a\in A}\sup_{b\in B}f_{(x,\cdot)} = \sup_{a\in A}\sup_{b\in B} f$ is an upper bound on the function $\sup_{a\in A}f_{(\cdot, x)}$.  
+
+        Therefore $\sup_{b\in B}\sup_{a\in A}f_{(\cdot,x)} \preceq \sup_{a\in A}\sup_{b\in B}f$, which is the same as 
+
+        $$ \sup_{b\in B}\sup_{a\in A} f \preceq \sup_{a\in A}\sup_{b\in B} f $$
+
+        The reverse inequality can be proved similarly, which then shows 
+
+        $$ \sup_{b\in B}\sup_{a\in A}f  = \sup_{a\in A}\sup_{b\in B} f $$
+
+        And *mutatis mutandis* the same proof shows the equation for infima.
+
+        $\Box$
+        """
+    )
     return
 
 
