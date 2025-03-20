@@ -944,7 +944,7 @@ def _(mo):
     mo.md(
         r"""
         2. Show that $(G,\circ)$ is a group.  We take it for granted that function composition is associative, so there is no need to prove this (unless you just want to for exercise).
-  
+
             You should give a convincing argument that $\circ$ really is an operation on $G$ -- in particular, you should argue that for any two $x,y\in G$ we have $x\circ y\in G$.
 
             You should identify the identity element.  And you should find the inverse of each element.
@@ -1128,18 +1128,13 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        ## Solution 7
-
-        """
-    )
+    mo.md(r"""## Solution 7""")
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"""We just need two elements which do not commute.  These """)
+    mo.md(r"""We just need two elements which do not commute.  These""")
     return
 
 
@@ -2810,33 +2805,93 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Order theorem 2
+
+    `Negating precedence`
+
+    ---
+
+    Let $(X,\preceq)$ be a poset and $a,b\in X$.  
+
+    If $a\prec b$ then $b\not\preceq a$.  
+
+    If $\preceq$ is a total order, then $a\prec b$ if and only if $b\not\preceq a$.
+    """), kind="danger")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Assume $a\prec b$.  For contradiction, further assume $b\preceq a$.  
+
+        Then $a\preceq b$ by definition of $\prec$, and so $a=b$ by anti-symmetry of $\preceq$.  But also by definition of $\prec$ we have $a\ne b$, a contradiction.
+
+        Therefore $b\not\preceq a$.
+        """
+    )
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Now assume that $(X,\preceq)$ is a total order.  We already have that if $a\prec b$ then $b\not\preceq a$ from above.
+
+        Assume $b\not\preceq a$.  By totality, we must therefore have $a\preceq b$.  
+
+        Assume for contradiction that $a = b$.  Then we must have $a\preceq a$ by reflexivity, and therefore $b\preceq a$,  But this contradicts $b\not\preceq a$.
+
+        Therefore $a\ne b$, which shows $a\prec b$.  
+
+        $\Box$
+        """
+    )
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## 0005: Bounds""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $Y\subseteq X$ a nonempty subset.  Let $\alpha\in X$.
+
+    If $\forall a\in Y$ we have $a\preceq \alpha$, then we say that $\alpha$ is an **upper bound** of $Y$.  If $\forall a\in Y$ we have $\alpha\preceq a$ then we say that $\alpha$ is a **lower bound** of $Y$.
+
+    We denote the set of all upper bounds of $Y$ by $UB_Y$ and the set of all lower bounds of $Y$ by $LB_Y$.  
+
+    If $\alpha\in Y\cap UB_Y$ we say that $\alpha$ is the **maximum** of $Y$, and write $\alpha = \max(Y)$.  If $\alpha\in Y\cap LB_Y$ then we say that $\alpha$ is the **minimum** of $Y$, and write $\alpha = \min(Y)$.  
+
+    If $\alpha = \min(UB_Y)$ then we say that $\alpha$ is the **supremum** or **least upper bound** of $Y$, and write $\alpha=\sup(Y)$.  If $\alpha = \max(LB_Y)$ then we say that $\alpha$ is the **infimum** or **greatest lower bound** of $Y$, and write $\alpha = \inf(Y)$.  
+    """), kind="success")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, assume $(X,\preceq)$ is a poset.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $\emptyset\ne A\subseteq B\subseteq X$ be two nonempty subsets, for which $\sup(A)$ and $\sup(B)$ both exist.  
+
+    Then  
+
+    $$\sup(A)\preceq \sup(B), \text{ and } \inf(B)\preceq \inf(A) $$
+    """), kind="danger")
     return
 
 
