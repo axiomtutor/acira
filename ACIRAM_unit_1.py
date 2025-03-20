@@ -2886,6 +2886,50 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
+    Bound theorem 1
+
+    `Finite set max min`
+
+    ---
+
+    If $(X,\preceq)$ is a totally ordered set, and if $\emptyset \ne A\subseteq X$ is finite, then both $\max(A)$ and $\min(A)$ exist.
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  If $|A|=1$ then $A = \{b\}$ for some $b\in X$.  In that case, $b\preceq b$ by reflexivity.  Immediate from this, $b = \max(A)$ and $b=\min(A)$.  
+
+        Assume that the theorem holds for every set, with $|A|=n$.  Now let $A$ be a set with $|A|=n+1$.  Let $b\in A$.
+
+        Then define $A' = A\smallsetminus\{b\}$, so that $|A'| = n$ and therefore $\alpha=\min(A')$ and $\beta = \max(A')$ both exist.  
+
+        If $b\preceq \beta$ then $\beta=\max(A)$.  This follows because, if $c\in A$ then if $c=b$ we have $c\preceq \beta$.  And if $c\ne b$ then $c\in A'$, and since $\beta=\max(A')$, we have $c\preceq \alpha$.  
+
+        On the other hand, if $\alpha\preceq b$ then $b=\max(A)$.  This follows because, if $c\in A$ then if $c=b$ we have $c\preceq b$ by reflexivity.  If $c\ne b$ then $c\in A'$ and therefore $c\preceq \beta\preceq b$.
+
+        Since $\preceq$ is total, then the above cases are exhaustive.  Therefore we have that the maximum and minimum of $A$ both exist.
+
+        *Mutatis mutandis* the same argument applies for the minimum.  
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Bound theorem 2
+
+    `Subset sup inf`
+
+    ---
+
     Let $\emptyset\ne A\subseteq B\subseteq X$ be two nonempty subsets, for which $\sup(A)$ and $\sup(B)$ both exist.  
 
     Then  
@@ -2895,8 +2939,19 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  If we show that $\sup(B) \in UB_A$ then it follows immediately that $\sup(A)\preceq \sup(B)$, as $\sup(A) = \min(UB_A)$.  
+
+        Let $c\in A$.  Then $c\in B$  and $c\preceq \sup(B)$, so the conclusion follows.
+
+        The proof for infima is *mutatis mutandis* the same.
+
+        $\Box$
+        """
+    )
     return
 
 
