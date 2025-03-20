@@ -8,8 +8,10 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 # To use this project
 
-1. Download the .py file (or clone the repo).
+1. Download the .py files (or clone the repo).
 
 2. Install marimo if necessary.
 
-3. In a terminal, run `marimo edit acira.py`
+3. Pick the particular notebook to read, say `ACIRA_0000_intro.py`.
+
+4. In the terminal, cd into the directory with the files, and run `marimo edit ACIRA_0000_intro.py`.
