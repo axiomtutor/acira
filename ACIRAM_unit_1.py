@@ -128,7 +128,7 @@ def _(mo):
         * Lectures, for pedagogy.
         * End of lecture exercises, for basic familiarization. (Easy.)
         * End of chapter homeworks, for more challenging project-based learning. (Medium to hard difficulty.)
-        * Exams, for self-assessment.  (No hard problems, but the challenge is to organize and internalize the large )
+        * Exams, for self-assessment.  (Forces the student to organize and consolidate the large collection of knowledge covered in a unit.)
         """
     )
     return
@@ -144,7 +144,7 @@ def _(mo):
 
         Some texts are exactly the reverse.  (Needham's *Visual Complex Analysis*.)
 
-        In this author's opinion, those are the best books because they have a clear design philosophy and execute on the design well.
+        In this author's opinion, those are the best books.  They have a clear design philosophy and execute on the design well.
         """
     )
     return
@@ -237,7 +237,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        For anyone interested in the foundations project, it would be better to include these ideas in a course on set theory, or some sort of course dedicated entirely to foundations.  
+        For anyone interested in the foundations project, it would be better to include these ideas in a course on set theory, or some sort of course dedicated entirely to foundations.  (The interested student can also consort a textbook like, say, Jech's *Set Theory*.)
 
         If I get enough requests for such a thing, I might consider making a Marimo course in foundations one day.  But at least for now, let's move efficiently to the things that are of interest to real analysis.
         """
@@ -370,7 +370,7 @@ def _(mo):
 
         $$ x+(y+z) = (x+y)+z, \quad \forall x,y,z\in\Bbb Z $$
 
-        3. There is an identity element, $0\in\Bbb Z$.  We call this an identity element because
+        3. There is an identity element, $0\in\Bbb Z$.  We call this an identity element because, when you combine it with some $x\in \Bbb Z$, "it doesn't change".
 
             $$ 0+x=x+0 = x, \quad \forall x\in \Bbb Z $$
 
@@ -386,9 +386,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The condition that the function, $+$, must be an operation, is sometimes called "closure".  So for instance, we sometimes asser this by saying "$\Bbb Z$ is closed under $+$."
+        The condition that the function, $+$, must be an operation, is sometimes called "closure".  So for instance, $\Bbb Z$ is closed under $+$.
 
-        Consider for example the function of subtraction, $-$, defined on the natural numbers.
+        For a non-example, consider the function of subtraction, $-$, defined on the natural numbers.
 
         $$ -: \Bbb N^2 \to \Bbb Z $$
 
@@ -408,7 +408,7 @@ def _(mo):
 
         (Even though we have not officially introduced $\Bbb R$ yet, we still know some of the properties that we expect it to have.)
 
-        Note, however, that $\Bbb N$ is not a group because it lacks an identity element.
+        Note, however, that $\Bbb N$ is not a group under $+$, because it lacks an identity element, which is $0$.
         """
     )
     return
@@ -584,21 +584,21 @@ def _(mo):
 def _(mo):
     mo.callout(
         mo.md(r"""
-    Let $G$ be a nonempty set, and $\cdot:G\times G\to G$ an operation on $G$.  
+    Let $G$ be a nonempty set, and $\ast:G\times G\to G$ an operation on $G$.  
 
     We say that an element $e\in G$ is an **identity element** if 
 
-    $$ e\cdot x = x\cdot e = x, \quad \forall x\in G $$
+    $$ e\ast x = x\ast e = x, \quad \forall x\in G $$
 
     If $x,y\in G$ then we say that $y$ is the **inverse of $x$** if 
 
-    $$ x\cdot y = e $$
+    $$ x\ast y = e $$
 
     When $y$ is the inverse of $x$ we typically write $y = x^{-1}$.
 
-    If the following conditions are met, we say that $(G,\cdot)$ is a **group**.  
+    If the following conditions are met, we say that $(G,\ast)$ is a **group**.  
 
-    1. The operation, $\cdot$, is associative.
+    1. The operation, $\ast$, is associative.
 
     2. There is an identity element, which we typically denote as $e$.
 
@@ -612,6 +612,20 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""When we eventually state the axioms of the real numbers, one axiom will be that $(\Bbb R,+)$ is a group, and another will be that $(\Bbb R\smallsetminus \{0\},\times)$ is also a group.""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        A quick comment about notation: Officially, the symbol for the group operation is often $\ast$.  If we're working with addition, multiplication, composition, or some other more concrete operation, then we'll use its symbol instead.
+
+        But we know that, when working with multiplication, we often just omit the symbol entirely.  For example, $ab$ is understood to mean $a\cdot b$.  
+
+        When working with an abstract group, we adopt the same convention.  Although officially we should write $a\ast b$, we will informally write $ab$ instead.  
+        """
+    )
     return
 
 
@@ -1132,9 +1146,29 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""We just need two elements which do not commute.  These""")
+    mo.md(
+        r"""
+        We just need two elements which do not commute.  Any non-zero rotation and any reflection will do.  But since we just need one example, then for concreteness let's choose $R_{120^\circ}$ and $s_A$.
+
+        We now compute $R_{120^\circ}\circ s_A$ and $s_A\circ R_{120^\circ}$, and demonstrate that these are not equal to each other.  
+
+        Let us trace what each does to the vertex $A$.  
+
+        $$ (R_{120^\circ}\circ s_A)(A) = R_{120^\circ}(s_A(A)) = R_{120^\circ}(A) = B $$
+
+        $$ (s_A\circ R_{120^\circ})(A) = s_A(R_{120^\circ}(A)) = s_A(B) = C $$
+
+        In fact, we can stop early.  We can already see that we must have 
+
+        $$ R_{120^\circ}\circ s_A \ne s_A\circ R_{120^\circ} $$
+
+        and therefore $G$ must not be commutative.
+
+        $\Box$
+        """
+    )
     return
 
 
