@@ -189,7 +189,7 @@ def _(mo):
 
         $$ L = \{x\in\Bbb R:0\le x^2<2\}^{\ge 0} $$
 
-        We've seen this set before, and discussed how its right edge should be where $\sqrt 2$ is.  
+        We've seen this set before, and discussed how its right edge should be where $\sqrt 2$ is.
         """
     )
     return
@@ -201,15 +201,45 @@ def _(mo):
         r"""
         Before that, we need to formally show that it is nonempty and bounded above, so that we can ensure its supremum must exist.
 
-        Certainly it is nonempty because $0\in L$, which follows from $0< 0^2 = 0 <2$.  
+        Certainly it is nonempty because $0\in L$, which follows from $0< 0^2 = 0 <2$.
         """
     )
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""It is bounded above because """)
+    mo.md(
+        r"""
+        It is bounded above because $2\in UB_L$.  To demonstrate this, let $x\in L$ so that $0\le x$ and $0\le x^2 < 2$.  
+
+        By a previous exercise, it follows that $x\le 2$ if and only if $x^2 \le 4$.  But since we have $x^2<2$, the latter condition is met. 
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Since we now have that $L$ is nonempty and bounded above, the completeness axiom implies that $\alpha=\sup(L)$ exists.
+
+        It is natural that we should now try to prove that $\alpha$ has the property $\alpha^2=2$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        How?  We know relatively little about $\alpha$ except for its supremum properties, which have more to do with ordering than anything else.  
+
+        Therefore, we probably want to approach this by showing that $\alpha^2 < 2$ leads to a contradiction, so that we can make use of those ordering properties.  
+        """
+    )
     return
 
 
