@@ -136,7 +136,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
     Let $(F,+,\times)$ be a ring.

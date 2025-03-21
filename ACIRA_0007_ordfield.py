@@ -79,7 +79,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""In all that follows, let $(F,+,\times,\preceq)$ be an ordered field.  """)
+    mo.md(r"""In all that follows, let $(F,+,\times,\preceq)$ be an ordered field.""")
     return
 
 
@@ -150,6 +150,33 @@ def _(mo):
         Show $0\preceq 1$ by contradiction.
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 4""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        For $a,b\in P$ two positive numbers, show that 
+
+        $$ a\prec b \quad \Leftrightarrow \quad a^2\prec b^2 $$
+
+        Then generalize this to 
+
+        $$ a\prec b \quad \Leftrightarrow \quad a^n\prec b^n, \quad \forall n\in\Bbb N $$
+        """
+    )
+    return
+
+
+@app.cell
+def _():
     return
 
 

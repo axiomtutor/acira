@@ -68,7 +68,7 @@ def _(mo):
         r"""
         It is easy to confirm that $0, \ 1, \ 1.4, \ 1.41$ are all in $L$.  
 
-        If you ask a calculator for the decimal approximation of $\sqrt 2$, it will give you something like 
+        If you ask a calculator for the decimal approximation of $\sqrt 2$, it will give you something like
         """
     )
     return
@@ -93,7 +93,7 @@ def _(mo):
 
         But so is $1.42$.
 
-        But so is $1.415$, and so on.  
+        But so is $1.415$, and so on.
         """
     )
     return
@@ -136,13 +136,98 @@ def _(mo):
 
     ---
 
-    There is a complete ordered field.  We denote it by $(\Bbb R,+,\times,\le)$.  
+    There is a complete ordered field, called the **real numbers**.  We denote it by $(\Bbb R,+,\times,\le)$.  
     """), kind="danger")
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        We will take it for granted that the natural numbers are a subset of $\Bbb R$, which correspond to $1$ and $2=1+1$, and $3=2+1$, and so on.  We will likewise take it for granted that $\Bbb Z$ and $\Bbb Q$ are identified with a subset of $\Bbb R$ in a natural way.  
+
+        Many real analysis courses will labor over proving the "isomorphism" inherent in these claims.  But the design philosophy of this course is to focus as much as possible on the interests of real analysis, and these sorts of concerns are not core the the interests of real analysis.  Hence we take such things for granted.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        It is likely familiar from a previous course in discrete math, that there is no rational number $x\in\Bbb Q$ such that $x^2=2$.  That is to say, $\sqrt 2\notin \Bbb Q$.  
+
+        However, that is not the same as saying that $\sqrt 2$ is irrational!  To demonstrate *this*, we need to show that there *is* a real number $x\in\Bbb R$ such that $x^2 = 2$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Real number theorems 2
+
+    $\sqrt 2\in \Bbb R$
+
+    ---
+
+    There is a real number $x\in\Bbb R$ such that $x^2=2$.
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        How should we prove this theorem?  One hint is from the fact that the proof must depend on the completeness axiom.  Otherwise one would be able to prove this for the rational numbers.
+
+        In order to use the completeness axiom, we need a set with a relevantly interesting sup.  A natural guess is 
+
+        $$ L = \{x\in\Bbb R:0\le x^2<2\}^{\ge 0} $$
+
+        We've seen this set before, and discussed how its right edge should be where $\sqrt 2$ is.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Before that, we need to formally show that it is nonempty and bounded above, so that we can ensure its supremum must exist.
+
+        Certainly it is nonempty because $0\in L$, which follows from $0< 0^2 = 0 <2$.  
+        """
+    )
+    return
+
+
 @app.cell
-def _():
+def _(mo):
+    mo.md(r"""It is bounded above because """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Exercises""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 1""")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""Show that ther""")
     return
 
 
