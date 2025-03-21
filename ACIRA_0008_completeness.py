@@ -30,15 +30,12 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        So far we have definitions that tell us about $+,\times,$ and $\preceq$.  
+    mo.md(r"""So far we have definitions that tell us about $+,\times,$ and $\preceq$.
 
         But these definitions are all satisfied by the rational numbers.  That is to say, $(\Bbb Q,+,\times,\le)$ satisfy the properties of an ordered field.
 
-        There is still something not yet captured by these definitions, which give the distinct properties of the real numbers.
-        """
-    )
+        There is still something not yet captured by these definitions, which give the distinct properties of the real numbers."""
+         )
     return
 
 
@@ -180,7 +177,7 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(mo):
+def _(mo, quote):
     mo.md(
         r"""
         *Chatty proof*: 
@@ -192,21 +189,31 @@ def _(mo):
 
         Consider the proof that Rudin gives, of the theorem that we are currently working on, in his *Principles of Mathematical Analysis*:  (His $y$ is my $\alpha$, and he's immediately treating the case for a general $n$ whereas I am starting with the special case of $n=2$.  His $x$ is a general positive real number, whereas I am starting with the special case $x=2$.)
 
-        "Assume $y^n < x$.  Choose $h$ so that $0<h<1$ and 
-
-        $$ h < \frac{x-y^n}{n(y+1)^{n-1}}  $$
-    
-        "
+        """ + f"""
+        {mo.as_html(quote)}
+        """+r"""
 
         Many students read a line like this and are left stunned.  "Where did this random object, $\frac{x-y^n}{n(y+1)^{n-1}}$, come from?  If I have to prove similar theorems, how am I supposed to come up with an object like this?"
 
-        The definition of such an object is not logically invalid, and the rest of the proof that Rudin gives is certainly correct.  But it comes from a background of knowledge that Rudin has, which a new student cannot possibly have.  This is bad for pedagogy.  
+        The definition of such an object is not logically invalid, and the rest of the proof that Rudin gives is certainly correct.  But it comes from a background of knowledge that Rudin has, which a new student cannot possibly have.  This is bad for pedagogy. 
     
         A chatty proof is suppose to communicate a logical process for coming up with the proof in the first place.  
     
         ///
         """)
     return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    quote = mo.md(r"""
+    /// admonition | 
+
+    "Assume $y^n < x$.  Choose $h$ so that $0<h<1$ and 
+
+    $$ h < \frac{x-y^n}{n(y+1)^{n-1}}\ \ \ \ ''$$
+    """)
+    return (quote,)
 
 
 @app.cell(hide_code=True)
@@ -273,8 +280,39 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        So assuming $\alpha^2<2$, where is our contradiction going to come from?  If we think somewhat intuitively about the real line, this probably means that $\alpha$ is now a little bit lower than the right edge of $L$, which should mean that $\alpha$ cannot be an upper bound on $L$.  
+
+        That is a contradiction, since we assumed that $\alpha=\sup(L)$.  So this will be the nature of the contradiction that we hope to show: There is an $x\in L$ such that $\alpha<x$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Naturally that provokes the follow-up question, how do we find this $x$?  
+
+        It is often helpful, not just to represent this number bigger than $\alpha$, but in fact to represent *how much bigger* it is.  That is to say, it is often useful to use the quantity $\varepsilon = x-\alpha$.  The hope, then, is to find a $\varepsilon>0$ small enough that $\alpha+\varepsilon = x \in L$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        This may seem like exchanging one challenge for an equally hard challenge: Instead of finding $x$, we now find $\varepsilon$.  But how do we find $\varepsilon$?
+
+        Well, because we can now work with the object $\alpha+\varepsilon$, and this has some algebraic structure, we can use some algebra!
+        """
+    )
     return
 
 
