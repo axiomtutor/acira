@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.11.24"
 app = marimo.App(width="medium")
 
 
@@ -183,13 +183,43 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
+        *Chatty proof*: 
+        /// details | What is a "chatty proof"?
+
+        Of course it's not an official phrase, but what I mean is that I will try to talk through the thought process for *creating* the proof, rather than just giving the end result.
+
+        The point is to remedy a problem that occurs in many advanced mathematics texts, where proofs seem to involve objects and steps that "come from nowhere".
+
+        Consider the proof that Rudin gives, of the theorem that we are currently working on, in his *Principles of Mathematical Analysis*:  (His $y$ is my $\alpha$, and he's immediately treating the case for a general $n$ whereas I am starting with the special case of $n=2$.  His $x$ is a general positive real number, whereas I am starting with the special case $x=2$.)
+
+        "Assume $y^n < x$.  Choose $h$ so that $0<h<1$ and 
+
+        $$ h < \frac{x-y^n}{n(y+1)^{n-1}}  $$
+    
+        "
+
+        Many students read a line like this and are left stunned.  "Where did this random object, $\frac{x-y^n}{n(y+1)^{n-1}}$, come from?  If I have to prove similar theorems, how am I supposed to come up with an object like this?"
+
+        The definition of such an object is not logically invalid, and the rest of the proof that Rudin gives is certainly correct.  But it comes from a background of knowledge that Rudin has, which a new student cannot possibly have.  This is bad for pedagogy.  
+    
+        A chatty proof is suppose to communicate a logical process for coming up with the proof in the first place.  
+    
+        ///
+        """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
         How should we prove this theorem?  One hint is from the fact that the proof must depend on the completeness axiom.  Otherwise one would be able to prove this for the rational numbers.
 
-        In order to use the completeness axiom, we need a set with a relevantly interesting sup.  A natural guess is 
+            In order to use the completeness axiom, we need a set with a relevantly interesting sup.  A natural guess is 
 
         $$ L = \{x\in\Bbb R:0\le x^2<2\}^{\ge 0} $$
 
-        We've seen this set before, and discussed how its right edge should be where $\sqrt 2$ is.
+            We've seen this set before, and discussed how its right edge should be where $\sqrt 2$ is.
         """
     )
     return
@@ -213,7 +243,7 @@ def _(mo):
         r"""
         It is bounded above because $2\in UB_L$.  To demonstrate this, let $x\in L$ so that $0\le x$ and $0\le x^2 < 2$.  
 
-        By a previous exercise, it follows that $x\le 2$ if and only if $x^2 \le 4$.  But since we have $x^2<2$, the latter condition is met. 
+        By a previous exercise, it follows that $x\le 2$ if and only if $x^2 \le 4$.  But since we have $x^2<2$, the latter condition is met.
         """
     )
     return
@@ -237,9 +267,14 @@ def _(mo):
         r"""
         How?  We know relatively little about $\alpha$ except for its supremum properties, which have more to do with ordering than anything else.  
 
-        Therefore, we probably want to approach this by showing that $\alpha^2 < 2$ leads to a contradiction, so that we can make use of those ordering properties.  
+        Therefore, we probably want to approach this by showing that $\alpha^2 < 2$ leads to a contradiction, so that we can make use of those ordering properties.
         """
     )
+    return
+
+
+@app.cell
+def _():
     return
 
 
@@ -258,6 +293,11 @@ def _(mo):
 @app.cell
 def _(mo):
     mo.md(r"""Show that ther""")
+    return
+
+
+@app.cell
+def _():
     return
 
 
