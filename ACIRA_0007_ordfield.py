@@ -71,18 +71,85 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Exercises""")
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, let $(F,+,\times,\preceq)$ be an ordered field.  """)
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 1""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    We say that $\prec$ is **compatible with $+$** if $\forall a,b,c\in F$
+
+    $$ a\prec b \quad \Rightarrow \quad a+c\prec b+c $$
+
+    We say that $\prec$ is **compatible with $\times$** if $\forall a,b,c\in F$ and $0\prec c$,
+
+    $$ a\prec b \quad \Rightarrow \quad ac \prec bc $$
+    """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Show that $\prec$ is compatible with $+$ and $\times$.
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 2""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $a,b,c,d,e\in F$.  Assume $c$ is negative, $0\prec d\prec 1 \prec e$ and $a\preceq b$.
+
+        Show each of the following.
+
+        1. $bc\preceq ac$
+        3. $0\prec d^2 \prec d \prec 1\prec \frac 1 d$
+        4. $\frac 1 e \prec 1 \prec e\prec e^2$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Show that $0\prec 1$.  
+
+        Hint: You already have, as an axiom of fields, that $0\ne 1$.  
+
+        Show $0\preceq 1$ by contradiction.
+        """
+    )
     return
 
 

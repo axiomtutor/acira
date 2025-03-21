@@ -46,7 +46,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
@@ -56,12 +56,11 @@ def _(mo):
 
         * $(\Bbb Z,+)$ forms a commutative group.
 
-        * $\times$ has an identity element, 1.
+        * $\times$ has an identity element, 1, which is not equal to 0.
 
         * $\times$ distributes over $+$, which means:
 
             $$ a(b+c) = ab+ac, \quad \forall a,b,c \in \Bbb Z $$
-
         """
     )
     return
@@ -125,7 +124,7 @@ def _(mo):
 
         For example, the matrix $\begin{bmatrix}0&1\\0&0\end{bmatrix}$ is nonzero but has no multiplicative inverse.
 
-        Not just that, but also multiplication of real numbers commutes:  $ab = ba$ for each $a,b\in \Bbb R$.  
+        Not just that, but also multiplication of real numbers commutes:  $ab = ba$ for each $a,b\in \Bbb R$.
         """
     )
     return
@@ -142,7 +141,10 @@ def _(mo):
     mo.callout(mo.md(r"""
     Let $(F,+,\times)$ be a ring.
 
-    If $(F\smallsetminus\{0\},\times)$ is a commutative group, then we call $(F,+,\times)$ a **field**.
+    We call $(F,+,\times)$ a **field**, if the following conditions are met.
+
+    * $(F\smallsetminus\{0\},\times)$ is a commutative group with identity 1.
+    * $0\ne 1$
     """), kind="success")
     return
 
