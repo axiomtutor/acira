@@ -18,7 +18,7 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 # Unit 1: The Axioms of the Real Numbers
 
-* [Lesson 0000: Introduction](marimo.app/https://github.com/axiomtutor/acira/blob/master/ACIRAM_unit_1.py)
+* [Lesson 0000: Introduction](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0000_intro.py)
 
 * Lesson 0001: Axiooms
 
