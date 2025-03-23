@@ -20,9 +20,9 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 * [Lesson 0000: Introduction](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0000_intro.py)
 
-* Lesson 0001: Axiooms
+* [Lesson 0001: Axioms](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0001_axioms.py)
 
-* Lesson 0002: Groups
+* [Lesson 0002: Groups](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0002_groups.py)
 
 * Lesson 0003: Rings and Fields
 
