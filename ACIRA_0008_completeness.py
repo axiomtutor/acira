@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.24"
+__generated_with = "0.11.26"
 app = marimo.App(width="medium")
 
 
@@ -30,12 +30,15 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""So far we have definitions that tell us about $+,\times,$ and $\preceq$.
+    mo.md(
+        r"""
+        So far we have definitions that tell us about $+,\times,$ and $\preceq$.
 
-        But these definitions are all satisfied by the rational numbers.  That is to say, $(\Bbb Q,+,\times,\le)$ satisfy the properties of an ordered field.
+            But these definitions are all satisfied by the rational numbers.  That is to say, $(\Bbb Q,+,\times,\le)$ satisfy the properties of an ordered field.
 
-        There is still something not yet captured by these definitions, which give the distinct properties of the real numbers."""
-         )
+            There is still something not yet captured by these definitions, which give the distinct properties of the real numbers.
+        """
+    )
     return
 
 
@@ -196,9 +199,9 @@ def _(mo, quote):
         Many students read a line like this and are left stunned.  "Where did this random object, $\frac{x-y^n}{n(y+1)^{n-1}}$, come from?  If I have to prove similar theorems, how am I supposed to come up with an object like this?"
 
         The definition of such an object is not logically invalid, and the rest of the proof that Rudin gives is certainly correct.  But it comes from a background of knowledge that Rudin has, which a new student cannot possibly have.  This is bad for pedagogy. 
-    
+
         A chatty proof is suppose to communicate a logical process for coming up with the proof in the first place.  
-    
+
         ///
         """)
     return
@@ -286,7 +289,7 @@ def _(mo):
         r"""
         So assuming $\alpha^2<2$, where is our contradiction going to come from?  If we think somewhat intuitively about the real line, this probably means that $\alpha$ is now a little bit lower than the right edge of $L$, which should mean that $\alpha$ cannot be an upper bound on $L$.  
 
-        That is a contradiction, since we assumed that $\alpha=\sup(L)$.  So this will be the nature of the contradiction that we hope to show: There is an $x\in L$ such that $\alpha<x$.  
+        That is a contradiction, since we assumed that $\alpha=\sup(L)$.  So this will be the nature of the contradiction that we hope to show: There is an $x\in L$ such that $\alpha<x$.
         """
     )
     return
@@ -308,11 +311,48 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        This may seem like exchanging one challenge for an equally hard challenge: Instead of finding $x$, we now find $\varepsilon$.  But how do we find $\varepsilon$?
+        This may seem like exchanging one challenge for an equally hard challenge: Instead of finding $x$, we now find $\varepsilon$.  How do we find $\varepsilon$?
 
-        Well, because we can now work with the object $\alpha+\varepsilon$, and this has some algebraic structure, we can use some algebra!
+        Well, the search for $\varepsilon$ may actually have available tools that the search for $x$ didn't.  In particular, we can now work with $\alpha+\varepsilon$ and use the algebraic structure!
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The goal we have set for ourselves is to find $\varepsilon>0$ such that $\alpha+\varepsilon\in L$, which is to say,
+
+        $$ (\alpha+\varepsilon)^2 < 2 $$
+
+        which is 
+
+        $$ \alpha^2+2\alpha\varepsilon+\varepsilon^2 < 2$$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Solving for $\varepsilon$ the best we can, we get
+
+        $$ 2\alpha\varepsilon+\varepsilon^2<2-\alpha^2 $$
+
+        What a rush! So much progress and solving!  But now we are at an impasse.  
+
+        How do we go from here, to find $\varepsilon$?
+        """
+    )
+    return
+
+
+@app.cell
+def _():
     return
 
 
