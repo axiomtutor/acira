@@ -351,6 +351,22 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Here is an intuitive strategy:  Try to make $2\alpha\varepsilon$ less than half of $2-\alpha^2$, and also make $\varepsilon^2$ less than half of $2-\alpha^2$.  
+
+        The former is easy: $2\alpha\varepsilon < \frac{2-\alpha^2}2$ is equivalent to 
+
+        $$ \varepsilon < \frac{2-\alpha^2}{4\alpha} $$
+
+        Any choice of $\varepsilon$ such that $0<\varepsilon<\frac{2-\alpha^2}{4\alpha}$ will satisfy this condition.  Such a choice must exist because $2-\alpha^2$ is positive (prove this), and $4\alpha$ is positive (prove this), therefore the fraction is positive (prove this).  Therefore, between 0 and the fraction is some number (prove this), and any such number will satisfy our requirements.
+        """
+    )
+    return
+
+
 @app.cell
 def _():
     return

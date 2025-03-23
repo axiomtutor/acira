@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.11.26"
 app = marimo.App(width="medium")
 
 
@@ -119,6 +119,18 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""Show that the product of two positive number is positive, the product of negatives is positive, and the product of a positive and negative is negative.  Also show corresponding facts for division.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(
         r"""
         Let $a,b,c,d,e\in F$.  Assume $c$ is negative, $0\prec d\prec 1 \prec e$ and $a\preceq b$.
@@ -135,7 +147,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Exercise 3""")
+    mo.md(r"""## Exercise 4""")
     return
 
 
@@ -155,7 +167,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Exercise 4""")
+    mo.md(r"""## Exercise 5""")
     return
 
 
@@ -170,6 +182,30 @@ def _(mo):
         Then generalize this to 
 
         $$ a\prec b \quad \Leftrightarrow \quad a^n\prec b^n, \quad \forall n\in\Bbb N $$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 6""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Define $2 = 1+1$ and show that $1\prec 2$.
+
+        For any two real numbers $a,b\in F$, define their **average** $\frac{a+b}2$.
+
+        Show that if $a\prec b$ then 
+
+        $$ a\prec \frac{a+b}2\prec b $$
+
+        Conclude that between any two ordered field numbers, is a number.
         """
     )
     return
