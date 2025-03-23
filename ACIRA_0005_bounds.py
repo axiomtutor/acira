@@ -343,7 +343,7 @@ def _(mo):
         r"""
         Show that if $A\subseteq X$ is a subset and $b\in A$ then 
 
-        $$ b\in UB_{LB_A} \cap LB_{UB_A} $$ 
+        $$ b\in UB_{LB_A} \cap LB_{UB_A} $$
         """
     )
     return

@@ -375,7 +375,7 @@ def _(mo):
 
         But we have already proved, in an earlier exercise, that if $\varepsilon < 1$ then $\varepsilon^2<\varepsilon$.  This allows us to use a simplifying approximation.  
 
-        Instead of finding $\varepsilon^2<\frac{2-\alpha^2}2$ we find $\varepsilon < \frac{2-\alpha^2}2$.  So long as we pick $\varepsilon < 1$, it will follow that $\varepsilon^2<\varepsilon<\frac{2-\alpha^2}2$.  
+        Instead of finding $\varepsilon^2<\frac{2-\alpha^2}2$ we find $\varepsilon < \frac{2-\alpha^2}2$.  So long as we pick $\varepsilon < 1$, it will follow that $\varepsilon^2<\varepsilon<\frac{2-\alpha^2}2$.
         """
     )
     return
@@ -401,7 +401,7 @@ def _(mo):
 
         I claim that, if you use this choice of $\varepsilon$, you can prove (with some effort) that $(\alpha+\varepsilon)^2 \in L$, which was the plan all along.
 
-        With this in hand, the rest of the proof by contradiction goes through quickly:  Because $\alpha<\alpha+\varepsilon$ then $\alpha\notin UB_L$ which contradicts the assumption that $\alpha=\sup(L)$.  
+        With this in hand, the rest of the proof by contradiction goes through quickly:  Because $\alpha<\alpha+\varepsilon$ then $\alpha\notin UB_L$ which contradicts the assumption that $\alpha=\sup(L)$.
         """
     )
     return
@@ -427,7 +427,7 @@ def _(mo):
 
         Also prove that $\alpha^2\le 2$ in a similar fashion, to conclude that $\alpha^2=2$.
 
-        Conclude that $\sqrt 2\in \Bbb R$.  
+        Conclude that $\sqrt 2\in \Bbb R$.
         """
     )
     return
@@ -463,7 +463,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Use the above result to show that if $0< x$ then $\sqrt[n]x\in\Bbb R$.  """)
+    mo.md(r"""Use the above result to show that if $0< x$ then $\sqrt[n]x\in\Bbb R$.""")
     return
 
 
@@ -481,7 +481,7 @@ def _(mo):
 
         $$ y = x^n$$ 
 
-        has a unique solution in $\Bbb R$.  
+        has a unique solution in $\Bbb R$.
         """
     )
     return

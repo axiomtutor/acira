@@ -15,3 +15,25 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 3. Pick the particular notebook to read, say `ACIRA_0000_intro.py`.
 
 4. In the terminal, cd into the directory with the files, and run `marimo edit ACIRA_0000_intro.py`.
+
+# Unit 1: The Axioms of the Real Numbers
+
+* Lesson 0000: Introduction
+
+* Lesson 0001: Axiooms
+
+* Lesson 0002: Groups
+
+* Lesson 0003: Rings and Fields
+
+* Lesson 0004: Order 
+
+* Lesson 0005: Bounds
+
+* Lesson 0006: Function Bounds
+
+* Lesson 0007: Ordered Fields
+
+* Lesson 0008: Completeness
+
+* Unit 1 Reference

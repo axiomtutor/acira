@@ -269,9 +269,26 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r""" """)
+    mo.md(
+        r"""
+        Let $a,b,c\in F$, with $a\prec b$ and $a\prec c$.
+
+        Show that there is always some $0\prec \varepsilon$ such that 
+
+        $$a\prec a+\varepsilon \prec b$$ 
+
+        and 
+
+        $$ a\prec a+\varepsilon \prec c $$
+        """
+    )
+    return
+
+
+@app.cell
+def _():
     return
 
 
