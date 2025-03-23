@@ -211,8 +211,67 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 7""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        In this exercise we demonstrate an alternate, and often useful characterization of the supremum of a set in an ordered field.
+
+        Let $A\subseteq F$ be a nonempty subset.  
+
+        Show that, if $\alpha = \sup(A)$ exists, then it has the following two properties:
+
+        1.  $\alpha\in UB_A$.
+
+        2. For all $0\prec \varepsilon$, the we have $\alpha-\varepsilon\notin UB_A$.
+
+        /// details | In a sense, this says that the supremum is ...
+
+        right up against the upper boundary of $A$.  
+
+        It's an upper bound, but if you go *any* amount lower, it's no longer an upper bound.  
+        ///
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Also show that if $\beta\in F$ is such that:
+
+        1. $\beta\in UB_A$.
+        2. For all $0\prec \varepsilon$ then $\alpha-\varepsilon\in UB_A$.
+
+        /// details | Therefore these two properties ...
+
+        are equivalent to the property of being the supremum!  
+
+        That is to say, something is the supremum, if and only if these two properties are satisfied.
+
+        ///
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 8""")
+    return
+
+
 @app.cell
-def _():
+def _(mo):
+    mo.md(r""" """)
     return
 
 
