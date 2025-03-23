@@ -367,8 +367,43 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        What's less immediate is how to find an $\varepsilon$ such that $\varepsilon^2<\frac{2-\alpha^2}2$.  We cannot simply "solve" for $\varepsilon$, since the square root is not available to us.  (After all, we're proving that a certain square root must exist!)
+
+        But we have already proved, in an earlier exercise, that if $\varepsilon < 1$ then $\varepsilon^2<\varepsilon$.  This allows us to use a simplifying approximation.  
+
+        Instead of finding $\varepsilon^2<\frac{2-\alpha^2}2$ we find $\varepsilon < \frac{2-\alpha^2}2$.  So long as we pick $\varepsilon < 1$, it will follow that $\varepsilon^2<\varepsilon<\frac{2-\alpha^2}2$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        How do we guarantee that we pick $\varepsilon < 1$, and $\varepsilon < \frac{2-\alpha^2}2$, and $\varepsilon < \frac{2-\alpha^2}{4\alpha}$?  
+
+        $$ \varepsilon = \frac{\min\left\{1,\frac{2-\alpha^2}2, \frac{2-\alpha^2}{4\alpha} \right\}}2 $$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The search for $\varepsilon$ is now over.  
+
+        I claim that, if you use this choice of $\varepsilon$, you can prove (with some effort) that $(\alpha+\varepsilon)^2 \in L$, which was the plan all along.
+
+        With this in hand, the rest of the proof by contradiction goes through quickly:  Because $\alpha<\alpha+\varepsilon$ then $\alpha\notin UB_L$ which contradicts the assumption that $\alpha=\sup(L)$.  
+        """
+    )
     return
 
 
@@ -384,9 +419,71 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Show that ther""")
+    mo.md(
+        r"""
+        Take the "chatty proof" above, and clean it up into an efficient and proof that $\alpha^2\ge 2$.
+
+        Also prove that $\alpha^2\le 2$ in a similar fashion, to conclude that $\alpha^2=2$.
+
+        Conclude that $\sqrt 2\in \Bbb R$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 2""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Show that $\sqrt 3\in \Bbb R$ and $\sqrt[3]{2}\in\Bbb R$.
+
+        Then generalize this to show that, for any $x\in \Bbb R$ such that $1< x$, and for any $n\in\Bbb N$, we have 
+
+        $$ \sqrt[n]x \in\Bbb R $$
+
+        Hint: Use the binomial theorem.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 3""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Use the above result to show that if $0< x$ then $\sqrt[n]x\in\Bbb R$.  """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Exercise 4""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Let $0\le x$ and show that 
+
+        $$ y = x^n$$ 
+
+        has a unique solution in $\Bbb R$.  
+        """
+    )
     return
 
 
