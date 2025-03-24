@@ -24,16 +24,16 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 * [Lesson 0002: Groups](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0002_groups.py)
 
-* Lesson 0003: Rings and Fields
+* [Lesson 0003: Rings and Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0003_ringfield.py)
 
-* Lesson 0004: Order 
+* [Lesson 0004: Order](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0004_order.py) 
 
-* Lesson 0005: Bounds
+* [Lesson 0005: Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0005_bounds.py)
 
-* Lesson 0006: Function Bounds
+* [Lesson 0006: Function Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0006_boundfunc.py)
 
-* Lesson 0007: Ordered Fields
+* [Lesson 0007: Ordered Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0007_ordfield.py)
 
-* Lesson 0008: Completeness
+* [Lesson 0008: Completeness](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0008_completeness.py)
 
-* Unit 1 Reference
+* [Unit 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_unit1_ref.py)

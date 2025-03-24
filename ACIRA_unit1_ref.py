@@ -71,10 +71,60 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
-    Let $a\in G$.  For $n\in\Bbb N$ we define $a^n = \overbrace{a\ast a\ast\cdots\ast a}^n$ and $a^{-n}=(a^{-1})^n$.  
+    Let $a\in G$.  For $n\in\Bbb N$ we define $a^n = \overbrace{a\ast a\ast\cdots\ast a}^n$, and $a^{-n}=(a^{-1})^n$.  
 
     We define $a^0=e$.  
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Group theorem 1
+
+    `Unique identity and inverses`
+
+    ---
+
+    The identity of $G$ is unique.  For each $x\in G$, its inverse $x^{-1}$ is the unique inverse of $x$.
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Group theorem 2
+
+    `Inverse of product`
+
+    ---
+
+    For all $a,b\in G$, the inverse of their product is 
+
+    $$ (ab)^{-1} = b^{-1}a^{-1} $$
+    """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Group theorem 3
+
+    `Group exponent laws`
+
+    ---
+
+    For ever $m,n\in\Bbb Z$ and for $a\in G$, we have 
+
+    $$ a^ma^n = a^{m+n},\quad (a^m)^n $$
+
+    If $a$ and $b$ commute then 
+
+    $$ a^mb^m = (ab)^m $$
+    """), kind="danger")
     return
 
 
