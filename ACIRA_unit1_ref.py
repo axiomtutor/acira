@@ -83,12 +83,34 @@ def _(mo):
     mo.callout(mo.md(r"""
     Group theorem 1
 
-    `Unique identity and inverses`
+    `Unique associative operation identity, and inverses`
 
     ---
 
-    The identity of $G$ is unique.  For each $x\in G$, its inverse $x^{-1}$ is the unique inverse of $x$.
+    Let $X$ be a nonempty set, $\ast:X^2\to X$ an operation on $X$, and $e\in X$ an identity element.  Also let $a\in X$ and suppose $a^{-1}$ exists, i.e. $aa^{-1}=e$.
+
+    Then $e$ is the unique identity for $\ast$, and also $a^{-1}$ is the unique inverse of $a$.
     """), kind="danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Let $y\in G$ have the identity property.  Then 
+
+        $$ ye = y = e $$
+
+        where the first equation is by the identity property of $e$, and the second is by the identity property of $y$.
+
+        Let $x\in G$ and let $y\in G$ have the inverse property for $x$, i.e. $yx=e$.
+
+        $$ 
+
+        $\Box$
+        """
+    )
     return
 
 
