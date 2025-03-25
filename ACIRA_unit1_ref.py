@@ -524,6 +524,104 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# 0004 Order""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $X$ be a nonempty set and $\preceq \subseteq X^2$ a relation on $X$.  
+
+    We say that $\preceq$ is a **partial order** if it is reflexive, anti-symmetric, and transitive.  
+
+    If $\preceq$ is a partial order then we say that $(X,\preceq)$ is a **partially ordered set** or just **poset**.
+
+    We often write $(X,\preceq)$ and just $X$, interchangeably.  So we may say that $X$ is a poset, or that $X$ is partially ordered by $\preceq$.  
+
+    When we express $a\preceq b$ verbally we may say "$a$ precedes or equals $b$".  I personally shorten this to "$a$ left eqs $b$".  
+
+    The notation $a\succeq b$ is syntactic sugar for $b\preceq a$.  To pronounce "$a \succeq b$" we may say "$a$ succeeds or equals $b$".  For short I use "$a$ right eqs $b$".
+
+    For any two elements $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$ then we say that $a$ and $b$ are **incommensurable** with respect to $\preceq$.  Otherwise they are **commensurable**.
+
+    If every two elements of $X$ are commensurable, we say that $\preceq$ is **total**, or a **total order** on $X$.  We also say that $(X,\preceq)$ is a **totally ordered set**.  
+
+    If $\preceq$ is a partial order, then we define the relation $\prec \subseteq X^2$ by 
+
+    $$ a\prec b \quad \Leftrightarrow \quad a\preceq b, \text{ and } a\ne b, \quad \forall a,b\in X $$
+
+    To pronounce $a\prec b$ we say "$a$ precedes $b$".  The expression $a\succ b$ is syntactic sugar for $b\prec a$ and we say "$a$ succeeds $b$".
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, let $(X,\preceq)$ be a poset.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Precedence is a strict partial order`
+
+    ---
+
+    $\prec$ is irreflexive, asymmetric, and transitive.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _irref = mo.callout(mo.md(r"""
+    *Irreflexive*:  Let $a\in X$.
+
+    Then $a=a$ and therefore $a\not\prec a$.
+    """))
+
+    _asym = mo.callout(mo.md(r"""
+    *Asymmetric*: Let $a,b\in X$ and assume $a\prec b$.  
+
+    Then $a\ne b$ and $a\preceq b$, by definition.
+
+    For contradiction, assume $b\prec a$ so then $b\preceq a$.  
+
+    By the anti-symmetry of $\preceq$ we then have $a=b$.
+
+    But this contradicts $a\ne b$ above, concluding the proof by contradiction.
+
+    Therefore $b\not\prec a$, which shows that $\prec$ is asymmetric.
+    """))
+
+    _trans = mo.callout(mo.md(r"""
+    *Transitive*: Let $a,b,c\in X$ and assume $a\prec b$ and $b\prec c$.  
+
+    Then $a\preceq b$ and $b\preceq c$, so by the transitivity of $\preceq$ we have $a\preceq c$.
+
+    Assume for contradiction that $a=c$.  Then $c\preceq b$ which, by anti-symmetry of $\preceq$, implies $b=c$.  
+
+    But also from $b\prec c$ we have $b\ne c$, a contradiction.
+
+    Therefore $a\ne c$ and therefore $a\prec c$, showing transitivity.
+    """))
+
+    mo.md(f"""*Proof*:
+
+    {_irref}
+
+    {_asym}
+
+    {_trans}
+
+    """+r"$\Box$")
+    return
+
+
 @app.cell
 def _():
     return
