@@ -622,8 +622,223 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Negating precedence`
+
+    ---
+
+    If $a\prec b$ then $b\not\preceq a$.
+
+    If $(X,\preceq)$ is a totally ordered set, then if $a\not\preceq b$ it follows that $b\prec a$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Since $a\prec b$ then $a\preceq b$. 
+
+        If $b\preceq a$ then $a=b$, but since $a\ne b$, we must therefore have $b\not\prec a$.
+
+        Now assume $\preceq$ is a total order, and $a\not\preceq b$.
+
+        By totality, we must have $b\preceq a$.  
+
+        If $b=a$ then $a\preceq b$ by reflexivity, contrary to assumption. Therefore $b\ne a$.
+
+        So $b\prec a$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# 0005 Bounds""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty set, and $\alpha\in X$.
+
+    If $\forall b\in A$ we have $b\preceq\alpha$ then we call $\alpha$ an **upper bound of $A$**.  If $\forall b\in A$ we have $\alpha\preceq b$ we call $\alpha$ a **lower bound of $A$**.
+
+    We denote the set of all upper bounds of $A$ by $UB_A$ and the set of all lower bounds as $LB_A$.  
+
+    If $\alpha\in A\cap UB_A$ then we call $\alpha$ the **maximum of $A$** and write $\alpha=\max(A)$.  If $\alpha\in A\cap LB_A$ we call $\alpha$ the **lower bound of $A$** and write $\alpha=\min(A)$.  
+
+    If $\alpha=\min(UB_A)$ we call $\alpha$ the **supremum of $A$**, and if $\alpha=\max(LB_A)$ we call $\alpha$ the **infimum of $A$**.  
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        In all that follows, let $(X,\preceq)$ be a poset, $A,B\subseteq X$ two nonempty subsets, and $\alpha\in X$.
+
+        Each theorem about an upper bound (or maximum, or supremum) has a corresponding theorem about a lower bound (minimum, infimum), which should be easy to infer.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Max is sup`
+
+    ---
+
+    If $\alpha = \max(A)$ then $\alpha=\sup(A)$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  We have by assumption that $\alpha\in A\cap UB_A$.
+
+        Let $\beta\in UB_A$.  Since $\alpha\in A$ we must have $\alpha\preceq \beta$.
+
+        Therefore $\alpha=\min(UB_A) = \sup(A)$.  
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Finite set, total order max`
+
+    ---
+
+    If $\preceq$ is a total order and $A$ is finite then $\max(A)$ exists.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _alpha = mo.callout(mo.md(r"""
+    *Case 1*: Assume $f\preceq \alpha$.
+
+    Then for every $x\in E$ we have $x\in E'$ or $x=f$.  
+
+    In the former case $x\preceq \alpha$ by definition.
+
+    In the latter case $x\preceq \alpha$ by assumption.
+
+    Therefore $\alpha = \max(E)$.  
+    """))
+
+    _f = mo.callout(mo.md(r"""
+    *Case 2*: Assume $\alpha\preceq f$.
+
+    Then for every $x\in E$ we have $x\in E'$ or $x=f$.
+
+    In the former case $x\preceq \alpha\preceq f$ and by transitivity, $x\preceq f$.
+
+    In the latter case $x\preceq f$ by reflexivity.  
+
+    Therefore $f=\max(E)$.  
+    """))
+
+    mo.md(
+        r"""
+        *Proof*:  The base-case for induction, is any nonempty set $C\subseteq X$ such that $|C|=1$, is the case that $C$ is a singleton set $C=\{d\}$.
+
+        In this case, trivially, $d = \max(C)$.
+
+        Now assume that the theorem is true for any nonempty $C\subseteq X$ such that $|C|=n$, where $n\ge 1$.
+
+        Consider any nonempty $E\subseteq X$ such that $|E|=n+1$.  Let $f\in E$.
+
+        Define $E' = E\smallsetminus \{f\}$, so that therefore $|E'|=n$.  
+
+        By the inductive hypothesis, let $\alpha=\max(E')$.  
+
+        There are now two cases, since $\preceq$ is a total order.  
+        """
+        + f"""
+        {_alpha}
+
+        {_f}
+        """
+        +r"""
+    Therefore in all cases, $\max(E)$ exists, concluding the proof of the inductive case, and therefore concluding the inductive proof.
+    
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Inf left eq sup`
+
+    ---
+
+    $$ \inf(A)\preceq \sup(A) $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Let $x\in A$ so that $\inf(A)\preceq x\preceq \sup(A)$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Subset sup inequality`
+
+    ---
+
+    If $A\subseteq B$ then
+
+    $$ \sup(A)\preceq \sup(B) $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Since $\sup(A)=\min(UB_A)$, then we only need to show that $\sup(B)\in UB_A$.
+
+        Let $x\in A$ so therefore $x\in B$, and so $x\preceq \sup(B)$.  
+
+        This shows $\sup(B)\in UB_A$.
+
+        $\Box$
+        """
+    )
     return
 
 
