@@ -194,6 +194,30 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
+    `Group equations have unique solutions`
+
+    ---
+
+    Let $x,a,b\in G$ such that $xa=b$.  Then the value of $x$ is uniquely determined to be $ba^{-1}$.  
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: From the given equation we have $xaa^{-1} = ba^{-1} = x$.  Since $a^{-1}$ uniquely determines an element of $G$, and the group operation is a function, then $ba^{-1}$ is uniquely determined.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
     Group theorem 3
 
     `Inverse of product`
@@ -327,19 +351,176 @@ def _(mo):
 
     $$ a\times (b+c) = (a\times b) + (a\times c) $$
 
+    and 
+
+    $$ (b+c)\times a = (b\times a)+(c\times a) $$
+
     We say that $(R,+,\times)$ is a **ring** if 
 
     1. Both operations are associative.
-    2. $(R,+)$ is a commutative group.  We write its identity as $0$.
-    3. $\times$ has an identity element.   We write it as $1$.
+    2. $(R,+)$ is a commutative group.  We write its identity as $0$, called the **additive identity**.
+    3. $\times$ has an identity element.   We write it as $1$, called the **multiplicative identity**.
     4. $\times$ distributes over $+$.
 
     For brevity, we write the inverse of $x\in R$ as $-x$ and we write $a+(-b)$ instead as $a-b$ for all $a,b\in R$.  We also write $a\times b$ as $ab$ and $a\times b^{-1}$ as $a/b$.  
 
     For $n\in\Bbb Z$ and $a\in R$, we define $na$ as repeated addition, in the exact same sense as we did for a group.  Likewise $a^n$ is repeated multiplication, in the sense we defined for a group.  
 
-    If $(R,\times)$ forms a commutative group, we say that $(R,+,\times)$ is a **field**.
+    If $(R\smallsetminus \{0\},\times)$ forms a commutative group, and if $0\ne 1$, then we say that $(R,+,\times)$ is a **field**.
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, assume $(R,+,\times)$ is a ring.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Unique ring identities and inverses`
+
+    ---
+
+    $0$ is the unique additive identity, and $1$ is the unique multiplicative identity.  All additive and multiplicative inverses that exist, exist uniquely.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Immediate from the fact that the ring operations are associative, and `Unique associative operation identity and inverses`.  
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Ring zero annihilates`
+
+    ---
+
+    For every $x\in R$, 
+
+    $$ 0x = x0 = 0 $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  
+
+        \begin{align*}
+          0x &= (0+0)x \\
+          &= 0x+0x 
+        \end{align*}
+
+        therefore 
+
+        \begin{align*}
+            0x-0x &= 0x+0x-0x\\
+            &= 0\\
+            &=0x
+        \end{align*}
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Ring negative is negative 1`
+
+    ---
+
+    For every $x\in R$, 
+
+    $$ -x = (-1)x = x(-1)$$
+
+    Also, for all $y\in R$
+
+    $$ -(xy)=(-x)y = x(-y) $$
+    """),"danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: 
+
+        \begin{align*}
+        (-1)x+x &= (-1)x+1x \\
+        &= (-1+1)x \\
+        &= 0x \\
+        &= 0
+        \end{align*}
+
+        Therefore $(-1)x$ has the property of being the additive inverse of $x$ and so 
+
+        $$ (-1)x = -x $$
+
+        *Mutatis mutandis* the same proof applies with $-1$ on the other side of $x$.  
+
+        Using this result, if $y\in R$ then 
+
+        \begin{align*}
+            -(xy) &= (-1)xy \\
+            &= (-x)y
+            &= xy(-1) \\
+            &= x(-y)
+        \end{align*}
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Field equations have unique solutions`
+
+    ---
+
+    Show that for all $x,a,b\in F$ the equation 
+
+    $$ ax=b $$
+
+    has the unique solution $x=ba^{-1}$ if $a\ne 0$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: If $a\ne 0$ then $a^{-1}$ exists.  
+
+        $$ a^{-1}ax = a^{-1}b = x $$
+
+        and $a^{-1}b$ is uniquely determined.
+
+        $\Box$
+        """
+    )
     return
 
 
