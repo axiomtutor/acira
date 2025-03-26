@@ -842,5 +842,64 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# 0006 Function Bounds""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $A,B,C$ be any nonempty sets.  Let $f,g:A\to B$ and let $h:A\times B\to C$.
+
+    We denote the **image of $f$** by $\text{Im}(f)$, which is 
+
+    $$ \text{Im(f)} = \{f(c): c\in A\} $$ 
+
+    If $c\in A$ then we define the **partial function of $h$ fixing $a$ at $c$** to be the function $h_{(c,\cdot)}:B\to C$.
+
+    If $d\in B$ then we define the **partial function of $h$ fixing $b$ at $d$** to be the function $h_{(c,\cdot)}:A\to C$.
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(X,\preceq)$ be a poset and $A,B$ any nonempty sets.  Let $f,g:A\to X$ and $h:A\times B\to X$.  
+
+    We say that $\alpha\in X$ is an **upper bound for $f$** if $\alpha$ is an upper bound for $\text{Im}(f)$.  The **maximum of $f$** is the maximum of $\text{Im}(f)$.  The **supremum of $f$** is the supremum of $\text{Im}(f)$.
+
+    There are corresponding definitions of **bounded below**, **minimum**, and **infimum**.
+
+    We say that $f\preceq g$ if $f(c)\preceq g(c)$ for every $c\in A$. 
+
+    Let $B'$ be the set of points $d\in B$ such that $\sup(\{f(c,d):c\in A\})$ exists.  We define the **supremum of $f$ over $A$** to be the function $\sup_{a\in A}f_{(a,\cdot)}:B'\to X$ given by 
+
+    $$ \left(\sup_{a\in A}f_{(a,\cdot)}\right)(d) = \sup\left\{f(c,d): c\in A\right\},\quad \forall d\in B $$
+
+    The **supremum of $f$ over $B$** is 
+
+    $$ \left(\sup_{b\in B}f_{(\cdot,b)}\right)(c) = \sup\left\{f(c,d): d\in B\right\},\quad \forall c\in A $$
+
+    defined for $c\in A$ where this supremum exists.
+
+    We define 
+
+    $$ \sup_{a\in A}\sup_{b\in B} f = \sup_{a\in A}\left(\sup_{b\in B}f_{(\cdot,b)}\right) $$
+
+    and 
+
+    $$ \sup_{b\in B}\sup_{a\in A} f = \sup_{b\in B}\left(\sup_{a\in A}f_{(a,\cdot)}\right) $$
+    """),"success")
+    return
+
+
+@app.cell
+def _():
+    return
+
+
 if __name__ == "__main__":
     app.run()
