@@ -971,7 +971,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
@@ -995,7 +995,7 @@ def _(mo):
 
         $$ \sup(h_{(\cdot,d)}) \preceq \sup\left(\sup_{b\in B} h_{(\cdot,b)} \right)$$
 
-        The right-hand side is just the number $\sup_{a\in A}\sup_{b\in B} h$.  
+        The right-hand side is just $\sup_{a\in A}\sup_{b\in B} h$.  
 
         We can now view $\sup(h_{(\cdot,d)})$ as a function of $d$, which is the function $\sup_{a\in A}h_{(a,\cdot)}$.  Due to the inequality above, therefore, $\sup_{a\in A}\sup_{b\in B} h$ is an upper bound on this function.
 
@@ -1008,6 +1008,62 @@ def _(mo):
         $\Box$
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# 0007 Ordered Fields""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(F,+,\times)$ be a field and $(F,\preceq)$ be a totally ordered set.
+
+    For any $a\in F$ we define the **intervals**
+
+    \begin{align*}
+      (a,\infty) &= \{c\in F:a\prec c\}\\ 
+      [a,\infty) &= \{c\in F:a \preceq c\}
+    \end{align*}
+
+    We similarly define, for each $a,b\in F$, the intervals 
+
+    \begin{align*}
+      &(-\infty,a)\\
+      &(-\infty,a]\\
+      &(a,b)\\
+      &(a,b]\\
+      &[a,b)\\
+      &[a,b]
+    \end{align*}
+
+    We call $F^* = F\cup\{\infty,-\infty\}$ the **extended set of numbers**, where $\pm \infty$ are mere symbols.  
+
+    Then for $a,b\in F^*$, the intervals $(a,b)$ are always called an **open intervals**.  Intervals of the form $[a,b]$ for $a,b\in F$ are **closed intervals**, and so are $[a,\infty)$ and $(-\infty,a)$.  
+
+    If $X\subseteq F$ then we define the **subset of positives**, $X^+=X\cap (0,\infty)$, the **subset of negatives**, $X^- = X\cap (-\infty,0)$, the **subset of nonnegatives**, $X^{\succeq 0}=X^+ \cup \{0\}$, and the **subset of nonpositives** $X^{\preceq 0} = X^-\cup\{0\}$.  
+
+    We define the **positives** as $F^+$ and **negatives** as $F^-$.  
+
+    We say that $\preceq$ is **compatible with addition** if 
+
+    $$ a\preceq b \quad \Rightarrow \quad a+c\preceq b+c, \quad \forall a,b,c\in F $$
+
+    We say that $\preceq$ is **compatible with multiplication** if 
+
+    $$ a\preceq b \quad \Rightarrow \quad ac\preceq bc, \quad \forall a,b\in F, c\in F^{\succeq 0} $$
+
+    We say that $\prec$ is **compatible with addition** if 
+
+    $$ a\prec b \quad\Rightarrow\quad a+c\prec b+c, \quad \forall a,b,c\in F $$
+
+    We say that $\prec$ is **compatible with multiplication** if 
+
+    $$ a\prec b \quad \Rightarrow \quad ac\prec bc, \quad \forall a,b\in F, c\in F^+ $$
+    """), "success")
     return
 
 
