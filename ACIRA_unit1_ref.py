@@ -1029,11 +1029,13 @@ def _(mo):
       [a,\infty) &= \{c\in F:a \preceq c\}
     \end{align*}
 
+    The interval $(a,\infty)$ is said to be **open on the left** and $[a,\infty)$ is **closed on the left**.  
+
     We similarly define, for each $a,b\in F$, the intervals 
 
     \begin{align*}
-      &(-\infty,a)\\
-      &(-\infty,a]\\
+      &({-\infty},a)\\
+      &({-\infty},a]\\
       &(a,b)\\
       &(a,b]\\
       &[a,b)\\
@@ -1042,7 +1044,9 @@ def _(mo):
 
     We call $F^* = F\cup\{\infty,-\infty\}$ the **extended set of numbers**, where $\pm \infty$ are mere symbols.  
 
-    Then for $a,b\in F^*$, the intervals $(a,b)$ are always called an **open intervals**.  Intervals of the form $[a,b]$ for $a,b\in F$ are **closed intervals**, and so are $[a,\infty)$ and $(-\infty,a)$.  
+    If $a,b\in F^*$ we call $a$ and $b$ the **endpoints** of the interval $(a,b)$ and likewise for $(a,b]$ and $[a,b)$ and $[a,b]$.
+
+    For $a,b\in F^*$, the intervals $(a,b)$ are always called an **open intervals**.  Intervals of the form $[a,b]$ for $a,b\in F$ are **closed intervals**, and so are $[a,\infty)$ and $(-\infty,a]$.  
 
     If $X\subseteq F$ then we define the **subset of positives**, $X^+=X\cap (0,\infty)$, the **subset of negatives**, $X^- = X\cap (-\infty,0)$, the **subset of nonnegatives**, $X^{\succeq 0}=X^+ \cup \{0\}$, and the **subset of nonpositives** $X^{\preceq 0} = X^-\cup\{0\}$.  
 
@@ -1063,7 +1067,157 @@ def _(mo):
     We say that $\prec$ is **compatible with multiplication** if 
 
     $$ a\prec b \quad \Rightarrow \quad ac\prec bc, \quad \forall a,b\in F, c\in F^+ $$
+
+    If $\preceq$ is compatible with addition and multiplication, then we say that $(F,+,\times,\preceq)$ an **ordered field**.
     """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""In all that follows, assume that $(F,+,\times,\preceq)$ is an ordered field, and $X\subseteq F$ a nonempty subset.  """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    $0\prec 1$
+
+    ---
+
+    $0\prec 1$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Assume for contradiction that $1\preceq 0$.
+
+        Then $0\preceq -1$.  Then by compatibility with multiplication, 
+
+        $$ 0(-1)\preceq (-1)(-1) $$
+
+        which simplifies to 
+
+        $$ 0\preceq 1 $$
+
+        By anti-symmetry, therefore $0=1$, contrary to the axioms of a field.
+
+        Therefore $0\prec 1$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Strict precidence compatibility`
+
+    ---
+
+    $\prec$ is compatible with addition and multiplication.  
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $a,b\in F$ and $a\prec b$.
+
+        Then $a\preceq b$ and $a\ne b$.
+
+        To show compatibility with addition, assume $c\in F$.  Then $a+c\preceq b+c$ by compatibility with addition of $\preceq$.
+
+        Assume for contradiction that $a+c=b+c$, which implies $a=b$.  
+
+        Since this contradicts $a\ne b$ above, we must have $a+c\ne b+c$ and therefore $a+c\prec b+c$.
+
+        This concludes the demonstration of compatibility with addition.
+
+        Next to show compatibility with multiplication, assume $c\in F^+$.  Then $ac\preceq bc$.  
+
+        For contradiction, assume $ac=bc$.  Since $c\ne 0$ it follows that $c^{-1}$ exists.  
+
+        Therefore $a=b$, contrary to $a\ne b$ above.  
+
+        So $ac\ne bc$ which shows $ac\prec bc$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Integer power ordering`
+
+    ---
+
+    Let $a,b,c,d\in F$ such that $0\prec a, b$ and $0\prec c\prec 1\prec d$.  
+
+    1. $a\preceq b$ if and only if $a^n\preceq b^n$ for all $n\in\Bbb N$.
+    2. $a\preceq b$ if and onlly if $\frac 1 b \preceq \frac 1 a$.
+    3. $0\prec c^2\prec c\prec 1\prec \frac 1 c$.
+    4. $0\prec \frac 1 d\prec 1 \prec d\prec d^2$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _base_ltr = mo.callout(mo.md(r"""
+    $(\Rightarrow)$: Assume $a\preceq b$.
+
+    By compatibility with multiplication $a^2\preceq ab$ and $ab\preceq b^2$.
+
+    By transitivity, $a^2\preceq b^2$.
+    """))
+
+    _base_rtl = mo.callout(mo.md(r"""
+    $(\Leftarrow)$: For the contrapositive, assume $b\prec a$.  Then $b^2\prec ab$ and $ab\prec a^2$.
+
+    By transitivity, $b^2\prec a^2$.
+    """))
+
+    _base = mo.callout(mo.md(f""" *Base-case $n=2$*:
+
+
+
+    {_base_ltr}
+
+    {_base_rtl}
+    """))
+
+    _ind_ltr = mo.callout(mo.md(r"""
+
+    """))
+
+    mo.md(
+        r"""
+        *Proof*:  (1.) This is trivially true for $n=1$.  
+
+        """+f"""
+        {_base}
+
+
+        """
+    )
     return
 
 
