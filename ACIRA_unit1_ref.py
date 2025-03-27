@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.26"
+__generated_with = "0.11.28"
 app = marimo.App(width="medium")
 
 
@@ -781,7 +781,7 @@ def _(mo):
         """
         +r"""
     Therefore in all cases, $\max(E)$ exists, concluding the proof of the inductive case, and therefore concluding the inductive proof.
-    
+
         $\Box$
         """
     )
@@ -871,8 +871,6 @@ def _(mo):
 
     We say that $\alpha\in X$ is an **upper bound for $f$** if $\alpha$ is an upper bound for $\text{Im}(f)$.  The **maximum of $f$** is the maximum of $\text{Im}(f)$.  The **supremum of $f$** is the supremum of $\text{Im}(f)$.
 
-    There are corresponding definitions of **bounded below**, **minimum**, and **infimum**.
-
     We say that $f\preceq g$ if $f(c)\preceq g(c)$ for every $c\in A$. 
 
     Let $B'$ be the set of points $d\in B$ such that $\sup(\{f(c,d):c\in A\})$ exists.  We define the **supremum of $f$ over $A$** to be the function $\sup_{a\in A}f_{(a,\cdot)}:B'\to X$ given by 
@@ -892,7 +890,124 @@ def _(mo):
     and 
 
     $$ \sup_{b\in B}\sup_{a\in A} f = \sup_{b\in B}\left(\sup_{a\in A}f_{(a,\cdot)}\right) $$
+
+    There are corresponding definitions of **bounded below**, **minimum**, and **infimum**.
+
     """),"success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        In all that follows, let $(X,\preceq)$ be a poset, and $A,B$ any nonempty sets. 
+
+        Let $f,g:A\to X$ and let $h:A\times B\to X$.
+
+        For each theorem below, there is a natural dual theorem for infima.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Sup function bounds`
+
+    ---
+
+    Suppose $f\preceq g$.  Then 
+
+    $$ \sup f\preceq \sup g $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $c\in A$ so that $f(c)\preceq g(c)\preceq \sup(g)$.
+
+        Then $\sup g\in UB_{\text{Im}(f)}$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Suppose that $h$ is bounded above by $\alpha\in X$.  Then for each $c\in A$ we have that $h_{(c,\cdot)}$ is bounded above by $\alpha$. 
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $d\in B$.  Then 
+
+        $$h_{(c,\cdot)}(d) = h(c,d) \preceq \alpha $$
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Assuming that all suprema involved in the expressions exist, 
+
+    $$ \sup_{a\in A}\sup_{b\in B}h = \sup_{b\in B}\sup_{a\in A}h $$
+    """), "danger")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Fix $c\in A$.  
+
+        Then for all $d\in D$ we have $h_{(c,\cdot)}(d) \preceq \sup(h_{(c,\cdot)})$.
+
+        Note that the left-hand side is the same as $h_{(\cdot,d)}(c)$.
+
+        Also the right-hand side, because the supremum is taken over the second coordinate, is the same as $\left(\sup_{b\in B}h_{(\cdot,b)}\right)(c)$.  We therefore have
+
+        $$ h_{(\cdot,d)}(c) \preceq \left(\sup_{b\in B}h_{(\cdot,b)}\right)(c) $$
+
+        The order of choice can be reversed (because both quantifiers are universal).  So if we first fix any $d\in D$, the above inequality holds for all $c\in A$.
+
+        Then the inequality $h_{(\cdot,d)}(c)\preceq \left(\sup_{b\in B} h_{(\cdot,b)}\right)(c)$ then demonstrates the inequality of functions, 
+
+        $$ h_{(\cdot,d)} \preceq \sup_{b\in B} h_{(\cdot, b)} $$
+
+        By the theorem `Sup function bounds`, this implies
+
+        $$ \sup(h_{(\cdot,d)}) \preceq \sup\left(\sup_{b\in B} h_{(\cdot,b)} \right)$$
+
+        The right-hand side is just the number $\sup_{a\in A}\sup_{b\in B} h$.  
+
+        We can now view $\sup(h_{(\cdot,d)})$ as a function of $d$, which is the function $\sup_{a\in A}h_{(a,\cdot)}$.  Due to the inequality above, therefore, $\sup_{a\in A}\sup_{b\in B} h$ is an upper bound on this function.
+
+        Therefore 
+
+        $$ \sup_{b\in B}\sup_{a\in A}h \preceq \sup_{a\in A}\sup_{b\in B}h $$
+
+        The reverse inequality is proved, *mutatis mutandis* the same.  One only exchanges choices made for $A$ with choices made for $B$ along the way.
+
+        $\Box$
+        """
+    )
     return
 
 
