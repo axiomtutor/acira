@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.30"
+__generated_with = "0.11.31"
 app = marimo.App(width="medium")
 
 
@@ -48,39 +48,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        In this chapter we will prove several properties that we will prove theorems which justify some of our geometric intuitions about the real number line.  
-
-        Some of them come directly from the fact that $\Bbb R$ is an ordered field, and therefore we have either already proved them, or they are better handled as exercises in that lesson.  
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""But some of them are either not true of the rationals, or are true or the rationals but do not carry over in a completely trivial way.  These we prove in this lesson.  """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        We try to do so with a philosophy that is not shared by every other textbook:  We first show that every real number is "well-approximated by" a rational number (or a sequence of rational numbers).  
-
-        Then we try to use a corresponding fact which can be leveraged to prove what is needed for the real numbers.
-
-        This hopefully does two things: Cuts down on how much we need to appeal to anything which couldn't better and more easily be handled by the rational numbers alone.  And it helps to display exactly what is different, when we finally have to appeal to something distinct about the reals.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        The first theorem which will be a tool for the other theorems, is the `Thousand miles` theorem. 
+        In this lesson we prove theorems which justify our intuitions about the geometry of the numberline.  The first theorem which will be a tool for the other theorems, is the `Thousand miles` theorem. 
 
         The name is a metaphor for the saying "A journey of a thousand miles starts with a single step".
 
@@ -128,7 +96,7 @@ def _(mo):
         r"""
         If the same sort of claim were made about the rationals, it would be true.  How would we prove it? Presumably by first expressing a rational as a ratio of integers, and then using knowledge about the ordering on integers.
 
-        That technique is not available for proving facts about the real numbers, because we don't know that real numbers have an expression in terms of anything simpler (like rational numbers).  
+        That technique is not available for proving facts about the real numbers, because we don't know that real numbers have an expression in terms of anything simpler (like rational numbers).
         """
     )
     return
@@ -140,7 +108,7 @@ def _(mo):
         r"""
         But the real numbers does have a property abound bounding sets, and there does seem like something here is bounded.
 
-        In an sense, the claim is that $y$ is *not* a bound on the set of all $nx$.  Some $nx$ must be bigger than $y$.  
+        In an sense, the claim is that $y$ is *not* a bound on the set of all $nx$.  Some $nx$ must be bigger than $y$.
         """
     )
     return
@@ -158,12 +126,75 @@ def _(mo):
 
         *Proof idea*:
 
-        1. For contradiction, assume that $S$ is bounded by $y$.
-        2. Show that $S$ is nonempty and bounded above, therefore $\sup(S)$ exists.
+        1. For contradiction, assume that $S$ is bounded by $y$.  
+        2. Show that $S$ is nonempty and bounded above, therefore $\sup(S)$ exists.  (Handle the special case of $y\le 0$, which is trivial -- but explain why.)
         3. Go down from $\sup(S)$ by $x$, so that there must (by the `Sup ordered field characterization` theorem) be some $nx\in S$ such that $\sup(S)-x < nx\le \sup(S)$.
         4. Infer that $\sup(S)<(n+1)x$ and $(n+1)x\in S$.
         5. Infer a contradiction.
+        """
+    )
+    return
 
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `1/n approaches 0`
+
+    ---
+
+    Let $x\in\Bbb R^+$.
+
+    Then there is an $n\in\Bbb N$ such that $\frac 1 n < x$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The proof of this theorem is a relatively simple appeal to the `Thousand miles` theorem.  By saying that it's simple, I don't mean that it's *easy* to think of, the first time that you try.  I do mean that the proof can be given in a small number of sentences.  
+
+        Note that the theorem is equivalent to finding an $n\in\Bbb N$ such that $1<nx$, which will be my only hint here.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Q distributed in R`
+
+    ---
+
+    Between any two real numbers, there is a rational number.
+    """),"danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        To prove this, let $a,b\in\Bbb R$ and $a<b$.  In particular, at least to get started, assume $0<a$.
+
+        Think of $(a,b)$ as a region in the numberline, and we want to find a rational number in this region.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Using metaphors like the ones we used for the `Thousand miles` theorem, one should be able to take small enough "steps", starting at 0, eventually crossing to the other side of $a$, but not stepping so large that we immediately also step over $b$.
+
+        To make this idea rigorous, we probably want a small step size, $\varepsilon$.  It should be smaller than $b-a$, the length of the interval $(a,b)$.  We can obtain this can appeal to the `1/n approaches 0` theorem.  
+
+        We also want a "number of steps" which step us from 0, over $a$ and into the region $(a,b)$.  We can obtain this by a separate appeal to the `Thousand miles` theorem.  
         """
     )
     return
