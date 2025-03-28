@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.11.28"
 app = marimo.App(width="medium")
 
 
@@ -136,6 +136,12 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""### Pedagogical Sections, Reference Sections, and Exercises""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(
         r"""
         This course practices an unusually strict "division of labor".  
@@ -178,6 +184,34 @@ def _(mo):
         4. Read the corresponding reference section (toward the end of the notebook).
         5. At the end of each chapter, do the homework.
         6. At the end of each unit, do the exam.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""### Time""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        I am designing this course with the following logic: The typical university course meets twice a week for about 2 hours each meeting, for about 16 weeks.
+
+        Therefore I am going to try to design this course by 
+
+        1. Initially only including only the most absolutely essential parts of real analysis.
+        2. If I find that the total lecture time is less than 2 * 16 * 2 = 64 hours, I will include more until it fills the alotted time of 64 hours.
+        3. If my total lecture time is more than 64 hours, I will try to painfully cut away material until it fits the constraint.
+
+        Therefore these lessons should really approximate what can fit into a single semester of a real analysis course.  
+
+        I hope that this self-constraint will also make the lessons relatively lean and efficient, since I won't give myself permission to talk about things I think are interesting or optional.
+
+        Therefore, if something is in here, it's probably important.
         """
     )
     return
