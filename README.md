@@ -31,7 +31,7 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 ## Chapter 2: Properties of $\Bbb R$
 
-* [Lesson 0009: Archimedes](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_arc.py)
+* [Lesson 0009: Numberline](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
 
 * [Lesson 0010: Open and Closed Sets]()
 
@@ -57,3 +57,10 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 ## Chapter 10: The Fundamental Theorem of Calculus
 
+# Contributing
+
+I welcome feedback about typos or mistakes.  
+
+If anyone wants to contribute, I'm also open to others writing portions of the text collaboratively.  Anyone can send a pull request.
+
+However, note that I am trying to maintain a certain consistency of style in the look as well as in the prose.  If you have any questions, please email before spending too much time writing anything.
