@@ -289,7 +289,7 @@ def _(mo):
         r"""
         It is trivial, by construction, that $a < \frac {m'}n$.
 
-        We only need to show that $b < \frac {m'} n$, so for contradiction assume that $\frac{m'}n \le b$.  
+        We only need to show that $\frac {m'} n < b$, so for contradiction assume that $b\le \frac{m'}n$.  
         """
     )
     return
