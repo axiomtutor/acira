@@ -6,6 +6,12 @@ The prerequisites are calculus and discrete math.
 
 It covers the axioms of the real numbers, properties and topology, sequences and series of real numbers, sequences and series of real functions, limits, continuity, differentiation, integration, and the Fundamental Theorem of Calculus.
 
+# Trump Is Destroying American Greatness
+
+[Trump destroys our hard work](./images/trumpwreck.png)
+
+It is too important to point out the anti-American destruction that Trump is doing to our scientific production.  
+
 # Unit 1: The Real Numbers
 ## Chapter 1: The Axioms of $\Bbb R$
 

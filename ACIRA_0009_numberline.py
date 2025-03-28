@@ -194,9 +194,27 @@ def _(mo):
 
         To make this idea rigorous, we probably want a small step size, $\varepsilon$.  It should be smaller than $b-a$, the length of the interval $(a,b)$.  We can obtain this can appeal to the `1/n approaches 0` theorem.  
 
-        We also want a "number of steps" which step us from 0, over $a$ and into the region $(a,b)$.  We can obtain this by a separate appeal to the `Thousand miles` theorem.  
+        We also want a "number of steps" which step us from 0, over $a$, and into the region $(a,b)$.  We can obtain this by a separate appeal to the `Thousand miles` theorem.  
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        In effect, the two steps above give us each part of a rational number, $q=\frac a b$: The appeal to `1/n approaches 0` provides the denominator, $b$.  The appeal to the `Thousand miles` theorem provides the numerator, $a$.  We hope that $q\in (a,b)$.
+
+        But of course, hope is not enough.  The proof is complete when we actually show $q\in (a,b)$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""*Proof*:  Assume $0<a<b$ and let $n\in\Bbb N$ be such that <span style="color:red">[Select below]</span>.""")
     return
 
 
