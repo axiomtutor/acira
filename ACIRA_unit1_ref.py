@@ -1157,8 +1157,41 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Simultaneous comparison`
+
+    ---
+
+    Suppose $a,b,c,d\in F$, and assume $a\preceq b$ and $c\preceq d$.  
+
+    Then 
+
+    $$ a+c\preceq b+d $$
+
+    If $a,b,c,d\in F^{\succeq 0}$ then 
+
+    $$ ac\preceq bd $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  From $a\preceq b$ we have $a+c\preceq b+c$ and from $c\preceq d$ we have $b+c\preceq b+d$.  
+
+        Now by transitivity $a+c\preceq b+d$.  
+
+        Assuming $a,b,c,d\in F^{\succeq 0}$, then from $a\preceq b$ we get $ac\preceq bc$ and from $c\preceq d$ we get $bc\preceq bd$.
+
+        By transitivity $ac\preceq bd$.
+
+        $\Box$
+        """
+    )
     return
 
 
@@ -1204,8 +1237,30 @@ def _(mo):
     {_base_rtl}
     """))
 
-    _ind_ltr = mo.callout(mo.md(r"""
+    _ind_ltr = mo.callout(mo.md(r"""$(\Rightarrow)$:
 
+    \begin{align*}
+      a^{n+1} &= a^n\cdot a\\
+      &\preceq b^n\cdot b \\
+      &= b^{n+1}
+    \end{align*}
+    """))
+
+    _ind_rtl = mo.callout(mo.md(r"""$(\Leftarrow)$: We prove the converse.
+
+    If $b\prec a$ then by a similar argument $b^{n+1}\prec a^{n+1}$.
+    """))
+
+    _ind = mo.callout(mo.md(r"""
+    *Inductive-case*: Let $2\le n$ and assume $a\preceq b$ if and only if $a^n\preceq b^n$.  
+
+    Suppose $a\preceq b$, so that $a^n\preceq b^n$.  
+
+    It is easy to show, by induction, that $0\preceq a^n,b^n$ and therefore we may use `Simultaneous comparison` as we do below.
+
+    """+f"""{_ind_ltr}
+
+    {_ind_rtl}
     """))
 
     mo.md(
@@ -1215,7 +1270,46 @@ def _(mo):
         """+f"""
         {_base}
 
+        {_ind}
 
+        """+r""" $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        2. Because $0\prec a,b$ then the inverses of each exist.
+
+        Therefore by compatibility, $a\preceq b$ if and only if $1\preceq \frac b a$ if and only if $\frac 1 b \preceq \frac 1 a$.  
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        3. Since $0\prec c\prec 1$ then by compatibility with multiplication, $0\prec c^2\prec c\prec 1$.
+
+        By the result in part (2.), extended in an obvious way to strict inequality:  since $c\prec 1$ then $1\prec \frac 1 c$. 
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        4. Proof is similar, *mutatis mutandis*, to (3.) above.
+
+
+        $\Box$
         """
     )
     return
