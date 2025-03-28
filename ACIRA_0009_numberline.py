@@ -295,13 +295,26 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Then $b-a \le \frac {m'}n -a$ and then $\frac 1 n < \frac{m'}n - a$.
+
+        So $a < \frac{m'-1}n$ which contradicts <span style="color:red">[Select below]</span>.
+        """
+    )
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo, mprime, mprime_correct):
+    if mprime.value == mprime_correct:
+        _text = """<span style="color: green">CORRECT! :heart:</span>"""
+    else:
+        _text = "False"
+
+    mo.hstack([mprime, mo.md(_text)])
     return
 
 
@@ -337,6 +350,33 @@ def _(mo):
         """
     )
     return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mprime = mo.ui.dropdown(["the minimality of m'", "the supremum is an upper bound","the supremum is a lower bound", "m is a natural number"], label="which contradicts ...")
+    mprime_correct = "the minimality of m'"
+    return mprime, mprime_correct
 
 
 @app.cell(hide_code=True)
