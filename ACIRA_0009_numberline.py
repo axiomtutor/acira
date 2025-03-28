@@ -138,6 +138,20 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""Please take a moment to enjoy some great 90s country music.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.video(src="https://www.youtube.com/watch?v=Tu3ypuKq8WE&pp=ygUbdGhvdXNhbmQgbWlsZXMgZnJvbSBub3doZXJl")
+
+    mo.Html('''<iframe width="560" height="315" src="https://www.youtube.com/embed/Tu3ypuKq8WE?si=6sOHjoDGCoRb9AA6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>''')
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.callout(mo.md(r"""
     `1/n approaches 0`
 
@@ -214,8 +228,130 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""*Proof*:  Assume $0<a<b$ and let $n\in\Bbb N$ be such that <span style="color:red">[Select below]</span>.""")
+    mo.md(r"""*Proof*:  Assume $0<a<b$ and let $n\in\Bbb N$ be such that <span style="color:red">[Select below]</span>, which exists by the `1/n approaches 0` theorem.""")
     return
+
+
+@app.cell(hide_code=True)
+def _(mo, n, n_correct):
+    if n.value == n_correct:
+        _text = f"""<span style="color:green">CORRECT! :heart:</span>"""
+    else:
+        _text = f"False"
+    mo.hstack([n, mo.md(f" {_text} ")])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Let $m\in\Bbb N$ be such that <span style="color: red">[Select below]</span>, which exists by the `Thousand miles` theorem.  """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(m, m_correct, mo):
+    if m.value == m_correct:
+        _text = r"""<span style="color: green">CORRECT! :heart:</span>"""
+    else:
+        _text = "False"
+
+    mo.hstack([m, mo.md(_text)])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Since such a choice exists, we may form the set $C = \{m'\in\Bbb N: a < m'(1/n) \}$.  
+
+        Since this is a set of natural numbers, it has a least element.  This is due to the `Well-ordering of the integers`, which says that every nonempty set of integers which is bounded below, has a least element.
+
+        Let $m' = \min(C)$.
+
+        /// details | This step is the tricky step.
+
+        Because this is a fact about the integers, and one that is intuitively true, we will not prove it in this course.  It is one of those facts that I relegate to a course in "foundations", for any student who is interested in that.
+
+        It is probably unreasonable to expect a student, encountering this material for the first time, to know about or think of these steps on their own.
+
+        However, I hope that once I express these ideas, their correctness will be obvious.  In future exercises you will solve similar problems that also make use of the well-ordering of the integers, and thereby develop some facility with this theorem.
+
+        ///
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        It is trivial, by construction, that $a < \frac {m'}n$.
+
+        We only need to show that $b < \frac {m'} n$, so for contradiction assume that $\frac{m'}n \le b$.  
+        """
+    )
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        # Don't Look Down
+
+        The stuff below is the backend of the notebook.  
+
+        You don't need to look at any of this stuff unless you just want to out of curiosity or whatever.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    m = mo.ui.dropdown(options=["m < a", "a < m < b", "b < m", "m(1/n) < a", "a < m(1/n) < b", "b < m(1/n)", "a < m(1/n)"], label="such that ...")
+
+    m_correct = "a < m(1/n)"
+    return m, m_correct
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    n = mo.ui.dropdown(options=["1/n < a", "a < 1/n < b", "b < 1/n", "1/n < b-a", "1/n < a-b"], label="such that ...")
+    n_correct = "1/n < b-a"
+    return n, n_correct
 
 
 @app.cell
