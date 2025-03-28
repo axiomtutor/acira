@@ -15,8 +15,10 @@ def _(mo):
     mo.md(
         r"""
         # A Course in Real Analysis ... in Marimo!
-        ## Unit 1: The Axioms of the Real Numbers
-        ### by Axiom Tutor
+        ## Unit 1: The Real Numbers
+        ### Chapter 1: The Axioms of $\Bbb R$
+        
+        by Axiom Tutor
         """
     )
     return

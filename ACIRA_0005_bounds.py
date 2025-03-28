@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.26"
+__generated_with = "0.11.30"
 app = marimo.App(width="medium")
 
 
@@ -8,6 +8,20 @@ app = marimo.App(width="medium")
 def _():
     import marimo as mo
     return (mo,)
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        # A Course in Real Analysis ... in Marimo!
+        ## Unit 1: The Real Numbers
+        ### Chapter 1: The Axioms of $\Bbb R$
+        
+                by Axiom Tutor
+        """
+    )
+    return
 
 
 @app.cell(hide_code=True)
