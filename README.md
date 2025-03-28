@@ -46,3 +46,14 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 ## Chapter 5: Limits
 
 ## Chapter 6: Continuity
+
+# Unit 4: Differentiation
+## Chapter 7: Algebraic Laws
+
+## Chapter 8: EVT and MVT
+
+# Unit 5: Integration 
+## Chapter 9: The Riemann Integral
+
+## Chapter 10: The Fundamental Theorem of Calculus
+
