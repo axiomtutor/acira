@@ -6,7 +6,8 @@ The prerequisites are calculus and discrete math.
 
 It covers the axioms of the real numbers, properties and topology, sequences and series of real numbers, sequences and series of real functions, limits, continuity, differentiation, integration, and the Fundamental Theorem of Calculus.
 
-# Unit 1: The Axioms of the Real Numbers
+# Unit 1: The Real Numbers
+## Chapter 1: The Axioms of $\Bbb R$
 
 * [Lesson 0000: Introduction](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0000_intro.py)
 
