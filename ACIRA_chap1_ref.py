@@ -24,7 +24,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""# Unit 1 Reference""")
+    mo.md(r"""# Chapter 1 Reference""")
     return
 
 
@@ -1308,6 +1308,244 @@ def _(mo):
         r"""
         4. Proof is similar, *mutatis mutandis*, to (3.) above.
 
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# 0008 Completeness""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $(F,+,\times,\preceq)$ be an ordered field.  The following property of the ordered field is called the **completeness (with respect to suprema)** property.
+
+    "For every nonempty subset $X\subseteq F$ for which $UB_X\ne \emptyset$, the number $\sup(X)$ exist."
+
+    If $(F,+,\times,\preceq)$ has the completeness property, we say that it is a **complete ordered field**.
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Axiom of real numbers`
+
+    ---
+
+    There is a complete ordered field, called the **real numbers**, and denoted $(\Bbb R,+,\times,\le)$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $x\in\Bbb R^{\ge 0}$ and $n\in\Bbb N$.  We define $y \in\Bbb R$ where $y= \sqrt[n]x$ as the unqiue solution of the equation
+
+    $$ y^n = x $$
+
+    We call $y$ the **$n$th root of $x$**.  
+
+    We equivalently write $\sqrt[n]x$ and $x^{1/n}$ to denote this same number.
+
+    For any rational number $\frac p q\in\Bbb Q$, where $p,q\in\Bbb Z$ and $q\ne 0$, we extend the notation for exponents.  Specifically, we define 
+
+    $$ x^{p/q} = (x^{1/q})^p $$
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Existence of nth roots`
+
+    ---
+
+    For each $n\in\Bbb N$ and $x\in\Bbb R^{\ge 0}$, the number $\sqrt[n]x$ exists.  That is to say, there is a unique $n$th root of $x$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _le = mo.callout(mo.md(r"""
+    Assume for contradiction that $\alpha^n < x$.  
+
+    Define 
+
+    $$ T = \left\{ \frac{x-\alpha^n}{n\binom n k\alpha^k}: 0\le k\le n-1\right\} $$
+
+    Define 
+
+    $$ \varepsilon = \min\left(\{1\}\cup T\right)/2 $$
+
+    Since $0< \varepsilon < 1$ according to this definition, we may infer
+
+    \begin{align*}
+      (\alpha+\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^{k}\varepsilon^{n-k}\\
+      &< \alpha^n +\sum_{k=0}^{n-1}\binom n k \alpha^k \varepsilon \\
+      &< \alpha^n + \sum_{k=0}^{n-1}\binom n k \alpha^k \cdot \frac{x-\alpha^n}{n\binom n k \alpha^k}\\
+      &= \alpha^n + (x-\alpha^n)\sum_{k=0}^{n-1}\frac 1 n \\
+      &= \alpha^n + x - \alpha^n \\
+      &= x
+    \end{align*}
+
+    Therefore $\alpha+\varepsilon\in L$. 
+
+    Since $\alpha < \alpha+\varepsilon$ then $\alpha\notin UB_L$.  But this contradicts the assumption $\alpha = \sup(L)$.
+
+    The proof by contradiction is complete, and we may infer $x\le \alpha^n$.
+    """))
+
+    _ge = mo.callout(mo.md(r"""
+    Assume for contradiction that $\alpha^n > x$.
+
+    Define $T$ and $\varepsilon$ the same as in the proof that $x\le \alpha^n$.
+
+    The inequalities below follow by definition of $\varepsilon$ and becauses $0<\varepsilon<1$.  
+
+    Note that the index is eventually taken for $0\le n-k$ and $n-k$ odd.  This somewhat abuses notation but is clear enough -- keep in mind that the index is always $k$.
+
+    \begin{align*}
+      (\alpha-\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^k(-\varepsilon)^{n-k} \\
+      &> \alpha^n-\sum_{\substack{0\le n-k\\n-k\text{ odd}}}^{n-1} \binom n k \alpha^k \varepsilon^{n-k}\\
+      &> \alpha^n-\sum_{\substack{0\le n-k\\n-k\text{ odd}}}^{n-1} \binom n k \alpha^k \varepsilon \\
+      &> \alpha^n-\sum_{\substack{0\le n-k\\n-k\text{ odd}}}^{n-1} \binom n k \alpha^k\left(\frac{\alpha^n-x}{n\binom n k \alpha^k}\right)\\
+      &= \alpha^n-(\alpha^n-x)\sum_{\substack{0\le n-k\\n-k\text{ odd}}}^{n-1} \frac 1 n \\
+      &> \alpha^n-(\alpha^n-x) \\
+      &= x
+    \end{align*}
+
+    This shows that $x < (\alpha-\varepsilon)^n$ and therefore if $a\in L$ it follows that $a^n\le x<(\alpha-\varepsilon)^n$.
+
+    This implies that $a<\alpha-\varepsilon$ by the `Integer powers ordering` theorem, and therefore $\alpha-\varepsilon\in UB_L$.
+
+    But since $\alpha-\varepsilon < \alpha$, this contradicts the minimality of $\alpha=\sup(L)$.
+
+    This concludes the proof by contradiction, and therefore $\alpha^n\le x$.
+    """))
+
+    mo.md(
+        r"""
+        *Proof*:  Assume that $1\le x$.  
+
+        Define the set $L=\{a\in \Bbb R: 0\le a^n\le x\}$.  Since $0\le 0^n = 0\le 1$ then $0\in L$ and so $L\ne \emptyset$.
+
+        Also, if $a\in L$ then $a^n\le x^n$ if and only if $a\le x$, by the `Integer power ordering` theorem above.  
+
+        Since the latter is true, we have that $x^n\in UB_L$.  Therefore by the completeness axiom, $\alpha=\sup(L)$ exists.
+        """
+        + f"""
+        {_le}
+
+        {_ge}
+
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The two inequalities imply $\alpha^n=x$, demonstrating the existence of a solution of $y^n=x$ for $y$.
+
+        To demonstrate the uniqueness of this solution, suppose $y^n=x$ has another solution, call it $\beta$.  
+
+        Since $\alpha^n=\beta^n$ then $\alpha^n\le \beta^n$ and also $\beta^n\le \alpha^n$.  
+
+        Therefore, by the `Integer powers ordering` theorem, we obtain both $\alpha\le\beta$ and $\beta\le\alpha$.  
+
+        Therefore $\alpha=\beta$.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Rational exponent laws`
+
+    ---
+
+    Let $x,y\in F^{\succeq 0}$ and $p,q\in \Bbb Q$.  Then 
+
+    1. $x^p y^p = (xy)^p$
+
+    2. $(x^p)^q = x^{pq}$
+
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  First we show that if $m\in\Bbb N$ then $x^{1/m}y^{1/m}=(xy)^{1/m}$.  
+
+        By definition, and the `Existence of nth roots` theorem, the equation is true if $x^{1/m}y^{1/m}$ solves the equation $z^m=xy$.
+
+        We know that natural number exponents distribute and therefore 
+
+        $$ (x^{1/m}y^{1/m})^m = (x^{1/m})^m (y^{1/m})^m = xy $$
+
+        Now assume that $p=a/b$ for $a,b\in \Bbb Z$ and $b\ne 0$.
+
+        Then 
+
+        \begin{align*}
+          x^py^p &= (x^{1/b})^a (y^{1/b})^a \\
+          &= (x^{1/b}y^{1/b})^a \\
+          &= ((xy)^{1/b})^a \\
+          &= (xy)^{p/q}
+        \end{align*}
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Next we show that if $m,n\in\Bbb N$ then $(x^{1/m})^{1/n} = x^{\frac 1 {mn}}$.
+
+        \begin{align*}
+          ((x^{1/m})^{1/n})^{\frac 1 {mn}} &= (((x^{1/m})^{1/n})^n)^m \\
+          &= (x^{1/m})^m \\
+          &= x
+        \end{align*}
+
+        Now assume $p=a/b, q=c/d$ for $a,b,c,d\in\Bbb Z$ and $b,d\ne 0$.  Then $(x^{1/b})^a = (x^a)^{1/b}$ if the left-hand side solves $z^b=x^a$.
+
+        \begin{align*}
+          ((x^{1/b})^a)^b &= ((x^{1/b})^b)^a \\
+          &= x^a
+        \end{align*}
+
+        Therefore we are now free to use this interchange below, to show $(x^p)^q = x^{pq}$.
+
+        \begin{align*}
+          (x^p)^q &= (((x^{1/b})^a)^{1/d})^c \\
+          &= (((x^{1/b})^{1/d})^a)^c \\
+          &= (x^{\frac{1}{bd}})^{ac} \\
+          &= x^{\frac{ac}{bd}} \\
+          &= x^{pq}
+        \end{align*}
 
         $\Box$
         """
