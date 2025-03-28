@@ -26,4 +26,4 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 * [Lesson 0008: Completeness](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0008_completeness.py)
 
-* [Unit 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_unit1_ref.py)
+* [Chapter 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_chap1_ref.py)
