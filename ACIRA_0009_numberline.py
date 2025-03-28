@@ -48,7 +48,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        In this lesson we prove theorems which justify our intuitions about the geometry of the numberline.  The first theorem which will be a tool for the other theorems, is the `Thousand miles` theorem. 
+        In this lesson we prove theorems which justify our intuitions about the geometry of the number line.  The first theorem which will be a tool for the other theorems, is the `Thousand miles` theorem. 
 
         The name is a metaphor for the saying "A journey of a thousand miles starts with a single step".
 
@@ -194,7 +194,7 @@ def _(mo):
         r"""
         To prove this, let $a,b\in\Bbb R$ and $a<b$.  In particular, at least to get started, assume $0<a$.
 
-        Think of $(a,b)$ as a region in the numberline, and we want to find a rational number in this region.  
+        Think of $(a,b)$ as a region in the number line, and we want to find a rational number in this region.
         """
     )
     return
@@ -208,7 +208,7 @@ def _(mo):
 
         To make this idea rigorous, we probably want a small step size, $\varepsilon$.  It should be smaller than $b-a$, the length of the interval $(a,b)$.  We can obtain this can appeal to the `1/n approaches 0` theorem.  
 
-        We also want a "number of steps" which step us from 0, over $a$, and into the region $(a,b)$.  We can obtain this by a separate appeal to the `Thousand miles` theorem.  
+        We also want a "number of steps" which step us from 0, over $a$, and into the region $(a,b)$.  We can obtain this by a separate appeal to the `Thousand miles` theorem.
         """
     )
     return
@@ -244,7 +244,7 @@ def _(mo, n, n_correct):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Let $m\in\Bbb N$ be such that <span style="color: red">[Select below]</span>, which exists by the `Thousand miles` theorem.  """)
+    mo.md(r"""Let $m\in\Bbb N$ be such that <span style="color: red">[Select below]</span>, which exists by the `Thousand miles` theorem.""")
     return
 
 
@@ -289,7 +289,7 @@ def _(mo):
         r"""
         It is trivial, by construction, that $a < \frac {m'}n$.
 
-        We only need to show that $\frac {m'} n < b$, so for contradiction assume that $b\le \frac{m'}n$.  
+        We only need to show that $\frac {m'} n < b$, so for contradiction assume that $b\le \frac{m'}n$.
         """
     )
     return
@@ -318,8 +318,62 @@ def _(mo, mprime, mprime_correct):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""This concludes the demonstration that, if $0<a<b$, then there is a rational $q=m'/n$ such that $q\in (a,b)$.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Now assume $a\le 0$.  The basic trick in this case, is to add a large enough number so that the interval $(a,b)$ shifts over the positive side of the number line.
+
+        Then use the above result to get a rational inside the shifted interval.  Then shift everything back.  Filling in the details is left as an exercise.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Note: Proving that "between any two rational numbers is a real number" is much easier.
+
+        In particular, we already know that between any two real numbers is a real number.  Since rational numbers are real numbers, then between any two rational numbers is a real number.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The more interesting challenge is to prove that between any two rational numbers is an irrational number.  One can prove this with more effort, but it's not too hard.
+
+        Use the fact that $0<\sqrt 2<2$ (or any other irrational number that you like).  Scale it down to whatever small size is needed, for a given pair of rational numbers.  Then add the scaled-down $\sqrt 2$ to the smaller rational number.
+
+        I'm intentionally leaving the details of the proof vague, so that any interested reader can fill them in as an exercise.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Number line tick marks`
+
+    ---
+
+    For each $x\in \Bbb R$ there is a unique integer $n\in\Bbb Z$ such that $x\in [n,n+1)$.
+
+    """), "danger")
     return
 
 

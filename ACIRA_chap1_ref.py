@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.28"
+__generated_with = "0.11.31"
 app = marimo.App(width="medium")
 
 
@@ -1075,7 +1075,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""In all that follows, assume that $(F,+,\times,\preceq)$ is an ordered field, and $X\subseteq F$ a nonempty subset.  """)
+    mo.md(r"""In all that follows, assume that $(F,+,\times,\preceq)$ is an ordered field, and $X\subseteq F$ a nonempty subset.""")
     return
 
 
@@ -1284,7 +1284,7 @@ def _(mo):
         r"""
         2. Because $0\prec a,b$ then the inverses of each exist.
 
-        Therefore by compatibility, $a\preceq b$ if and only if $1\preceq \frac b a$ if and only if $\frac 1 b \preceq \frac 1 a$.  
+        Therefore by compatibility, $a\preceq b$ if and only if $1\preceq \frac b a$ if and only if $\frac 1 b \preceq \frac 1 a$.
         """
     )
     return
@@ -1296,7 +1296,7 @@ def _(mo):
         r"""
         3. Since $0\prec c\prec 1$ then by compatibility with multiplication, $0\prec c^2\prec c\prec 1$.
 
-        By the result in part (2.), extended in an obvious way to strict inequality:  since $c\prec 1$ then $1\prec \frac 1 c$. 
+        By the result in part (2.), extended in an obvious way to strict inequality:  since $c\prec 1$ then $1\prec \frac 1 c$.
         """
     )
     return
@@ -1308,6 +1308,62 @@ def _(mo):
         r"""
         4. Proof is similar, *mutatis mutandis*, to (3.) above.
 
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `OF has no infinitesimals`
+
+    ---
+
+    If $x\in F$ is smaller than every positive number, then $x$ is not positive.
+
+    Therefore if $x\in F^{\succeq 0}$ and for all $\varepsilon\in F^+$ we have $x\prec \varepsilon$, it follows that $x=0$.  
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Suppose $x\in F^+$.  Define $2=1+1$, and clearly $0\prec 1 \prec 2$.
+
+        By `Integer power ordering`, $0\prec \frac 1 2 \prec 1$ and therefore by compatibility with multiplication, 
+
+        $$ 0\prec x/2 \prec x $$
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    Let $a,b\in F$ and $c,d\in F^+$.  Assume that $\forall \varepsilon\in F \cap (0,d]$ we have $a\prec b+c\varepsilon$.
+
+    Then $a\preceq b$.  
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Assume for contradiction that $b\prec a$ and therefore $0\prec a-b$.  
+
+        Set $\varepsilon = \min(\frac{a-b}c, d)$ and note that $0\prec \varepsilon\preceq d$.  
+
+        Then $a\prec b+c\varepsilon \preceq b+c\cdot \frac{a-b}c = a$.
 
         $\Box$
         """
