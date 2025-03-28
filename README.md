@@ -33,6 +33,16 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 * [Lesson 0009: Archimedes](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_arc.py)
 
-* [Lesson 0010: Topology]()
+* [Lesson 0010: Open and Closed Sets]()
 
-* [Lesson 0011: $n$-space]()
+* [Lesson 0011: Compact Sets]()
+
+# Unit 2: $\Bbb R$-valued Sequences and Series
+## Chapter 3: Sequences
+
+## Chapter 4: Series
+
+# Unit 3: $\Bbb R$-valued Functions
+## Chapter 5: Limits
+
+## Chapter 6: Continuity
