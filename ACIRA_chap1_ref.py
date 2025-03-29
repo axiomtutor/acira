@@ -1082,6 +1082,46 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
+    `Lower-upper duality`
+
+    ---
+
+    Let $X\subseteq F$ be a nonempty subset.
+
+    1. $\alpha\in LB_X$ if and only if $-\alpha\in UB_{-X}$.  Therefore $LB_X = -UB_{-X}$.
+
+    2. $\alpha = \min(X)$ if and only if $-\alpha = \max(-X)$.
+
+    3. $\alpha = \inf(X)$ if and only if $-\alpha = \sup(-X)$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: 
+
+        1. Let $\alpha\in LB_X$, and then let $a\in -X$ so that $-a\in X$.
+
+            Then $\alpha\preceq -a$ and therefore $a\preceq -\alpha$.  So $-\alpha\in UB_{-X}$.
+
+            For the converse, let $-\alpha\in UB_{-X}$, and then let $a\in X$.
+
+            Then $-a\in-X$ and therefore $-a\preceq -\alpha$.  Then $\alpha\preceq a$ so therefore $\alpha\in LB_X$.
+
+        3. This is immediate from (1.) and the fact that, if $\alpha\in X$ then $-\alpha\in -X$.
+
+        4. From the results above, $\alpha= \inf(X) = \max(UB_X)$ if and only if $-\alpha = \min(-UB_{X}) =  \min(LB_{-X}) = \sup(-X)$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
     $0\prec 1$
 
     ---
@@ -1373,6 +1413,61 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.callout(mo.md(r"""
+    `OF sup characterization`
+
+    ---
+
+    Let $X\subseteq F$ be a nonempty subset.  
+
+    If $\alpha=\sup(X)$ exists, then 
+
+    1. $\alpha\in UB_X$ and 
+    2. $\forall \varepsilon\in F^+$ we have that $\alpha-\varepsilon\notin UB_X$.
+
+    Conversely, if $\alpha\in F$ is such that 
+
+    1. $\alpha\in UB_X$ and
+    2. $\forall \varepsilon\in F^+$ we have that $\alpha-\varepsilon\notin UB_X$.
+
+    then $\sup(X)$ exists and $\alpha=\sup(X)$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $\alpha=\sup(X)$ exist. Trivially we have $\alpha\in UB_X$.
+
+        Let $\varepsilon\in F^+$ so that $\alpha-\varepsilon < \alpha$.  If $\alpha-\varepsilon\in UB_X$ this would contradict the minimality of $\alpha=\min(UB_X)$.  So $\alpha-\varepsilon\notin UB_X$.
+
+        ---
+
+        For the converse, suppose $\alpha\in F$ is such that $\alpha\in UB_X$ and for every $\varepsilon\in F^+$ we have $\alpha-\varepsilon\notin UB_X$.
+
+        We only need to show that $\alpha\in LB_{UB_X}$, so assume that $\beta\in UB_X$. 
+
+        Assume for contradiction that $\beta \prec \alpha$ and define $\varepsilon=\alpha-\beta$.  Clearly $0\prec\varepsilon$.
+
+        Then we would have that $\alpha-\varepsilon = \beta \notin UB_X$, but this contradicts our assumption.
+
+        Therefore we must have $\alpha\preceq\beta$ and therefore $\alpha\in LB_{UB_X}$ as required to infer $\alpha=\sup(X)$.  
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""# 0008 Completeness""")
     return
 
@@ -1602,6 +1697,40 @@ def _(mo):
           &= x^{\frac{ac}{bd}} \\
           &= x^{pq}
         \end{align*}
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `GLB property`
+
+    ---
+
+    $\Bbb R$ is also "complete with respect to infima", which we define by the following property:
+
+    For every nonempty $X\subseteq\Bbb R$, if $LB_X\ne\empty$ then $\max(LB_X)=\inf(X)$ exists.
+    """),"danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $X\subseteq \Bbb R$ be a nonempty subset with $\alpha\in LB_X$.  
+
+        Then by `Lower-upper duality`, 
+
+        $$-\alpha\in UB_{-X}$$
+
+        As $-X$ is a nonempty set and therefore bounded above, then $\sup(-X)=\beta$ exists, by completeness.
+
+        Then $-\sup(-X)= \inf(X) = -\beta$, by the `Lower-upper duality`.
 
         $\Box$
         """

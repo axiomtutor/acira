@@ -46,7 +46,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""The first theorem which will be a tool for the other theorems, is the `Well-ordering of the integers` theorem.""")
+    mo.md(r"""The first theorem will be a tool for the other theorems.""")
     return
 
 
@@ -70,19 +70,23 @@ def _(mo):
         r"""
         *Chatty proof*:  As a nonempty set of real numbers bounded below, it has an infimum.  Say $\alpha=\inf(X)$.
 
-        All that remains is to show that $\alpha\in X$.  As a set of integers, it makes sense to try adding to $\alpha$ something less than 1 -- since this is the distance to an integer.  And then use the `OF sup characterization`.  
+        All that remains is to show that $\alpha\in X$.  As a set of integers, it makes sense to try adding to $\alpha$ something less than 1 -- since this is the distance between integers.  
+
+        And then use the `OF sup characterization`.
         """
     )
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        There is an element $a\in X$ such that $\alpha\le a < \alpha+\frac 1 2$.  Since $a$ is an integer then there is no integer in the interval $(a-1, a)$.
+        By the `OF sup characterization`, there is an element $a\in X$ such that $\alpha\le a < \alpha+\frac 1 2$.  Since $a$ is an integer then there is no integer in the interval $(a-1, a)$.
 
+        Therefore there is no element $b\in X$ such that $\alpha < b < a$.  Therefore $a$ is a lower-bound on $X$, and hence $a=\alpha$.  
 
+        $\Box$
         """
     )
     return
@@ -309,19 +313,9 @@ def _(mo):
         r"""
         Since such a choice exists, we may form the set $C = \{m'\in\Bbb N: a < m'(1/n) \}$.  
 
-        Since this is a set of natural numbers, it has a least element.  This is due to the `Well-ordering of the integers`, which says that every nonempty set of integers which is bounded below, has a least element.
+        Trivially, $0\in LB_C$.  By the `Well-ordering of integers`, $C$ has a least element.
 
         Let $m' = \min(C)$.
-
-        /// details | This step is the tricky step.
-
-        Because this is a fact about the integers, and one that is intuitively true, we will not prove it in this course.  It is one of those facts that I relegate to a course in "foundations", for any student who is interested in that.
-
-        It is probably unreasonable to expect a student, encountering this material for the first time, to know about or think of these steps on their own.
-
-        However, I hope that once I express these ideas, their correctness will be obvious.  In future exercises you will solve similar problems that also make use of the well-ordering of the integers, and thereby develop some facility with this theorem.
-
-        ///
         """
     )
     return
