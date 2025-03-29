@@ -427,8 +427,17 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    For each $x\in\Bbb R$ let $n\in\Bbb Z$ be the unique integer such that $x\in[n,n+1)$.  
+
+    We define this $n$ to be the **integer part of $x$**, denoted $\lfloor x\rfloor = n$.  We define $x-\lfloor x\rfloor$ to be the **decimal part of $x$**.
+
+    Let $m\in\Bbb Z$ be the unique integer such that $x\in (m,m+1]$.
+
+    We define $m+1$ to be the **least integer greater than or equal to $x$**.  
+    """),"success")
     return
 
 
