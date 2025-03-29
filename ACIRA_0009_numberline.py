@@ -46,9 +46,53 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""The first theorem which will be a tool for the other theorems, is the `Well-ordering of the integers` theorem.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Well-ordering of the integers`
+
+    ---
+
+    Let $X\subseteq \Bbb Z$ be a nonempty subset of integers.  Suppose that $\alpha\in\Bbb R$ is a lower bound of $X$.
+
+    Then $\min(X)$ exists.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(
         r"""
-        In this lesson we prove theorems which justify our intuitions about the geometry of the number line.  The first theorem which will be a tool for the other theorems, is the `Thousand miles` theorem. 
+        *Chatty proof*:  As a nonempty set of real numbers bounded below, it has an infimum.  Say $\alpha=\inf(X)$.
+
+        All that remains is to show that $\alpha\in X$.  As a set of integers, it makes sense to try adding to $\alpha$ something less than 1 -- since this is the distance to an integer.  And then use the `OF sup characterization`.  
+        """
+    )
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        There is an element $a\in X$ such that $\alpha\le a < \alpha+\frac 1 2$.  Since $a$ is an integer then there is no integer in the interval $(a-1, a)$.
+
+
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        The remaining theorems tend to justify our geometric intutions about the real number line.
 
         The name is a metaphor for the saying "A journey of a thousand miles starts with a single step".
 
@@ -192,7 +236,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        To prove this, let $a,b\in\Bbb R$ and $a<b$.  In particular, at least to get started, assume $0<a$.
+        *Chatty proof*:  To prove this, let $a,b\in\Bbb R$ and $a<b$.  In particular, at least to get started, assume $0<a$.
 
         Think of $(a,b)$ as a region in the number line, and we want to find a rational number in this region.
         """
@@ -377,8 +421,15 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof idea*: Using the `Well-ordering of the integers`, it is not hard to show that there is a least integer bigger than $x$.
+
+        We can call the least integer bigger than $x$ the number $n+1$.  It follows by the minimality of $n+1$ that $n\le x$.
+        """
+    )
     return
 
 
