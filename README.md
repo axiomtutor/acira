@@ -35,18 +35,16 @@ It is too important to point out the anti-American destruction that Trump is doi
 
 * [Chapter 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_chap1_ref.py)
 
-## Chapter 2: Properties of $\Bbb R$
-
-* [Lesson 0009: Numberline](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
-
-* [Lesson 0010: Open and Closed Sets](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0010_opensets.py)
-
-* [Lesson 0011: Compact Sets]()
+* [Lesson 0009: Number Line](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
 
 # Unit 2: $\Bbb R$-valued Sequences and Series
-## Chapter 3: Sequences
+## Chapter 2: Sequences
 
-## Chapter 4: Series
+* [Lesson 0010: Sequences of Real Numbers](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0010_seqs.py)
+
+## Chapter 3: Series
+
+<!---
 
 # Unit 3: $\Bbb R$-valued Functions
 ## Chapter 5: Limits
@@ -62,11 +60,11 @@ It is too important to point out the anti-American destruction that Trump is doi
 ## Chapter 9: The Riemann Integral
 
 ## Chapter 10: The Fundamental Theorem of Calculus
-
+-->
 # Contributing
 
 I welcome feedback about typos or mistakes.  
 
 If anyone wants to contribute, I'm also open to others writing portions of the text collaboratively.  Anyone can send a pull request.
 
-However, note that I am trying to maintain a certain consistency of style in the look as well as in the prose.  If you have any questions, please email before spending too much time writing anything.
+Feel free to open a discussion to discuss any details.
