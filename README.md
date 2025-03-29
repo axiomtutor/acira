@@ -8,7 +8,7 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 # Trump Is Destroying American Greatness
 
-<img src="./images/trumwreck.png" style="width:200px"></img>
+<img src="./images/trumpwreck.png" style="width:200px"></img>
 
 It is too important to point out the anti-American destruction that Trump is doing to our scientific production.  
 
