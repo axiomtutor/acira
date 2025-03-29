@@ -24,7 +24,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""# Chapter 1 Reference""")
+    mo.md(r"""# Unit 1 Reference""")
     return
 
 

@@ -12,8 +12,8 @@ It covers the axioms of the real numbers, properties and topology, sequences and
 
 It is too important to point out the anti-American destruction that Trump is doing to our scientific production.  
 
-# Unit 1: The Real Numbers
-## Chapter 1: The Axioms of $\Bbb R$
+# Unit 1: The Axioms of the Real Numbers
+## Chapter 1: The Algebraic Axioms
 
 * [Lesson 0000: Introduction](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0000_intro.py)
 
@@ -23,24 +23,28 @@ It is too important to point out the anti-American destruction that Trump is doi
 
 * [Lesson 0003: Rings and Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0003_ringfield.py)
 
+## Chapter 2: Order 
+
 * [Lesson 0004: Order](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0004_order.py) 
 
 * [Lesson 0005: Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0005_bounds.py)
 
 * [Lesson 0006: Function Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0006_boundfunc.py)
 
+## Chapter 3: Ordered Fields, Completeness, and Real Numbers
+
 * [Lesson 0007: Ordered Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0007_ordfield.py)
 
 * [Lesson 0008: Completeness](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0008_completeness.py)
 
-* [Chapter 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_chap1_ref.py)
-
 * [Lesson 0009: Number Line](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
 
-# Unit 2: $\Bbb R$-valued Sequences and Series
-## Chapter 2: Sequences
+* [Unit 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_unit1_ref.py)
 
-* [Lesson 0010: Sequences of Real Numbers](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0010_seqs.py)
+# Unit 2: $\Bbb R$-valued Sequences and Series
+## Chapter 4: Sequences
+
+* [Lesson 0010: Sequences and Convergence](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0010_seqs.py)
 
 ## Chapter 3: Series
 
