@@ -1113,7 +1113,13 @@ def _(mo):
 
         3. This is immediate from (1.) and the fact that, if $\alpha\in X$ then $-\alpha\in -X$.
 
-        4. From the results above, $\alpha= \inf(X) = \max(UB_X)$ if and only if $-\alpha = \min(-UB_{X}) =  \min(LB_{-X}) = \sup(-X)$.
+        4. From the results above, $\alpha= \inf(X) = \max(UB_X)$ if and only if
+
+        \begin{align*}
+        -\alpha &= \min(-UB_{X}) \\
+        &=  \min(LB_{-X}) \\
+        &= \sup(-X)
+        \end{align*}
         """
     )
     return
