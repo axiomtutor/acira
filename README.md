@@ -39,7 +39,7 @@ It is too important to point out the anti-American destruction that Trump is doi
 
 * [Lesson 0009: Numberline](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
 
-* [Lesson 0010: Open and Closed Sets]()
+* [Lesson 0010: Open and Closed Sets](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0010_opensets.py)
 
 * [Lesson 0011: Compact Sets]()
 
