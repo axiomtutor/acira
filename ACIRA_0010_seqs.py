@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.31"
+__generated_with = "0.12.0"
 app = marimo.App(width="medium")
 
 
@@ -116,7 +116,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Definition, Theorem, and some Proofs""")
+    mo.md(r"""## Sequence Definitions and Notation""")
     return
 
 
@@ -201,8 +201,8 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _():
-    ## Convergence of Sequences
+def _(mo):
+    mo.md(r"""## Convergence of Sequences""")
     return
 
 
@@ -243,6 +243,8 @@ def _(mo):
     We say that $L$ is the **limit of $(a_k)$** if, for every $\varepsilon\in\Bbb R^+$, the sequence is eventually within $\varepsilon$ of $L$.  In this case we write 
 
     $$ \lim_{n\to\infty} a_n = L $$
+
+    If the limit of $(a_k)_{k=m}$ exists, we say that $(a_k)_{k=m}$ **converges**.  
 
     """), "success")
     return
@@ -332,7 +334,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Limits by """)
+    mo.md(r"""## Limits by Snug Cells""")
     return
 
 
@@ -395,9 +397,9 @@ def _(mo):
 
     Let $(a_k)_{k=m}$ be a sequence of real numbers, and let $I_n$ be the snug cell of the tail $(a_k)_{k=n}$.  
 
-    Then $\lim_{n\to\infty} a_n$ exists if and only if $\bigcap_{n=m}^\infty I_n$ is a singleton set.
+    Then $(a_k)_{k=m}$ converges if and only if $\bigcap_{n=m}^\infty I_n$ is a singleton set.
 
-    Also, if $\lim_{n\to\infty} a_n = L$ then $\bigcap_{n=m}^\infty I_n = \{x\}$.
+    Also, $\lim_{n\to\infty} a_n = L$ if and only if $\bigcap_{n=m}^\infty I_n = \{ L \}$.
 
     """), "danger")
     return
@@ -407,11 +409,11 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        *Proof*:  Suppose that $\lim_{n\to\infty} a_n = L$.  We need to show that $\bigcap_{n=m}^\infty I_n = [L]$, and we start by showing that $L\in\bigcap_{n=m}^\infty I_n$.  
+        *Proof*:  Suppose that $\lim_{n\to\infty} a_n = L$.  We need to show that $\bigcap_{n=m}^\infty I_n = \{L\}$, and we start by showing that $L\in\bigcap_{n=m}^\infty I_n$.  
 
         Let $m\le n$, and we will show that $L\in I_n$.  Let $I_n = [\alpha,\beta]$ and we have, by definition that $\alpha=\inf((a_k)_{k=n})$.
 
-        Let us now focus on showing $\alpha\le L$.  
+        Let us now focus on showing $\alpha\le L$.
         """
     )
     return
@@ -425,7 +427,7 @@ def _(mo):
 
         Set $q = \max\{n,p\}$, then we must have that the $q$th tail both stays above $\alpha$, but also stays within $\varepsilon$ of $L$.
 
-        However, there are no points in the intersection $(L-\varepsilon,L+\varepsilon)\cap [\alpha,\infty) = \emptyset$.  
+        However, there are no points in the intersection $(L-\varepsilon,L+\varepsilon)\cap [\alpha,\infty) = \emptyset$.
         """
     )
     return
@@ -454,6 +456,18 @@ def _(mo):
         Let $\varepsilon = \frac{L-x}2$, and let the $p$th tail be within $\varepsilon$ of $L$.  Then $I_p=[\alpha,\beta]$ must be such that $L-\varepsilon \le \alpha \le \beta\le L+\varepsilon$.  
 
         But since $x\notin (L-\varepsilon,L+\varepsilon)$ then $x\notin I_n$ and therefore $x\notin \bigcap_{n=m}^\infty I_n$.
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        If $L < x$ the proof is nearly the same.  Therefore in general, if $x\ne L$ then $x\notin \bigcap_{I\in\mathcal G}I$.  
+
+        This shows that $\bigcap_{I\in\mathcal G}I\subseteq \{L\}$.  With inclusion proved in both directions, we have shown $\bigcap_{I\in\mathcal G}I = \{L\}$.
         """
     )
     return

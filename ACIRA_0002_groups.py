@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.12.0"
 app = marimo.App(width="medium")
 
 
@@ -17,7 +17,7 @@ def _(mo):
         # A Course in Real Analysis ... in Marimo!
         ## Unit 1: The Real Numbers
         ### Chapter 1: The Axioms of $\Bbb R$
-        
+
         by Axiom Tutor
         """
     )
@@ -105,13 +105,15 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The condition that the function, $+$, must be an operation, is sometimes called "closure".  So for instance, $\Bbb Z$ is closed under $+$.
+        The condition that the function, $+$, must be an operation, is sometimes called "closure".  So for instance, $\Bbb Z$ is closed under $+$, because the sum of two integers is an integer.  
+
+        This is what is encoded by saying $+:\Bbb Z\times \Bbb Z \to \Bbb Z$.
 
         For a non-example, consider the function of subtraction, $-$, defined on the natural numbers.
 
         $$ -: \Bbb N^2 \to \Bbb Z $$
 
-        This is not an operation, because the range, $\Bbb Z$, does not equal the domain component, $\Bbb N$.  
+        This is not an operation, because the range (or "codomain" if you prefer), $\Bbb Z$, does not equal the domain component, $\Bbb N$.  
 
         Put in the language of closure, we can equivalently say that $\Bbb N$ is not closed under $-$.
         """
@@ -123,11 +125,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        It should be easy to see that $\Bbb Q$ and $\Bbb R$ also form groups under the addition operation, for the same reasons. 
+        It should be easy to see that $\Bbb Q$ is also a group under addition, for the same reasons. 
 
-        (Even though we have not officially introduced $\Bbb R$ yet, we still know some of the properties that we expect it to have.)
-
-        Note, however, that $\Bbb N$ is not a group under $+$, because it lacks an identity element, which is $0$.
+        Note, however, that $\Bbb N$ is not a group under $+$, because it lacks an identity element, which is $0$.  In fact, even if we included the number $0$, the resulting set would not be a group because some elements (say 1) would lack an inverse.
         """
     )
     return
@@ -158,7 +158,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        However, although $\times$ is an associative operation with an identity element, $\Bbb Z$ with multiplication is still not a group.  This is because it lacks inverses.  For example, 2 has no inverse, since this would require an *integer* $x\in \Bbb Z$ such that 
+        Although $\times$ is an associative operation with an identity element, $\Bbb Z$ with multiplication is *not* a group.  This is because it lacks inverses.  
+
+        For example, 2 has no inverse, since this would require an *integer* $x\in \Bbb Z$ such that 
 
         $$ 2\cdot x = 1 $$
 
@@ -205,10 +207,54 @@ def _(mo):
         Just to show you that groups are not *just* about numbers, I'll include this geometric example.
 
         Let $T = \triangle ABC$ be an equilateral triangle, with vertices labeled counter-clockwise in the order $A,B,C$.
+        """
+    )
+    return
 
-        Consider the symmetry of rotating the triangle about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$.  Let us call this symmetry $R_{120^\circ}$.
 
-        We can also describe $r$ as the rotation of $T$ about its center by $120^\circ$.  You should convince yourself of this fact with some basic geometry calculations.
+@app.cell(hide_code=True)
+def _():
+    from manim.utils import ipython_magic
+    from manim import Scene, RegularPolygon, Create, Tex, UP, DOWN, LEFT, RIGHT
+
+
+    class Triangle(Scene):
+        def construct(self):
+            t = RegularPolygon(3)
+            self.play(Create(t))
+            self.wait()
+            a = Tex("A").next_to(t,UP)
+
+
+    ipython_magic.ManimMagic({}).manim(
+        """Triangle""",
+        None,
+        {
+            "Triangle": Triangle,
+            "config": {"media_embed": True},
+        },
+    )
+    return (
+        Create,
+        DOWN,
+        LEFT,
+        RIGHT,
+        RegularPolygon,
+        Scene,
+        Tex,
+        Triangle,
+        UP,
+        ipython_magic,
+    )
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        Consider the symmetry of rotating $T$ about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$.  Let us call this symmetry $R_{120^\circ}$.
+
+        We can also describe $r$ as the rotation of $T$ about its center by $120^\circ$, counter-clockwise.  You should convince yourself of this fact with some basic geometry calculations.
         """
     )
     return
@@ -218,7 +264,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        There is another symmetry which sends $A$ to $C$, $B$ to $A$, and $C$ to $B$.  This can be obtained either by a rotation about $T$'s center by $240^\circ$ or $-120^\circ$.  We will call this rotation $R_{240^\circ}$.
+        There is another symmetry which sends $A$ to $C$, $B$ to $A$, and $C$ to $B$.  This can be obtained either by a rotation about $T$'s center by $240^\circ$ or by $-120^\circ$.  We will call this rotation $R_{240^\circ}$.
 
         Finally, technically, we should include the "$0^\circ$ rotation".  This rotation leaves all the points fixed, and we denote it by $R_{0^\circ}$.
         """
@@ -236,7 +282,7 @@ def _(mo):
 
         Rather the objects of this group are *functions*.
 
-        For example, $R_{120^\circ}(A) = B$ and so on.  It is a mapping of points in the plane to other points.  And the function itself is an element of $G$.
+        For example, $R_{120^\circ}(A) = B$ and so on.  $R_{120^\circ}$ is a mapping of points in the plane to other points, and $R_{120^\circ}\in G$.
         """
     )
     return
@@ -246,9 +292,11 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        If the objects of this group are functions, then what is the operation?
+        If the objects of this group are functions, then what is the "operation" for the group structure?  That is to say, if we take some two elements $x,y\in G$, how will we "combine" them to form another element of $G$?
 
-        It will be ... *function composition*!  That is, the operation is $\circ : G^2\to G$.  
+        The operation is ... *function composition*!  That is, the operation on $G$ is $\circ : G^2\to G$.  This is defined by letting $x,y\in G$ and $V$ any vertex of $T$.  Then 
+
+        $$ (x\circ y)(V) = x(y(V)) $$
 
         Note that it is not trivial that this is an "operation".  In particular, how do you know that the composition of two elements from $G$ result in an element of $G$?
         """
@@ -260,9 +308,11 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let us explicitly check this one:  $R_{120^\circ}\circ R_{120^\circ}$.  Let us think about what this composition does to the vertex $A$.  The first $R_{120^\circ}$ sends it to $B$ and then the second one sends it to $C$.  
+        Let us explicitly check this one:  $R_{120^\circ}\circ R_{120^\circ}$.  Let us think about what this composition does to the vertex $A$.  
 
-        So $(R_{120^\circ}\circ R_{120^\circ})(A) = C$.
+        $$ (R_{120^\circ}\circ R_{120^\circ})(A) \ =\  R_{120^\circ}(R_{120^\circ}(A)) \ =\  R_{120^\circ}(B) \ = \ C $$
+
+        The first $R_{120^\circ}$ sends $A$ to $B$.  Then the second one sends $B$ to $C$.  
         """
     )
     return
@@ -289,7 +339,7 @@ def _(mo):
         r"""
         But this implies that $R_{120^\circ}\circ R_{120^\circ}$ has the same element-wise mapping as $R_{240^\circ}$.  
 
-        So therefore $R_{120^\circ}\circ R_{120^\circ}\in G$!  This is one step along the way of showing that $\circ$ is an operation on $G$.
+        So therefore $R_{120^\circ}\circ R_{120^\circ} = R_{240^\circ} \in G$!  This is one step along the way of showing that $\circ$ is an operation on $G$.
         """
     )
     return
@@ -315,13 +365,13 @@ def _(mo):
 def _(mo):
     mo.callout(
         mo.md(r"""
-    Let $G$ be a nonempty set, and $\ast:G\times G\to G$ an operation on $G$.  
+    Let $G$ be a nonempty set, and $\ast:G^2\to G$ an operation on $G$.  
 
     We say that an element $e\in G$ is an **identity element** if 
 
     $$ e\ast x = x\ast e = x, \quad \forall x\in G $$
 
-    If $x,y\in G$ then we say that $y$ is the **inverse of $x$** if 
+    If $x,y\in G$ and if $G$ has identity $e\in G$, then we say that $y$ is the **inverse of $x$** if 
 
     $$ x\ast y = e $$
 
@@ -350,11 +400,11 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        A quick comment about notation: Officially, the symbol for the group operation is often $\ast$.  If we're working with addition, multiplication, composition, or some other more concrete operation, then we'll use its symbol instead.
+        A quick comment about notation: Officially, the symbol for the group operation is often $\ast$.  If we're working with addition, multiplication, composition, or some other more concrete operation, then we'll use the symbol for that operation instead.
 
-        But we know that, when working with multiplication, we often just omit the symbol entirely.  For example, $ab$ is understood to mean $a\cdot b$.  
+        But we know that, when working with multiplication, we often just omit the symbol entirely.  For example, $ab$ is understood to mean $a\cdot b$ for numbers $a,b$.  
 
-        When working with an abstract group, we adopt the same convention.  Although officially we should write $a\ast b$, we will informally write $ab$ instead.
+        When working with an abstract group, we adopt the same convention.  Although officially, if $G$ is a group and $a,b\in G$, we should write $a\ast b$.  However, we will informally write $ab$ instead.  In a similar way, $a/b$ will be informal notation for $ab^{-1}$.  
         """
     )
     return
@@ -380,6 +430,12 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""In all that follows, let $(G,\ast)$ be a group.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""## Exercise 1""")
     return
 
@@ -390,13 +446,13 @@ def _(mo):
         r"""
         1. Show that $(\Bbb Q\smallsetminus \{0\},\times)$ is a group.
 
-        2. Let $G=\{a,b\}$ and set $\ast: G^2\to G$ defined by $a\ast a = a$ and $a\ast b= a$ and $b\ast a = b$ and $b\ast b = b$.  Decide whether $(G,\ast)$ is a group.  
+        2. Let $H=\{a,b\}$ and set $\star: H^2\to H$ defined by $a\star a = a$ and $a\star b= a$ and $b\star a = b$ and $b\star b = b$.  Decide whether $(H,\star)$ is a group.  
 
-        3. Let $X$ be any nonempty set, and define $G$ to be the set of all $f:X\to X$ such that $f$ is bijective.  Define the operation $\circ:G^2\to G$ to be composition of functions.
+        3. Let $X$ be any nonempty set, and define $H$ to be the set of all $f:X\to X$ such that $f$ is bijective.  Define the operation $\circ:H^2\to H$ to be composition of functions.
 
-               Show that $(G,\circ)$ is a group.
+               Show that $(H,\circ)$ is a group.
 
-        4. Let $G=\{a,b\}$ and find an operation $\ast:G^2\to G$ such that $(G,\ast)$ is a group.  If there is more than one such operation, find them all.  Repeat the exercise for $G=\{a,b,c\}$.
+        4. Let $H=\{a,b\}$ and find an operation $\star:H^2\to H$ such that $(H,\star)$ is a group.  If there is more than one such operation, find them all.  Repeat the exercise for $I=\{a,b,c\}$.
         """
     )
     return
@@ -412,7 +468,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Prove that, for any group, its identity is unqiue.  That is to say, let $e$ be the group identity and $x\in G$ an element with the identity property.  Prove that $e=x$.
+        Prove that, for any group, its identity is unqiue.  That is to say, let $x\in G$ have the identity property, and prove that $e=x$.
 
         Also prove that, if $x$ is a group element, then its inverse is unique.  That is to say, if $x^{-1}$ is its inverse and $y$ is an inverse of $x$, then $x^{-1} = y$.
         """
@@ -428,7 +484,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Show that, for any group elements, $(ab)^{-1} = b^{-1}a^{-1}$.""")
+    mo.md(r"""Show that for $a,b\in G$, we always have $(ab)^{-1} = b^{-1}a^{-1}$.""")
     return
 
 
@@ -488,8 +544,6 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r""" 
-    Let $(G,\ast)$ be a group.
-
     We say that the elements $a,b\in G$ **commute** if $a\ast b= b\ast a$.
 
     We say that $G$ is a **commutative group** if all elements $a,b\in G$ commute.  Equivalently, $G$ is commutative if $\ast$ is commutative.  

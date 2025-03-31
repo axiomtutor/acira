@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.12.0"
 app = marimo.App(width="medium")
 
 
@@ -17,7 +17,7 @@ def _(mo):
         # A Course in Real Analysis ... in Marimo!
         ## Unit 1: The Real Numbers
         ### Chapter 1: The Axioms of $\Bbb R$
-        
+
         by Axiom Tutor
         """
     )
@@ -44,7 +44,7 @@ def _(mo):
 
         This makes obvious sense.  If we're going to study real numbers, let's start from the beginning!
 
-        And yet that is not what these notebooks will do. 🙂
+        And yet that is not what these notebooks will do. 🙃
         """
     )
     return
@@ -56,7 +56,7 @@ def _(mo):
         r"""
         The project of constructing all objects from the axioms of set theory is called the "foundations project".  
 
-        It is true that real analysis must, to some degree, have one foot in this project.  After all, its fundamental object of study is the real number.  In order to guarantee that this even exists in our mathematical universe, it must be constructed from the axioms!
+        It is true that real analysis must, to some degree, have one foot in this project.  In order to guarantee that this even exists in our mathematical universe, it must be constructed from the axioms!
         """
     )
     return
@@ -66,9 +66,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        However, foundations as a field has its own set of interests.  They often do not overlap with the interests of real analysis.  
+        However, the field of mathematical foundations has its own set of interests.  They often do not overlap with the interests of real analysis.  
 
-        Since the construction of the real numbers takes quite a long time, and does not really serve the interests of real analysis, it is better for us to skip this topic entirely.
+        Since the construction of the real numbers takes quite a long time, and does not really serve the interests of real analysis, then it is better for us to skip this topic entirely.
         """
     )
     return
@@ -78,7 +78,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        For anyone interested in the foundations project, it would be better to include these ideas in a course on set theory, or some sort of course dedicated entirely to foundations.  (The interested student can also consort a textbook like, say, Jech's *Set Theory*.)
+        For anyone interested in the foundations project, it would be better to include these ideas in a course on set theory.  Possibly, it would be good to simply create a course which is entirely dedicated to foundations.  (The interested student can also consult a textbook like, say, Jech's *Set Theory*.)
 
         If I get enough requests for such a thing, I might consider making a Marimo course in foundations one day.  But at least for now, let's move efficiently to the things that are of interest to real analysis.
         """
@@ -144,6 +144,7 @@ def _(mo):
         """
     )
     return
+
 
 if __name__ == "__main__":
     app.run()
