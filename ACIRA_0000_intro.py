@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.28"
+__generated_with = "0.11.31"
 app = marimo.App(width="medium")
 
 
@@ -17,7 +17,7 @@ def _(mo):
         # A Course in Real Analysis ... in Marimo!
         ## Unit 1: The Real Numbers
         ### Chapter 1: The Axioms of $\Bbb R$
-        
+
         by Axiom Tutor
         """
     )
@@ -210,10 +210,6 @@ def _(mo):
         3. If my total lecture time is more than 64 hours, I will try to painfully cut away material until it fits the constraint.
 
         Therefore these lessons should really approximate what can fit into a single semester of a real analysis course.  
-
-        I hope that this self-constraint will also make the lessons relatively lean and efficient, since I won't give myself permission to talk about things I think are interesting or optional.
-
-        Therefore, if something is in here, it's probably important.
         """
     )
     return

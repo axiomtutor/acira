@@ -844,6 +844,44 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.callout(mo.md(r"""
+    For any $c,d\in X$, define the "closed interval from $c$ to $d$" by 
+
+    $$ [c,d] = \{e\in X: c\preceq d \preceq d\} $$
+
+    Suppose that both $\inf(A)=\alpha$ and $\sup(A)=\beta$ exist.  Let $\mathcal G$ be the set of all closed intervals $[c,d]$ which contain $A$.  That is to say,
+
+    $$\mathcal G = \{[c,d]:c,d\in X, \text{ and } A\subseteq [c,d] \}$$
+
+    Then $[\alpha,\beta] = \bigcap_{I\in\mathcal G} I$.   
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Since $\alpha\in LB_A$ and $\beta\in UB_A$ then $[\alpha,\beta]\in \mathcal G$.
+
+        Therefore $\bigcap_{I\in\mathcal G}I \subseteq [\alpha,\beta]$.  
+
+        Now let $x\in [\alpha,\beta]$ and let $I=[c,d]\in\mathcal G$.  Then $c\in LB_A$ and therefore $c\preceq\alpha\preceq x$.  Also $d\in UB_A$ so $x\preceq \beta\preceq d$.  
+
+        Hence $x\in[c,d]$, and in turn this shows $[\alpha,\beta]\subseteq \bigcap_{I\in\mathcal G}I$.
+
+        Since each direction of inclusion holds, we must have 
+
+        $$ [\alpha,\beta]=\bigcap_{I\in\mathcal G}I $$
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r"""# 0006 Function Bounds""")
     return
 
