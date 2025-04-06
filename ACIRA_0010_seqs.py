@@ -145,11 +145,11 @@ def _(mo):
 
     For a sequence $(a_k)_{k=m}$, starting at $m$, and for any $n\ge m$, we define the **$n$th tail of $(a_k)$** to be $(a_k)$ restricted to $\Bbb N^{\ge n}$.  We write this as $(a_k)_{k=n}$.
 
-    Suppose $n\in\Bbb N$ and $(i_k)_{k=m}$ is an increasing sequence of $\Bbb N^{\ge n}$.  Then if $(a_k)_{k=m}$ is a sequence of $X$ starting at $n$, the composition 
+    Suppose $n\in\Bbb N$ and $(i_k)_{k=n}$ is an increasing sequence of $\Bbb N^{\ge m}$.  Then if $(a_k)_{k=m}$ is a sequence of $X$ starting at $m$, the composition 
 
-    $$ a\circ i : \Bbb N^{\ge m} \to X $$
+    $$ a\circ i : \Bbb N^{\ge n} \to X $$
 
-    is a **subsequence of $(a_k)$**.  It is written as $(a_{i_k})_{\ge m}$.
+    is a **subsequence of $(a_k)$**.  It is written as $(a_{i_k})_{k=n}$.
 
 
 
@@ -163,7 +163,7 @@ def _(mo):
         r"""
         Consider the intuitively presented sequence $1^2, 2^2, 3^2, ...$ which is the same as $1, 4, 9, ...$.  
 
-        This is given formally as $(a_k)_{k=1} = k^2$.  
+        This is given formally as the sequence $(a_k)_{k=1}$ with formula $a_k = k^2$.  
 
         To give a demonstration of a random image, the image of $10$ is $a_{10} = 10^2 = 100$.
         """
@@ -181,9 +181,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        $(a_k)$ is an increasing sequence.  
-
-        But we still cannot use it to form a subsequence of $(b_k)$.  The reason is that $(b_k)$ starts at 5, but $(a_k)$ is a function of $\Bbb N^{\ge 1}$.  
+        $(a_k)$ is an increasing sequence.  But we still cannot use it to form a subsequence of $(b_k)$.  The reason is that $(b_k)$ starts at 5, but $(a_k)$ is a function of $\Bbb N^{\ge 1}$.  
 
         However, we can take the 3rd tail, $(a_k)_{k=3}$.  Then this has codomain $\Bbb N^{\ge 9}$, and we can therefore use this to form a subsequence of $(b_k)$.  
 
@@ -203,18 +201,6 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## Convergence of Sequences""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        The main thing that we are interested in for any sequence, is its convergence to some particular value.  
-
-        As we noted previously, this helps us to discuss the concept of the derivative and integral, among other things.
-        """
-    )
     return
 
 

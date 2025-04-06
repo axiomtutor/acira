@@ -213,42 +213,6 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _():
-    from manim.utils import ipython_magic
-    from manim import Scene, RegularPolygon, Create, Tex, UP, DOWN, LEFT, RIGHT
-
-
-    class Triangle(Scene):
-        def construct(self):
-            t = RegularPolygon(3)
-            self.play(Create(t))
-            self.wait()
-            a = Tex("A").next_to(t,UP)
-
-
-    ipython_magic.ManimMagic({}).manim(
-        """Triangle""",
-        None,
-        {
-            "Triangle": Triangle,
-            "config": {"media_embed": True},
-        },
-    )
-    return (
-        Create,
-        DOWN,
-        LEFT,
-        RIGHT,
-        RegularPolygon,
-        Scene,
-        Tex,
-        Triangle,
-        UP,
-        ipython_magic,
-    )
-
-
-@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
@@ -312,7 +276,7 @@ def _(mo):
 
         $$ (R_{120^\circ}\circ R_{120^\circ})(A) \ =\  R_{120^\circ}(R_{120^\circ}(A)) \ =\  R_{120^\circ}(B) \ = \ C $$
 
-        The first $R_{120^\circ}$ sends $A$ to $B$.  Then the second one sends $B$ to $C$.  
+        The first $R_{120^\circ}$ sends $A$ to $B$.  Then the second one sends $B$ to $C$.
         """
     )
     return
@@ -404,7 +368,7 @@ def _(mo):
 
         But we know that, when working with multiplication, we often just omit the symbol entirely.  For example, $ab$ is understood to mean $a\cdot b$ for numbers $a,b$.  
 
-        When working with an abstract group, we adopt the same convention.  Although officially, if $G$ is a group and $a,b\in G$, we should write $a\ast b$.  However, we will informally write $ab$ instead.  In a similar way, $a/b$ will be informal notation for $ab^{-1}$.  
+        When working with an abstract group, we adopt the same convention.  Although officially, if $G$ is a group and $a,b\in G$, we should write $a\ast b$.  However, we will informally write $ab$ instead.  In a similar way, $a/b$ will be informal notation for $ab^{-1}$.
         """
     )
     return
@@ -954,6 +918,78 @@ def _(mo):
         $\Box$
         """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Don't Look Down""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""What's below here is just the backend of the notebook and you don't need to read any of it unless you just want to.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _():
+    from manim.utils import ipython_magic
+    from manim import (
+        Scene,
+        RegularPolygon,
+        Create,
+        Write,
+        Tex,
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
+    )
+
+
+    class Triangle(Scene):
+        def construct(self):
+            t = RegularPolygon(3)
+            self.play(Create(t))
+            self.wait()
+            a = Tex("A").next_to(t, UP)
+            self.play(Write(a))
+            b = Tex("B").next_to(t, 2 * LEFT + DOWN)
+            self.play(Write(b))
+            c = Tex("C").next_to(t, 2 * RIGHT + DOWN)
+            self.play(Write(c))
+
+            self.wait(5)
+
+
+    label_triangle = ipython_magic.ManimMagic({}).manim(
+        """Triangle""",
+        None,
+        {
+            "Triangle": Triangle,
+            "config": {"media_embed": True},
+        },
+    )
+    return (
+        Create,
+        DOWN,
+        LEFT,
+        RIGHT,
+        RegularPolygon,
+        Scene,
+        Tex,
+        Triangle,
+        UP,
+        Write,
+        ipython_magic,
+        label_triangle,
+    )
+
+
+@app.cell
+def _():
     return
 
 

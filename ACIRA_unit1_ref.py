@@ -1,10 +1,10 @@
 import marimo
 
-__generated_with = "0.11.31"
+__generated_with = "0.12.2"
 app = marimo.App(width="medium")
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
     import marimo as mo
     return (mo,)
@@ -1113,7 +1113,155 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""In all that follows, assume that $(F,+,\times,\preceq)$ is an ordered field, and $X\subseteq F$ a nonempty subset.""")
+    mo.md(r"""In all that follows, assume that $(F,+,\times,\preceq)$ is an ordered field, and $X, Y\subseteq F$ two nonempty subsets. Let $a,b\in F$ and assume $0\preceq b$.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    We define the notation
+
+    \begin{align*}
+      a+X &= \{a+r: r\in X\} \\
+      aX &= \{ar: r\in X\} \\
+      X+Y &= \{r+s: r\in X,s\in Y\} \\
+      XY &= \{rs:r\in X,s\in Y\}
+    \end{align*}
+
+    Also $-X = (-1)X$.
+    """), "success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""  
+    `Algebra of sups`
+
+    ---
+
+    If $\sup(X),\sup(Y)$ each exist, then each of the following suprema exist and satisfy the equations below.
+
+    \begin{align*}
+      \sup(a+X) &= a+\sup(X) \\
+      \sup(bX) &= b\sup(X) \\
+      \sup(X+Y) &= \sup(X) + \sup(Y)
+    \end{align*}
+
+    Also, if $X=X^{\succeq 0}, Y=Y^{\succeq 0}$ then 
+
+    $$ \sup(XY) = \sup(X)\sup(Y) $$
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _one = mo.callout(mo.md(r"""
+    Let $a+r\in a+X$, then $r\preceq \sup(X)$ and therefore $a+r\preceq a+\sup(X)$.  This shows $a+\sup(X)\in UB_{a+X}$.
+
+    Next let $\beta\in UB_{a+X}$ and $a+r\in a+X$.  Then $a+r\preceq \beta$ and therefore $r\preceq \beta-a$, which shows $\beta-a\in UB_X$.
+
+    Therefore $\sup(X)\preceq \beta - a$ and then $a+\sup(X)\preceq \beta$.  Therefore $a+\sup(X) = \min(UB_{a+X}) = \sup(a+X)$.
+
+    """))
+
+    mo.md(
+        r"""
+        *Proof*:  $\sup(a+X)=a+\sup(X)$.
+        """ + f"{_one}"
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _two = mo.callout(mo.md(r"""
+    Note that if $b=0$ then $bX = \{0\}$ and therefore $\sup(bX) = 0$.  Also $b\sup(X) = 0$, so the equation holds.
+
+    Therefore assume for the rest of the proof that $b\ne 0$.
+
+    Let $br\in rX$ so that $r\preceq \sup(X)$.  Since $0\preceq b$ we have $br\preceq b\sup(X)$, which shows $b\sup(X)\in UB_{bX}$.
+
+    Let $\beta\in UB_{bX}$ and $br\in bX$.  Then $br\preceq \beta$ so $r\preceq \beta/b$ which shows $\beta/b\in UB_{X}$.
+
+    Therefore $\sup(X)\preceq \beta/b$ and then $b\sup(X)\preceq \beta$, which shows $b\sup(X) = \sup(bX)$.  
+    """))
+
+    mo.md(r"$\sup(bX) = b\sup(X)$." + f"{_two}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _three = mo.callout(mo.md(r"""
+    Let $r\in X,s\in Y$ then $r\preceq\sup(X),s\preceq\sup(Y)$ therefore $r+s\preceq\sup(X)+\sup(Y)$.  This shows $\sup(X)+\sup(Y)\in UB_{X+Y}$.
+
+    Let $\beta\in \sup(X+Y)$ and $r\in X,s\in Y$.  Then $r+s\preceq \beta$ and therefore $r\preceq\beta-s$ which shows $\beta-s\in UB_{X}$.  Then $\sup(X)\preceq \beta-s$.
+
+    Therefore $s\preceq\beta-\sup(X)$ which shows $\beta-\sup(X)\in UB_Y$ and therefore $\sup(Y)\preceq \beta-\sup(X)$.  
+
+    Therefore $\sup(X)+\sup(Y)\preceq \beta$.  This shows $\sup(X)+\sup(Y)=\sup(X+Y)$.
+
+    """))
+
+    mo.md(r"$\sup(X+Y)=\sup(X)+\sup(Y)$." + f"{_three}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    _four = mo.callout(mo.md(r"""
+    If one of $X$ or $Y$ is $\{0\}$ then $XY = \{0\}$ and so $\sup(XY)=0$.  Also $\sup(X)\sup(Y)=0$, so the equation holds.
+
+    Therefore, for the rest of the proof, assume that both $X$ and $Y$ contain at least one positive number, and therefore $0\prec \sup(X),\sup(Y)$.
+
+    Let $r\in X,s\in Y$ so that $r\preceq \sup(X), s\preceq \sup(Y)$ and therefore $rs\preceq\sup(X)\sup(Y)$.  This shows $\sup(X)+\sup(Y)\in UB_{XY}$.  
+
+    Now let $\beta\in UB_{XY}$ and $r\in X^+,s\in Y^+$.  Then $rs\preceq \beta$ and therefore $r\preceq\beta/s$.  This shows $\beta/s\in UB_{X}$.
+
+    Therefore $\sup(X)\preceq \beta/s$ and then $s\preceq \beta/\sup(X)$, which shows $\beta/\sup(X)\in UB_Y$.
+
+    Then $\sup(Y)\preceq \beta/\sup(X)$ and therefore $\sup(X)\sup(Y)\preceq \beta$.  This shows $\sup(XY)=\sup(X)\sup(Y)$.
+    """))
+
+    mo.md(r"If $X=X^{\succeq 0}, Y=Y^{\succeq 0}$ then $\sup(XY) = \sup(X)\sup(Y)$." + f"{_four}" +r"""
+    $\Box$
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `OF Function Sups`
+
+    ---
+
+    Let $A$ be any nonempty set and $f,g:A\to X$.  Assume that $\sup(f),\sup(g),$ and $\sup(f+g)$ all exist.  
+
+    Then
+
+    $$ \sup(f+g)\preceq \sup(f)+\sup(g) $$
+
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Let $b\in A$, and therefore $f(b)\preceq \sup(f)$ and $g(b)\preceq \sup(g)$.  
+
+        Then $f(b)+g(b)\preceq\sup(f)+\sup(g)$, which demonstrates $\sup(f)+\sup(g)\in UB_{f+g}$.
+
+        Therefore $\sup(f+g)\preceq \sup(f)+\sup(g)$.
+
+        $\Box$
+        """
+    )
     return
 
 
@@ -1505,8 +1653,15 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Inf sup duality`
+
+    Each theorem above regarding the supremum has a correlate regarding the infimum.
+
+    The details of the theorem statement and proof are omitted for brevity.
+    """), "danger")
     return
 
 
