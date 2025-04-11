@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.12.2"
+__generated_with = "0.12.8"
 app = marimo.App(width="medium")
 
 
@@ -260,6 +260,81 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""# Lesson 0011: Monotonicity and Subsequences""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    For any function $f:\Bbb R\to\Bbb R$.  We say that $f$ is a **monotonically increasing function** if 
+
+    $$ \forall x,y\in\Bbb R, \quad x < y \Rightarrow f(x)\le f(y) $$
+
+    We say that $f$ is **strictly increasing** if 
+
+    $$ \forall x,y\in\Bbb R,\quad x<y \Rightarrow f(x) < f(y) $$
+
+    Similarly we define $f$ to be **monotonically decreasing** if $f(x) \ge f(y)$, and we define $f$ to be **strictly decreasing** if $f(x)>f(y)$, for all $x<y$.  
+
+    We say that $f$ is **monotonic** if it is either monotonically increasing or decreasing.
+
+    Because sequences are functions, the above also defines **monotonically decreasing / increasing, strictly decreasing / increasing sequences**.  
+    """), "success")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""In all that follows, let $(a_k)_{k=m}$ be a sequence of real numbers.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Bounded monotonic limits`
+
+    ---
+
+    Suppose that $(a_k)$ is bounded below and monotonically decreasing.  Then $\lim_{k\to\infty}a_k$ exists and equals $\inf(a_k)_{k=m}$. 
+
+    Correspondingly if $(a_k)$ is bounded above and monotonically increasing then $\lim_{k\to\infty}a_k = \sup(a_k)_{k=m}$.  
+
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: Since $(a_k)$ is bounded below, $\alpha=\inf(a_k)_{k=m}$ exists.
+
+        Let $\varepsilon\in \Bbb R^+$.  By the equivalent characterization of the infimum, there is a point $a_p$ in the sequence such that 
+
+        $$ \alpha \le a_p < \alpha+\varepsilon $$
+
+        But moreover, since $(a_k)$ is decreasing, then for every $p\le q$ we also have $\alpha\le a_q\le \alpha+\varepsilon$.
+
+        This shows that the tail $(a_k)_{k=p}$ is within $\varepsilon$ of $\alpha$, and therefore $\lim_{k\to\infty}a_k = \alpha$.
+
+        The proof for an increasing sequence bounded above is likewise.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Lesson 0012: Basic Limit Theorems""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.callout(mo.md(r"""
     `Algebra of limits`
 
@@ -284,11 +359,7 @@ def _(mo):
 @app.cell
 def _(mo):
     _p1 = mo.callout(mo.md(r"""
-    1. Let $N = \max\{m,n\}$ and $N\le p$.  
-
-    Suppose for contradiction that $A+B < \inf(a_k+b_k)_{k=p}$.
-
-    Then there is some $p\le q$ such that $
+    1. 
     """))
 
     mo.md(f"""*Proof*:  
