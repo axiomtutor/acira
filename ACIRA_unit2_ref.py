@@ -267,26 +267,100 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
-    For any function $f:\Bbb R\to\Bbb R$.  We say that $f$ is a **monotonically increasing function** if 
+    Let $(X,\preceq_X), (Y,\preceq_Y)$ be any two posets, and $f:X\to Y$ a function.  We say that $f$ is a **monotonically increasing function** if 
 
-    $$ \forall x,y\in\Bbb R, \quad x < y \Rightarrow f(x)\le f(y) $$
+    $$ \forall x,y\in\Bbb X, \quad x \preceq_X y \Rightarrow f(x)\preceq_Y f(y) $$
 
     We say that $f$ is **strictly increasing** if 
 
-    $$ \forall x,y\in\Bbb R,\quad x<y \Rightarrow f(x) < f(y) $$
+    $$ \forall x,y\in\Bbb X,\quad x\prec_X y \Rightarrow f(x) \prec_Y f(y) $$
 
-    Similarly we define $f$ to be **monotonically decreasing** if $f(x) \ge f(y)$, and we define $f$ to be **strictly decreasing** if $f(x)>f(y)$, for all $x<y$.  
+    Similarly we define $f$ to be **monotonically decreasing** if $f(x) \succeq_Y f(y)$, and we define $f$ to be **strictly decreasing** if $f(x)\succ_Y f(y)$, for all $x\prec_X y$.  
 
     We say that $f$ is **monotonic** if it is either monotonically increasing or decreasing.
 
-    Because sequences are functions, the above also defines **monotonically decreasing / increasing, strictly decreasing / increasing sequences**.  
+    Sequences are functions defined on a subset of $\Bbb R$ with values in $\Bbb R$.  Therefore, the above also defines **monotonically decreasing / increasing sequences**, and **strictly decreasing / increasing sequences**.  
+
+    Let $(a_k)_{k=m}$ be a sequence of real numbers, and let the snug cell of the tail $(a_k)_{k=p}$ be the interval $[\alpha_p,\beta_p]$.  Then we define the **limit inferior of $(a_k)$** to be $\lim_{k\to\infty}\alpha_k\in\Bbb R^*$.  To denote this we write 
+
+    $$ \lim_{k\to\infty} \alpha_k = \liminf_{k\to\infty} a_k $$
+
+    We define the **limit superior of $(a_k)$** to be $\lim_{k\to\infty} \beta_k\in\Bbb R^*$ and denote it
+
+    $$\lim_{k\to\infty} \beta_k = \limsup_{k\to\infty} a_k $$
     """), "success")
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""In all that follows, let $(a_k)_{k=m}$ be a sequence of real numbers.""")
+    mo.md(r"""In all that follows, let $(a_k)_{k=m}$ be a sequence of real numbers.  Let the snug cell of $(a_k)_{k=p}$ be $[\alpha_p,\beta_p]$.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Sequence monotonicity equivalence`
+
+    ---
+
+    $(a_k)$ is monotonically decreasing if and only if $a_{p} \ge a_{p+1}$ for every $k\le p$.  
+
+    A similar fact gives an equivalent for $(a_k)$ being strictly decreasing, or monotonically increasing, or strictly increasing.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Suppose $(a_k)$ is monotonically decreasing and $m\le p$.  Then since $p\le p+1$, it follows immediately that $a_p\ge a_{p+1}$.
+
+        Now suppose that $a_p\ge a_{p+1}$ for every $m\le p$.  Let $p\le q$.  Then since 
+
+        $$ p\le p+1\le p+2 \le \cdots\le q$$
+
+        then
+
+        $$ a_p \ge a_{p+1} \ge \cdots \ge a_q $$
+
+        So $a_p\ge a_q$ and therefore $(a_k)$ is monotonically decreasing.
+
+        $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Snug ends monotonic`
+
+    ---
+
+    Consider the sequence of left end-points of the snug cells, $(\alpha_k)_{k=m}$.  This is a monotonically increasing sequence.
+
+    Also $(\beta_k)_{k=m}$ is a monotonically decreasing sequence.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*: If $m\le p\le q$ then $\text{Im}(a_k)_{k=p}\supseteq \text{Im}(a_k)_{k=q}$.  Therefore by the `Subset sup` theorem, 
+
+        $$\inf(a_k)_{k=p}=\alpha_p \le \inf(a_k)_{k=q} = \alpha_q$$
+
+        Likewise for the rest of the theorem.
+
+        $\Box$
+        """
+    )
     return
 
 
@@ -322,6 +396,34 @@ def _(mo):
         The proof for an increasing sequence bounded above is likewise.
 
         $\Box$
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.callout(mo.md(r"""
+    `Limit equal to limsup`
+
+    ---
+
+    $(a_k)$ converges if and only if $\lim_{k\to\infty}\alpha_k = \lim_{k\to\infty}\beta_k$.  In this case, $\lim_{k\to\infty} a_k = \lim_{k\to\infty}\alpha_k$.
+    """), "danger")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        *Proof*:  Suppose that $(a_k)$ converges and $\lim_{k\to\infty}a_k = L$.  
+
+        $(\alpha_k)$ is a monotonically increasing sequence, by the `Snug ends monotonic` theorem.
+
+        Also $(\alpha_k)$ is bounded above by $L$.  This follows from the fact that $\bigcap_{k=m}^\infty [\alpha_k,\beta_k] = \{L\}$, by the `Limit by snug cell` theorem.
+
+        Therefore $\lim_{k\to\infty}\alpha_k$ exists by the `Bounded monotonic limits` theorem.  Moreover $\lim_{k\to\infty}\alpha_k\le L$.  
         """
     )
     return
