@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Math Notes</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        line-height: 1.6;
+      }
+      .box {
+        background-color: #eef6ff;
+        border-left: 4px solid #1e90ff;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      a {
+        color: #1e90ff;
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <h1 id="intro">Introduction</h1>
+    <p>This is inline math: $a^2 + b^2 = c^2$</p>
+
+    <p>This is a block equation:</p>
+    $$ \int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi} $$
+
+    <div class="box">
+      <strong>Theorem:</strong> Every bounded sequence has a convergent
+      subsequence.
+    </div>
+
+    <p><a href="#next">Go to next section</a></p>
+
+    <h2 id="next">Next Section</h2>
+    <p>Back to <a href="#intro">Introduction</a></p>
+  </body>
+</html>
