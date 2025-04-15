@@ -96,7 +96,7 @@
     </div>
 
     <div class="thm" id="assocOpUniqIdNInv">
-      Theorem: <tt>Assoc. op. Uniq. Id. & Inv.</tt> <br>
+      Theorem: <tt>Assoc. Op. Uniq. Id. & Inv.</tt> <br>
 
       The identity and inverse elements of an associative operation are unique.
     </div>
@@ -105,5 +105,25 @@
     <i>Statement</i>: Let $X$ be a nonempty set and $\ast: X^2\to X$ be an associative operation on $X$.  Assume that $e\in X$ is an identity element for $\ast$.  Let $a\in X$ have an inverse element $a^{-1}\in X$.<br>
 
     Then $e$ is the unique element with the identity property.  Also $a^{-1}$ is the unique element with the property of the inverse of $a$.  
+
+    <i>Proof</i>: Let $y\in X$ have the property of the identity.  Then 
+
+    $$ ey = e = y $$ 
+
+    Now let $b\in X$ be an inverse of $a$.  Then 
+
+    $$ a^{-1} = a^{-1}e = a^{-1}ab = eb = b $$
+
+    $\Box$
+
+    <div class="thm">
+      Theorem: <tt>Group Uniq. Id. & Inv.</tt> <br>
+
+      In a group, the identity and inverses are unique.
+    </div>
+
+    <i>Statement</i>: Let $(G,\ast)$ be a group with identity $e$.  Then $e$ is the unique identity element.  Also, for each $x\in G$, the inverse $x^{-1}$ is unique.  <br>
+
+    <i>Proof</i>: Because the operation of any group is associative, therefore these elements are unique by the <tt>Assoc. Op. Uniq. Id. & Inv.</tt> theorem.
   </body>
 </html>
