@@ -14,7 +14,7 @@ It is too important to point out the anti-American destruction that Trump is doi
 
 # Reference Page
 
-You can find the reference page at [ACIRA Reference Page](https://www.axiomtutor.github.io/acira).
+You can find the reference page at [ACIRA Reference Page](https://axiomtutor.github.io/acira/).
 
 # Unit 1: The Axioms of the Real Numbers
 ## Chapter 1: The Algebraic Axioms
