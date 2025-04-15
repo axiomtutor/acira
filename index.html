@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Math Notes</title>
+    <title>ACIRA Reference Page</title>
     <style>
       body {
         font-family: sans-serif;
@@ -45,6 +45,10 @@
     Welcome to the reference page of <i>A Course in Real Analysis</i>.  This page is intended to hold only a dense collection of facts with no explanation -- i.e. this page is not intended for teaching or learning, but only for <i>reference</i>. <br>
 
     The pedagogical portion of the course is hosted at this GitHub repository:  <a href="https://www.github.com/axiomtutor/acira">A Course in Real Analysis ... in Marimo!</a>
+
+    <h1 id="toc">Table of Contents  </h1>
+    <a href="#unit1">Unit 1: Real Number Axioms</a>
+
     <h1 id="unit1">Unit 1: Real Number Axioms</h1>
     <h2 id="lesson0002">0002 Groups</h2>
 
@@ -52,11 +56,14 @@
       Let $X$ be a nonmepty set and $\ast:X^2\to X$ an operation on $X$. <br>
       
       If
-      $e\in X$ is such that $$ \forall x \in X, \quad x\ast e = e\ast x = x $$
+      $e\in X$ is such that 
+      $$ \forall x \in X, \quad x\ast e = e\ast x = x $$
       then we say that $e$ is an <b>identity for $\ast$</b>. <br>
       
       If $x\in X$ and
-      there exists an element $y\in X$ such that $$ xy=yx=e $$ then we say that
+      there exists an element $y\in X$ such that 
+      $$ x\ast y=y\ast x=e $$ 
+      then we say that
       $y$ is the <b>inverse of $x$</b>. <br>
       
       Typically we denote the identity of an
@@ -72,6 +79,16 @@
       identity for $\ast$.<br>
 
       3. Each $x\in G$ has an inverse element.
+
+      We abbreviate $x\ast y$ as $xy$ and we abbreviate $x y^{-1}$ as $x/y$.
+
+      For any $n\in\Bbb N$ we abbreviate 
+      
+      <ul>
+        <li>$x^n = \overbrace{x\ast x\ast \cdots \ast x}^n$</li>
+        <li>$x^0=e$</li>
+        <li>$x^{-n} = (x^{-1})^n$</li>
+      </ul>
     </div>
 
     <!--
