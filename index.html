@@ -139,7 +139,7 @@
     </details>
 
     <div class="thm">
-      Theorem: <tt>Group inv. inv.</tt> <br>
+      Theorem: <tt>Group Inv. Inv.</tt> <br>
 
       $(x^{-1})^{-1} = x$
     </div>
@@ -152,5 +152,48 @@
 
       $\Box$
     </details>
+
+    <div class="thm">
+      Theorem: <tt>Group Uniq. Sol.</tt> <br>
+
+      Group equations have unique solutions.
+    </div>
+
+    <details><summary>Statement and proof.</summary>
+      <i>Statement</i>: Let $a,b\in G$ such that 
+      $$ ax = b $$
+
+      Then this uniquely determines the element $x$.  <br>
+      
+      Likewise $xa = b$ uniquely determines $x$.  <br><br>
+
+      <i>Proof</i>: From $ax=b$ we obtain 
+      $$ x = a^{-1}b $$ 
+      Because inverses and products are uniquely determined, then this value is unique. <br>
+
+      The case for $xa = b$ is similar. <br><br>
+      $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Group Prod. Inv.</tt> <br>
+
+      The inverse of a product is the product of inverses, in reverse order.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+      <i>Statement</i>: Let $a,b\in G$.  Then 
+      $$ (ab)^{-1} = b^{-1}a^{-1} $$
+      <i>Proof</i>: By associativity of the operation,
+      $$ (ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = aa^{-1} = e $$
+
+      This shows, by the uniqueness of inverses, that $b^{-1}a^{-1}$ is the inverse of $ab$.  
+
+      $$ b^{-1}a^{-1} = (ab)^{-1} $$
+
+      $\Box$
+    </details>
+
   </body>
 </html>
