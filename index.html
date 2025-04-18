@@ -195,5 +195,34 @@
       $\Box$
     </details>
 
+    <div class="thm">
+      Theorem: <tt>Group Exp. Laws</tt> <br>
+      Groups obey the familiar exponent laws.
+    </div>
+    <details>
+      <summary>Statement and proof.</summary>
+      <i>Statement</i>: Let $m,n\in\Bbb Z$.  Then 
+      $$ x^mx^n = x^{m+n} $$ 
+      and 
+      $$ (x^m)^n = x^{mn} $$
+
+      <i>Proof</i>:  Without loss of generality assume $m\le n$.
+      <details><summary>Case 1: $m$ or $n$ is 0.</summary>
+      Suppose, without loss of generality, that $m=0$.  Then $x^m = e$ and therefore 
+      $$ x^m x^n = x^n = x^{m+n} $$
+      </details>
+      <details>
+        <summary>Case 2: $0 < m$.</summary>
+        Suppose $0 < m$.  Then by associativity,
+
+        $$
+        \begin{alinged}
+          x^{m}x^n &= \overbrace{x x \cdots x}^m \overbrace{ x x \cdots x}^n \\
+          &= \overbrace{x x \cdots x}^{m+n} \\
+          &= x^{m+n}
+        \end{aligned}$$
+      </details>
+    </details>
+
   </body>
 </html>
