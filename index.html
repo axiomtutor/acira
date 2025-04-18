@@ -289,7 +289,7 @@
         \end{aligned} $$
       </details>
 
-      Therefore in all cases $(x^m)^n = x^{mn}$.
+      Therefore in all cases $(x^m)^n = x^{mn}$. <br>
 
       $\Box$
     </details>
@@ -320,9 +320,52 @@
       If moreover $(R\smallsetminus \{0\}, \times)$ forms a commutative group, then we say that $(R,+,\times)$ is a <b>field</b>.  
     </div>
 
-    <div class="thm">
+    For the rest of this section, assume that $(R,+,\times)$ is a ring.
 
+    <div class="thm">
+      Theorem: <tt>Ring uniq. ids. & invs.</tt>
+
+      The identities and inverses in a ring, if they exist, are unique.
     </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $0$ is the unique additive identity of $R$, and $1$ is the unique multiplicative identity.  Every $x\in R$ has a unique additive inverse, $-a$.  If $x$ has a multiplicative inverse, then it is uniquely $x^{-1}$. <br></br>
+
+      <i>Proof</i>: Since $+$ and $\times$ are associative, these results all follow from the definition of a ring and the <a href="#assocOpUniqIdNInv">Assoc. Op. Uniq. Id. & Inv.</a> theorem
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ring zero annihilates</tt> <br>
+
+      Zero times anything is zero.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $\forall x\in R, \quad 0x = x0 = 0$. <br><br>
+
+      <i>Proof</i>: Let $x\in R$.  Then, by the additive identity property of 0, followed by distribution, 
+
+      $$\begin{aligned}
+        0x &= (0+0)x \\
+        &= 0x + 0x
+      \end{aligned}$$
+
+      Adding $-0x$ to each side, 
+
+      $$ 0x-0x = 0x+0x-0x $$
+
+      The left simplifies to $0$ by the property of the inverse, and the right-hand side simplifies to $0x+0$ which is $0x$.  <br>
+
+      Therefore the equation above simplifies to 
+
+      $$ 0 = 0x $$ 
+
+      $\Box$
+    </details>
 
   </body>
 </html>
