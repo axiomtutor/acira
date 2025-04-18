@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.12.8"
+__generated_with = "0.12.9"
 app = marimo.App(width="medium")
 
 
@@ -423,7 +423,7 @@ def _(mo):
 
         Also $(\alpha_k)$ is bounded above by $L$.  This follows from the fact that $\bigcap_{k=m}^\infty [\alpha_k,\beta_k] = \{L\}$, by the `Limit by snug cell` theorem.
 
-        Therefore $\lim_{k\to\infty}\alpha_k$ exists by the `Bounded monotonic limits` theorem.  Moreover $\lim_{k\to\infty}\alpha_k\le L$.  
+        Therefore $\lim_{k\to\infty}\alpha_k$ exists by the `Bounded monotonic limits` theorem.  Moreover $\lim_{k\to\infty}\alpha_k\le L$.
         """
     )
     return

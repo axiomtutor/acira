@@ -259,11 +259,70 @@
       </details>
       <details>
         <summary>Case 2: $0 < m$.</summary>
-        Suppose $0<m$.  Then 
+        Suppose $0 < m$.  Then 
+        $$\begin{aligned}
+          (x^m)^n &= \overbrace{\overbrace{xx\cdots x}^m\overbrace{xx\cdots x}^m\cdots \overbrace{xx\cdots x}^m}^n \\
+          &= \overbrace{xx\cdots x}^{mn} \\
+          &= x^{mn}
+        \end{aligned}$$
       </details>
+
+      <details><summary>
+        Case 3: $m < 0 < n$.
+      </summary>
+      Suppose $m < 0 < n$.  
+      $$\begin{aligned}
+        (x^m)^n &= \overbrace{\overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m}\overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m}\cdots \overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m}}^n \\
+        &= \overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{n(-m)} \\
+        &= \overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-mn} \\
+        &= x^{mn}
+      \end{aligned}$$
+      </details>
+
+      <details>
+        <summary>Case 4: $m \le n < 0$.</summary>
+        Suppose $m \le n < 0$.
+        $$\begin{aligned}
+          (x^m)^n &= \overbrace{(\overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m})^{-1}(\overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m})^{-1}\cdots (\overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m})^{-1}}^{-n}\\
+          &= \overbrace{xx\cdots x}^{(-m)(-n)} \\
+          &= x^{mn}
+        \end{aligned} $$
+      </details>
+
+      Therefore in all cases $(x^m)^n = x^{mn}$.
 
       $\Box$
     </details>
+
+    <h1> 0003 Rings and Fields</h1>
+
+    <div class="def">
+      Let $R$ be a nonempty set and $+,\times:R^2\to R$ two operations on $R$.  <br>
+
+      We say that $\times$ <b>distributes over $+$</b> if for every $a,b,c\in R$ we have both 
+
+      $$ a\times (b+c) = (a\times b)+(a\times c) $$
+      and 
+      $$ (b + c)\times a = (b\times a)+(c\times a) $$
+
+      We say that the triple $(R, +,\times)$ is a <b>ring</b> if 
+      <ol>
+        <li>Both $+$ and $\times$ are associative.</li>
+        <li>$(R,+)$ is a commutative group with identity 0, which we call the <b>additive identity</b>.</li>
+        <li>$\times$ has an identity element, 1, which we call the <b>multaplicative identity</b>.</li>
+        <li>$\times$ distributes over $+$.</li>
+      </ol>
+
+      For rings we use the familiar notation for addition and multiplication.  In particular $a+(-b)$ is written $a-b$, and $a\times b$ is written $ab$, and $a\times b^{-1}$ is written $a/b$.  We also assume the familiar <a href="https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics">PEMDAS</a> order of operations. <br>
+
+      For a natural number $n\in\Bbb N$ and element $a\in R$, we define $na$ as "repeated addition", similar to the corresponding definition for group elements.  Likewise $a^n$ is defined as repeated multiplication.  The definition also extends to $0a$ and $(-n)a$ and $a^0$ and $a^{-n}$ in the same ways. <br>
+
+      If moreover $(R\smallsetminus \{0\}, \times)$ forms a commutative group, then we say that $(R,+,\times)$ is a <b>field</b>.  
+    </div>
+
+    <div class="thm">
+
+    </div>
 
   </body>
 </html>
