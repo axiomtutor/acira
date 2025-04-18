@@ -216,13 +216,31 @@
         Suppose $0 < m$.  Then by associativity,
 
         $$
-        \begin{alinged}
+        \begin{aligned}
           x^{m}x^n &= \overbrace{x x \cdots x}^m \overbrace{ x x \cdots x}^n \\
           &= \overbrace{x x \cdots x}^{m+n} \\
           &= x^{m+n}
         \end{aligned}$$
       </details>
+      <details><summary>Case 3: $m < 0 < n$.</summary>
+        Suppose $m < 0 < n$.  Then 
+        $$\begin{aligned}
+          x^m x^n &= \overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m} \overbrace{xx\cdots x}^n
+        \end{aligned}$$
+
+        If $-m \le n$ then $-m$ instances of $x^{-1}$ and $x$ will cancel.  In that case, the above is
+        $$ \overbrace{xx\cdots x}^{n-(-m)} = x^{n+m} $$
+        Note that the above includes the case $-m=n$ in which case all instances of $x^{-1}$ and $x$ cancel, resulting in $e=x^{n+m}=x^0$.
+
+        Finally suppose $n < -m$, in which case $n$ instances of $x^{-1}$ and $x$ cancel.  Then $x^mx^n$ is 
+
+        $$\begin{aligned}
+          \overbrace{x^{-1}x^{-1}\cdots x^{-1}}^{-m-n} &= x^{m+n}
+        \end{aligned}$$ 
+      </details>
     </details>
+
+    $\Box$
 
   </body>
 </html>
