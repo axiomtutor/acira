@@ -153,7 +153,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="GroupUniqSol">
       Theorem: <tt>Group Uniq. Sol.</tt> <br>
 
       Group equations have unique solutions.
@@ -376,7 +376,7 @@
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: $\forall x\in R, \quad -x = (-1)x = x(-1)$.
+      <i>Statement</i>: $\forall x\in R, \quad -x = (-1)x = x(-1)$. <br><br>
 
       <i>Proof</i>: Let $x\in R$.  
 
@@ -391,6 +391,47 @@
 
       $\Box$
     </details>
+
+    <div class="thm">
+      Theorem: <tt>Field eqs. uniq. sols.</tt> <br>
+
+      Field equations have unique solutions.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+      <i>Statement</i>: Let $F$ be a field, $a,b\in F$ and $a\ne 0$.  Then there is a unique $x$ such that
+
+      $$ ax = b $$
+
+      <i>Proof</i>:  Because $F$ is a field then $(F\smallsetminus \{0\}, \times)$ is a group.  Therefore, by the <a href="#GroupUniqSol">Group Uniq. Sol.</a> theorem, this equation has a unique solution. <br>
+
+      $\Box$
+    </details>
+
+    <h1>0004 Order</h1>
+
+    <div class="def">
+      Let $X$ be a nonempty set and $\preceq \subseteq X^2$ a relation on $X$. <br>
+
+      We say that $\preceq$ is a <b>partial order</b> if it is reflexive, anti-symmetric, and transitive. <br>
+
+      If $\preceq$ is a partial order then we say that $(X,\preceq)$ is a <b>partially ordered set</b> or just <b>poset</b> for short. <br>
+
+      We often write that $X$ is a poset, leaving it implicit that it is actually the pair $(X,\preceq)$ which is a poset.  <br>
+
+      When we express that $a\preceq b$ verbally, we may say that "$a$ precedes or equals $b$".  I personally shorten this to "$a$ left-eqs $b$".  <br>
+
+      The notation $a\succeq b$ is syntactic sugar for $b\preceq a$.  To pronounce "$a \succeq b$" we may say "$a$ succeeds or equals $b$".  Or for short, just "$a$ right-eqs $b$". <br>
+
+      For any two elements $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$, then we say that $a$ and $b$ are <b>incommensurable</b> with respect to $\preceq$.  Otherwise they are <b>commensurable</b>. <br>
+
+      If every two elements of $X$ are commensurable, we say that $\preceq$ is <b>total</b>, or a <b>total order on $X$</b>.  We also say that $(X,\preceq)$ is a <b>totally ordered set</b>. <br>
+
+      If $\preceq$ is a partial order, then we define the relation $\prec\subseteq X^2$ by 
+
+      $$ a\prec b \quad \Leftrightarrow \quad a \prec b, \text{ and } a\ne b, \quad \forall a,b\in X $$
+    </div>
 
   </body>
 </html>
