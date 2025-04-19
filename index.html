@@ -435,5 +435,73 @@
       To pronounce $a\prec b$ we say "$a$ precedes $b$".  The expression $a\succ b$ is syntactic sugar for $b\prec a$ and we say that "$a$ succeeds $b$".
     </div>
 
+    Throughout this section, assume that $(X,\preceq)$ is a poset.
+
+    <div class="thm">
+      Theorem: <tt>Poset prec. strict part. ord.</tt> <br>
+
+      Precedence is a strict partial order.
+    </div>
+
+    <div class="thm">
+      Theorem: <tt>Poset neg. prec.</tt> <br>
+
+      If $a\prec b$ then $b\neg\preceq a$, and the converse if $\preceq$ is total.
+    </div>
+
+    <h1>0005 Bounds</h1>
+
+    <div class="def">
+      Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty set, and $\alpha\in X$.  <br>
+
+      If $\forall b\in A$ we have $b\preceq \alpha$ then we call $\alpha$ an <b>upper bound of $A$</b>.  <br>
+
+      We denote the set of all upper bounds of $A$ by $UB_A$. <br>
+      
+      If $\alpha\in A\cap UB_A$ then we call $\alpha$ the <b>maximum of $A$</b> and write $\alpha=\max(A)$. <br>
+
+      If $\alpha=\min(UB_A)$ we call $\alpha$ the <b>supremum of $A$</b> and write $\alpha=\sup(A)$.  <br>
+
+      Each of these terms define a kind of upper bound for a set.  Each has a dual in terms of lower bounds.  The dual of the maximum is called the <b>minimum</b>, written $\min(A)$.  The dual of the supremum is the <b>infimum</b>, written $\inf(A)$.
+    </div>
+
+    Throughout this section, assume that $(X,\preceq)$ is a poset, and $A,B\subseteq X$ are nonempty subsets, and $\alpha\in X$.  <br>
+
+    For each theorem below, stated in terms of an upper bound, there is a theorem for its dual in terms of a lower bound.
+
+    <div class="thm">
+      Theorem: <tt>Bound max is sup</tt> <br>
+
+      If a set has a maximum then the maximum is the supremum of that set.
+    </div>
+
+    <div class="thm">
+      Theorem: <tt>Bound tot. ord. finite set max.</tt> <br>
+
+      For a total order, every finite set has a maximum.
+    </div>
+
+    <div class="thm">
+      Theorem: <tt>Bound inf. left-eq sup.</tt> <br>
+
+      $\inf(A)\preceq \sup(A)$
+    </div>
+
+    <div class="thm">
+      Theorem: <tt>Bound subset sup. ineq.</tt> <br>
+
+      Subsets have left-eq suprema.
+    </div>
+
+    <div class="thm">
+      Theorem: <tt>Bound inf. sup. closed inter.</tt>
+
+      $[\inf(A),\sup(A)]$ is the least closed interval cover.
+    </div>
+
+    <h1>0006 Function Bounds</h1>
+
+    
+
   </body>
 </html>
