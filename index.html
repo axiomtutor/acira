@@ -333,7 +333,9 @@
 
       <i>Statement</i>: $0$ is the unique additive identity of $R$, and $1$ is the unique multiplicative identity.  Every $x\in R$ has a unique additive inverse, $-a$.  If $x$ has a multiplicative inverse, then it is uniquely $x^{-1}$. <br></br>
 
-      <i>Proof</i>: Since $+$ and $\times$ are associative, these results all follow from the definition of a ring and the <a href="#assocOpUniqIdNInv">Assoc. Op. Uniq. Id. & Inv.</a> theorem
+      <i>Proof</i>: Since $+$ and $\times$ are associative, these results all follow from the definition of a ring and the <a href="#assocOpUniqIdNInv">Assoc. Op. Uniq. Id. & Inv.</a> theorem. <br>
+
+      $\Box$
     </details>
 
     <div class="thm">
@@ -443,6 +445,42 @@
       Precedence is a strict partial order.
     </div>
 
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: The relation $\prec$ is a strict partial order on $X$, meaning that it is irreflexive, asymmetric, and transitive. <br></br>
+
+      <i>Proof</i>: Let $a,b,c\in X$.
+
+      <details>
+        <summary>Irreflexive.</summary>
+
+        Since $a=a$ we must not have $a\prec a$ and therefore $a\not\prec a$.
+      </details>
+
+      <details>
+        <summary>Asymmetric.</summary>
+
+        Let $a\prec b$ and assume for contradiction that $b\prec a$.  <br>
+        The former entails $a\preceq b$ and the latter entails $b\preceq a$.  <br>
+
+        By the anti-symmetry of $\preceq$, then we have $a=b$. <br>
+        But $a\prec b$ also implies $a\ne b$, a contradiction.
+      </details>
+
+      <details>
+        <summary>Transitive.</summary>
+
+        Suppose $a\prec b$ and $b\prec c$.  Then $a\preceq b$ and $b\preceq c$, so by transitivity of $\preceq$ we have $a\preceq c$. <br>
+
+        Assume for contradiction that $a=c$.  Then $a\preceq b$ and $b\preceq a$ so $a=b$ by the anti-symmetry of $\preceq$.  <br>
+
+        But $a\prec b$ entails $a\ne b$, a contradiction.
+      </details>
+
+      $\Box$
+    </details>
+
     <div class="thm">
       Theorem: <tt>Poset neg. prec.</tt> <br>
 
@@ -501,7 +539,7 @@
 
     <h1>0006 Function Bounds</h1>
 
-    
+
 
   </body>
 </html>
