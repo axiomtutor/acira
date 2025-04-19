@@ -484,8 +484,27 @@
     <div class="thm">
       Theorem: <tt>Poset neg. prec.</tt> <br>
 
-      If $a\prec b$ then $b\neg\preceq a$, and the converse if $\preceq$ is total.
+      If $a\prec b$ then $b\not\preceq a$, and the converse if $\preceq$ is total.
     </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $a,b\in X$ are such that $a\prec b$ then $b\not\preceq a$.  <br>
+      Moreover, if $\preceq$ is a total order, then $b\not\preceq a$ entails $a\prec b$.  <br><br>
+
+      <i>Proof</i>: Suppose $a \prec b$.  Then by the asymmetry of $\prec$ we have $b\not\prec a$ so either $b\not\preceq a$ or $b=a$.  <br>
+
+      But $a\prec b$ entails $a\ne b$, so it follows that $b\not\preceq a$.  <br>
+
+      Now assume that $\preceq$ is a total order, and $b\not\preceq a$.  Then it follows that $a\preceq b$ by the totality property.  <br>
+
+      Moreover, if $a=b$ then we would have $b\preceq a$, so this cannot hold and therefore $a\ne b$.  <br>
+
+      This entails $a\prec b$.  <br>
+
+      $\Box$
+    </details>
 
     <h1>0005 Bounds</h1>
 
