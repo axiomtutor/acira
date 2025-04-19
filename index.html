@@ -441,6 +441,14 @@
 
     <h1>0004 Order</h1>
 
+    Summary: 
+
+    <ol>
+      <li>Notation: $\preceq,\succeq,\prec,\succ$</li>
+      <li><a href="#posetPrecStrictPartOrd"></a></li>
+      <li><a href="#posetNegPrec"></a></li>
+    </ol>
+
     <div class="def">
       Let $X$ be a nonempty set and $\preceq \subseteq X^2$ a relation on $X$. <br>
 
@@ -467,7 +475,7 @@
 
     Throughout this section, assume that $(X,\preceq)$ is a poset.
 
-    <div class="thm">
+    <div class="thm" id="posetPrecStrictPartOrd">
       Theorem: <tt>Poset prec. strict part. ord.</tt> <br>
 
       Precedence is a strict partial order.
@@ -509,7 +517,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="posetNegPrec">
       Theorem: <tt>Poset neg. prec.</tt> <br>
 
       If $a\prec b$ then $b\not\preceq a$, and the converse if $\preceq$ is total.
@@ -536,6 +544,19 @@
 
     <h1>0005 Bounds</h1>
 
+    Summary: 
+
+    <ol>
+      <li>Notation: $UB_A, LB_A, \max(A), \min(A),\sup(A), \inf(A)$</li>
+      <li>Defs: Upper bound, maximum, supremum, lower bound, minimum, infimum.</li>
+      <li>Thm: <a href="#boundUniqMax">Bound uniq. max.</a></li>
+      <li>Thm: <a href="#boundMaxIsSup">Bound max. is sup.</a></li>
+      <li>Thm: <a href="#boundTotOrdFiniteSetMax">Bound tot. ord. finite set max.</a></li>
+      <li>Thm: <a href="#boundInfLefteqSup">Bound inf. lefteq sup.</a></li>
+      <li>Thm: <a href="#boundSubsetSupIneq">Bound subset sup. ineq.</a></li>
+      <li>Thm: <a href="#boundInfSupClosedInter">Bound inf. sup. closed inter.</a></li>
+    </ol>
+
     <div class="def">
       Let $(X,\preceq)$ be a poset and $A\subseteq X$ a nonempty set, and $\alpha\in X$.  <br>
 
@@ -554,8 +575,25 @@
 
     For each theorem below, stated in terms of an upper bound, there is a theorem for its dual in terms of a lower bound.
 
-    <div class="thm">
-      Theorem: <tt>Bound max is sup</tt> <br>
+    <div class="thm" id="boundUniqMax">
+      Theorem: <tt>Bound uniq. max.</tt> <br>
+
+      If the maximum of a set exists, it is unique.
+    </div>
+    <details>
+      <summary>Statement and proof.</summary>
+
+      Suppose $\alpha=\max(A)$ exists.  Let $\beta\in X$  be another maximum, $\beta \in A\cap UB_A$.  <br>
+
+      Then $\alpha\preceq \beta$ because $\alpha\in A$ and $\beta\in UB_A$.  But also $\beta\preceq \alpha$ because $\beta\in A$ and $\alpha\in UB_A$.  <br>
+
+      Therefore by the anti-symmetry of $\preceq$, we have $\alpha=\beta$. <br>
+
+      $\Box$
+    </details>
+
+    <div class="thm" id="boundMaxIsSup">
+      Theorem: <tt>Bound max. is sup.</tt> <br>
 
       If a set has a maximum then the maximum is the supremum of that set.
     </div>
@@ -567,33 +605,48 @@
       <i>Proof</i>: 
     </details>
 
-    <div class="thm">
+    <div class="thm" id="boundTotOrdFiniteSetMax">
       Theorem: <tt>Bound tot. ord. finite set max.</tt> <br>
 
       For a total order, every finite set has a maximum.
     </div>
 
-    <div class="thm">
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $\preceq$ is total and $A$ is finite, then $\max(A)$ exists. <br></br>
+
+      <i>Proof</i>: 
+
+      <details>
+        <summary>Base-case: $|A|=1$.</summary>
+
+        Suppose that $A$ is the singleton set $A=\{y\}$.  Then $y\in UB_A$ by reflexivity, $y\preceq y$.  <br>
+        Therefore $y \in A\cap UB_A$ and so $y = \max(A)$.
+      </details>
+    </details>
+
+    <div class="thm" id="boundInfLefteqSup">
       Theorem: <tt>Bound inf. left-eq sup.</tt> <br>
 
       $\inf(A)\preceq \sup(A)$
     </div>
 
-    <div class="thm">
+    <div class="thm" id="boundSubsetSupIneq">
       Theorem: <tt>Bound subset sup. ineq.</tt> <br>
 
       Subsets have left-eq suprema.
     </div>
 
-    <div class="thm">
-      Theorem: <tt>Bound inf. sup. closed inter.</tt>
+    <div class="thm" id="boundInfSupClosedInter">
+      Theorem: <tt>Bound inf. sup. closed inter.</tt> <br>
 
       $[\inf(A),\sup(A)]$ is the least closed interval cover.
     </div>
 
     <h1>0006 Function Bounds</h1>
 
-
+    
 
   </body>
 </html>
