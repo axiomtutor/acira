@@ -628,7 +628,7 @@
       <details>
         <summary>Inductive case.</summary>
 
-        Let $1\le n$ and suppose that every finite set $D\subseteq X$, such that $|D|=n$, has a maximum. Suppose that $C\subseteq X$ is such that $|C| = n+1$. <br>
+        Let $1\le n$ and suppose that every finite set $D\subseteq X$, such that $|D|=n$, the set $D$ has a maximum. Suppose that $C\subseteq X$ is such that $|C| = n+1$. <br>
 
         Then let $y\in C$ and define $C' = C\smallsetminus \{y\}$.  By the inductive hypothesis, since $|C'|=n$, then $\alpha = \max(C')$ exists. <br>
 
@@ -638,19 +638,36 @@
       $\Box$
     </details>
 
-
-
     <div class="thm" id="boundInfLefteqSup">
       Theorem: <tt>Bound inf. left-eq sup.</tt> <br>
 
       $\inf(A)\preceq \sup(A)$
     </div>
 
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Suppose that both $\alpha=\inf(A)$ and $\beta=\sup(A)$ exist.  Then 
+      $$ \inf(A)\preceq \sup(A) $$
+      <i>Proof</i>: Let $y\in A$.  Then if $\gamma\in LB_A$ and $\delta\in UB_A$, we must have 
+      $$ \gamma\preceq y \preceq \delta $$
+
+      Since $\alpha\in LB_A$ and $\beta\in UB_A$ then we have 
+
+      $$ \alpha\preceq y\preceq \beta $$
+
+      $\Box$
+    </details>
+
     <div class="thm" id="boundSubsetSupIneq">
       Theorem: <tt>Bound subset sup. ineq.</tt> <br>
 
       Subsets have left-eq suprema.
     </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+    </details>
 
     <div class="thm" id="boundInfSupClosedInter">
       Theorem: <tt>Bound inf. sup. closed inter.</tt> <br>
