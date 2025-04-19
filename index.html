@@ -56,6 +56,18 @@
     <h1 id="unit1">Unit 1: Real Number Axioms</h1>
     <h2 id="lesson0002">0002 Groups</h2>
 
+    Summary: 
+    <ol>
+      <li>Notation: $xy$, $e$, $x^{-1}$, $x/y$, $x^n$</li>
+      <li>Defs: identity element, inverse element, group, commutative</li>
+      <li>Thm: <a href="#assocOpUniqIdNInv">Assoc. op. uniq. id. & inv.</a></li>
+      <li>Thm: <a href="#groupUniqIdNInv">Group. op. uniq. id. & inv.</a></li>
+      <li>Thm: <a href="#groupInvInv">Group inv. inv.</a></li>
+      <li>Thm: <a href="#groupUniqSol">Group uniq. sol.</a></li>
+      <li>Thm: <a href="#groupProdInv">Group prod. inv.</a></li>
+      <li>Thm: <a href="#groupExpLaws">Group exp. laws</a></li>
+    </ol>
+
     <div class="def" id="groupdef">
       Let $X$ be a nonmepty set and $\ast:X^2\to X$ an operation on $X$. <br>
       
@@ -95,6 +107,10 @@
         <li>$x^0=e$</li>
         <li>$x^{-n} = (x^{-1})^n$</li>
       </ul>
+
+      If $(G,\ast)$ is a group, as a shorthand we often write and say that $G$ is a group.  The operation is left implicit by context. <br>
+
+      If $\ast$ is a commutative operation, then we say that $G$ is a <b>commutative group</b>.
     </div>
 
     <p> In all that follows, assume that $(G,\ast)$ is a group and $x\in G$. </p>
@@ -123,7 +139,7 @@
 
     </details>
 
-    <div class="thm">
+    <div class="thm" id="groupUniqIdNInv">
       Theorem: <tt>Group Uniq. Id. & Inv.</tt> <br>
 
       In a group, the identity and inverses are unique.
@@ -138,7 +154,7 @@
 
     </details>
 
-    <div class="thm">
+    <div class="thm" id="groupInvInv">
       Theorem: <tt>Group Inv. Inv.</tt> <br>
 
       $(x^{-1})^{-1} = x$
@@ -175,7 +191,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="groupProdInv">
       Theorem: <tt>Group Prod. Inv.</tt> <br>
 
       The inverse of a product is the product of inverses, in reverse order.
@@ -195,10 +211,11 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="groupExpLaws">
       Theorem: <tt>Group Exp. Laws</tt> <br>
       Groups obey the familiar exponent laws.
     </div>
+
     <details>
       <summary>Statement and proof.</summary>
       <i>Statement</i>: Let $m,n\in\Bbb Z$.  Then 
@@ -296,6 +313,17 @@
 
     <h1> 0003 Rings and Fields</h1>
 
+    Summary: 
+
+    <ol>
+      <li>Notation: 0, 1, $na$, $a^n$</li>
+      <li>Defs: Distributes, ring, field</li>
+      <li>Thm: <a href="#ringUniqIdNInv">Ring uniq. id. & Inv.</a></li>
+      <li>Thm: <a href="#ringZeroAnnihilates">Ring zero annihilates</a></li>
+      <li>Thm: <a href="#ringNegOneNegates">Ring -1 negates</a></li>
+      <li>Thm: <a href="#fieldEqsUniqSols">Field eqs. uniq. sols.</a></li>
+    </ol>
+
     <div class="def">
       Let $R$ be a nonempty set and $+,\times:R^2\to R$ two operations on $R$.  <br>
 
@@ -322,7 +350,7 @@
 
     For the rest of this section, assume that $(R,+,\times)$ is a ring.
 
-    <div class="thm">
+    <div class="thm" id="ringUniqIdNInv">
       Theorem: <tt>Ring uniq. ids. & invs.</tt> <br>
 
       The identities and inverses in a ring, if they exist, are unique.
@@ -338,7 +366,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="ringZeroAnnihilates">
       Theorem: <tt>Ring zero annihilates</tt> <br> 
 
       Zero times anything is zero.
@@ -371,7 +399,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="ringNegOneNegates">
       Theorem: <tt>Ring -1 negates</tt> <br>
       $-x = (-1)x$
     </div>
@@ -394,7 +422,7 @@
       $\Box$
     </details>
 
-    <div class="thm">
+    <div class="thm" id="fieldEqsUniqSols">
       Theorem: <tt>Field eqs. uniq. sols.</tt> <br>
 
       Field equations have unique solutions.
@@ -531,6 +559,13 @@
 
       If a set has a maximum then the maximum is the supremum of that set.
     </div>
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>:  Let $A\subseteq X$ be a set with a maximum, $\alpha = \max(A)$.  Then $\alpha=\sup(A)$. <br><br>
+
+      <i>Proof</i>: 
+    </details>
 
     <div class="thm">
       Theorem: <tt>Bound tot. ord. finite set max.</tt> <br>
