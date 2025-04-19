@@ -445,8 +445,8 @@
 
     <ol>
       <li>Notation: $\preceq,\succeq,\prec,\succ$</li>
-      <li><a href="#posetPrecStrictPartOrd"></a></li>
-      <li><a href="#posetNegPrec"></a></li>
+      <li><a href="#posetPrecStrictPartOrd">Poset prec. strict part. ord.</a></li>
+      <li><a href="#posetNegPrec">Poset neg. prec.</a></li>
     </ol>
 
     <div class="def">
@@ -619,12 +619,26 @@
       <i>Proof</i>: 
 
       <details>
-        <summary>Base-case: $|A|=1$.</summary>
+        <summary>Base-case: $|C|=1$.</summary>
 
-        Suppose that $A$ is the singleton set $A=\{y\}$.  Then $y\in UB_A$ by reflexivity, $y\preceq y$.  <br>
-        Therefore $y \in A\cap UB_A$ and so $y = \max(A)$.
+        Suppose that $C\subseteq X$ is a singleton set, and let $C=\{y\}$.  Then $y\in UB_C$ by reflexivity, $y\preceq y$.  <br>
+        Therefore $y \in C\cap UB_C$ and so $y = \max(C)$.
       </details>
+
+      <details>
+        <summary>Inductive case.</summary>
+
+        Let $1\le n$ and suppose that every finite set $D\subseteq X$, such that $|D|=n$, has a maximum. Suppose that $C\subseteq X$ is such that $|C| = n+1$. <br>
+
+        Then let $y\in C$ and define $C' = C\smallsetminus \{y\}$.  By the inductive hypothesis, since $|C'|=n$, then $\alpha = \max(C')$ exists. <br>
+
+        If $y\preceq \alpha$ then $\alpha=\max(C)$.  If $\alpha\preceq y$ then $y=\max(C)$.  Therefore, in all cases, $\max(C)$ exist.
+      </details>
+
+      $\Box$
     </details>
+
+
 
     <div class="thm" id="boundInfLefteqSup">
       Theorem: <tt>Bound inf. left-eq sup.</tt> <br>
@@ -646,7 +660,7 @@
 
     <h1>0006 Function Bounds</h1>
 
-    
+
 
   </body>
 </html>
