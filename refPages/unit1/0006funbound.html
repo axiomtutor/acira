@@ -45,9 +45,13 @@
     <h1>0006 Function Bounds</h1>
 
     <div class="def">
-      Let $X, Y$ be two nonempty sets and $f:X\to Y$.  <br>
-      We define the <b>image of $f$</b> as the set 
-      $$ \text{Im}(f) = \{f(a):a\in X\} $$
+      Let $A,B,C$ be nonempty sets, $f,g:A\to B$ and $h:A\times B\to C$.
+
+      We define the <b>image of $f$ </b> as 
+      $$ \text{Im}(f) = \{f(x) : x\in X\} $$
+
+      For any $x\in A$ we define the <b>$h$ with $x$ fixed</b> to be the function $h_{(x,\cdot)}:B\to C$ defined by 
+      $$ h_{(x,\cdot)}(y) = h(x,y), \quad \forall y\in B $$
     </div>
 
   </body>
