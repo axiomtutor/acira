@@ -45,13 +45,33 @@
     <h1>0006 Function Bounds</h1>
 
     <div class="def">
-      Let $A,B,C$ be nonempty sets, $f,g:A\to B$ and $h:A\times B\to C$.
+      Let $A,B,C$ be nonempty sets, $f:A\to B$ and $g:A\times B\to C$.
 
       We define the <b>image of $f$ </b> as 
-      $$ \text{Im}(f) = \{f(x) : x\in X\} $$
+      $$ \text{Im}(f) = \{f(d) : d\in A\} $$
 
-      For any $x\in A$ we define the <b>$h$ with $x$ fixed</b> to be the function $h_{(x,\cdot)}:B\to C$ defined by 
-      $$ h_{(x,\cdot)}(y) = h(x,y), \quad \forall y\in B $$
+      For any $d\in A$ we define the <b>$g$ with $d$ fixed</b> to be the function $g_{(d,\cdot)}:B\to C$ defined by 
+      $$ g_{(d,\cdot)}(e) = g(d,e), \quad \forall e\in B $$
+
+      For $e\in B$ we define <b>$g$ with $e$ fixed</b> to be $g_{(\cdot,e)}:A\to C$ defined by 
+      $$ g_{(\cdot,e)(d)} = g(d,e),\quad \forall d\in A $$
+
+      Either of these is called a <b>partial application of $g$</b>.
+    </div>
+
+    <div class="def">
+      Let $A,B$ be nonempty sets and $(X,\preceq)$ a poset, and $f,g:A\to X$ and $h:A\times B \to X$.  <br>
+
+      We say that $\alpha\in X$ is an <b>upper bound of $f$</b> if $\alpha\in UB_{\text{Im}(f)}$.  We say that $\alpha = \max(f)$ is the <b>maximum of $f$</b> if $\alpha = \max(\text{Im}(f))$.  We say that $\alpha=\sup(f)$ is the <b>supremum of $f$</b> if $\alpha = \sup(\text{Im}(f))$.  <br>
+
+      We say that $f\preceq g$ if 
+      $$ f(c)\preceq g(c), \quad \forall c\in A $$
+
+      For any $c\in A$ we define the function $\sup_{c\in A}h_{(c,\cdot)}: B\to X$ given by 
+      $$ \left(\sup_{c\in A} h_{(c,\cdot)}\right)(d) = \sup \left( h_{(\cdot,d)}\right), \quad \forall d\in B$$
+
+      For any $d\in B$ we define the function $\sup_{d\in B} h_{(\cdot,d)}: A\to X$ given by 
+      $$ \left(\sup_{d\in B} h_{(\cdot,d)}\right)(c) = \sup (h_{(c,\cdot)}),\quad \forall c\in A $$
     </div>
 
   </body>
