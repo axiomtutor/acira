@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ACIRA Reference Page</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        line-height: 1.6;
+      }
+      .thm {
+        background-color: #ffdddd;
+        border-left: 4px solid #ee0000;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      .def {
+        background-color: #ddffdd;
+        border-left: 4px solid #008800;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      a {
+        color: #1e90ff;
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </head>
+  <body>
+
+    <h1 id="lesson0002"> Lesson 0003: Rings and Fields</h1>
+
+    <h1> 0003 Rings and Fields</h1>
+
+    <div class="def">
+      Let $R$ be a nonempty set and $+,\times:R^2\to R$ two operations on $R$.  <br>
+
+      We say that $\times$ <b>distributes over $+$</b> if for every $a,b,c\in R$ we have both 
+
+      $$ a\times (b+c) = (a\times b)+(a\times c) $$
+      and 
+      $$ (b + c)\times a = (b\times a)+(c\times a) $$
+
+      We say that the triple $(R, +,\times)$ is a <b>ring</b> if 
+      <ol>
+        <li>Both $+$ and $\times$ are associative.</li>
+        <li>$(R,+)$ is a commutative group with identity 0, which we call the <b>additive identity</b>.</li>
+        <li>$\times$ has an identity element, 1, which we call the <b>multaplicative identity</b>.</li>
+        <li>$\times$ distributes over $+$.</li>
+      </ol>
+
+      For rings we use the familiar notation for addition and multiplication.  In particular $a+(-b)$ is written $a-b$, and $a\times b$ is written $ab$, and $a\times b^{-1}$ is written $a/b$.  We also assume the familiar <a href="https://en.wikipedia.org/wiki/Order_of_operations#Mnemonics">PEMDAS</a> order of operations. <br>
+
+      For a natural number $n\in\Bbb N$ and element $a\in R$, we define $na$ as "repeated addition", similar to the corresponding definition for group elements.  Likewise $a^n$ is defined as repeated multiplication.  The definition also extends to $0a$ and $(-n)a$ and $a^0$ and $a^{-n}$ in the same ways. <br>
+
+      If moreover $(R\smallsetminus \{0\}, \times)$ forms a commutative group, then we say that $(R,+,\times)$ is a <b>field</b>.  
+    </div>
+
+    For the rest of this section, assume that $(R,+,\times)$ is a ring.
+
+    <div class="thm" id="ringUniqIdNInv">
+      Theorem: <tt>Ring uniq. ids. & invs.</tt> <br>
+
+      The identities and inverses in a ring, if they exist, are unique.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $0$ is the unique additive identity of $R$, and $1$ is the unique multiplicative identity.  Every $x\in R$ has a unique additive inverse, $-a$.  If $x$ has a multiplicative inverse, then it is uniquely $x^{-1}$. <br></br>
+
+      <i>Proof</i>: Since $+$ and $\times$ are associative, these results all follow from the definition of a ring and the <a href="#assocOpUniqIdNInv">Assoc. Op. Uniq. Id. & Inv.</a> theorem. <br>
+
+      $\Box$
+    </details>
+
+    <div class="thm" id="ringZeroAnnihilates">
+      Theorem: <tt>Ring zero annihilates</tt> <br> 
+
+      Zero times anything is zero.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $\forall x\in R, \quad 0x = x0 = 0$. <br><br>
+
+      <i>Proof</i>: Let $x\in R$.  Then, by the additive identity property of 0, followed by distribution, 
+
+      $$\begin{aligned}
+        0x &= (0+0)x \\
+        &= 0x + 0x
+      \end{aligned}$$
+
+      Adding $-0x$ to each side, 
+
+      $$ 0x-0x = 0x+0x-0x $$
+
+      The left simplifies to $0$ by the property of the inverse, and the right-hand side simplifies to $0x+0$ which is $0x$.  <br>
+
+      Therefore the equation above simplifies to 
+
+      $$ 0 = 0x $$ 
+
+      The proof that $0 = x0$ is <i>mutatis mutandis</i> the same on the other side.
+
+      $\Box$
+    </details>
+
+    <div class="thm" id="ringNegOneNegates">
+      Theorem: <tt>Ring -1 negates</tt> <br>
+      $-x = (-1)x$
+    </div>
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $\forall x\in R, \quad -x = (-1)x = x(-1)$. <br><br>
+
+      <i>Proof</i>: Let $x\in R$.  
+
+      $$\begin{aligned}
+        x+(-1)x &= (1)x+(-1)x \\
+        &= (1-1)x \\
+        &= 0x \\
+        &= 0
+      \end{aligned}$$
+
+      The proof that $-x = x(-1)$ is <i>mutatis mutandis</i> the same on the other side.
+
+      $\Box$
+    </details>
+
+    <div class="thm" id="fieldEqsUniqSols">
+      Theorem: <tt>Field eqs. uniq. sols.</tt> <br>
+
+      Field equations have unique solutions.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+      <i>Statement</i>: Let $F$ be a field, $a,b\in F$ and $a\ne 0$.  Then there is a unique $x$ such that
+
+      $$ ax = b $$
+
+      <i>Proof</i>:  Because $F$ is a field then $(F\smallsetminus \{0\}, \times)$ is a group.  Therefore, by the <a href="#GroupUniqSol">Group Uniq. Sol.</a> theorem, this equation has a unique solution. <br>
+
+      $\Box$
+    </details>
+
+  </body>
+</html>
