@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ACIRA Reference Page</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        line-height: 1.6;
+      }
+      .thm {
+        background-color: #ffdddd;
+        border-left: 4px solid #ee0000;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      .def {
+        background-color: #ddffdd;
+        border-left: 4px solid #008800;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      a {
+        color: #1e90ff;
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <h1>0004 Order</h1>
+
+    Summary: 
+
+    <ol>
+      <li>Notation: $\preceq,\succeq,\prec,\succ$</li>
+      <li><a href="#posetPrecStrictPartOrd">Poset prec. strict part. ord.</a></li>
+      <li><a href="#posetNegPrec">Poset neg. prec.</a></li>
+    </ol>
+
+    <div class="def">
+      Let $X$ be a nonempty set and $\preceq \subseteq X^2$ a relation on $X$. <br>
+
+      We say that $\preceq$ is a <b>partial order</b> if it is reflexive, anti-symmetric, and transitive. <br>
+
+      If $\preceq$ is a partial order then we say that $(X,\preceq)$ is a <b>partially ordered set</b> or just <b>poset</b> for short. <br>
+
+      We often write that $X$ is a poset, leaving it implicit that it is actually the pair $(X,\preceq)$ which is a poset.  <br>
+
+      When we express that $a\preceq b$ verbally, we may say that "$a$ precedes or equals $b$".  I personally shorten this to "$a$ left-eqs $b$".  <br>
+
+      The notation $a\succeq b$ is syntactic sugar for $b\preceq a$.  To pronounce "$a \succeq b$" we may say "$a$ succeeds or equals $b$".  Or for short, just "$a$ right-eqs $b$". <br>
+
+      For any two elements $a,b\in X$, if neither $a\preceq b$ nor $b\preceq a$, then we say that $a$ and $b$ are <b>incommensurable</b> with respect to $\preceq$.  Otherwise they are <b>commensurable</b>. <br>
+
+      If every two elements of $X$ are commensurable, we say that $\preceq$ is <b>total</b>, or a <b>total order on $X$</b>.  We also say that $(X,\preceq)$ is a <b>totally ordered set</b>. <br>
+
+      If $\preceq$ is a partial order, then we define the relation $\prec\subseteq X^2$ by 
+
+      $$ a\prec b \quad \Leftrightarrow \quad a \prec b, \text{ and } a\ne b, \quad \forall a,b\in X $$
+
+      To pronounce $a\prec b$ we say "$a$ precedes $b$".  The expression $a\succ b$ is syntactic sugar for $b\prec a$ and we say that "$a$ succeeds $b$".
+    </div>
+
+    Throughout this section, assume that $(X,\preceq)$ is a poset.
+
+    <div class="thm" id="posetPrecStrictPartOrd">
+      Theorem: <tt>Poset prec. strict part. ord.</tt> <br>
+
+      Precedence is a strict partial order.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: The relation $\prec$ is a strict partial order on $X$, meaning that it is irreflexive, asymmetric, and transitive. <br></br>
+
+      <i>Proof</i>: Let $a,b,c\in X$.
+
+      <details>
+        <summary>Irreflexive.</summary>
+
+        Since $a=a$ we must not have $a\prec a$ and therefore $a\not\prec a$.
+      </details>
+
+      <details>
+        <summary>Asymmetric.</summary>
+
+        Let $a\prec b$ and assume for contradiction that $b\prec a$.  <br>
+        The former entails $a\preceq b$ and the latter entails $b\preceq a$.  <br>
+
+        By the anti-symmetry of $\preceq$, then we have $a=b$. <br>
+        But $a\prec b$ also implies $a\ne b$, a contradiction.
+      </details>
+
+      <details>
+        <summary>Transitive.</summary>
+
+        Suppose $a\prec b$ and $b\prec c$.  Then $a\preceq b$ and $b\preceq c$, so by transitivity of $\preceq$ we have $a\preceq c$. <br>
+
+        Assume for contradiction that $a=c$.  Then $a\preceq b$ and $b\preceq a$ so $a=b$ by the anti-symmetry of $\preceq$.  <br>
+
+        But $a\prec b$ entails $a\ne b$, a contradiction.
+      </details>
+
+      $\Box$
+    </details>
+
+    <div class="thm" id="posetNegPrec">
+      Theorem: <tt>Poset neg. prec.</tt> <br>
+
+      If $a\prec b$ then $b\not\preceq a$, and the converse if $\preceq$ is total.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $a,b\in X$ are such that $a\prec b$ then $b\not\preceq a$.  <br>
+      Moreover, if $\preceq$ is a total order, then $b\not\preceq a$ entails $a\prec b$.  <br><br>
+
+      <i>Proof</i>: Suppose $a \prec b$.  Then by the asymmetry of $\prec$ we have $b\not\prec a$ so either $b\not\preceq a$ or $b=a$.  <br>
+
+      But $a\prec b$ entails $a\ne b$, so it follows that $b\not\preceq a$.  <br>
+
+      Now assume that $\preceq$ is a total order, and $b\not\preceq a$.  Then it follows that $a\preceq b$ by the totality property.  <br>
+
+      Moreover, if $a=b$ then we would have $b\preceq a$, so this cannot hold and therefore $a\ne b$.  <br>
+
+      This entails $a\prec b$.  <br>
+
+      $\Box$
+    </details>
+
+  </body>
+</html>
