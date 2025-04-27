@@ -72,7 +72,34 @@
 
       For any $d\in B$ we define the function $\sup_{d\in B} h_{(\cdot,d)}: A\to X$ given by 
       $$ \left(\sup_{d\in B} h_{(\cdot,d)}\right)(c) = \sup (h_{(c,\cdot)}),\quad \forall c\in A $$
+
+      We use $\sup_{c\in A}\sup_{d\in B}h$ to denote 
+
+      $$ \sup \left(\sup_{d\in B} h_{(\cdot,d)}\right) $$
+      and $\sup_{d\in B}\sup_{c\in A}h$ to denote 
+
+      $$ \sup \left(\sup_{c\in A} h_{(c,\cdot)}\right)$$
+
+      Dual defintions and notation for lower bounds, minima, and infima, are all similar.  
     </div>
+
+    Throughout this section, assume that $A,B$ are nonempty sets, $(X,\preceq)$ a poset, $f,g:A\to X$ and $h:A\times B\to X$.  
+
+    <div class="thm" id="funBoundIneqSupIneq">
+      Theorem: <tt>Fun. Bound Ineq. Sup. Ineq.</tt> <br>
+
+      Function bounds imply sup bounds.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $f\preceq g$ and if both $\sup(f)$ and $\sup(g)$ exist, then $\sup f\preceq \sup g$. <br></br>
+
+      <i>Proof</i>: Let $c\in A$, then $f(c)\preceq g(c)\preceq \sup(g)$.  Therefore $\sup(g)$ is an upper bound on $f$ and therefore $\sup(f)\preceq \sup(g)$.  <br>
+
+      $\Box$
+    </details>
 
   </body>
 </html>
