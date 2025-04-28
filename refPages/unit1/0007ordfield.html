@@ -113,33 +113,9 @@
             X+Y &= \{p+q: p\in X,q\in Y\}\\
             XY &= \{ pq: p\in X, q\in Y \}
         \end{aligned}$$
-        min
+
         Also $-X = (-1)X$.
     </div>
-
-    <div class="thm" id="ordFieldAlgSup">
-      Theorem: <tt>Ord. field alg. sup.</tt> <br>
-
-      The algebra laws of suprema and infima apply.
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>:  If $X, Y$ both have suprema then all following suprema exist and satify these equations.  <br>
-      $$\begin{aligned}
-        \sup(a+X) &= a+\sup(X) \\
-        \sup(bX) &= b\sup(X) \\
-        \sup(X+Y) &= \sup(X)+\sup(Y)\\
-        \text{ if } X = X^{\succeq 0}, Y = Y^{\succeq 0} \text{ then } sup(XY) = \sup(X)\sup(Y)
-      \end{aligned}$$
-      
-      <br></br>
-
-      <i>Proof</i>:   <br>
-
-      $\Box$
-    </details>
 
     <div class="thm" id="ordFieldDual">
         Theorem: <tt>Ord. field dual.</tt> <br>
@@ -159,6 +135,40 @@
         <br><br>
 
         <i>Proof</i>: 
+        <details> 
+          <summary>(a) $\alpha\in UB_X \quad \Leftrightarrow \quad -\alpha\in LB_{-X}$</summary>
+          By definition, then compatibility with addition, then computation, and then definition,
+          $$\begin{aligned}
+            \alpha\in UB_X &\Leftrightarrow \forall p\in X: p\preceq \alpha \\
+            &\Leftrightarrow \forall p\in X:p-p-\alpha\preceq \alpha-p-\alpha \\
+            &\Leftrightarrow \forall p\in X:-\alpha\preceq -p \\
+            &\Leftrightarrow -\alpha\in LB_{-X}
+          \end{aligned}$$
+        </details>
+    </details>
+
+    <div class="thm" id="ordFieldAlgSup">
+      Theorem: <tt>Ord. field alg. sup.</tt> <br>
+
+      The algebra laws of suprema and infima apply.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>:  If $X, Y$ both have suprema then all following suprema exist and satify these equations.  <br>
+      $$\begin{aligned}
+        \sup(a+X) &= a+\sup(X) \\
+        \sup(bX) &= b\sup(X) \\
+        \sup(X+Y) &= \sup(X)+\sup(Y)\\
+        \text{ if } X = X^{\succeq 0}, Y = Y^{\succeq 0} &\text{ then } sup(XY) = \sup(X)\sup(Y)
+      \end{aligned}$$
+      
+      <br></br>
+
+      <i>Proof</i>:   <br>
+
+      $\Box$
     </details>
 
 
