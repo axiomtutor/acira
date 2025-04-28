@@ -50,8 +50,8 @@
       For any $a\in F$ we define the <b>intervals</b> 
 
       $$ \begin{aligned}
-      (a,\infty) &= \{ x\in F: a < x\} \\
-      [a,\infty) &= \{ x\in F: a\le x\} 
+      (a,\infty) &= \{ c\in F: a < c\} \\
+      [a,\infty) &= \{ c\in F: a\le c\} 
       \end{aligned} $$
 
       The interval $(a,\infty)$ is said to be <b>open on the left</b> and $[a,\infty)$ is <b>closed on the left</b>.  <br>
@@ -90,8 +90,16 @@
         We say that $\preceq$ is <b>compatible with multiplication</b> if $\forall a,b\in F$ and $c\in F^{\succeq 0}$,
         $$ a\preceq b \Rightarrow ac\preceq bc $$
 
-        If $\preceq$ is compatible with both addition and multiplication then we say that $(F,+,\times,\preceq)$ is an <b>ordered field</b>.  
+        If $\preceq$ is compatible with both addition and multiplication then we say that $(F,+,\times,\preceq)$ is an <b>ordered field</b>.  <br>
     </div>
+    Throughout this section, assume $(F,+,\times,\preceq)$ is an ordered field, and $X,Y\subseteq F$ nonempty subsets. <br>
+    Also let $a,b\in F$ and assume $0\preceq b$.
+    <div class="def">
+        Define $\prec\subseteq F^2$ by the relationship
+        $$ a\prec b \quad \Leftrightarrow \quad (\ a\preceq b \text{ and }  a\ne b \ )
+    </div>
+
+    In all that follows, 
 
     <div class="thm" id="">
       Theorem: <tt></tt> <br>
