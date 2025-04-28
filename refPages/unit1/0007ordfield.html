@@ -79,9 +79,16 @@
         and the <b>subset of negatives</b>
         $$ X^- = \{a\in X: a\prec 0\} $$
         and the <b>subset of nonnegatives</b>
-        $$ X^{\preceq 0} = \{a\in X: 0\preceq a\} $$
+        $$ X^{\succeq 0} = \{a\in X: 0\preceq a\} $$
         and the <b>subset of nonpositives</b>
-        $$ X^{\succeq 0} = \{a\in X: a\preceq 0\}$$
+        $$ X^{\preceq 0} = \{a\in X: a\preceq 0\}$$
+
+        The set of positive numbers is $F^+$ and the negative numbers is $F^-$.
+
+        We say that $\preceq$ is <b>compatible with addition</b> if $\forall a,b,c\in F$ 
+        $$ a\preceq b \Rightarrow a+c\preceq b+c $$
+        We say that $\preceq$ is <b>compatible with multiplication</b> if $\forall a,b\in F$ and $c\in F^{\succeq 0}$,
+        $$ a\preceq b \Rightarrow ac\preceq bc $$
     </div>
 
     <div class="thm" id="">
