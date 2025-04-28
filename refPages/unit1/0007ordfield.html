@@ -183,7 +183,7 @@
         \sup(a+X) &= a+\sup(X) \\
         \sup(bX) &= b\sup(X) \\
         \sup(X+Y) &= \sup(X)+\sup(Y)\\
-        \text{ if } X = X^{\succeq 0}, Y = Y^{\succeq 0} &\text{ then } sup(XY) = \sup(X)\sup(Y)
+        \text{ if } X = X^{\succeq 0}, Y = Y^{\succeq 0} &\text{ then } \sup(XY) = \sup(X)\sup(Y)
       \end{aligned}$$
       
       <br></br>
@@ -192,7 +192,7 @@
       
       <details>
         <summary>$\sup(a+X) = a+\sup(X)$</summary>
-      Let $a+p\in a+X$, and observe that since $p\preceq \alpha$ therefore $a+p\preceq a+\sup(X)$.  This demonstrates both that $UB_{a+X}\ne \emptyset$ and $a+\sup(X)\in UB_{a+X}$.  <br>
+      Let $a+p\in a+X$, and observe that since $p\preceq \sup(X)$ therefore $a+p\preceq a+\sup(X)$.  This demonstrates both that $UB_{a+X}\ne \emptyset$ and $a+\sup(X)\in UB_{a+X}$.  <br>
 
       Now let $\alpha\in UB_{a+X}$ and $p\in X$.  Since $a+p\preceq \alpha$ then $p\preceq\alpha-a$ so $\alpha-a\in UB_X$ and then $\sup(X)\preceq \alpha-a$.  <br>
 
@@ -202,7 +202,9 @@
       </details>
 
       <details>
-        <summary>$\sup(bX) = b\sup(X).</summary>
+        <summary>$\sup(bX) = b\sup(X)$.</summary>
+
+        Let $bp\in bX$, and observe that since $p\preceq\sup(X)$ and since $0\prec b$ therefore $bp\prec b\sup(X)$.  This shows that $UB_{bX}\ne \emtpyset$ and $b\sup(X)\in UB_{bX}$.  
       </details>
 
       <details>
