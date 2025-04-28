@@ -126,7 +126,7 @@
     <details>
         <summary>Statement and proof.</summary>
 
-        <i>Statement</i>: (a) $\alpha\in UB_X \quad \Leftrightarrow \quad -\alpha\in LB_{-X}$.  <br>
+        <i>Statement</i>: (a) $\alpha\in UB_X \quad \Leftrightarrow \quad -\alpha\in LB_{-X}$.  Therefore $UB_X = -LB_{-X}$.<br>
 
         (b) $\alpha=\max (X) \quad\Leftrightarrow \quad -\alpha = \min(-X)$.  <br>
 
@@ -143,6 +143,23 @@
             &\Leftrightarrow \forall p\in X:p-p-\alpha\preceq \alpha-p-\alpha \\
             &\Leftrightarrow \forall p\in X:-\alpha\preceq -p \\
             &\Leftrightarrow -\alpha\in LB_{-X}
+          \end{aligned}$$
+        </details>
+
+        From the above, it is immediate that $UB_X = -LB_{-X}$.  
+
+        <details>
+          <summary>(b) $\alpha=\max(X) \quad \Leftrightarrow \quad -\alpha=\min(-X)$</summary>
+          This follows from (a) and the fact that $p\in X \Leftrightarrow -p\in -X$ for all $p\in X$.  
+        </details>
+
+        <details>
+          <summary>(c) $\alpha=\sup(X) \quad \Leftrightarrow \quad -\alpha=\min(-X)$</summary>
+
+          Note that since $UB_X = -LB_{-X}$ it is easy to then show that $-UB_X = LB_{-X}$.  Therefore
+
+          $$\begin{aligned}
+            \alpha = \sup(X) = \min(UB_X) &\Leftrightarrow -\alpha = \max(-UB_X) = \max(LB_{-X}) = \inf(-X)
           \end{aligned}$$
         </details>
     </details>
