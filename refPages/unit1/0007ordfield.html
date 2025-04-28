@@ -95,8 +95,20 @@
     Throughout this section, assume $(F,+,\times,\preceq)$ is an ordered field, and $X,Y\subseteq F$ nonempty subsets. <br>
     Also let $a,b\in F$ and assume $0\preceq b$.
     <div class="def">
-        Define $\prec\subseteq F^2$ by the relationship
-        $$ a\prec b \quad \Leftrightarrow \quad (\ a\preceq b \text{ and }  a\ne b \ )
+        We say that $\prec$ is <b>compatible with addition</b> if $\forall a,b,c\in F$ 
+        $$ a\prec b \Rightarrow a+c\prec b+c $$
+        We say that $\prec$ is <b>compatible with multiplication</b> if $\forall a,b\in F$ and $c\in F^+$,
+        $$ a\prec b\Rightarrow ac\prec bc $$
+    </div>
+    <div class="def">
+        We define the notations: 
+
+        $$\begin{aligned}
+            a+X &= \{a+p: p\in X\} \\
+            aX &= \{ap: p\in X\} \\
+            X+Y &= \{p+q: p\in X,q\in Y\}\\
+            XY &= \{ pq: p\in X, q\in Y \}
+        \end{aligned}$$
     </div>
 
     In all that follows, 
