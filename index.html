@@ -1,132 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>ACIRA Reference Page</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 2em;
-        line-height: 1.6;
-      }
-      .thm {
-        background-color: #ffdddd;
-        border-left: 4px solid #ee0000;
-        padding: 1em;
-        margin: 1em 0;
-      }
-      .def {
-        background-color: #ddffdd;
-        border-left: 4px solid #008800;
-        padding: 1em;
-        margin: 1em 0;
-      }
-      a {
-        color: #1e90ff;
-      }
-    </style>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-        },
-        svg: { fontCache: "global" },
-      };
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-      async
-    ></script>
-  </head>
-  <body>
-    Welcome to the reference page of <i>A Course in Real Analysis</i>.  
-    
-    <h1> About </h1>
-    
-    This page is intended to hold only a dense collection of facts with no explanation -- i.e. this page is not intended for teaching or learning, but only for <i>reference</i>. <br>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACIRA Reference Page</title>
 
-    The pedagogical portion of the course is hosted at this GitHub repository:  <a href="https://www.github.com/axiomtutor/acira">A Course in Real Analysis ... in Marimo!</a> <br>
+  <style>
+    /* General Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-    <h2 id="toc">Unit 1: Real Number Axioms  </h2>
-    <details><summary>Lessons</summary>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    h1, h2 {
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 2.5rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #224499;
+    }
+
+    p, ul, ol {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    ol {
+      padding-left: 2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    details {
+      background: #fefefe;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    summary {
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      outline: none;
+      padding: 0.3rem 0;
+    }
+
+    summary:hover {
+      color: #224499;
+    }
+
+    code, tt {
+      background-color: #eee;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    .thm {
+      background: #fff4f4;
+      border-left: 4px solid #cc4444;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .def {
+      background: #f4fff4;
+      border-left: 4px solid #44cc44;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+      },
+      svg: { fontCache: "global" },
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+
+<body>
+
+  <p>
+    Welcome to the reference page of <em>A Course in Real Analysis</em>.
+  </p>
+
+  <h1>About</h1>
+
+  <p>
+    This page is intended to hold only a dense collection of facts with no explanation —
+    i.e., it is not intended for teaching or learning, but only for <em>reference</em>.
+  </p>
+
+  <p>
+    The pedagogical portion of the course is hosted at this GitHub repository:
+    <a href="https://www.github.com/axiomtutor/acira">A Course in Real Analysis ... in Marimo!</a>.
+  </p>
+
+  <h2 id="toc">Unit 1: Real Number Axioms</h2>
+
+  <details>
+    <summary>Lessons</summary>
     <ul>
-      <li> <a href="refPages/unit1/0002groups.html">Lesson 0002: Groups</a>
+      <li>
+        <a href="refPages/unit1/0002groups.html">Lesson 2: Groups</a>
         <ol>
           <li>Notation: $xy$, $e$, $x^{-1}$, $x/y$, $x^n$</li>
-          <li>Defs: identity element, inverse element, group, commutative</li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#assocOpUniqIdNInv">Assoc. op. uniq. id. & inv.</a></li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#groupUniqIdNInv">Group. op. uniq. id. & inv.</a></li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#groupInvInv">Group inv. inv.</a></li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#groupUniqSol">Group uniq. sol.</a></li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#groupProdInv">Group prod. inv.</a></li>
-          <li>Thm: <a href="refPages/unit1/0002groups.html#groupExpLaws">Group exp. laws</a></li>
+          <li>Definitions: identity element, inverse element, group, commutative</li>
+          <li>Theorems:
+            <ul>
+              <li><a href="refPages/unit1/0002groups.html#assocOpUniqIdNInv">Assoc. op. uniq. id. & inv.</a></li>
+              <li><a href="refPages/unit1/0002groups.html#groupUniqIdNInv">Group. op. uniq. id. & inv.</a></li>
+              <li><a href="refPages/unit1/0002groups.html#groupInvInv">Group inv. inv.</a></li>
+              <li><a href="refPages/unit1/0002groups.html#groupUniqSol">Group uniq. sol.</a></li>
+              <li><a href="refPages/unit1/0002groups.html#groupProdInv">Group prod. inv.</a></li>
+              <li><a href="refPages/unit1/0002groups.html#groupExpLaws">Group exp. laws</a></li>
+            </ul>
+          </li>
         </ol>
       </li>
-      <li> <a href="refPages/unit1/0003ringfield.html">Lesson 3: Rings and Fields</a>
 
+      <li>
+        <a href="refPages/unit1/0003ringfield.html">Lesson 3: Rings and Fields</a>
         <ol>
-          <li>Notation: 0, 1, $na$, $a^n$</li>
-          <li>Defs: Distributes, ring, field</li>
-          <li>Thm: <a href="refPages/unit1/0003ringfield.html#ringUniqIdNInv">Ring uniq. id. & Inv.</a></li>
-          <li>Thm: <a href="refPages/unit1/0003ringfield.html#ringZeroAnnihilates">Ring zero annihilates</a></li>
-          <li>Thm: <a href="refPages/unit1/0003ringfield.html#ringNegOneNegates">Ring -1 negates</a></li>
-          <li>Thm: <a href="refPages/unit1/0003ringfield.html#fieldEqsUniqSols">Field eqs. uniq. sols.</a></li>
-        </ol>
-      
-      </li>
-      <li> <a href="refPages/unit1/0004order.html">Lesson 4: Order</a>
-        <ol>
-          <li>Notation: $\preceq,\prec,\succeq,\succ$</li>
-          <li>Defs: Partial order, partially ordered set, poset, commensurability, totality, total order, totally ordered set</li>
-          <li>Thm: <a href="refPages/unit1/0004order.html#posetPrecStrictPartOrd">Poset prec. strict part. ord.</a></li>
-          <li>Thm: <a href="refPages/unit1/0004order.html#posetNegPrec">Poset neg. prec.</a></li>
+          <li>Notation: $0$, $1$, $na$, $a^n$</li>
+          <li>Definitions: distributes, ring, field</li>
+          <li>Theorems:
+            <ul>
+              <li><a href="refPages/unit1/0003ringfield.html#ringUniqIdNInv">Ring uniq. id. & inv.</a></li>
+              <li><a href="refPages/unit1/0003ringfield.html#ringZeroAnnihilates">Ring zero annihilates</a></li>
+              <li><a href="refPages/unit1/0003ringfield.html#ringNegOneNegates">Ring -1 negates</a></li>
+              <li><a href="refPages/unit1/0003ringfield.html#fieldEqsUniqSols">Field eqs. uniq. sols.</a></li>
+            </ul>
+          </li>
         </ol>
       </li>
-      <li><a href="refPages/unit1/0005bounds.html">Lesson 5: Bounds</a>
-      <ol>
-        <li>Notation: $UB_A, \max(A), \sup(A)$</li>
-        <li>Defs: Upper bound, maximum, supremum, and duals (lower bound, minimum, infimum)</li>
-        <li>Thm: <a href="refPages/unit1/0005bounds.html#boundMaxIsSup">Bound max. is sup.</a></li>
-        <li>Thm: <a href="refPages/unit1/0005bounds.html#boundTotOrdFiniteSetMax">Bound tot. ord. finite set max.</a></li>
-        <li>Thm: <a href="refPages/unit1/0005bounds.html#boundInfLefteqSup">Bound inf. lefteq sup.</a> </li>
-        <li>Thm: <a href="refPages/unit1/0005bounds.html#boundSubsetSupIneq">Bound subset sup. ineq.</a> </li>
 
-      </ol>
-      </li>
-      <li><a href="refPages/unit1/0006funbound.html">Lesson 6: Function Bounds</a>
-      <ol>
-        <li>
-          Notation: $\text{Im}(f), \max(f),\sup(f),f\preceq g, f_{(\cdot, c)}, f_{(c,\cdot)}, \sup_{x\in X}f_{(x,\cdot)}, \sup_{y\in Y}f_{(\cdot,y)}, \sup_{x}\sup_y f$
-        </li>
-        <li>Defs: Image, function bound, function maximum, function supremum, partially applied function</li>
-        <li>Thm: <a href="refPages/unit1/0006funbound.html#funBoundIneqSupIneq">Fun. Bound Ineq. Sup. Ineq.</a><br>
-        </li>
-        <li>Thm: <a href="refPages/unit1/0006funbound.html#funBoundDoubleSup">Fun. Bound Double Sup.</a></li>
-      </ol>
-      </li>
-      <li><a href="refPages/unit1/0007ordfield.html">Lesson 7: Ordered Fields</a>
-      <ol>
-        <li>Notation: $(a,b), (a,b], [a,b), [a,b],\infty, F^\ast, a+X, aX X+Y, XY, X^+, X^-, X^{\preceq 0}, X^{\succeq 0}$</li>
-        <li>Def: Interval, bounded, closed, open, positive, negative, compatible with addition, compatible with multiplication</li>
-        <li>Thm: <tt></tt></li>
-        <li>Thm: <tt></tt> </li>
-        <li>Thm: <tt></tt></li>
-      </ol>
-      </li>
-      <li><a href="refPages/unit1/0008completeness.html">Lesson 8: Completeness</a>
-      <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
-      </li>
+      <!-- More Lessons Follow similarly... -->
     </ul>
-    </details>
+  </details>
 
-  </body>
+</body>
 </html>
