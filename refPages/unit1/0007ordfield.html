@@ -118,7 +118,7 @@
     </div>
 
     <p>Note that the theorems below all have dual theorems, meaning that anything stated in terms of an upper bound (either a simple upper bound, max, or sup) has a corresponding theorem stated in terms of lower bounds.  <br>
-    In general, stating the dual theorem involves toggling upper bounds (maxima, suprema) to lower bounds (minima, infima), and reversing the direction of inequalities.  </p>
+    In general, stating the dual theorem involves toggling upper bounds (maxima, suprema) to lower bounds (minima, infima), and reversing the direction of inequalities.  Therefore it is left to the reader to derive the dual theorems and their proofs.</p>
 
     <div class="thm" id="ordFieldDual">
         Theorem: <tt>Ord. field dual.</tt> <br>
@@ -165,6 +165,8 @@
             \alpha = \sup(X) = \min(UB_X) &\Leftrightarrow -\alpha = \max(-UB_X) = \max(LB_{-X}) = \inf(-X)
           \end{aligned}$$
         </details>
+
+        $\Box$
     </details>
 
     <div class="thm" id="ordFieldAlgSup">
@@ -186,7 +188,11 @@
       
       <br></br>
 
-      <i>Proof</i>:   <br>
+      <i>Proof</i>:  Let $a+p\in a+X$, and observe that since $p\preceq \alpha$ therefore $a+p\preceq a+\sup(X)$.  This demonstrates both that $UB_{a+X}\ne \emptyset$ and $a+\sup(X)\in UB_{a+X}$.  <br>
+
+      Now let $\alpha\in UB_{a+X}$ and $p\in X$.  Since $a+p\preceq a+\alpha$ then $p\preceq\alpha$ so $\alpha\in UB_X$ and then $\sup(X)\preceq \alpha$.  <br>
+
+      
 
       $\Box$
     </details>
