@@ -68,7 +68,11 @@
         [a,b] 
       \end{aligned}$$
 
-        We define $F^\ast = F\cup\{-\infty,\infty\}$.  If $a,b\in F$ then we say that $a$ is the <b>left end-point</b> of the interval $(a,b)$, and $b$ is the <b>right end-point</b>.  Likewise for other intervals. <br>
+        We define $F^\ast = F\cup\{-\infty,\infty\}$.  <br>
+        
+        If $a,b\in F$ then we say that $a$ is the <b>left end-point</b> of the interval $(a,b)$, and $b$ is the <b>right end-point</b>.  In this case, we say that the interval is <b>bounded</b>.  Likewise for all other intervals, with endpoints in $F$. <br>
+
+        Any interval of the forms $(-\infty,\infty),(-\infty,a),(-\infty,a],(a,\infty),[a,\infty)$ is said to be <b>unbounded</b>.  
 
         Every interval of the forms $(-\infty,\infty),(-\infty,a),(a,\infty),(a,b)$ is called an <b>open interval</b>.  <br>
 
@@ -109,24 +113,52 @@
             X+Y &= \{p+q: p\in X,q\in Y\}\\
             XY &= \{ pq: p\in X, q\in Y \}
         \end{aligned}$$
+        min
+        Also $-X = (-1)X$.
     </div>
 
-    In all that follows, 
+    <div class="thm" id="ordFieldAlgSup">
+      Theorem: <tt>Ord. field alg. sup.</tt> <br>
 
-    <div class="thm" id="">
-      Theorem: <tt></tt> <br>
-
-
+      The algebra laws of suprema and infima apply.
     </div>
 
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>:  <br></br>
+      <i>Statement</i>:  If $X, Y$ both have suprema then all following suprema exist and satify these equations.  <br>
+      $$\begin{aligned}
+        \sup(a+X) &= a+\sup(X) \\
+        \sup(bX) &= b\sup(X) \\
+        \sup(X+Y) &= \sup(X)+\sup(Y)\\
+        \text{ if } X = X^{\succeq 0}, Y = Y^{\succeq 0} \text{ then } sup(XY) = \sup(X)\sup(Y)
+      \end{aligned}$$
+      
+      <br></br>
 
       <i>Proof</i>:   <br>
 
       $\Box$
+    </details>
+
+    <div class="thm" id="ordFieldDual">
+        Theorem: <tt>Ord. field dual.</tt> <br>
+
+        Upper bounds correspond to negative lower bounds of negative sets.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: (a) $\alpha\in UB_X \quad \Leftrightarrow \quad -\alpha\in LB_{-X}$.  <br>
+
+        (b) $\alpha=\max (X) \quad\Leftrightarrow \quad -\alpha = \min(-X)$.  <br>
+
+        (c) $\alpha=\sup(X) \quad\Leftrightarrow\quad -\alpha=\inf(-X)$.
+        
+        <br><br>
+
+        <i>Proof</i>: 
     </details>
 
 
