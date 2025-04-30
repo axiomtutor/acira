@@ -235,12 +235,30 @@
 
         Now let $\alpha\in UB_{XY}$.  Since neither $\sup(X)$ nor $\sup(Y)$ is zero, both $X$ and $Y$ have positive elements.  Let $a\in X, b\in Y$ be positive elements.  <br>
         
-        Then $ab\preceq \alpha$, and therefore $a\preceq \alpha/b$.  Then $\alpha/b\in UB_X$ so $\sup(X)\preceq \alpha/b$.  <br>
+        Then $ab\preceq \alpha$, and therefore $a\preceq \alpha/b$.  Moreover $0\prec \alpha/b$, therefore $\alpha/b\in UB_X$ so $\sup(X)\preceq \alpha/b$.  <br>
 
-        So $b\preceq \alpha/\sup(X)$  and therefore $\alpha/\sup(X)\in UB_Y$.  Then $\sup(Y)\preceq \alpha/\sup(X)$.  <br>
+        So $b\preceq \alpha/\sup(X)$ and therefore $\alpha/\sup(X)\in UB_Y$.  Then $\sup(Y)\preceq \alpha/\sup(X)$.  <br>
 
         Therefore $\sup(X)\sup(Y)\preceq \alpha$ which shows that $\sup(X)\sup(Y) = \sup(XY)$.  
       </details>
+
+      $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field func. sum sup.</tt>
+
+      $\sup(f+g)\preceq \sup(f)+\sup(g)$
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $Z$ is any set and $f,g:Z\to F$ are functions such that $\sup(f)$ and $\sup(g)$ each exist, then $\sup(f+g)\preceq \sup(f)+\sup(g)$.  <br><br>
+
+      <i>Proof</i>:  Let $r\in Z$.  Then $f(r)\preceq \sup(f)$ and $g(r)\preceq \sup(g)$.  <br>
+
+      Therefore $f(r)+g(r)=(f+g)(r)\preceq \sup(f)+\sup(g)$ which shows $\sup(f)+\sup(g)\in UB_{\text{Im}(f+g)}$.  Then $\sup(f+g)\preceq\sup(f)+\sup(g)$.  <br>
 
       $\Box$
     </details>
@@ -262,6 +280,8 @@
 
       $\Box$
     </details>
+
+    
 
 
   </body>
