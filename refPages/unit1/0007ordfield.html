@@ -46,37 +46,34 @@
 
     <div class="def">
       Let $(F,+,\times)$ be a field and $(F,\preceq)$ a totally ordered set.  <br>
-
-      For any $a\in F$ we define the <b>intervals</b> 
-
-      $$ \begin{aligned}
-      (a,\infty) &= \{ c\in F: a < c\} \\
-      [a,\infty) &= \{ c\in F: a\le c\} 
-      \end{aligned} $$
-
-      The interval $(a,\infty)$ is said to be <b>open on the left</b> and $[a,\infty)$ is <b>closed on the left</b>.  <br>
-      
-      For $a,b\in F$, similar defintions apply for the intervals 
-
-      $$\begin{aligned}
-        (-\infty,a) \\
-        (-\infty,a] \\
-        (-\infty,\infty)\\
-        (a,b) \\
-        (a,b] \\
-        [a,b) \\
-        [a,b] 
-      \end{aligned}$$
-
-        We define $F^\ast = F\cup\{-\infty,\infty\}$.  <br>
         
-        If $a,b\in F$ then we say that $a$ is the <b>left end-point</b> of the interval $(a,b)$, and $b$ is the <b>right end-point</b>.  In this case, we say that the interval is <b>bounded</b>.  Likewise for all other intervals, with endpoints in $F$. <br>
+        For all $a,b\in F$ we define 
+        $$ \begin{aligned}
+          (a,b) &=\{c\in F: a\prec c\prec b\} \\
+          (a,b] &= \{c\in F: a\prec c\preceq b\} \\
+          [a,b) &= \{c\in F: a\preceq c\prec b\} \\
+          [a,b] &= \{c\in F: a\preceq c\preceq \}
+        \end{aligned}$$
 
-        Any interval of the forms $(-\infty,\infty),(-\infty,a),(-\infty,a],(a,\infty),[a,\infty)$ is said to be <b>unbounded</b>.  
+        Any of the above is called a <b>bounded interval</b>, and $a$ is called its <b>left end-point</b>, and $b$ is called its <b>right end-point</b>.  <br>
 
-        Every interval of the forms $(-\infty,\infty),(-\infty,a),(a,\infty),(a,b)$ is called an <b>open interval</b>.  <br>
+        We define $\infty$ and $-\infty$ as new objects, and define $F^* = F\cup \{\infty,-\infty\}$.  We then extend the ordering relation as follows, for every $x\in F^*$.
 
-        Every interval of the forms $(-\infty,\infty),(-\infty,a],[a,\infty],[a,b]$ is called a <b>closed interval</b>.  <br>
+        $$ \begin{aligned}
+          -\infty \preceq x\preceq \infty
+        $$ \end{aligned}
+
+        With these extensions, we define $(F^\ast,\preceq)$ as the <b>extended order of $F$</b>.  
+
+        We define the <b>unbounded intervals</b>,
+
+        $$\begin{aligned}
+          (-\infty,a) &= \{c\in F: c\prec a\} \\
+          (-\infty,a] &= \{c\in F: c\preceq a\} \\
+          (a,\infty) &= \{ c\in F: a\prec c \} \\
+          [a,\infty) &= \{ c\in F: a\preceq c\} \\
+          (-\infty,\infty) &= F 
+        \end{aligned}$$
 
         If $X\subseteq F$ then we define the <b>subset of positives</b>, 
         $$ X^+ = \{a\in X: 0\prec a \}$$
