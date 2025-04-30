@@ -264,6 +264,44 @@
     </details>
 
     <div class="thm">
+      Theorem: <tt>Ord. field strict prec. compat.</tt>
+
+      Strict precedence is compatible with addition and multiplication.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $\prec$ is compatible with addition and multiplication.   <br><br>
+
+      <i>Proof</i>: 
+
+      <details>
+        <summary>Comptability with addition.</summary>
+      
+        Let $a,b,c\in F$ and assume $a\prec b$.  <br>
+
+        Then $a\preceq b$ and by compatibility of $\preceq$ we have $a+c\preceq b+c$.  <br>
+
+        Assume for contradiction that $a+c=b+c$.  Then $a=b$ which in inconsistent with $a\prec b$.  
+      </details>
+
+      <details>
+        <summary>Compatibility with multiplication.</summary>
+
+        Let $a,b\in F$ and $c\in F^+$.  Assume $a\prec b$.  <br>
+
+        Then $a\preceq b$ and therefore $ac\preceq bc$.  <br>
+
+        Assume for contradiction that $ac=bc$.  Since $c\ne 0$ then $ac/c = bc/c$ which simplifies to $a=b$. <br>
+
+        But this is inconsistent with $a\prec b$.  
+      </details>
+
+      $\Box$ 
+    </details>
+
+    <div class="thm">
       Theorem: <tt>Ord. field zero prec. one</tt>
 
       $0\prec 1$
@@ -280,9 +318,6 @@
 
       $\Box$
     </details>
-
-    
-
 
   </body>
 </html>
