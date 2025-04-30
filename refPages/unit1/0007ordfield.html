@@ -196,14 +196,12 @@
       Now let $\alpha\in UB_{a+X}$ and $p\in X$.  Since $a+p\preceq \alpha$ then $p\preceq\alpha-a$ so $\alpha-a\in UB_X$ and then $\sup(X)\preceq \alpha-a$.  <br>
 
       Therefore $a+\sup(X)\preceq \alpha$ which now shows $a+\sup(X)=\sup(a+X)$. <br>
-
-      $\Box$
       </details>
 
       <details>
         <summary>$\sup(bX) = b\sup(X)$.</summary>
 
-        Let $bp\in bX$, and observe that since $p\preceq\sup(X)$ and since $0\prec b$ therefore $bp\preceq b\sup(X)$.  This shows that $UB_{bX}\ne \emtpyset$ and $b\sup(X)\in UB_{bX}$.  <br>
+        Let $bp\in bX$, and observe that since $p\preceq\sup(X)$ and since $0\prec b$ therefore $bp\preceq b\sup(X)$.  This shows that $UB_{bX}\ne \emptyset$ and $b\sup(X)\in UB_{bX}$.  <br>
 
         Now let $\alpha\in UB_{bX}$ and $p\in X$.  Since $bp \preceq \alpha$, and because $0\prec b$, then $p\preceq \alpha/b$.  So $\alpha/b \in UB_X$ and therefore $\sup(X)\preceq \alpha/b$.  <br>
 
@@ -212,11 +210,23 @@
 
       <details>
         <summary>$\sup(X+Y) = \sup(X)+\sup(Y)$.</summary>
+
+        Let $a\in X, b\in Y$ so that $a+b\in X+Y$.  Then $a+b\preceq \sup(X)+\sup(Y)$, so $\sup(X)+\sup(Y)\in UB_{X+Y}$.  <br>
+
+        Now let $\alpha\in UB_{X+Y}$, and $a\in X,b\in Y$.  Then $a+b\preceq \alpha$ therefore $b\preceq \alpha-a$.  <br>
+
+        This shows that, with $a$ fixed, $\alpha-a\in UB_Y$.  Therefore $\sup(Y)\preceq \alpha-a$.  <br>
+
+        Then $a\preceq \alpha-\sup(Y)$ for all $a\in F$.  So $\alpha-\sup(Y)\in UB_X$, and so $\sup(X)\preceq \alpha-\sup(Y)$.  <br>
+
+        Therefore $\sup(X)+\sup(Y)\preceq \alpha$, which then shows $\sup(X)+\sup(Y) = \sup(X+Y)$.  
       </details>
 
       <details>
         <summary>$\sup(XY) = \sup(X)\sup(Y)$ if $X=X^{\succeq 0}, Y=Y^{\succeq 0}$.</summary>
       </details>
+
+      $\Box$
     </details>
 
     <div class="thm">
