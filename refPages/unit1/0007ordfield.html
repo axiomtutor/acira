@@ -224,6 +224,22 @@
 
       <details>
         <summary>$\sup(XY) = \sup(X)\sup(Y)$ if $X=X^{\succeq 0}, Y=Y^{\succeq 0}$.</summary>
+
+        Because $X$ is nonnegative, its supremum can only be 0 or positive.  <br>
+
+        Consider the case that $\sup(X) = 0$.  In that case, $X = \{0\}$ and therefore $XY = \{0\}$, in which case it trivially follows that $\sup(XY)=0=\sup(X)\sup(Y)$.  <br>
+
+        If $\sup(Y)=0$ the same result follows.  Therefore, through the remainder of this proof, assume that neither suprema is zero, and therefore both are positive.  <br>
+
+        Let $a\in X,b\in Y$ so that $ab\in XY$.  Then $ab \preceq \sup(X)\sup(Y)$, therefore $\sup(X)\sup(Y)\in UB_{XY}$.  <br>
+
+        Now let $\alpha\in UB_{XY}$.  Since neither $\sup(X)$ nor $\sup(Y)$ is zero, both $X$ and $Y$ have positive elements.  Let $a\in X, b\in Y$ be positive elements.  <br>
+        
+        Then $ab\preceq \alpha$, and therefore $a\preceq \alpha/b$.  Then $\alpha/b\in UB_X$ so $\sup(X)\preceq \alpha/b$.  <br>
+
+        So $b\preceq \alpha/\sup(X)$  and therefore $\alpha/\sup(X)\in UB_Y$.  Then $\sup(Y)\preceq \alpha/\sup(X)$.  <br>
+
+        Therefore $\sup(X)\sup(Y)\preceq \alpha$ which shows that $\sup(X)\sup(Y) = \sup(XY)$.  
       </details>
 
       $\Box$
