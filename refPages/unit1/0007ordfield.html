@@ -55,7 +55,7 @@
           [a,b] &= \{c\in F: a\preceq c\preceq \}
         \end{aligned}$$
 
-        Any of the above is called a <b>bounded interval</b>, and $a$ is called its <b>left end-point</b>, and $b$ is called its <b>right end-point</b>.  <br>
+        Any of the above is called a <b>bounded interval</b>, and $a$ is called its <b>left end-point</b>, and $b$ is called its <b>right end-point</b>.  End-points are called <b>exclusive</b> if they are delimited by a curved parenthesis.  They are called <b>inclusive</b> if it is delimited by a "square bracket".<br>
 
         We define $\infty$ and $-\infty$ as new objects, and define $F^* = F\cup \{\infty,-\infty\}$.  We then extend the ordering relation as follows, for every $x\in F^*$.
 
@@ -63,7 +63,7 @@
           -\infty \preceq x\preceq \infty
         $$ \end{aligned}
 
-        With these extensions, we define $(F^\ast,\preceq)$ as the <b>extended order of $F$</b>.  
+        With these extensions, we define $(F^\ast,\preceq)$ as the <b>extended order of $F$</b>.   <br>
 
         We define the <b>unbounded intervals</b>,
 
@@ -75,6 +75,8 @@
           (-\infty,\infty) &= F 
         \end{aligned}$$
 
+        If an interval's end-points are all exclusive, or it has no end-points, then it is called an <b>open interval</b>.  If its end-points are all inclusive, or it has no end-points, then it is called a <b>closed interval</b>.  <br>
+
         If $X\subseteq F$ then we define the <b>subset of positives</b>, 
         $$ X^+ = \{a\in X: 0\prec a \}$$
         and the <b>subset of negatives</b>
@@ -84,7 +86,7 @@
         and the <b>subset of nonpositives</b>
         $$ X^{\preceq 0} = \{a\in X: a\preceq 0\}$$
 
-        The set of positive numbers is $F^+$ and the negative numbers is $F^-$. <br>
+        The set of <b>all positive numbers</b> is $F^+$ and the set of <b>all negative numbers</b> is $F^-$. <br>
 
         We say that $\preceq$ is <b>compatible with addition</b> if $\forall a,b,c\in F$ 
         $$ a\preceq b \Rightarrow a+c\preceq b+c $$
@@ -201,7 +203,11 @@
       <details>
         <summary>$\sup(bX) = b\sup(X)$.</summary>
 
-        Let $bp\in bX$, and observe that since $p\preceq\sup(X)$ and since $0\prec b$ therefore $bp\prec b\sup(X)$.  This shows that $UB_{bX}\ne \emtpyset$ and $b\sup(X)\in UB_{bX}$.  
+        Let $bp\in bX$, and observe that since $p\preceq\sup(X)$ and since $0\prec b$ therefore $bp\prec b\sup(X)$.  This shows that $UB_{bX}\ne \emtpyset$ and $b\sup(X)\in UB_{bX}$.  <br>
+
+        Now let $\alpha\in UB_{bX}$ and $p\in X$.  Since $bp \preceq \alpha$, and because $0\prec b$, then $p\preceq \alpha/b$.  So $\alpha/b \in UB_X$ and therefore $\sup(X)\preceq \alpha/b$.  <br>
+
+        Therefore $b\sup(X) \preceq \alpha$ which shows that $b\sup(X)=\sup(a+X)$.  
       </details>
 
       <details>
