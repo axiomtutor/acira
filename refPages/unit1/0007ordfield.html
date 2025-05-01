@@ -115,9 +115,19 @@
 
         Also $-X = (-1)X$.
     </div>
+    <div class="def">
+      We define the element $\overline n = \overbrace{1+1+\cdots + 1}^n$, for each $n\in \Bbb N$.  Similarly $\overline{-n} = \overbrace{-1-1-\cdots -1}^n$ for each $n\in \Bbb N$.  And $\overline 0 = 0\in F$.  <br>
+      For each $m,n\in \Bbb Z$ with $n\ne 0$, we define $\overline{\frac{m}n} = \frac{\overline m}{\overline n}$.  <br>
+      We then define 
+      
+      $$Q = \{\overline{\frac m n}: m,n\in \Bbb Z, n\ne 0\}$$
+    </div>
 
-    <p>Note that the theorems below all have dual theorems, meaning that anything stated in terms of an upper bound (either a simple upper bound, max, or sup) has a corresponding theorem stated in terms of lower bounds.  <br>
-    In general, stating the dual theorem involves toggling upper bounds (maxima, suprema) to lower bounds (minima, infima), and reversing the direction of inequalities.  Therefore it is left to the reader to derive the dual theorems and their proofs.</p>
+    Note that we will begin to -- somewhat unofficially -- refer to elements in an ordered field as "numbers".  <br>
+    We do not make the definition of the word "number" official, because it is neither universally accepted nor is it terribly important that we do so. <br>
+    But if any object is an element of an ordered field, we may refer to it as a number.  
+
+    <h2>Number Theorems</h2>
 
     <div class="thm">
       Theorem: <tt>Ord. field simult. comp.</tt> <br>
@@ -293,13 +303,22 @@
 
         Since $c\prec 1$ then by compatibility $c^2\prec c$.  <br>
 
-        Finally, since $c\in F^+$ then $\prec c^{-1}$ exists.  Since $1 = cc^{-1}$
+        Finally, since $c\in F^+$ then $\prec c^{-1}$ exists.  Since $1 = cc^{-1}$, if $c^{-1}$ were negative then $1$ would be negative, which we know it isn't.  Therefore $0\prec \frac 1 c$.  Now because $c\prec 1$ then by compatibility, $1\prec \frac 1 c$.
       </details>
 
       <details>
         <summary>(d) $0\prec \frac 1 d \prec 1 \prec d\prec d^2$.</summary>
+
+        The proofs of these statements are nearly the same as for (c).  
       </details>
+
+      $\Box$
     </details>
+
+    <h2>Set Bound Thereoms</h2>
+    
+    <p>Note that the theorems below all have dual theorems, meaning that anything stated in terms of an upper bound (either a simple upper bound, max, or sup) has a corresponding theorem stated in terms of lower bounds.  <br>
+      In general, stating the dual theorem involves toggling upper bounds (maxima, suprema) to lower bounds (minima, infima), and reversing the direction of inequalities.  Therefore it is left to the reader to derive the dual theorems and their proofs.</p>
 
 
     <div class="thm" id="ordFieldDual">
