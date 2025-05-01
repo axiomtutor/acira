@@ -127,6 +127,154 @@
       Also if $a,b,c,d$ are all nonnegative and $a\preceq b$ and $c\preceq d$, then $ac\preceq bd$.
     </div>
 
+    <div class="thm">
+      Theorem: <tt>Ord. field strict prec. compat.</tt> <br>
+
+      Strict precedence is compatible with addition and multiplication.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: $\prec$ is compatible with addition and multiplication.   <br><br>
+
+      <i>Proof</i>: 
+
+      <details>
+        <summary>Comptability with addition.</summary>
+      
+        Let $a,b,c\in F$ and assume $a\prec b$.  <br>
+
+        Then $a\preceq b$ and by compatibility of $\preceq$ we have $a+c\preceq b+c$.  <br>
+
+        Assume for contradiction that $a+c=b+c$.  Then $a=b$ which in inconsistent with $a\prec b$.  <br>
+
+        Therefore $a+c\ne b+c$ which now implies $a+c\prec b+c$, which demonstrates compatibility with addition.  
+      </details>
+
+      <details>
+        <summary>Compatibility with multiplication.</summary> <br>
+
+        Let $a,b\in F$ and $c\in F^+$.  Assume $a\prec b$.  <br>
+
+        Then $a\preceq b$ and therefore $ac\preceq bc$.  <br>
+
+        Assume for contradiction that $ac=bc$.  Since $c\ne 0$ then $ac/c = bc/c$ which simplifies to $a=b$. <br>
+
+        But this is inconsistent with $a\prec b$.  
+      </details>
+
+      $\Box$ 
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field zero prec. one</tt> <br>
+
+      $0\prec 1$
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary> <br>
+
+      <i>Statement</i>: $0\prec 1$. <br><br>
+      <i>Proof</i>: Assume for contradiction that $1\preceq 0$.  <br>
+
+      By compatbility with addition, $0\preceq -1$.  By compatibility with multiplication therefore, $0\cdot (-1)\preceq (-1)(-1)$.  <br>
+
+      This simplifies to $0\preceq 1$ and therefore by anti-symmetry, implies $0=1$.  But it is an axiom of fields that $0\ne 1$.  <br>
+
+      $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field prod. pos. neg.</tt> <br>
+
+      A product of two positive or two negative numbers is positive.  A product of a positive and negative number is negative.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Let $a,b \in F^+$ and $c,d\in F^-$.  <br>
+
+      Then $ab, cd \in F^+$ and $ac \in F^-$.  <br><br>
+
+      <i>Proof</i>:  Since $a\in F^+$ then $0\prec a$.  Since $b\in F^+$ then by compatibility with multiplication, $0b = 0 \prec ab$.  <br>
+
+      Since $c,d\prec 0$ then by compatibility with addition $0\prec -c,-d$.  From the result above, $(-c)(-d) = cd\in F^+$. <br>
+
+      Finally, since $c\prec 0$ then by compatibility with multiplication, $ac\prec 0$ so $ac\in F^-$.  <br>
+
+      $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field integer powers</tt> <br>
+
+      An ordered field follows familiar ordering relations for integer exponents.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Let $a,b,c,d\in F^+$ such that $c\prec 1\prec d$.  Then <br>
+      
+      (a) $a\preceq b$ if and only if $a^n\preceq b^n$ for all $n\in\Bbb N$.  <br>
+      
+      (b) $a\preceq b$ if and only if $\frac 1 b \preceq \frac 1 a$.  <br>
+      
+      (c) $0\prec c^2 \prec c \prec 1 \prec \frac 1 c$.  <br>
+      
+      (d) $0\prec \frac 1 d \prec 1 \prec d\prec d^2$. <br><br>
+
+      <i>Proof</i>: 
+
+      <details>
+        <summary>(a) $a\preceq b$ if and only if $a^n\preceq b^n$.</summary>
+
+        <details>
+          <summary>If $a\preceq b$ then $a^n\preceq b^n$, for all $n\in\Bbb N$.</summary>
+
+          Suppose $a\preceq b$.  As a note which will be useful soon, since $a\in F^+$ then by compatibility, $a^2\preceq ab$ and $ab\preceq b^2$.  Therefore $a^2\preceq b^2$.  <br>
+
+          Now for the base case for induction, with $n=1$, the result is trivial.  <br>
+
+          For the inductive case, let $1\le n$ be a natural number such that $a^n\preceq b^n$.  Then 
+          $$\begin{aligned}
+            a^{n+1} &= aa^n \\
+            &\preceq bb^n \\
+            &=b^{n+1}
+          \end{aligned}$$
+
+          This concludes the inductive case, and therefore the claim holds for all $n\in\Bbb N$.  
+        </details>
+
+        The converse direction holds trivially, setting $n=1$.  
+      </details>
+
+      <details>
+        <summary>(b) $a\preceq b$ if and only if $\frac 1 b \preceq \frac 1 a$.</summary>
+
+        Since $a,b\in F^+$ then by compatibility, if $a\preceq b$ then multiplying both sides by $\frac 1 {ab}$ and simplifying, we obtain $\frac 1 b\preceq \frac 1 a$.  <br>
+
+        For the converse, assume $\frac 1 b\preceq \frac 1 a$ and multiply by $ab$.  
+      </details>
+
+      <details>
+        <summary>(c) $0\prec c^2 \prec c \prec 1 \prec \frac 1 c$. </summary>
+
+        Since $0\prec c$ we have by compatibility $0c = 0 \prec cc = c^2$.  <br>
+
+        Since $c\prec 1$ then by compatibility $c^2\prec c$.  <br>
+
+        Finally, since $c\in F^+$ then $\prec c^{-1}$ exists.  Since $1 = cc^{-1}$
+      </details>
+
+      <details>
+        <summary>(d) $0\prec \frac 1 d \prec 1 \prec d\prec d^2$.</summary>
+      </details>
+    </details>
+
     <details>
       <summary>Statement and proof.</summary>
 
@@ -296,79 +444,6 @@
       Therefore $f(r)+g(r)=(f+g)(r)\preceq \sup(f)+\sup(g)$ which shows $\sup(f)+\sup(g)\in UB_{\text{Im}(f+g)}$.  Then $\sup(f+g)\preceq\sup(f)+\sup(g)$.  <br>
 
       $\Box$
-    </details>
-
-    <div class="thm">
-      Theorem: <tt>Ord. field strict prec. compat.</tt> <br>
-
-      Strict precedence is compatible with addition and multiplication.
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: $\prec$ is compatible with addition and multiplication.   <br><br>
-
-      <i>Proof</i>: 
-
-      <details>
-        <summary>Comptability with addition.</summary>
-      
-        Let $a,b,c\in F$ and assume $a\prec b$.  <br>
-
-        Then $a\preceq b$ and by compatibility of $\preceq$ we have $a+c\preceq b+c$.  <br>
-
-        Assume for contradiction that $a+c=b+c$.  Then $a=b$ which in inconsistent with $a\prec b$.  <br>
-
-        Therefore $a+c\ne b+c$ which now implies $a+c\prec b+c$, which demonstrates compatibility with addition.  
-      </details>
-
-      <details>
-        <summary>Compatibility with multiplication.</summary> <br>
-
-        Let $a,b\in F$ and $c\in F^+$.  Assume $a\prec b$.  <br>
-
-        Then $a\preceq b$ and therefore $ac\preceq bc$.  <br>
-
-        Assume for contradiction that $ac=bc$.  Since $c\ne 0$ then $ac/c = bc/c$ which simplifies to $a=b$. <br>
-
-        But this is inconsistent with $a\prec b$.  
-      </details>
-
-      $\Box$ 
-    </details>
-
-    <div class="thm">
-      Theorem: <tt>Ord. field zero prec. one</tt> <br>
-
-      $0\prec 1$
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary> <br>
-
-      <i>Statement</i>: $0\prec 1$. <br><br>
-      <i>Proof</i>: Assume for contradiction that $1\preceq 0$.  <br>
-
-      By compatbility with addition, $0\preceq -1$.  By compatibility with multiplication therefore, $0\cdot (-1)\preceq (-1)(-1)$.  <br>
-
-      This simplifies to $0\preceq 1$ and therefore by anti-symmetry, implies $0=1$.  But it is an axiom of fields that $0\ne 1$.  <br>
-
-      $\Box$
-    </details>
-
-    <div class="thm">
-      Theorem: <tt>Ord. field integer powers</tt> <br>
-
-      An ordered field follows familiar ordering relations for integer exponents.
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: <br><br>
-
-      <i>Proof</i>: 
     </details>
   </body>
 </html>
