@@ -126,6 +126,32 @@
 
       Also if $a,b,c,d$ are all nonnegative and $a\preceq b$ and $c\preceq d$, then $ac\preceq bd$.
     </div>
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Let $a,b,c,d\in F$ such that $a\preceq b$ and $c\preceq d$.  Then $a+c\preceq b+d$.  <br>
+      
+      Also if $a,b,c,d\in F^{\succeq 0}$ and still $a\preceq b$ and $c\preceq d$, then $ac\preceq bd$.  <br><br>
+
+      <i>Proof</i>: 
+
+      <details>
+        <summary>$a+c\preceq b+d$.</summary>
+
+        By compatibility with addition, $a+c\preceq b+c$.  Also by compatibility with addition $b+c\preceq b+d$.  <br>
+        By transitivity then $a+c\preceq b+d$.
+      </details>
+
+      <details>
+        <summary>$ac\preceq bd$.</summary>
+
+        Assuming $a,b,c,d\in F^{\succeq 0}$, then $ac\preceq bc$ by compatibility with multiplication.  Also $bc\preceq bd$.  <br>
+
+        Therefore by transitivity $ac\preceq  bd$.
+      </details>
+
+      $\Box$
+    </details>
 
     <div class="thm">
       Theorem: <tt>Ord. field strict prec. compat.</tt> <br>
@@ -275,32 +301,6 @@
       </details>
     </details>
 
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: Let $a,b,c,d\in F$ such that $a\preceq b$ and $c\preceq d$.  Then $a+c\preceq b+d$.  <br>
-      
-      Also if $a,b,c,d\in F^{\succeq 0}$ and still $a\preceq b$ and $c\preceq d$, then $ac\preceq bd$.  <br><br>
-
-      <i>Proof</i>: 
-
-      <details>
-        <summary>$a+c\preceq b+d$.</summary>
-
-        By compatibility with addition, $a+c\preceq b+c$.  Also by compatibility with addition $b+c\preceq b+d$.  <br>
-        By transitivity then $a+c\preceq b+d$.
-      </details>
-
-      <details>
-        <summary>$ac\preceq bd$.</summary>
-
-        Assuming $a,b,c,d\in F^{\succeq 0}$, then $ac\preceq bc$ by compatibility with multiplication.  Also $bc\preceq bd$.  <br>
-
-        Therefore by transitivity $ac\preceq  bd$.
-      </details>
-
-      $\Box$
-    </details>
 
     <div class="thm" id="ordFieldDual">
         Theorem: <tt>Ord. field dual.</tt> <br>
