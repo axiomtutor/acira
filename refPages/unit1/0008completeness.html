@@ -103,19 +103,19 @@
 
           Suppose for contradiction that $x < \alpha^n$, and define 
 
-          $$ S = \max\left\{\frac{\alpha^n - x}{n\binom n k \alpha^k} : 0\le k\le n\right\} $$
+          $$ S = \left\{\frac{\alpha^n - x}{n\binom n k \alpha^k} : 0\le k\le n\right\} $$
 
           and 
 
           $$ \varepsilon = \min\{1, \min(S)\}/2 $$
 
-          Therefore, for any integer $0\le k\le n$, we have $\varepsilon^k < 1$ and $\varepsilon < \frac{\alpha^n-x}{n\binom n k \alpha^k}$.  
+          Therefore, for any integer $0\le k\le n$, we have $\varepsilon^k < 1$ and $\varepsilon < \frac{\alpha^n-x }{n\binom n k \alpha^k}$.  
 
           Then by the binomial theorem, and the above, 
           $$\begin{aligned} 
             (\alpha-\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^k (-\varepsilon)^{n-k} \\
             &= \alpha^n + \sum_{k=0}^{n-1}\binom n k \alpha^k(-\varepsilon)^{n-k} \\
-            &> \alpha^n - \sum_{\substack{0 \le n-k \le n}{n-k \text{ odd}} }
+            &> \alpha^n - \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}} } 
           \end{aligned}$$
         </details>
 
