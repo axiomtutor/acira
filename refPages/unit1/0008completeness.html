@@ -45,55 +45,63 @@
     <h1>Lesson 0008: Completeness</h1>
 
     <div class="def">
-      Let $(F,+,\times)$ be a field and $(F,\preceq)$ a totally ordered set.  <br>
-        
-        For all $a,b\in F$ we define 
-        $$ \begin{aligned}
-          (a,b) &=\{c\in F: a\prec c\prec b\} \\
-          (a,b] &= \{c\in F: a\prec c\preceq b\} \\
-          [a,b) &= \{c\in F: a\preceq c\prec b\} \\
-          [a,b] &= \{c\in F: a\preceq c\preceq \}
-        \end{aligned}$$
+        Let $(F,+,\times,\preceq)$ be an ordered field.  <br>
 
-        Any of the above is called a <b>bounded interval</b>, and $a$ is called its <b>left end-point</b>, and $b$ is called its <b>right end-point</b>.  End-points are called <b>exclusive</b> if they are delimited by a curved parenthesis.  They are called <b>inclusive</b> if it is delimited by a "square bracket".<br>
+        We say that $F$ has the <b>completeness (with respect to suprema) property</b> if for every $X\subseteq F$ a nonempty subset bounded above, $\sup(X)$ exists.  <br>
 
-        We define $\infty$ and $-\infty$ as new objects, and define $F^* = F\cup \{\infty,-\infty\}$.  We then extend the ordering relation as follows, for every $x\in F^*$.
-
-        $$ \begin{aligned}
-          -\infty \preceq x\preceq \infty
-        \end{aligned}$$
-
-        We define $(F^\ast,\preceq)$ as the <b>extended order of $F$</b>.   <br>
-
-        We define the <b>unbounded intervals</b>,
-
-        $$\begin{aligned}
-          (-\infty,a) &= \{c\in F: c\prec a\} \\
-          (-\infty,a] &= \{c\in F: c\preceq a\} \\
-          (a,\infty) &= \{ c\in F: a\prec c \} \\
-          [a,\infty) &= \{ c\in F: a\preceq c\} \\
-          (-\infty,\infty) &= F 
-        \end{aligned}$$
-
-        If an interval's end-points are all exclusive, or it has no end-points, then it is called an <b>open interval</b>.  If its end-points are all inclusive, or it has no end-points, then it is called a <b>closed interval</b>.  <br>
-
-        If $X\subseteq F$ then we define the <b>subset of positives</b>, 
-        $$ X^+ = \{a\in X: 0\prec a \}$$
-        and the <b>subset of negatives</b>
-        $$ X^- = \{a\in X: a\prec 0\} $$
-        and the <b>subset of nonnegatives</b>
-        $$ X^{\succeq 0} = \{a\in X: 0\preceq a\} $$
-        and the <b>subset of nonpositives</b>
-        $$ X^{\preceq 0} = \{a\in X: a\preceq 0\}$$
-
-        The set of <b>all positive numbers</b> is $F^+$ and the set of <b>all negative numbers</b> is $F^-$. <br>
-
-        We say that $\preceq$ is <b>compatible with addition</b> if $\forall a,b,c\in F$ 
-        $$ a\preceq b \Rightarrow a+c\preceq b+c $$
-        We say that $\preceq$ is <b>compatible with multiplication</b> if $\forall a,b\in F$ and $c\in F^{\succeq 0}$,
-        $$ a\preceq b \Rightarrow ac\preceq bc $$
-
-        If $\preceq$ is compatible with both addition and multiplication then we say that $(F,+,\times,\preceq)$ is an <b>ordered field</b>.  <br>
+        In that case we call $F$ a <b>complete ordered field</b>.
     </div>
+
+
+    <div class="thm" id="axiomsOfR">
+        The <b>axiom of the real numbers</b> is the following proposition. <br>
+
+        There exists a complete ordered field.  We denote the set by $F = \Bbb R$ and its ordering relation by $\le$.  <br>
+
+        We denote the field of fractions of $\Bbb R$ by the symbol $\Bbb Q$.  We assume without proof that this is the same as our intuitive concept of the rational numbers.
+    </div>
+
+    <div class="thm">
+        If $x\in\Bbb R$ and $n\in\Bbb N$ then we define <b>the $n$th root of $x$</b> as the number $y$ satisfying 
+
+        $$ y^n = x $$
+
+        We denote $y$ by $y=\sqrt[n]x$.
+    </div>
+
+    <div class="thm">
+
+        Theorem: <tt>Real roots exist</tt> <br>
+
+        Roots of positives exist uniquely, and so do odd roots of negatives.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: 
+        If $x\in\Bbb R^{\ge 0}$ then for every $n\in\Bbb N$, the $n$th root $\sqrt[n]x$ exists and is unqiue.  <br>
+
+        If $x\in\Bbb R^-$ then if $n\in\Bbb N$ is odd then $\sqrt[n]x$ exists and is unique.  If $n$ is even then $\sqrt[n]x$ does not exist.  <br><br>
+
+        <i>Proof</i>:
+    </details>
+
+    <div class="thm">
+        Theorem: <tt>Real rational pow. laws</tt> <br>
+
+        Real numbers with rational exponents follow the power laws.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: For all $p,q\in\Bbb Q$ and $x,y\in\Bbb R^+$, 
+        $$ x^py^p = (xy)^p $$ 
+        and 
+        $$ (x^p)^q = x^{pq} $$ 
+
+        <i>Proof</i>:
+    </details>
   </body>
 </html>
