@@ -82,9 +82,30 @@
         <i>Statement</i>: 
         If $x\in\Bbb R^{\ge 0}$ then for every $n\in\Bbb N$, the $n$th root $\sqrt[n]x$ exists and is unqiue.  <br>
 
-        If $x\in\Bbb R^-$ then if $n\in\Bbb N$ is odd then $\sqrt[n]x$ exists and is unique.  If $n$ is even then $\sqrt[n]x$ does not exist.  <br><br>
+        If $x\in\Bbb R^-$ then if $n\in\Bbb N$ is odd then $\sqrt[n]x$ exists and is unique.  If $n$ is even then $\sqrt[n]x$ does not exist.  <br><br> 
 
-        <i>Proof</i>:
+        <i>Proof</i>: Assume that $1 < x$ and $n\in\Bbb N$.  <br>
+
+        Define the set $L = \{ z\in\Bbb R: z^n < x\}^{\ge 0}$. 
+        
+        <details>
+          <summary>$\sup(L)=\alpha$ exists.</summary>
+        
+          Clearly $0\in L$ so it is nonempty.  <br>
+  
+          If $1\le x$ then by the integer power comparison theorem, $x^n$ is an upper bound on $L$.  If $0\le x < 1$ then 1 is an upper bound on $L$.  Since $L$ is bounded above in every case, then therefore $\sup(L)=\alpha$ exists.  
+        </details>
+
+        <details>
+          <summary>$\alpha^n\le x$</summary>
+        </details>
+
+        <details>
+          <summary>$\alpha^n\ge x$</summary>
+        </details>
+
+        
+
     </details>
 
     <div class="thm">
@@ -96,7 +117,7 @@
     <details>
         <summary>Statement and proof.</summary>
 
-        <i>Statement</i>: For all $p,q\in\Bbb Q$ and $x,y\in\Bbb R^+$, 
+        <i>Statement</i>: For all $p,q\in\Bbb Q$ and $x,y\in\Bbb R^{\ge 0}$, 
         $$ x^py^p = (xy)^p $$ 
         and 
         $$ (x^p)^q = x^{pq} $$ 
