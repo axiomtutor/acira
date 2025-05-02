@@ -113,7 +113,9 @@
 
           Then by the binomial theorem, and the above, 
           $$\begin{aligned} 
-            (\alpha-\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^k (-\varepsilon)^{n-k}
+            (\alpha-\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^k (-\varepsilon)^{n-k} \\
+            &= \alpha^n + \sum_{k=0}^{n-1}\binom n k \alpha^k(-\varepsilon)^{n-k} \\
+            &> \alpha^n - \sum_{\substack{0 \le n-k \le n}{n-k \text{ odd}} }
           \end{aligned}$$
         </details>
 
