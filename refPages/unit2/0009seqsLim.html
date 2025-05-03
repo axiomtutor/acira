@@ -87,9 +87,17 @@
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: Let $x\in\Bbb R^+$<br><br>
+      <i>Statement</i>: Let $x\in\Bbb R^+$ and $y\in\Bbb R$.  Then there is an $n\in\Bbb N$ such that $y < nx$.<br><br>
 
-      <i>Proof</i>: 
+      <i>Proof</i>: Define $S = \{n\in\Bbb N: nx < y \}$.  If $S = \emptyset$ then $y < 1x$ and the theorem holds, so assume for the rest of the proof that $S\ne \emptyset$.  <br>
+
+      $S$ is then bounded above by $y/x$.  Since $S$ is a nonempty set of integers, bounded above, then $\max(S)=\sup(S)$ exists.  <br>
+
+      Therefore $\max(S)+1\notin S$ and therefore $y < (\max(S)+1)x$ by definition of $S$.  <br>
+
+      Therefore the $n$ required by the theorem is $\max(S)+1$.  <br>
+
+      $\Box$
     </details>
 
     <div class="thm">

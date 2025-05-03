@@ -116,9 +116,15 @@
         Also $-X = (-1)X$.
     </div>
     <div class="def">
-      We define the element $\overline n = \overbrace{1+1+\cdots + 1}^n$, for each $n\in \Bbb N$.  Similarly $\overline{-n} = \overbrace{-1-1-\cdots -1}^n$ for each $n\in \Bbb N$.  And $\overline 0 = 0\in F$.  <br>
+      We define the element $\overline n = \overbrace{1+1+\cdots + 1}^n$, for each $n\in \Bbb N$.  The set 
+      $$N = \{\overline n: n\in\Bbb N\}$$ 
+       we call the <b>natural numbers of $F$</b> <br>
+      
+      Similarly $\overline{-n} = \overbrace{-1-1-\cdots -1}^n$ for each $n\in \Bbb N$.  And $\overline 0 = 0\in F$. The set 
+      $$Z = \{\overline n: n\in\Bbb Z\}$$ 
+      we call the <b>integers of $F$</b>. <br>
       For each $m,n\in \Bbb Z$ with $n\ne 0$, we define $\overline{\frac{m}n} = \frac{\overline m}{\overline n}$.  <br>
-      We then define the <b>field of fractions</b>,
+      We then define the <b>field of fractions</b> as
       
       $$Q = \{\overline{\frac m n}: m,n\in \Bbb Z, n\ne 0\}$$
     </div>
@@ -477,5 +483,23 @@
 
       $\Box$
     </details>
-  </body>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field bounded integers max.</tt> <br>
+
+      Any nonempty set of natural numbers has a minimum.  
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Let $S\subseteq N$ be a subset of the natural numbers of $F$.  Then $\min(S)$ exists.  <br>
+
+      If $S$ is bounded above then $\max(S)$ exists.  <br>
+
+      And if $T\subseteq Z$ and if $Z$ is bounded below, then $\min(T)$ exists; and if $T$ is bounded above then $\max(T)$ exists.  
+    </details>
+
+    <i>Proof</i>:  
+  </body> 
 </html>
