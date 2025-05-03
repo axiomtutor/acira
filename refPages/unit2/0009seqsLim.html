@@ -49,13 +49,153 @@
 
         For any set $X$, a <b>sequence of $X$ starting at $m$</b> is any function $a:\Bbb N^m\to X$ for any $m\in\Bbb N$.  <br>
 
-        The image of $k$ under $a$ is written $a(k)$, using standard function notation.  However, for sequences, we prefer to write this instead as $a_k$.  <br>
+        The image of $k$ under $a$ is written $a(k)$, using standard function notation.  However, for sequences, we prefer to write this instead as $a_k$, and we prefer to call this the <b>$k$th term of the sequence</b>.  <br>
 
         Although the function is denoted by $a$, for sequences we prefer to denote it as $(a_k)_{k=m}$, where $m$ is the "starting index" of the sequence.  <br>
 
         If $m,p\in\Bbb N$ and if $m\le p$, then we may restrict $(a_k)_{k=m}$ to the domain $N^{\ge p}$.  We denote this restriction as $(a_k)_{k=p}$, and we call this the <b>$p$th tail of $(a_k)_{k=m}$</b>.  <br>
 
-        If $(i_k)_{k=m} : \Bbb N^{\ge p} \to \Bbb N^{\ge m}$ is a strictly increasing function, then the composition $(a_k)_{k=m} \circ (i_k)_{k=p}$ is also a sequence of $X$.  In this case, we write this function as $(a_{i_k})_{k=p}$ and call this a <b>subsequence of $(a_k)_{k=m}$</b>.  
+        If $(i_k)_{k=p} : \Bbb N^{\ge p} \to \Bbb N^{\ge m}$ is a strictly increasing sequence of $\Bbb N^{\ge m}$, then the composition $(a_k)_{k=m} \circ (i_k)_{k=p}$ is also a sequence of $X$.  In this case, we write this sequence as $(a_{i_k})_{k=p}$ and call this a <b>subsequence of $(a_k)_{k=m}$</b>.  <br>
+
+        If $a,b$ are elements in an ordered field, we define the <b>absolute value of $a$</b> by 
+
+        $$ |a| = \begin{cases}
+            a & \text{ if } 0\preceq a \\
+            -a & \text{ if } a\prec 0
+        \end{cases}$$
+
+        We define <b>the distance between $a$ and $b$</b> by $|a-b|$.  <br>
+
+        For a given $\varepsilon\in F^{\ge 0}$, we say that $a$ is <b>within $\varepsilon$ of $b$</b> if $|a-b|\prec \varepsilon$.  <br>
+
+        For a given sequence of $F$, say $(a_k)_{k=m}$, we say that $(a_k)_{k=m}$ is <b>within $\varepsilon$ of $b$</b> if every term of $(a_k)_{k=m}$ is within $\varepsilon$ of $b$.  <br>
+
+        We say that $(a_k)_{k=m}$ is <b>eventually within $\varepsilon$ of $b$</b> if some tail of $(a_k)_{k=m}$ is within $\varepsilon$ of $b$.  <br>
+
+        We say that $(a_k)_{k=m}$ <b>converges to $b$</b> if for every $\varepsilon\in F^+$, eventually $(a_k)_{k=m}$ is within $\varepsilon$ of $b$.  In this case we say that $b$ is the <b>limit of $(a_k)_{k=m}$</b> and we write 
+        
+        $$ \lim_{k\to\infty}a_k = b $$
     </div>
+
+    Throughout this section, assume that $m,p,q\in\Bbb N$, and $(a_k)_{k=m}, (b_k)_{k=m}, (c_k)_{k=m}$ are sequences of $\Bbb R$.  Also assume that $(i_k)_{k=p}:\Bbb N^{\ge p}\to \Bbb N^{\ge m}$ is a strictly increasing sequence of $\Bbb N^{\ge m}$.  
+
+    <div class="thm">
+        Theorem: <tt>Seq. thousand steps</tt> <br>
+        Positive steps become arbitrarily large. 
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Let $x\in\Bbb R^+$<br><br>
+
+      <i>Proof</i>: 
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. no infinitesimals</tt> <br>
+      There are no real infinitesimals.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. one over n</tt> <br>
+      $\frac 1 n \to 0$.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. tails are subseqs.</tt> <br>
+      Every tail is a subsequence.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. lim. is subseq. lim.</tt> <br>
+      If a sequence has a limit, then every subsequence has that limit.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. lim. of dist.</tt> <br>
+      Limit equivalence to limit of distance.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. alg. lims.</tt> <br>
+
+      Algebraic limit laws.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. rat. func.</tt> <br>
+      Limit laws for rational functions.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
   </body>
 </html>
