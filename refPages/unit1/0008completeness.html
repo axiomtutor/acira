@@ -159,8 +159,33 @@
           If either $a$ or $b$ is zero, then $a,x$ and $b$ must all be zero.  <br>
         </details>
 
+        
+
         $\Box$
 
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Real pow frac. indep. ord.</tt>  <br>
+
+      Real numbers to a fractional power are independent of order.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: If $x\in\Bbb R^{\ge 0}$ and if $p,q\in\Bbb Z$ with $q\ne 0$, then 
+
+      $$ x^{p/q} = (x^p)^{1/q} $$
+
+      <i>Proof</i>:  By facts already established for integer exponents,
+      $$\begin{aligned}
+        (x^{p/q})^q &= ((x^{1/q})^p)^q \\
+        &= ((x^{1/q})^q)^p \\
+        &= x^p
+      \end{aligned}$$
+      By uniqueness it now follows that $(x^{p/q}) = (x^p)^{1/q}$.  <br>
+      $\Box$
     </details>
 
     <div class="thm">
@@ -203,8 +228,35 @@
         </details>
 
         <details>
-          <summary></summary>
+          <summary>$x^py^p = (xy)^p$.</summary>
+
+          Let $p\in\Bbb Q$ and $p=\frac a b$ where $a,b\in\Bbb Z$ and $b\ne 0$.  <br>
+
+          Then 
+          $$\begin{aligned}
+            x^py^p &= (x^{1/r})^q (y^{1/r})^q \\
+            &= (x^{1/r}y^{1/r})^q \\
+            &= ((xy)^{1/r})^q \\
+            &= (xy)^{q/r} \\ 
+            &= (xy)^p
+          \end{aligned}$$
         </details>
+
+        <details>
+          <summary>$(x^p)^q = x^{pq}$.</summary>
+
+          With $p = a/b, q=c/d$ and $a,b,c,d\in \Bbb Z$ with $b\ne 0\ne d$,
+          $$\begin{aligned}
+            (x^p)^q & = (((x^{1/b})^a)^{1/d})^c \\
+            &= ((x^{1/b})^{a/d})^c \\ 
+            &= (((x^{1/b})^{1/d})^a)^c \\
+            &= (x^{\frac 1 {bd}})^{ac} \\
+            &= x^{\frac{ac}{bd}} \\
+            &= x^{pq}
+          \end{aligned}$$
+        </details>
+
+        $\Box$
     </details>
   </body>
 </html>
