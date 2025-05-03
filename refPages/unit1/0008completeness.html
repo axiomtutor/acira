@@ -62,11 +62,11 @@
     </div>
 
     <div class="thm">
-        If $x\in\Bbb R$ and $n\in\Bbb N$ then we define <b>the $n$th root of $x$</b> as the number $y$ satisfying 
+        If $x\in\Bbb R^{\ge 0}$ and $n\in\Bbb N$ then we define <b>the $n$th root of $x$</b> as a number $y$ satisfying 
 
         $$ y^n = x $$
 
-        We denote $y$ by $y=\sqrt[n]x$.
+        We denote the unique positive solution by $y=\sqrt[n]x$.
     </div>
 
     <div class="thm">
@@ -82,10 +82,7 @@
         <i>Statement</i>: 
         If $x\in\Bbb R^{\ge 0}$ then for every $n\in\Bbb N$, the $n$th root $\sqrt[n]x$ exists and is unqiue.  <br>
 
-        If $x\in\Bbb R^-$ then if $n\in\Bbb N$ is odd then $\sqrt[n]x$ exists and is unique.  If $n$ is even then $\sqrt[n]x$ does not exist.  <br><br> 
-
-        <i>Proof</i>: Assume that $1 < x$ and $n\in\Bbb N$.  <br>
-
+        <i>Proof</i>: 
         Define the set $L = \{ z\in\Bbb R: z^n < x\}^{\ge 0}$. 
         
         <details>
@@ -150,6 +147,14 @@
           Therefore $\alpha+\varepsilon\in L$ and $\alpha<\alpha+\varepsilon$.  But this contradicts the assumption that $\alpha=\sup(L)$.  
         </details>
 
+        <details>
+          <summary>Uniqueness.</summary>
+
+          If $a,b\in\Bbb R^+$ are any two positive solutions of the equation $y^n = x$, then $a^n = x = b^n$.  From an earlier result, therefore $a=b$.  <br>
+
+          If either $a$ or $b$ is zero, then $a,x$ and $b$ must all be zero.  <br>
+        </details>
+
         $\Box$
 
     </details>
@@ -168,7 +173,9 @@
         and 
         $$ (x^p)^q = x^{pq} $$ 
 
-        <i>Proof</i>:
+        <i>Proof</i>: If $x$ or $y$ is zero, it follows easily that both $x^py^p$ and $(xy)^p$ are both zero.  <br>
+
+        
     </details>
   </body>
 </html>

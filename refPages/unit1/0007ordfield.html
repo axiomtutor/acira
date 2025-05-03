@@ -255,7 +255,7 @@
 
       <i>Statement</i>: Let $a,b,c,d\in F^+$ such that $c\prec 1\prec d$.  Then <br>
       
-      (a) $a\preceq b$ if and only if $a^n\preceq b^n$ for all $n\in\Bbb N$.  <br>
+      (a) $a\preceq b$ if and only if $a^n\preceq b^n$ for all $n\in\Bbb N$.  Therefore $a=b$ if and only if $a^n=b^n$.  <br>
       
       (b) $a\preceq b$ if and only if $\frac 1 b \preceq \frac 1 a$.  <br>
       
@@ -286,6 +286,16 @@
         </details>
 
         The converse direction holds trivially, setting $n=1$.  
+      </details>
+
+      <details>
+        <summary>Therefore $a=b$ if and only if $a^n=b^n$.</summary>
+
+        If $a=b$ then $a^n=b^n$ trivially.  <br>
+
+        Suppose next that $a^n = b^n$ and therefore $a^n\preceq b^n$ and therefore $a\preceq b$.  <br>
+
+        But also $b^n\preceq a^n$ and therefore $b\preceq a$.  Therefore $a=b$.  
       </details>
 
       <details>
