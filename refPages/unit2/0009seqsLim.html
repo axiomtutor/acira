@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ACIRA 0009 Sequences</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        line-height: 1.6;
+      }
+      .thm {
+        background-color: #ffdddd;
+        border-left: 4px solid #ee0000;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      .def {
+        background-color: #ddffdd;
+        border-left: 4px solid #008800;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      a {
+        color: #1e90ff;
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <h1>Lesson 0009: Sequences</h1>
+
+    <div class="def">
+        For any $m\in\Bbb N$ we define $\Bbb N^{\ge m} = \Bbb N \cap [m,\infty)$.  <br>
+
+        For any set $X$, a <b>sequence of $X$ starting at $m$</b> is any function $a:\Bbb N^m\to X$ for any $m\in\Bbb N$.  <br>
+
+        The image of $k$ under $a$ is written $a(k)$, using standard function notation.  However, for sequences, we prefer to write this instead as $a_k$.  <br>
+
+        Although the function is denoted by $a$, for sequences we prefer to denote it as $(a_k)_{k=m}$, where $m$ is the "starting index" of the sequence.  <br>
+
+        If $m,p\in\Bbb N$ and if $m\le p$, then we may restrict $(a_k)_{k=m}$ to the domain $N^{\ge p}$.  We denote this restriction as $(a_k)_{k=p}$, and we call this the <b>$p$th tail of $(a_k)_{k=m}$</b>.  <br>
+
+        If $(i_k)_{k=m} : \Bbb N^{\ge m} \to \Bbb N^{\ge p}$ is a strictly increasing function, and 
+    </div>
+  </body>
+</html>
