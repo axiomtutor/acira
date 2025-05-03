@@ -501,5 +501,48 @@
     </details>
 
     <i>Proof</i>:  
+
+    <details>
+      <summary>$S\subseteq N$ has a minimum.</summary>
+    
+      Let $S\subseteq N$ be nonempty and $a\in S$.  Then the set $S' = \{b\in S:b\preceq a\}$ is finite, and therefore has a minimum.  <br>
+  
+      $\min(S')\in S'\subseteq S$.  <br>
+  
+      Also, if $b\in S$ then either $b\in S'$ or $a\preceq b$.  In the former case, it is immediate that $\min(S')\preceq b$.  <br>
+  
+      In the latter case, $\min(S')\preceq a\preceq b$.  <br>
+  
+      Therefore in either case $\min(S')\preceq b$ and so $\min(S')\in LB_S$.  <br>
+  
+      We can now infer that $\min(S')=\min(S)$ so that $\min(S)$ exists.  
+    </details>
+
+    <details>
+      <summary>If bounded above, then maximum.</summary>
+
+      Let $S\subseteq N$ be bounded above by $\alpha\in F$.  Then define 
+
+      $$ T = \alpha-S \subseteq N $$ 
+
+      which is, by the previous part, has a minimum.  <br>
+
+      Then by the algebra of sups and duality,
+      $$\begin{aligned}
+        \alpha-\min(T) &= \alpha-\min(\alpha-S) \\
+        &= \alpha-(\alpha-\max(S)) \\
+        &= \max(S)
+      \end{aligned}$$
+    </details>
+
+    <details>
+      <summary>If $T\subseteq Z$ is bounded.</summary>
+
+      Suppose $T\subseteq Z$ and is bounded below by $\alpha$.  Then $T+\alpha\subseteq N$ and therefore has a minimum, say $\beta$.  <br>
+
+      
+    </details>
+
+
   </body> 
 </html>
