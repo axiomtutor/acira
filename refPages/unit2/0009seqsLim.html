@@ -75,6 +75,8 @@
         We say that $(a_k)_{k=m}$ <b>converges to $b$</b> if for every $\varepsilon\in F^+$, eventually $(a_k)_{k=m}$ is within $\varepsilon$ of $b$.  In this case we say that $b$ is the <b>limit of $(a_k)_{k=m}$</b> and we write 
         
         $$ \lim_{k\to\infty}a_k = b $$
+        or
+        $$ a_k \to b $$
 
         Note that this notation does not allow you to determine the starting index of the sequence.  Implicitly, the starting index is 1, or the least natural number for which the sequence is defined.
     </div>
@@ -116,7 +118,7 @@
 
       <i>Proof</i>: Let $a\in\Bbb R^+$.  By the <tt>Seq. thousand steps</tt> theorem, there is an $n\in\Bbb N$ such that $1 < an$. <br>
 
-      Therefore $\frac 1 n < a$.  
+      Therefore $\frac 1 n < a$.  <br>
 
       $\Box$
     </details>
@@ -135,7 +137,7 @@
 
       $$\begin{aligned}
         |a_p-0| & = \frac 1 p \\
-        &= \le \frac 1 n \\
+        &\le \frac 1 n \\
         &<\varepsilon
       \end{aligned}$$
 
