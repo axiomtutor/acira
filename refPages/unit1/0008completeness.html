@@ -99,7 +99,7 @@
         </details>
 
         <details>
-          <summary>$\alpha^n\le x$</summary>
+          <summary>$\alpha^n\le x$.</summary>
 
           Suppose for contradiction that $x < \alpha^n$, and define 
 
@@ -118,15 +118,39 @@
             &> \alpha^n - \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}} } \binom nk \alpha^k \varepsilon^{n-k} \\
             &> \alpha^n - \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}}} \binom n k \alpha^k \varepsilon \\ 
             &> \alpha^n - \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}}} \binom n k \alpha^k  \left(\frac{\alpha^n-x}{n\binom n k \alpha^k}\right)\\
-            &= \alpha^n - \frac 1 n \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}}} (\alpha^n - x)  
+            &= \alpha^n - \frac 1 n \sum_{\substack{0 \le n-k \le n \\ n-k \text{ odd}}} (\alpha^n - x)  \\
+            &\ge \alpha^n - \frac 1 n \cdot n (\alpha^n-x) \\
+            &= x
           \end{aligned}$$
+
+          Therefore $\alpha-\varepsilon < \alpha$ and also $\alpha-\varepsilon\in UB_L$.  But this contradicts the assumption that $\alpha=\sup(L)$.  
         </details>
 
         <details>
-          <summary>$x\le \alpha^n$</summary>
+          <summary>$x\le \alpha^n$.</summary>
+
+          Assume for contradiction that $\alpha^n < x$ and define 
+
+          $$ S = \left\{ \frac{x-\alpha^n}{n\binom n k \alpha^k}: 0\le k\le n \right \} $$
+
+          and 
+
+          $$ \varepsilon = \min\{1,\min (S)\} $$
+
+          Then 
+
+          $$\begin{alinged}
+            (\alpha+\varepsilon)^n &= \sum_{k=0}^n \binom n k \alpha^k\varepsilon^{n-k} \\
+            & < \alpha^n + \sum_{k=0}^{n-1} \binom n k \alpha^k\varepsilon \\
+            & < \alpha^n + \sum_{k=0}^{n-1} \binom n k \alpha^k\left(\frac{x-\alpha^n}{n\binom n k \alpha^k}\right) \\ 
+            &= \alpha^n + \frac 1 n \sum_{k=0}^{n-1}(x-\alpha) \\
+            &= x
+          \end{aligned}$$
+
+          Therefore $\alpha+\varepsilon\in L$ and $\alpha<\alpha+\varepsilon$.  But this contradicts the assumption that $\alpha=\sup(L)$.  
         </details>
 
-        
+        $\Box$
 
     </details>
 
