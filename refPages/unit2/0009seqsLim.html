@@ -75,6 +75,8 @@
         We say that $(a_k)_{k=m}$ <b>converges to $b$</b> if for every $\varepsilon\in F^+$, eventually $(a_k)_{k=m}$ is within $\varepsilon$ of $b$.  In this case we say that $b$ is the <b>limit of $(a_k)_{k=m}$</b> and we write 
         
         $$ \lim_{k\to\infty}a_k = b $$
+
+        Note that this notation does not allow you to determine the starting index of the sequence.  Implicitly, the starting index is 1, or the least natural number for which the sequence is defined.
     </div>
 
     Throughout this section, assume that $m,p,q\in\Bbb N$, and $(a_k)_{k=m}, (b_k)_{k=m}, (c_k)_{k=m}$ are sequences of $\Bbb R$.  Also assume that $(i_k)_{k=p}:\Bbb N^{\ge p}\to \Bbb N^{\ge m}$ is a strictly increasing sequence of $\Bbb N^{\ge m}$.  
@@ -127,11 +129,25 @@
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: <br><br>
+      <i>Statement</i>: $\lim_{n\to\infty} \frac 1 n = 0$.<br><br>
 
-      <i>Proof</i>: 
+      <i>Proof</i>: Let $a_k = \frac 1 k$, and let $\varepsilon\in\Bbb R^+$.  Let $n\in\Bbb N$ such that $ \frac 1 k < \varepsilon$.  Then for every natural number $n\le p$
 
-      
+      $$\begin{aligned}
+        |a_p-0| & = \frac 1 p \\
+        &= \le \frac 1 n \\
+        &<\varepsilon
+      \end{aligned}$$
+
+      Therefore the $n$th tail is within $\varepsilon$ of 0, which implies $(a_k)_{k=1}$ is eventually within $\varepsilon$ of 0.  <br>
+
+      Since $\varepsilon\in\Bbb R^+$ was arbitrary, therefore $(a_k)_{k=1}$ is eventually within $\varepsilon$ of 0, for every $\varepsilon\in\Bbb R^+$.  <br>
+
+      By definition, therefore 
+
+      $$ \lim_{k\to\infty}a_k = 0 $$
+
+      $\Box$
     </details>
 
     <div class="thm">
