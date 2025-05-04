@@ -201,7 +201,17 @@
       <i>Statement</i>: Suppose $\lim_{k\to\infty} a_k = L\in\Bbb R$ and let $(a_{i_k})_{k=1}$ be a subsequence.  Then 
       $$\lim_{k\to\infty} a_{i_{k}} = L$$
 
-      <i>Proof</i>: 
+      <i>Proof</i>: Let $\varepsilon\in\Bbb R$ and let the $p$th tail of $(a_k)_{k=m}$ be within $\varepsilon$ of $L$.  <br>
+
+      Since $i_k$ is strictly increasing, then for each $k\in\Bbb N$ we have $k \le i_k$.  In particular, $p\le i_p$.  <br>
+
+      Moreover, for each $p\le q$ we have $p\le i_p\le i_q$ and therefore $a_{i_q}$ is within $\varepsilon$ of $L$.  Hence the $p$th tail of $(a_{i_k})_{k=1}$ is within $\varepsilon$ of $L$.  <br>
+
+      This shows that $(a_{i_k})_{k=1}$ is eventually within $\varepsilon$ of $L$.  <br>
+      
+      But since $\varepsilon$ was arbitrary, then $\displaystyle \lim_{k\to\infty}a_{i_k} = L$.  <br>
+
+      $\Box$
 
       
     </details>
