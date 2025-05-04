@@ -153,6 +153,29 @@
     </details>
 
     <div class="thm">
+      Theorem: <tt>Seq. no bound no lim.</tt> <br>
+      If $(a_k)_{k=m}$ has no upper bound then $\lim_{k\to\infty}a_k$ does not exist.  
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Suppose $(a_k)_{k=m}$ is not bounded above.  Then $\lim_{k\to\infty}a_k$ does not exist. <br><br>
+
+      <i>Proof</i>: We prove the contrapositive, so assume that $\lim_{k\to\infty} a_k = L$ exists.  <br>
+
+      Set $\varepsilon=1$ and therefore $(a_k)_{k=m}$ is eventually within 1 of $L$.  Therefore let the $p$th tail be within 1 of $L$.  <br>
+
+      Then $L+1\in UB_{\text{Im}(a_k)_{k=p}}$.  <br>
+      
+      Let $\alpha=\max\{a_k: m\le k\le p\}$.  <br>
+
+      Then $\max\{\alpha,L+1\} \in UB_{\text{Im}(a_k)_{k=m}}$ which shows that $(a_k)_{k=m}$ is bounded above.  <br>
+
+      $\Box$
+    </details>
+
+    <div class="thm">
       Theorem: <tt>Seq. tails are subseqs.</tt> <br>
       Every tail is a subsequence.
     </div>
@@ -177,7 +200,7 @@
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: <br><br>
+      <i>Statement</i>: Suppose $\lim_{k\to\infty} a_k = L\in\Bbb R$.  <br><br>
 
       <i>Proof</i>: 
 
