@@ -331,6 +331,54 @@
       $\Box$
     </details>
 
+    <div class="thm">
+      Theorem: <tt>Ord. field abs. val. ineq. equiv.</tt> <br>
+
+      Absolute value inequality equivalence.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: For any $x\in F^{\ge 0}$ we have 
+      $$ |a| \preceq x \quad \Leftrightarrow \quad -x \preceq a \preceq x $$
+
+      <i>Proof</i>: 
+      <details>
+        <summary>If $|a|\preceq x$ then $-x\preceq a\preceq x$.</summary>
+        Suppose $0\preceq a$ so that $|a| = a\preceq x$.  Since $-x\preceq 0\preceq a$ then we have 
+        $$ -x\preceq a\preceq x $$ 
+        Now suppose $a\prec 0$ so that $|a| = -a$.  Then $-x\preceq 0\preceq |a|=-a\preceq x$.
+      </details>
+
+      <details>
+        <summary>If $-x\preceq a\preceq x$ then $|a|\preceq x$.</summary>
+
+        If $0\preceq a$ then $|a|=a$ and therefore $a=|a|\preceq x$.  <br>
+
+        If $a\prec 0$ then $|a|=-a$ and therefore $-x\preceq a=-|a|$.  Then $|a|\preceq x$.
+      </details>
+
+      $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Ord. field triangle ineq.</tt> <br>
+
+      The triangle inequality.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: For any $x,y\in F$, 
+      $$ |x+y| \preceq |x|+|y| $$
+
+      <i>Proof</i>: $-|a|-|b|\preceq a+b \preceq |a|+|b|$.  Therefore by the absolute value inequality equivalence, 
+      $$ |a+b|\preceq |a|+|b| $$
+      $\Box$
+    </details>
+
 
     </details>
 
