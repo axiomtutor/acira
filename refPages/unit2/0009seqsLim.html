@@ -251,6 +251,35 @@
 
       <i>Proof</i>: 
 
+      <details>
+        <summary>$\lim_{k\to\infty} ca_k = cA$.</summary>
+
+        Let $\varepsilon\in\Bbb R^+$ and set $p$ such that $(a_k)_{k=p}$ is within $\varepsilon / |c|$ of $A$.  <br>
+
+        Then for $k\ge p$,
+        $$ \begin{aligned}
+          |ca_k - cA| &= |c| |a_k-A| \\
+          &< |c| \cdot \varepsilon / |c| \\
+          &= \varepsilon 
+        \end{aligned}$$
+      </details>
+
+      <details>
+        <summary>$\lim_{k\to\infty}(a_k+b_k) = A+B$.</summary>
+
+        Let $\varepsilon\in\Bbb R^+$.  Set $p$ such that $(a_k)_{k=p}$ is within $\varepsilon/2$ of $A$.  Set $q$ such that $(b_k)_{k=q}$ is within $\varepsilon/2$ of $B$.  <br>
+
+        Now set $r = \max\{ p,q \}$, which implies that $(a_k)_{k=r}$ is within $\varepislon/2$ of $A$, and also $(b_k)_{k=r}$ is within $\varepsilon/2$ of $B$.  <br>
+
+        Therefore, for $k\ge r$, we have, by algebra and then the triangle inequality,
+        $$\begin{aligned}
+          |(a_k+b_k)- (A+B)| &= |(a_k-A)+(b_k-B)| \\
+          & \le |a_k-A|+|b_k+B| \\
+          & < \frac \varepsilon 2 + \frac \varepsilon 2 \\
+          &= \varepsilon 
+        \end{aligned} $$
+      </details>
+
       
     </details>
 
