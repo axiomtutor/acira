@@ -269,7 +269,7 @@
 
         Let $\varepsilon\in\Bbb R^+$.  Set $p$ such that $(a_k)_{k=p}$ is within $\varepsilon/2$ of $A$.  Set $q$ such that $(b_k)_{k=q}$ is within $\varepsilon/2$ of $B$.  <br>
 
-        Now set $r = \max\{ p,q \}$, which implies that $(a_k)_{k=r}$ is within $\varepislon/2$ of $A$, and also $(b_k)_{k=r}$ is within $\varepsilon/2$ of $B$.  <br>
+        Now set $r = \max\{ p,q \}$, which implies that $(a_k)_{k=r}$ is within $\varepsilon/2$ of $A$, and also $(b_k)_{k=r}$ is within $\varepsilon/2$ of $B$.  <br>
 
         Therefore, for $k\ge r$, we have, by algebra and then the triangle inequality,
         $$\begin{aligned}
@@ -280,7 +280,58 @@
         \end{aligned} $$
       </details>
 
-      
+      <details>
+        <summary>$\lim_{k\to\infty}a_kb_k = AB$.</summary>
+
+        Note that from an earlier theorem (ref needed), if a sequence has a limit then it is bounded.  Let $\alpha$ be a bound on $(a_k)_{k=m}$.  <br>
+
+        Let $\varepsilon\in\Bbb R^+$.  <br>
+
+        First assume that one of the two limits is zero.  Without loss of generality, assume $B=0$.  <br>
+
+        Let $(b_k)_{k=q}$ be within $\varepsilon/\alpha$ of 0.  <br>
+
+        Then for all $k\ge \max\{p,q\}$,
+
+        $$\begin{aligned}
+          |a_kb_k - AB| &= |a_kb_k| \\
+          &= |a_k||b_k| \\
+          &< \alpha \cdot \varepsilon/\alpha \\
+          &= \varepsilon
+        \end{aligned}$$
+
+        Next we assume that $B\ne 0$.  <br>
+
+        Set $p$ such that $(a_k)_{k=p}$ is within $\varepsilon/|B|$ of $A$.  Set $q$ such that $(b_k)_{k=q}$ is within $\varepsilon/\alpha$ of $B$.  <br>
+
+        Set $r=\max\{p,q\}$.  Then $\forall k\ge r$,
+
+        $$ \begin{aligned}
+          |a_kb_k - AB| &= |a_kb_k - a_kB + a_kB - AB| \\
+          &\le |a_k||b_k-B| + |B||a_k-A| \\
+          & < \alpha\varepsilon/\alpha + |B|\varepsilon/|B| \\
+          &= 2\varepsilon
+        \end{aligned}$$
+      </details>
+
+      <details>
+        <summary>If $b_n\ne 0\ne B$ then $\lim_{k\to\infty}\frac{a_k}{b_k} = \frac AB$.</summary>
+
+        This follows immediately from $\frac{a_k}{b_k} = a_k\cdot\frac{1}{b_k}$ and the previous result, once we have shown $\lim_{k\to\infty}\frac 1 {b_k} = \frac 1 B$.  <br>
+
+        To show this, let $\varepsilon\in\Bbb R^+$ and let $(b_k)_{k=p}$ be within $\frac{\varepsilon|B|^2}2$ of $B$.  <br>
+
+        Let $(b_k)_{k=q}$ be such that $\frac{|B|}{2} < |b_k|$.  Then for $k\ge \max\{p,q\}$,
+
+        $$\begin{alinged}
+          |1/b_k - 1/B| & = \left| \frac{B-b_k}{b_kB} \right| \\
+          &= \frac{|b_k-B|}{|b_k||B|} \\
+          &< \frac{\varepsilon|B|^2/2}{(|B|/2)|B|} \\
+          &= \varepsilon
+        \end{aligned}$$
+      </details>
+
+      $\Box$
     </details>
 
     <div class="thm">
