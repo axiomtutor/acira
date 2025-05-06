@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ACIRA 0010 Infinite Limits</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2em;
+        line-height: 1.6;
+      }
+      .thm {
+        background-color: #ffdddd;
+        border-left: 4px solid #ee0000;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      .def {
+        background-color: #ddffdd;
+        border-left: 4px solid #008800;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      a {
+        color: #1e90ff;
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <h1>Lesson 0010: Infinite Limits</h1>
+    
+    <div class="def">
+        Let $(a_k)_{k=m}$ be a sequence of $\Bbb R$.  If for every $\alpha\in\Bbb R$, there is a tail of the sequence which is bounded below by $\alpha$, then we write 
+        $$ \lim_{k\to\infty} a_k = \infty$$
+
+        If for every $\alpha\in\Bbb R$ there is a tail of the sequence which is bounded above by $\alpha$, then we write 
+        $$ \lim_{k\to\infty} a_k = -\infty$$
+
+        In either case, we say that the sequence has <b>an infinite limit</b>.  
+    </div>
+
+    Throughout this section, assume that $(a_k)_{k=m}$ is a sequence of $\Bbb R$.  
+
+    <div class="thm">
+        Theorem: <tt>Infin. lim. no lim.</tt> <br>
+        If the limit is infinite, then the sequence has no limit.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: If $\lim_{k\to\infty}a_k=\pm\infty$ then $(a_k)_{k=m}$ has no limit.  <br><br>
+
+        <i>Proof</i>:  Suppose $\lim_{k\to\infty} a_k = \infty$ and let $L\in\Bbb R$.  <br>
+
+        Then let the $p$th tail be bounded below by $L+1$.  <br>
+        
+        We must then have that no tail can be within 1 of $L$, and therefore $\lim_{k\to\infty}a_k\ne L$.  <br>
+
+        Since $L$ was arbitrary, then no real number is the limit of $(a_k)_{k=m}$.  <br>
+
+        The proof is <i>mutatis mutandis</i> the same if $\lim_{k\to\infty}a_k=-\infty$.  <br>
+
+        $\Box$
+    </details>
+
+    <div class="thm">
+        Theorem: <tt>Infin. lim. zero recip.</tt> <br>
+
+        If the limit is infinite the reciprocal limit is zero.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: If $\lim_{k\to\infty}a_k=\pm\infty$ then $\lim_{k\to\infty}\frac 1 {a_k} = 0$.  <br>
+
+        <i>Proof</i>:  Suppose $\lim_{k\to\infty} a_k=\pm\infty$, and let $\varepsilon\in\Bbb R$.  <br>
+
+        Let the $p$th tail be bounded below by $1/\varepsilon$.  Then for all $k\ge p$, we have $a_k \ge 1/\varepsilon$ and therefore $\frac 1 {a_k} \le \varepsilon$.  <br>
+
+        Therefore, 
+        $$\begin{aligned}
+            \left|\frac 1 {a_k} - 0 \right| &= \frac 1 {a_k}  \\
+            &< \varepsilon 
+        \end{aligned}$$
+
+        If $\lim_{k\to\infty}a_k = -\infty$ then by a simple proof, $\lim_{k\to\infty}(-a_k) = \infty$.  From the above, then, 
+
+        $$ \begin{aligned}
+         \lim_{k\to\infty} \frac{1}{a_k} &= -\lim_{k\to\infty} \frac{1}{-a_k} \\
+         = -0 = 0
+        \end{aligned}$$
+
+        $\Box$
+    </details>
+
+    <div class="thm">
+        Theorem: <tt>Infin. lim. poly.</tt> <br>
+
+        The limit of every nonconstant polynomial is infinite.
+    </div>
+
+    <details>
+        <summary>Statement and proof.</summary>
+
+        <i>Statement</i>: Let $P(k)$ be a polynomial in $n$, with a positive leading coefficient.  Then $\lim_{k\to\infty}P(k) = \infty$.  If the leading coefficient is negative then $\lim_{k\to\infty} P(k) = -\infty$.  <br></br>
+
+        <i>Proof</i>: Let $P(k) = a_0+a_1k + \cdots a_nk^n = k^n(a_0/k^n + a_1/k^{n-1} + \cdots + a_n)$.  Let $\alpha\in\Bbb R$. <br>
+
+        For each $0\le i\le n$ there is some $k$ such that $a_i/k^{n-i} > \alpha$.  
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Seq. rat. func.</tt> <br>
+      Limit laws for rational functions.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      For any polynomial in $n$, $P(n)$, define $\text{deg}(P)$ to be the <b>degree of $P$</b>, which is the highest exponent of a nonzero term.  <br>
+
+      <i>Statement</i>: Let $P(n),Q(n)$ be two polynomials in $n$, and assume $Q(n)$ is not zero for $m\le n$.  <br> 
+      
+      Let $R(n) = \frac{P(n)}{Q(n)}$ be the rational function defined for $m\le n$.  <br>
+
+      <ol>
+        <li>If $\text{deg}(P) < \text{deg}(Q)$ then $\lim_{k\to\infty}R(k) = 0$.</li>
+        <li>If $\text{deg}(P) = \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)$ is equal to the ratio of the leading coefficients of $P$ and $Q$.  </li>
+        <li>If $\text{deg}(P) > \text{deg}(Q)$ then $\lim_{k\to</li>
+      </ol>
+      
+      <br><br>
+
+      <i>Proof</i>: 
+
+      
+    </details>
+  </body>
+</html>
