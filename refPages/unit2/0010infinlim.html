@@ -153,12 +153,30 @@
       <details>
         <summary>If $\text{deg}(P) < \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)=0$.</summary>
 
-        Let $P(k) = a_0+a_1k+\cdots +a_pk^p$ and $Q(k) = b_0+b_1k + \cdots b_{q}k^{q}$, where $Q(k)\ne 0$ for $m\le k$. <br> 
+        Let $P(k) = a_0+a_1k+\cdots +a_pk^p$ and $Q(k) = b_0+b_1k + \cdots b_{q}k^{q}$ where $a_p\ne 0 \ne b_q$.  Assume $Q(k)\ne 0$ for $m\le k$. <br> 
         
         Then 
         $$\begin{aligned}
           \lim_{k\to\infty}\frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1+\cdots+b_{q}k^{q}} & = 
-            \lim_{k\to\infty}\frac{a_0/k^q+a_1/k^{q-1}+\cdots a_p/k^{q-p}}{ b_0/k^q+b_1/k^{q-1}+\cdots+b_q }
+            \lim_{k\to\infty}\frac{a_0/k^q+a_1/k^{q-1}+\cdots a_p/k^{q-p}}{ b_0/k^q+b_1/k^{q-1}+\cdots+b_q } \\
+          &= \frac{\lim_{k\to\infty}(a_0/k^q + a_1k^{q-1}+\cdots +a_p/k^{q-p})}{\lim_{k\to\infty}(b_0/k^q + b_1/k^{q-1}+\cdots+b_q)} \\
+          &= \frac{0+0+\cdots+0}{0+0+\cdots+0+b_q} \\
+          &= 0
+        \end{aligned}$$
+      </details>
+
+      <details>
+        <summary>If $\text{deg}(P) = \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)$ is the ration of leading coefficients.</summary>
+
+        Let $P(k) = a_0+a_1k+\cdots+a_pk^p$ and $Q(k)=b_0+b_1k+\cdots b_pk^p$ where $a_p\ne 0\ne b_p$.  Assume $Q(k)\ne 0$ for $m\le k$.  <br>
+
+        Then 
+
+        $$\begin{aligned}
+          \lim_{k\to\infty} \frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1k+\cdots+b_pk^p} &= \lim_{k\to\infty}\frac{a_0/k^p+a_1/k^{p-1}+\cdots+a_p}{b_0+b_1k+\cdots+b_p} \\
+          &= \frac{\lim_{k\to\infty}(a_0/k^p+a_1/k^{p-1}+\cdots+a_p)}{\lim_{k\to\infty}(b_0+b_1k+\cdots+b_p)} \\
+          &= \frac{0+0+\cdots+0+a_p}{0+0+\cdots+0+b_p} \\
+          &= \frac{a_p}{b_p}
         \end{aligned}$$
       </details>
     </details>
