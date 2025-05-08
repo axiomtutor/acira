@@ -153,9 +153,12 @@
       <details>
         <summary>If $\text{deg}(P) < \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)=0$.</summary>
 
-        Let $P(k) = a_0+a_1k+\cdots +a_pk^p$ and $Q(k) = b_0+b_1k + \cdots b_{p+q}k^{p+q}$.  Then 
+        Let $P(k) = a_0+a_1k+\cdots +a_pk^p$ and $Q(k) = b_0+b_1k + \cdots b_{q}k^{q}$, where $Q(k)\ne 0$ for $m\le k$. <br> 
+        
+        Then 
         $$\begin{aligned}
-          \lim_{k\to\infty}\frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1+\cdots+b_{p+q}k^{p+q}} & = 
+          \lim_{k\to\infty}\frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1+\cdots+b_{q}k^{q}} & = 
+            \lim_{k\to\infty}\frac{a_0/k^q+a_1/k^{n-1}+\cdots a_p/k^{q-p}}{ b_0/k^q+b_1/k^{q-1}+\cdots+b_q }
         \end{aligned}$$
       </details>
     </details>
