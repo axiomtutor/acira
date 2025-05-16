@@ -138,6 +138,49 @@
     </details>
 
     <div class="thm">
+      Theorem: <tt>Infin. lim. alg.</tt> <br>
+
+      Products for infinite and null limits.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: 
+      <ul>
+        <li>Suppose $(a_k)_{k=m}$ is bounded and $b_k\to 0$.  Then $a_kb_k\to 0$.</li>
+        <li>Suppose $\liminf_{k\to\infty} a_k > 0$, and that $b_k\to\infty$.  Then $a_kb_k \to \infty$.</li>
+      </ul>
+      <br>
+      <i>Proof</i>: 
+      <details>
+        <summary>$(a_k)$ bounded, $b_k\to 0$.</summary>
+
+        Suppose $\alpha$ bounds $(a_k)_{k=m}$ and $b_k\to 0$.  Let $\varepsilon\in\Bbb R^+$ and let the $p$th tail of $(b_k)_{k=p}$ be within $\varepsilon/\alpha$ of $0$.  <br>
+
+        Then for all $k\ge p$,
+        $$ \begin{aligned}
+          |a_kb_k| &= |a_k||b_k| \\
+          & < \alpha(\varepsilon/\alpha) \\
+          &= \varepsilon
+        \end{aligned} $$
+      </details>
+      <details>
+        <summary>$\liminf_{k\to\infty}a_k > 0$ and $b_k\to\infty$.</summary>
+
+        Suppose $\liminf_{k\to\infty} a_k > 0$ and $b_k\to\infty$.  Let $(a_k)_{k=p}$ be greater than some $\varepsilon\in\Bbb R^+$.  <br>
+
+        Let $\alpha\in\Bbb R^+$ and let $(b_k)_{k=q}$ be bounded below by $\alpha/\varepsilon$.  Then for every $k\ge \max\{p,q\}$, 
+        $$\begin{aligned}
+          |a_kb_k| &= |a_k||b_k| \\
+          &> \varepsilon(\alpha/\varepsilon) \\
+          &= \alpha
+        \end{aligned} $$
+        Therefore $a_kb_k\to\infty$.
+      </details>
+    </details>
+
+    <div class="thm">
       Theorem: <tt>Infin. lim. recip.</tt> <br>
       Reciprocals of zero and infinity.
     </div>
