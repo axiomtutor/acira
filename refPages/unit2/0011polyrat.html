@@ -75,7 +75,17 @@
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: Suppose $P(k) = a_0+a_1k+\cdots+a_{m-1}k^{m-1}+k^m$ is a monic polynomial of degree $m$.  <br>
+      <i>Statement</i>: First let $x\in\Bbb Q$ and $x>1$.  <br>
+      
+      For $\varepsilon\in\Bbb R^+$ let $\left(\frac{1}{k}\right)_{k=p}$ be within $\varepsilon^{1/x}$ of 0.  <br>
+
+      Then for $k\ge p$ we have 
+      $$ \frac{1}{k} < \varepsilon^{1/x} $$ 
+      therefore 
+      $$ \frac{1}{k^x} < \varepsilon $$
+      which shows $\frac{1}{k^x} \to 0$.  <br>
+      
+      Now suppose $P(k) = a_0+a_1k+\cdots+a_{m-1}k^{m-1}+k^m$ is a monic polynomial of degree $m$.  <br>
       And suppose $Q(k) = b_0+b_1k+\cdots+b_{n-1}k^{n-1}+k^n$ is a monic polynomial of degree $n$.  Also assume that $Q(k)\ne 0$ for any $k\ge m$.  <br>
 
       Let $R = \frac{P}{Q}$.  
