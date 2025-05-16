@@ -53,95 +53,67 @@
     <details>
         <summary>Statement and proof.</summary>
 
-        <i>Statement</i>: Let $P(k)$ be a polynomial in $n$, with a positive leading coefficient.  Then $\lim_{k\to\infty}P(k) = \infty$.  If the leading coefficient is negative then $\lim_{k\to\infty} P(k) = -\infty$.  <br></br>
+        <i>Statement</i>: Let $P(k)$ be a polynomial with degree $n\ge 1$, with a positive leading coefficient.  Then $\lim_{k\to\infty}P(k) = \infty$.  If the leading coefficient is negative then $\lim_{k\to\infty} P(k) = -\infty$ and otherwise $\lim_{k\to\infty}P(k)=\infty$.  <br></br>
 
-        <i>Proof</i>: Let $P(k) = a_0+a_1k + \cdots a_nk^n = k^n(a_0/k^n + a_1/k^{n-1} + \cdots + a_n)$.  Let $\alpha\in\Bbb R^+$. <br>
-
-        For each $0\le i\le n$ there is some $k$ such that $|a_i/k^{n-i}| < \frac{\alpha}{n+1}$.  
-    </details>
-
-    <div class="thm">
-      Theorem: <tt>Infin. lim. with bound</tt> <br>
-      Infinity plus/times positive inf, to inifinity.  
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: Suppose $a_k\to \infty$ and $(b_k)_{k=m}$ has a positive liminf.  Then $a_k+b_k\to\infty$ and $a_kb_k\to\infty$.
-    </details>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: If $a_k\to \pm\infty$ and $b_k$ is a bounded sequence, then $a_k+b_k \to \pm\infty$ and $a_kb_k.  <br>
-
-      If $a_k\to 0$ and $b_k$ is bounded, then $a+
-    </details>
-
-    <div class="thm">
-      Theorem: <tt>Infin. lim. rat. func.</tt> <br>
-      Limit laws for rational functions.
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      For any polynomial in $n$, $P(n)$, define $\text{deg}(P)$ to be the <b>degree of $P$</b>, which is the highest exponent of a nonzero term.  <br>
-
-      <i>Statement</i>: Let $P(n),Q(n)$ be two polynomials in $n$, and assume $Q(n)$ is not zero for $m\le n$.  <br> 
-      
-      Let $R(n) = \frac{P(n)}{Q(n)}$ be the rational function defined for $m\le n$.  <br>
-
-      <ol>
-        <li>If $\text{deg}(P) < \text{deg}(Q)$ then $\lim_{k\to\infty}R(k) = 0$.</li>
-        <li>If $\text{deg}(P) = \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)$ is equal to the ratio of the leading coefficients of $P$ and $Q$.  </li>
-        <li>If $\text{deg}(P) > \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)=\pm \infty$. </li>
-      </ol>
-      
-      <br><br>
-
-      <i>Proof</i>: 
-
-      <details>
-        <summary>If $\text{deg}(P) < \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)=0$.</summary>
-
-        Let $P(k) = a_0+a_1k+\cdots +a_pk^p$ and $Q(k) = b_0+b_1k + \cdots b_{q}k^{q}$ where $p < q$ and where $a_p\ne 0 \ne b_q$.  Assume $Q(k)\ne 0$ for $m\le k$. <br> 
+        <i>Proof</i>: Let $P(k) = a_0+a_1k + \cdots + a_nk^n = k^n\cdot (a_0/k^n + a_1/k^{n-1} + \cdots + a_n)$.  <br>
         
         Then 
         $$\begin{aligned}
-          \lim_{k\to\infty}\frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1+\cdots+b_{q}k^{q}} & = 
-            \lim_{k\to\infty}\frac{a_0/k^q+a_1/k^{q-1}+\cdots a_p/k^{q-p}}{ b_0/k^q+b_1/k^{q-1}+\cdots+b_q } \\
-          &= \frac{\lim_{k\to\infty}(a_0/k^q + a_1k^{q-1}+\cdots +a_p/k^{q-p})}{\lim_{k\to\infty}(b_0/k^q + b_1/k^{q-1}+\cdots+b_q)} \\
-          &= \frac{0+0+\cdots+0}{0+0+\cdots+0+b_q} \\
-          &= 0
+          \lim_{k\to\infty} P(k) = \infty\cdot a_n 
         \end{aligned}$$
+
+        If $a_n < 0$ then $\infty \cdot a_n = -\infty$ and otherwise $\infty\cdot a_n = \infty$.  <br>
+
+        $\Box$
+    </details>
+
+    <div class="thm">
+      Theorem: <tt>Infin. lim. rational func.</tt> <br>
+      The limit of rationals functions.
+    </div>
+
+    <details>
+      <summary>Statement and proof.</summary>
+
+      <i>Statement</i>: Suppose $P(k) = a_0+a_1k+\cdots+a_{m-1}k^{m-1}+k^m$ is a monic polynomial of degree $m$.  <br>
+      And suppose $Q(k) = b_0+b_1k+\cdots+b_{n-1}k^{n-1}+k^n$ is a monic polynomial of degree $n$.  Also assume that $Q(k)\ne 0$ for any $k\ge m$.  <br>
+
+      Let $R = \frac{P}{Q}$.  
+
+      
+      <ul>
+        <li>If $m < n$ then $\lim_{k\to\infty}R(k) = 0$.</li>
+        <li>If $m=n$ then $\lim_{k\to\infty}R(k) = 1$.</li>
+        <li>If $m > n$ then $\lim_{k\to\infty}R(k) = \infty$.</li>
+      </ul>
+
+      <i>Proof</i>: 
+      <details>
+        <summary>If $m = n$ then $\lim_{k\to\infty} R(k) = 1$.</summary>
+
+        After factoring $k^m$ from the numerator and denominator, we have
+        $$ R(k) = \frac{a_0/k^m+a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^m + b_1/k^{m-1}+\cdots+b_{m-1}/k+1} $$
+        Applying the quotient rule and the fact that $\lim_{k\to\infty}\frac{1}{k^q} = 0$ for every integer $q \ge 1$, we obtain 
+        $$\lim_{k\to\infty} R(k) = \frac{0+0+\cdots+0+1}{0+0+\cdots + 0+1} $$
       </details>
 
       <details>
-        <summary>If $\text{deg}(P) = \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)$ is the ration of leading coefficients.</summary>
+        <summary>If $m < n$ then $\lim_{k\to\infty} R(k) = 0$.  </summary>
+        After factoring, 
+        $$ R(k) = \left(\frac{1}{k^{n-m}}\right)\cdot \left( \frac{a_0/k^m + a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^n+b_1/k^{n-1}+\cdots+b_{n-1}/k + 1} \right) $$
 
-        Let $P(k) = a_0+a_1k+\cdots+a_pk^p$ and $Q(k)=b_0+b_1k+\cdots b_pk^p$ where $a_p\ne 0\ne b_p$.  Assume $Q(k)\ne 0$ for $m\le k$.  <br>
-
-        Then 
-
-        $$\begin{aligned}
-          \lim_{k\to\infty} \frac{a_0+a_1k+\cdots+a_pk^p}{b_0+b_1k+\cdots+b_pk^p} &= \lim_{k\to\infty}\frac{a_0/k^p+a_1/k^{p-1}+\cdots+a_p}{b_0+b_1k+\cdots+b_p} \\
-          &= \frac{\lim_{k\to\infty}(a_0/k^p+a_1/k^{p-1}+\cdots+a_p)}{\lim_{k\to\infty}(b_0+b_1k+\cdots+b_p)} \\
-          &= \frac{0+0+\cdots+0+a_p}{0+0+\cdots+0+b_p} \\
-          &= \frac{a_p}{b_p}
-        \end{aligned}$$
+        Then $\lim_{k\to\infty} R(k) = 0\cdot 1$.
       </details>
 
       <details>
-        <summary>If $\text{deg}(P) = \text{deg}(Q)$ then $\lim_{k\to\infty}R(k)$ is the ration of leading coefficients.</summary>
+        <summary>If $m > n$ then $\lim_{k\to\infty}R(k) = \infty$.</summary>
 
-        Let $P(k) = a_0+a_1k+\cdots+a_pk^p$ and $Q(k)=b_0+b_1k+\cdots b_pk^p$ where $q < p$ and where $a_p\ne 0\ne b_q$.  Assume $Q(k)\ne 0$ for $m\le k$.  <br>
-
-        Then $\lim_{k\to\infty} (R(k))^{-1} = \lim_{k\to\infty} \frac{Q(k)}{P(k)}$ where the numerator now has a smaller degree than the denominator. <br>
-
-        Therefore by the earlier part of this theorem, $\lim_{k\to\infty}(R(k))^{-1} = 0$.  Therefore by a previous theorem, (ref needed) 
+        After factoring, 
+        $$ R(k) = ( n^{m-n} ) \cdot \left( \frac{a_0/k^m + a_1/k^{m-1} + \cdots+ a_{m-1}/k+1}{b_0/k^n + b_1/k^{n-1} + \cdots + b_{n-1}/k + 1} \right) $$
+        Then $\lim_{k\to\infty} R(k) = \infty \cdot 1 = \infty$.  
       </details>
     </details>
+
+    $\Box$
   </body>
 </html>

@@ -64,7 +64,7 @@
         $$\begin{aligned}
           x\pm\infty = y\cdot\pm\infty = \pm\infty, -y\cdot\pm\infty=\mp\infty \\
           \infty+\infty = \infty\cdot\infty = -\infty\cdot-\infty = \infty \\
-          -\infty-\infty = \infty\cdot-\infty = -\infty\cdot \infty = -\infty, \
+          -\infty-\infty = \infty\cdot-\infty = -\infty\cdot \infty = -\infty
         \end{aligned}$$
 
         With these defintions, the definition of $\lim_{k\to\infty}a_k$ is now extended to being a value in $\Bbb R^*$.  If $\lim_{k\to\infty}a_k = \pm\infty$ then we say either that the limit <b>does not exist as a real number</b>, or that it <b>exists as an extended real number</b>.  <br>
@@ -213,90 +213,8 @@
 
       $\Box$
     </details>
-
-    <div class="thm">
-      Theorem: <tt>Infin. lim. rational func.</tt> <br>
-      The limit of rationals functions.
-    </div>
-
-    <details>
-      <summary>Statement and proof.</summary>
-
-      <i>Statement</i>: Suppose $P(k) = a_0+a_1k+\cdots+a_{m-1}k^{m-1}+k^m$ is a monic polynomial of degree $m$.  <br>
-      And suppose $Q(k) = b_0+b_1k+\cdots+b_{n-1}k^{n-1}+k^n$ is a monic polynomial of degree $n$.  Also assume that $Q(k)\ne 0$ for any $k\ge m$.  <br>
-
-      Let $R = \frac{P}{Q}$.  
-
-      
-      <ul>
-        <li>If $m < n$ then $\lim_{k\to\infty}R(k) = 0$.</li>
-        <li>If $m=n$ then $\lim_{k\to\infty}R(k) = 1$.</li>
-        <li>If $m > n$ then $\lim_{k\to\infty}R(k) = \infty$.</li>
-      </ul>
-
-      <i>Proof</i>: 
-      <details>
-        <summary>If $m = n$ then $\lim_{k\to\infty} R(k) = 1$.</summary>
-
-        After factoring $k^m$ from the numerator and denominator, we have
-        $$ R(k) = \frac{a_0/k^m+a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^m + b_1/k^{m-1}+\cdots+b_{m-1}/k+1} $$
-        Applying the quotient rule and the fact that $\lim_{k\to\infty}\frac{1}{k^q} = 0$ for every integer $q \ge 1$, we obtain 
-        $$\lim_{k\to\infty} R(k) = \frac{0+0+\cdots+0+1}{0+0+\cdots + 0+1} $$
-      </details>
-
-      <details>
-        <summary>If $m < n$ then $\lim_{k\to\infty} R(k) = 0$.  </summary>
-        After factoring, 
-        $$ R(k) = \left(\frac{1}{k^{n-m}}\right)\cdot \left( \frac{a_0/k^m + a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^n+b_1/k^{n-1}+\cdots+b_{n-1}/k + 1} \right) $$
-
-        Then $\lim_{k\to\infty} R(k) = 0\cdot 1$.
-      </details>
-
-      <details>
-        <summary>If $m > n$ then $\lim_{k\to\infty}R(k) = \infty$.</summary>
-
-        After factoring, 
-        $$ R(k) = ( n^{m-n} ) \cdot \left( \frac{a_0/k^m + a_1/k^{m-1} + \cdots+ a_{m-1}/k+1}{b_0/k^n + b_1/k^{n-1} + \cdots + b_{n-1}/k + 1} \right) $$
-        Then $\lim_{k\to\infty} R(k) = \infty \cdot 1 = \infty$.  
-      </details>
+    
     </details>
-
-
-
-    <!-- Rethink what's below.  -->
-
-    <!--
-    <div class="thm">
-        Theorem: <tt>Infin. lim. zero recip.</tt> <br>
-
-        If the limit is infinite then the reciprocal limit is zero.  If the liminf is zero
-    </div>
-
-    <details>
-        <summary>Statement and proof.</summary>
-
-        <i>Statement</i>: If $\lim_{k\to\infty}a_k=\pm\infty$ then $\lim_{k\to\infty}\frac 1 {a_k} = 0$.  <br>
-
-        <i>Proof</i>:  Suppose $\lim_{k\to\infty} a_k=\pm\infty$, and let $\varepsilon\in\Bbb R$.  <br>
-
-        Let the $p$th tail be bounded below by $1/\varepsilon$.  Then for all $k\ge p$, we have $a_k \ge 1/\varepsilon$ and therefore $\frac 1 {a_k} \le \varepsilon$.  <br>
-
-        Therefore, 
-        $$\begin{aligned}
-            \left|\frac 1 {a_k} - 0 \right| &= \frac 1 {a_k}  \\
-            &< \varepsilon 
-        \end{aligned}$$
-
-        If $\lim_{k\to\infty}a_k = -\infty$ then by a simple proof, $\lim_{k\to\infty}(-a_k) = \infty$.  From the above, then, 
-
-        $$ \begin{aligned}
-         \lim_{k\to\infty} \frac{1}{a_k} &= -\lim_{k\to\infty} \frac{1}{-a_k} \\
-         &= -0 = 0
-        \end{aligned}$$
-
-        $\Box$
-    </details>
-    --->
 
     
   </body>
