@@ -143,7 +143,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    Let $M_2(\Bbb Z)$ be the set of all $2\times 2$ matrices with integer coordinates.  
+    Let $\Bbb Z^{2\times 2}$ be the set of all $2\times 2$ matrices with integer coordinates.  
 
     Check each of the group conditions, for the operation is addition.
 
@@ -376,7 +376,7 @@ def _(mo):
         r"""
     Consider the symmetry of rotating $T$ about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$. Let us call this symmetry $R_{120^\circ}$, since it's a $120^\circ$ rotation.
 
-    You can perform the rotation above by clicking the button (which merely rotates the labels of the vertices).  
+    You can perform the rotation above by clicking the button (which merely rotates the labels of the vertices).
     """
     )
     return
@@ -419,7 +419,6 @@ def _(mo):
     That is to say, the operation on $G$ is $\circ : G^2\to G$, defined in the following way.  Let $x,y\in G$ and let $V$ be any vertex of $T$.  Then 
 
     $$ (x\circ y)(V) = x(y(V)) $$
-
     """
     )
     return
@@ -566,7 +565,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""When we eventually state the axioms of the real numbers, the concept of a group with have relevance both to addition as well as multiplication.  """)
+    mo.md(r"""When we eventually state the axioms of the real numbers, the concept of a group with have relevance both to addition as well as multiplication.""")
     return
 
 
@@ -589,17 +588,14 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.callout(mo.md(r"""
+    #### A Recommendation
+
     I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
 
     For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
 
     If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses group theory.  
 
-    ---
-
-    I recommend spending at least an hour on a problem, before looking at its solution.  This recommendation is specifically for these problems, because they are meant to be easy.  For harder problems, like in the homeworks, you might need to spend several hours or days on them.
-
-    If you have to look at the solution of a problem, treat it as a problem that you did not solve correctly.  Therefore, if you look at the solution, then this does not count toward the 5 problems that you successfully solve on your own.  
     """), kind="info")
     return
 
@@ -607,6 +603,12 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""In all that follows, let $(G,\ast)$ be a group.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""# Exercises""")
     return
 
 
@@ -931,6 +933,24 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""3. Show that $(G,\circ)$ is not commutative.""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Other Exercises""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    I now recommend reading through the reference section.  Try to prove the theorems on your own before looking at the proofs given there.
+
+    It is not important that you successfully prove them before looking at the solutions.  More important is that you try, identify the reasons why you were unable to prove them on your own, and apply these lessons in later theorems.
+    """
+    )
     return
 
 

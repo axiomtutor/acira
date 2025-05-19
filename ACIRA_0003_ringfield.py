@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.26"
+__generated_with = "0.13.10"
 app = marimo.App(width="medium")
 
 
@@ -14,12 +14,12 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # A Course in Real Analysis ... in Marimo!
-        ## Unit 1: The Real Numbers
-        ### Chapter 1: The Axioms of $\Bbb R$
-        
-        by Axiom Tutor
-        """
+    # A Course in Real Analysis ... in Marimo!
+    ## Unit 1: The Real Numbers
+    ### Chapter 1: The Axioms of $\Bbb R$
+
+    by Axiom Tutor
+    """
     )
     return
 
@@ -40,11 +40,17 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        As we discussed in the lesson on groups, the abstract definition of a group will be used to state the definition of real numbers.  Primarily, it tells about the behavior of each operation, addition and multiplication.  
+    We discussed groups in the previous lesson.  A group essentially tells us how numbers (and certain other mathematical objects) combine through an operation.    
 
-        We'll next introduce the abstract definition of a ring.  This will tell us about the way in which addition and multiplication *interact with each other*.
-        """
+    We'll next introduce the abstract definition of a ring.  This will tell us about the way in which two operations, addition and multiplication, *interact with each other*.
+    """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### $(\Bbb Z,+,\times)$""")
     return
 
 
@@ -52,19 +58,27 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The integers, $\Bbb Z$ with addition and multiplication, will be our first example of a ring.  What makes this a ring is the following facts.  
+    The integers, $\Bbb Z$ with addition and multiplication, will be our first example of a ring.  What makes this a ring is the following facts.  
 
-        * $+$ and $\times$ are commutative operations. 
+    * $+$ and $\times$ are associative operations. 
 
-        * $(\Bbb Z,+)$ forms a commutative group.
+    * $(\Bbb Z,+)$ forms a commutative group.
 
-        * $\times$ has an identity element, 1, which is not equal to 0.
+    * $\times$ has an identity element, 1, which is not equal to 0.
 
-        * $\times$ distributes over $+$, which means:
+    * $\times$ distributes over $+$, which means:
 
-            $$ a(b+c) = ab+ac, \quad \forall a,b,c \in \Bbb Z $$
-        """
+        $$ a(b+c) = ab+ac, \quad \forall a,b,c \in \Bbb Z $$
+
+        $$ (b+c)a = ba + ca, \quad \forall a,b,c\in\Bbb Z $$
+    """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""#### $(\Bbb Z^{2\times 2}, +, \cdot)$""")
     return
 
 
@@ -72,21 +86,29 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Another example of a ring is the set of all $2\times 2$ matrices with coordinates in $\Bbb Z$.  We denote the set of all such matrices by $\Bbb Z^{2\times 2}$.  
+    Another example of a ring is the set of all $2\times 2$ matrices with coordinates in $\Bbb Z$.  We denote the set of all such matrices by $\Bbb Z^{2\times 2}$.  
 
-        You should check each condition:  There is an addition operation, and a multiplication operation, which we'll denote $+''$ and $\times'$ for this example.  
+    This set has an addition and multiplication operation, which should be familiar from a previous course in either discrete math or linear algebra.  
 
-        Both operations are associative.  
+    * The sum and product are operations, because the sum of two integer matrices is an integer matrix, and likewise for the product.  Both operations are associative.  
 
-        $(\Bbb Z^{2\times 2}, +')$ forms a commutative group.  
+    * $(\Bbb Z^{2\times 2}, +)$ forms a commutative group.  
 
-        The identity for $\times'$ is the $2\times 2$ identity matrix, $I_2 = \begin{bmatrix}1&0\\0&1\end{bmatrix}$.
+    * The identity for $\cdot$ is the $2\times 2$ identity matrix, $I_2 = \begin{bmatrix}1&0\\0&1\end{bmatrix}$.
 
-        And $\times'$ distributes over $+'$.  For any $A,B,C\in\Bbb Z^{2\times 2}$, 
+    * And $\cdot$ distributes over $+$.  For any $A,B,C\in\Bbb Z^{2\times 2}$, 
 
-        $$ A\times' (B+'C) = (A\times' B)+'(A\times'C) $$
-        """
+        $$ A (B+C) = (A B)+(AC) $$
+
+        $$ (B+C)A = BA+CA $$
+    """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""## Definition""")
     return
 
 
@@ -116,7 +138,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Fields""")
+    mo.md(r"""# Fields""")
     return
 
 
@@ -124,14 +146,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        We have said that $(\Bbb Z^{2\times 2},+',\times')$ is a ring.
+    We have said that $(\Bbb Z^{2\times 2},+',\times')$ is a ring.
 
-        However, it does lack some structure that we need for the real numbers.  That structure is: the existence of multiplicative invereses, for every nonzero number.  
+    However, it does lack some structure that we need for the real numbers.  That structure is: the existence of multiplicative invereses, for every nonzero number.  
 
-        For example, the matrix $\begin{bmatrix}0&1\\0&0\end{bmatrix}$ is nonzero but has no multiplicative inverse.
+    For example, the matrix $\begin{bmatrix}0&1\\0&0\end{bmatrix}$ is nonzero but has no multiplicative inverse.
 
-        Not just that, but also multiplication of real numbers commutes:  $ab = ba$ for each $a,b\in \Bbb R$.
-        """
+    Not just that, but also multiplication of real numbers commutes:  $ab = ba$ for each $a,b\in \Bbb R$.
+    """
     )
     return
 
@@ -165,16 +187,16 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let $(F,+,\times)$ be a field.  Define the operation $+_2$ on vectors $\begin{bmatrix}a\\b\end{bmatrix},\begin{bmatrix}c\\d\end{bmatrix}\in F^2$ by
+    Let $(F,+,\times)$ be a field.  Define the operation $+_2$ on vectors $\begin{bmatrix}a\\b\end{bmatrix},\begin{bmatrix}c\\d\end{bmatrix}\in F^2$ by
 
-        $$ \begin{bmatrix} a\\b\end{bmatrix} +_2 \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}a+c\\b+d\end{bmatrix} $$
+    $$ \begin{bmatrix} a\\b\end{bmatrix} +_2 \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}a+c\\b+d\end{bmatrix} $$
 
-        and $\times_2$ defined by 
+    and $\times_2$ defined by 
 
-        $$ \begin{bmatrix} a\\b\end{bmatrix} \times_2\begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\bd\end{bmatrix} $$
+    $$ \begin{bmatrix} a\\b\end{bmatrix} \times_2\begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}ac\\bd\end{bmatrix} $$
 
-        Show by a counter-example, that $(F^2,+_2,\times_2)$ is not necessarily a field.
-        """
+    Show by a counter-example, that $(F^2,+_2,\times_2)$ is not necessarily a field.
+    """
     )
     return
 
@@ -189,14 +211,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let $F = \{0,1,2,3\}$ and define $\oplus$ and $\otimes$ on $F$, by modular addition and multiplication, respectively.
+    Let $F = \{0,1,2,3\}$ and define $\oplus$ and $\otimes$ on $F$, by modular addition and multiplication, respectively.
 
-        $$ a\oplus b = (a+b)\mod 3,\quad a\otimes b = (a\times b)\mod 3 $$
+    $$ a\oplus b = (a+b)\mod 3,\quad a\otimes b = (a\times b)\mod 3 $$
 
-        Show that $(F,\oplus,\otimes)$ is a field.  
+    Show that $(F,\oplus,\otimes)$ is a field.  
 
-        Show that $(\{0,1,2,3,4\}, \oplus,\otimes)$, with plus and times defined by addition and multiplication mod 4, is not a field.
-        """
+    Show that $(\{0,1,2,3,4\}, \oplus,\otimes)$, with plus and times defined by addition and multiplication mod 4, is not a field.
+    """
     )
     return
 
@@ -223,10 +245,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        In a previous exercise, we saw a class `Group` which modeled finite groups as a set and operation, with methods to check that the given objects formed a group.  
+    In a previous exercise, we saw a class `Group` which modeled finite groups as a set and operation, with methods to check that the given objects formed a group.  
 
-        Create similar classes for rings and fields.
-        """
+    Create similar classes for rings and fields.
+    """
     )
     return
 
@@ -253,10 +275,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Show that $(\{0\}, +,\times)$ is a ring but not a field.
+    Show that $(\{0\}, +,\times)$ is a ring but not a field.
 
-        The operations are defined by $0+0=0$ and $0\times 0=0$.
-        """
+    The operations are defined by $0+0=0$ and $0\times 0=0$.
+    """
     )
     return
 
