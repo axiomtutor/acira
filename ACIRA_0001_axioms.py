@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.12.0"
+__generated_with = "0.13.10"
 app = marimo.App(width="medium")
 
 
@@ -14,12 +14,12 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # A Course in Real Analysis ... in Marimo!
-        ## Unit 1: The Real Numbers
-        ### Chapter 1: The Axioms of $\Bbb R$
+    # A Course in Real Analysis ... in Marimo!
+    ## Unit 1: The Real Numbers
+    ### Chapter 1: The Axioms of $\Bbb R$
 
-        by Axiom Tutor
-        """
+    by Axiom Tutor
+    """
     )
     return
 
@@ -40,12 +40,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Many real analysis textbooks begin their presentation, with a construction of the real numbers.
+    Many real analysis textbooks begin their presentation, with a construction of the real numbers.
 
-        This makes obvious sense.  If we're going to study real numbers, let's start from the beginning!
+    This makes obvious sense.  If we're going to study real numbers, let's start from the beginning!
 
-        And yet that is not what these notebooks will do. 🙃
-        """
+    And yet that is not what these notebooks will do. 🙃
+    """
     )
     return
 
@@ -54,10 +54,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The project of constructing all objects from the axioms of set theory is called the "foundations project".  
+    The construction of the real numbers takes a lot of time.  
 
-        It is true that real analysis must, to some degree, have one foot in this project.  In order to guarantee that this even exists in our mathematical universe, it must be constructed from the axioms!
-        """
+    Moreover, once it's done, nothing much has been gained!  Once the construction is done, we never refer back to what we learned from it!  Literally the *only* value of the the construction, is to ensure that the real numbers exist.
+
+    So from a cost-benefit analysis, going through the construction is a large cost with almost zero benefit.
+    """
     )
     return
 
@@ -66,22 +68,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        However, the field of mathematical foundations has its own set of interests.  They often do not overlap with the interests of real analysis.  
+    Thankfully there is another way: The axiomatic approach.  
 
-        Since the construction of the real numbers takes quite a long time, and does not really serve the interests of real analysis, then it is better for us to skip this topic entirely.
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        For anyone interested in the foundations project, it would be better to include these ideas in a course on set theory.  Possibly, it would be good to simply create a course which is entirely dedicated to foundations.  (The interested student can also consult a textbook like, say, Jech's *Set Theory*.)
-
-        If I get enough requests for such a thing, I might consider making a Marimo course in foundations one day.  But at least for now, let's move efficiently to the things that are of interest to real analysis.
-        """
+    In this presentation, we will simply write down the *axioms* of the real numbers.  The axioms of the real numbers are a minimal set of *assumptions*, from which we can do everything that we need to do.  
+    """
     )
     return
 
@@ -96,10 +86,18 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Since we are not starting at the start, then where are we starting?
+    Although the axiomatic approach cuts out the construction steps, it still takes a while to even just state the axioms.
 
-        In effect, we are just going to write down a list of *assumptions*.  The construction of the real numbers would prove that these assumptions are in fact correct.  But we will merely take these assumptions on faith.
-        """
+    Therefore we will break up the axioms into component ideas, to make each idea more digestible.  These include the ideas of 
+
+    * a group
+    * a ring
+    * a field
+    * a poset
+    * a total order
+    * an ordered field
+    * completeness (with respect to suprema)
+    """
     )
     return
 
@@ -108,40 +106,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        These assumption will tell us everything that we actually need to know about the real numbers, in practice.  They will tell us how to add, multiply, and compare real numbers, as well as ensure the existence of irrational numbers.
+    The structure of the first few lessons will start by introducing an abstract concept, like a group or an order.
 
-        These assumptions are the "axioms of the real numbers".
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        But the axioms themselves are quite long and complicated.  For this and other reasons, I want to break down the presentation of the axioms into self-contained component ideas.  These include the ideas of 
-
-        * a group
-        * a ring
-        * a field
-        * a poset
-        * a total order
-        * an ordered field
-        * completeness (with respect to suprema)
-        """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        The structure of the first few lessons will start by introducing an abstract concept, like a group or an order.
-
-        Then, once all of these abstract concepts have been introduced, we will use them to state the axioms of the real numbers.
-        """
+    Then, once all of these abstract concepts have been introduced, we will use them to state the axioms of the real numbers.
+    """
     )
     return
 
