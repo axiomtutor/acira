@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.23"
+__generated_with = "0.13.11"
 app = marimo.App(width="medium")
 
 
@@ -14,12 +14,12 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # A Course in Real Analysis ... in Marimo!
-        ## Unit 1: The Real Numbers
-        ### Chapter 1: The Axioms of $\Bbb R$
-        
-        by Axiom Tutor
-        """
+    # A Course in Real Analysis ... in Marimo!
+    ## Unit 1: The Real Numbers
+    ### Chapter 1: The Axioms of $\Bbb R$
+
+    by Axiom Tutor
+    """
     )
     return
 
@@ -34,10 +34,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The field properties contain what we will need to know about the algebraic operations of $+$ and $\times$ for the real numbers.
+    The field properties contain what we will need to know about the algebraic operations of $+$ and $\times$ for the real numbers.
 
-        We now proceed likewise, to describe how the $\le$ relation on the real numbers will behave.
-        """
+    We now proceed likewise, to describe how the $\le$ relation on the real numbers will behave.
+    """
     )
     return
 
@@ -46,10 +46,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let's first consider the ordering relation $\le$ on the natural numbers.
+    Let's first consider the ordering relation $\le$ on the natural numbers.
 
-        We call $(\Bbb N,\le)$ a "partially ordered set" because the $\le$ relation satisfies some basic properties that we expect from an ordering of a set.
-        """
+    We call $(\Bbb N,\le)$ a "partially ordered set" because the $\le$ relation satisfies some basic properties that we expect from an ordering of a set.
+    """
     )
     return
 
@@ -58,12 +58,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        For one thing it is reflexive:  For any $a\in \Bbb N$ we have $a\le a$.  
+    For one thing it is reflexive:  For any $a\in \Bbb N$ we have $a\le a$.  
 
-        For another it is anti-symmetric:  If $a,b\in \Bbb N$ and we have both $a\le b$ and $b\le a$ then it follows that $a=b$.
+    For another it is anti-symmetric:  If $a,b\in \Bbb N$ and we have both $a\le b$ and $b\le a$ then it follows that $a=b$.
 
-        And finally, it is transitive: $a\le b$ and $b\le c$ imply $a\le c$.
-        """
+    And finally, it is transitive: $a\le b$ and $b\le c$ imply $a\le c$.
+    """
     )
     return
 
@@ -78,14 +78,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        A more provocative example is the subset relation.
+    A more provocative example is the subset relation.
 
-        Let $X$ be a nonempty set, and set $Y =\mathcal P(X)$, the powerset of $X$.  
+    Let $X$ be a nonempty set, and set $Y =\mathcal P(X)$, the powerset of $X$.  
 
-        Define the following relation, $\preceq$, on the set $Y$.
+    Define the following relation, $\preceq$, on the set $Y$.
 
-        $$ A\preceq B \Leftrightarrow A\subseteq B, \quad \forall A,B\in Y $$
-        """
+    $$ A\preceq B \Leftrightarrow A\subseteq B, \quad \forall A,B\in Y $$
+    """
     )
     return
 
@@ -94,10 +94,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        One can readily check that this is also reflexive, anti-symmetric, and transitive.
+    One can readily check that this is also reflexive, anti-symmetric, and transitive.
 
-        *Reflexive*: For any $A\in Y$ we have $A\subseteq A$ and therefore $A\preceq A$.
-        """
+    *Reflexive*: For any $A\in Y$ we have $A\subseteq A$ and therefore $A\preceq A$.
+    """
     )
     return
 
@@ -140,22 +140,22 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        But there is something that the subset relation lacks, which we want in an order on numbers.  
+    But there is something that the subset relation lacks, which we want in an order on numbers.  
 
-        For concreteness, let's discuss $X=\{a,b,c\}$ and 
+    For concreteness, let's discuss $X=\{a,b,c\}$ and 
 
-        \begin{align*}
-          Y &= \mathcal P(X) \\
-          & = \{\emptyset, \{a\}, \{b\}, \{c\},\\
-          & \quad \{a,b\}, \{a,c\},\{b,c\},\{a,b,c\}\}
-        \end{align*}
+    \begin{align*}
+      Y &= \mathcal P(X) \\
+      & = \{\emptyset, \{a\}, \{b\}, \{c\},\\
+      & \quad \{a,b\}, \{a,c\},\{b,c\},\{a,b,c\}\}
+    \end{align*}
 
-        We use the partial order discussed earlier, $U\preceq V \Leftrightarrow U\subseteq V$ for each $U,V\in Y$.  
+    We use the partial order discussed earlier, $U\preceq V \Leftrightarrow U\subseteq V$ for each $U,V\in Y$.  
 
-        Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
+    Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
 
-        But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.
-        """
+    But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.
+    """
     )
     return
 
@@ -204,12 +204,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        If $\preceq$ is a partial order on $X$, show that the corresponding strict partial order $\prec$ is
+    If $\preceq$ is a partial order on $X$, show that the corresponding strict partial order $\prec$ is
 
-        1. Irreflexive: $\forall a\in X$ we have $a\not\prec a$.
-        2. Asymmetric: $\forall a,b\in X,$ if we have $a\prec b$ then $a\not\prec b$.
-        3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.
-        """
+    1. Irreflexive: $\forall a\in X$ we have $a\not\prec a$.
+    2. Asymmetric: $\forall a,b\in X,$ if we have $a\prec b$ then $a\not\prec b$.
+    3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.
+    """
     )
     return
 
@@ -236,15 +236,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let $\preceq$ be a partial order on the set $X$, and $\prec$ the corresponding strict partial order.  
+    Let $\preceq$ be a partial order on the set $X$, and $\prec$ the corresponding strict partial order.  
 
-        For $a,b\in X$ show that $a\not\preceq b$ is NOT equivalent to $b\prec a$.  
+    For $a,b\in X$ show that $a\not\preceq b$ is NOT equivalent to $b\prec a$.  
 
-        But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.
-        """
+    But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.
+    """
     )
     return
-
 
 
 if __name__ == "__main__":

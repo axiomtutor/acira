@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.10"
+__generated_with = "0.13.11"
 app = marimo.App(width="medium")
 
 
@@ -196,12 +196,12 @@ def _(mo):
     * Matrices are not commutative.  For example,
 
         $$ \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} 4 & 5 \\ 6 & 0 \end{bmatrix} = \begin{bmatrix} 16 & 5 \\ 18 & 0  \end{bmatrix} $$
-  
+
         but
 
         $$ \begin{bmatrix} 4 & 5 \\ 6 & 0 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} = \begin{bmatrix} 4 & 23 \\ 6 & 12  \end{bmatrix} $$
 
-    * Some nonzero matrices have no inverse.  For example, $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ is nonzero and has no inverse.  
+    * Some nonzero matrices have no inverse.  For example, $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ is nonzero and has no inverse.
     """
     )
     return
