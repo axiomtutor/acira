@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.12.0"
+__generated_with = "0.13.10"
 app = marimo.App(width="medium")
 
 
@@ -14,10 +14,10 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # A Course in Real Analysis ... in Marimo!
-        ## Unit 2: Sequences and Series
-        ### Chapter 2: Sequences
-        """
+    # A Course in Real Analysis ... in Marimo!
+    ## Unit 2: Sequences and Series
+    ### Chapter 2: Sequences
+    """
     )
     return
 
@@ -32,10 +32,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        We are working toward discussing the derivative and integral, among other things.
+    We are working toward discussing the derivative and integral, among other things.
 
-        One of the most important and fundamental objects that will help us to define and understand both of these, is sequences of real numbers.
-        """
+    One of the most important and fundamental objects that will help us to define and understand both of these, is sequences of real numbers.
+    """
     )
     return
 
@@ -50,12 +50,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Recall from calculus: If $f:\Bbb R\to\Bbb R$ is a function and $a\in\Bbb R$, then the derivative of $f$ at $a$ is approximated by, say, 
+    Recall from calculus: If $f:\Bbb R\to\Bbb R$ is a function and $a\in\Bbb R$, then the derivative of $f$ at $a$ is approximated by, say, 
 
-        $$\frac{f(a+1)-f(a)}{(a+1)-a}$$
+    $$\frac{f(a+1)-f(a)}{(a+1)-a}$$
 
-        (Let's ignore issues about whether this derivative exists.)
-        """
+    (Let's ignore issues about whether this derivative exists.)
+    """
     )
     return
 
@@ -64,16 +64,16 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Then a better estimate is, say, 
+    Then a better estimate is, say, 
 
-        $$\frac{f(a+0.1)-f(a)}{(a+0.1)-a}$$
+    $$\frac{f(a+0.1)-f(a)}{(a+0.1)-a}$$
 
-        and then a better one is
+    and then a better one is
 
-        $$ \frac{f(a+0.01)-f(a)}{(a+0.01)-a} $$
+    $$ \frac{f(a+0.01)-f(a)}{(a+0.01)-a} $$
 
-        and so on.
-        """
+    and so on.
+    """
     )
     return
 
@@ -82,10 +82,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        As this sequence goes on, its limit approaches $f'(a)$.
+    As this sequence goes on, its limit approaches $f'(a)$.
 
-        This isn't the only way to capture the notion of the derivative of a function, but it at least shows a connection between sequences and derivatives.
-        """
+    This isn't the only way to capture the notion of the derivative of a function, but it at least shows a connection between sequences and derivatives.
+    """
     )
     return
 
@@ -94,10 +94,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The connection between sequences and integrals is probably even more familiar.  
+    The connection between sequences and integrals is probably even more familiar.  
 
-        To compute the definite integral, $\int_a^b f \ dx$, we start by subdividing the interval $[a,b]$ into $n$ equal pieces.  Then we find approximating Riemann rectangles for each piece, and sum the rectangle areas.
-        """
+    To compute the definite integral, $\int_a^b f \ dx$, we start by subdividing the interval $[a,b]$ into $n$ equal pieces.  Then we find approximating Riemann rectangles for each piece, and sum the rectangle areas.
+    """
     )
     return
 
@@ -106,10 +106,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        This produces the "$n$th estimate" of the definite integral.  We can find its value for $n=2$ and then $n=3$, and so on.  
+    This produces the "$n$th estimate" of the definite integral.  We can find its value for $n=2$ and then $n=3$, and so on.  
 
-        As the sequence progresses, the rectangle areas approach $\int_a^b f\ dx$.
-        """
+    As the sequence progresses, the rectangle areas approach $\int_a^b f\ dx$.
+    """
     )
     return
 
@@ -124,12 +124,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Below is the technical definition of a sequence of real numbers, as a function with domain a certain subset of $\Bbb N$.  More about this later.
+    Below is the technical definition of a sequence of real numbers, as a function with domain a certain subset of $\Bbb N$.  More about this later.
 
-        This definition is technically correct, although it is often confusing for a student who's not used to the idea.  It's also not very important for the ways that we typically work with sequences.
+    This definition is technically correct, although it is often confusing for a student who's not used to the idea.  It's also not very important for the ways that we typically work with sequences.
 
-        Therefore if you conceive of a sequence in a more intuitive and less rigorous way, as just "a number, then another, then another, and so on", that's good enough for most of our needs.  The technical definition is included here, only for the sake of completeness.
-        """
+    Therefore if you conceive of a sequence in a more intuitive and less rigorous way, as just "a number, then another, then another, and so on", that's good enough for most of our needs.  The technical definition is included here, only for the sake of completeness.
+    """
     )
     return
 
@@ -161,12 +161,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Consider the intuitively presented sequence $1^2, 2^2, 3^2, ...$ which is the same as $1, 4, 9, ...$.  
+    Consider the intuitively presented sequence $1^2, 2^2, 3^2, ...$ which is the same as $1, 4, 9, ...$.  
 
-        This is given formally as the sequence $(a_k)_{k=1}$ with formula $a_k = k^2$.  
+    This is given formally as the sequence $(a_k)_{k=1}$ with formula $a_k = k^2$.  
 
-        To give a demonstration of a random image, the image of $10$ is $a_{10} = 10^2 = 100$.
-        """
+    To give a demonstration of a random image, the image of $10$ is $a_{10} = 10^2 = 100$.
+    """
     )
     return
 
@@ -181,19 +181,19 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        $(a_k)$ is an increasing sequence.  But we still cannot use it to form a subsequence of $(b_k)$.  The reason is that $(b_k)$ starts at 5, but $(a_k)$ is a function of $\Bbb N^{\ge 1}$.  
+    $(a_k)$ is an increasing sequence.  But we still cannot use it to form a subsequence of $(b_k)$.  The reason is that $(b_k)$ starts at 5, but $(a_k)$ is a function of $\Bbb N^{\ge 1}$.  
 
-        However, we can take the 3rd tail, $(a_k)_{k=3}$.  Then this has codomain $\Bbb N^{\ge 9}$, and we can therefore use this to form a subsequence of $(b_k)$.  
+    However, we can take the 3rd tail, $(a_k)_{k=3}$.  Then this has codomain $\Bbb N^{\ge 9}$, and we can therefore use this to form a subsequence of $(b_k)$.  
 
-        It is $(b_{a_k})_{k=3}$.  Note that $a_3=9$ and $a_4 = 16$ and so on.  Therefore the first few terms of $(b_{i_k})$ are
+    It is $(b_{a_k})_{k=3}$.  Note that $a_3=9$ and $a_4 = 16$ and so on.  Therefore the first few terms of $(b_{i_k})$ are
 
-        \begin{align*}
-        b_{a_3} &= b_9 = \frac 1 9\\
-        b_{a_4} &= b_{16} = \frac 1 {16}\\
-        b_{a_5} &= \frac{1}{25} \\
-        &\vdots
-        \end{align*}
-        """
+    \begin{align*}
+    b_{a_3} &= b_9 = \frac 1 9\\
+    b_{a_4} &= b_{16} = \frac 1 {16}\\
+    b_{a_5} &= \frac{1}{25} \\
+    &\vdots
+    \end{align*}
+    """
     )
     return
 
@@ -240,10 +240,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let's see an example of a sequence which has a limit.  Perhaps one of the simplest examples, which is still very useful, is the sequence given by $a_k=\frac 1 k$.  
+    Let's see an example of a sequence which has a limit.  Perhaps one of the simplest examples, which is still very useful, is the sequence given by $a_k=\frac 1 k$.  
 
-        I claim that this sequence has limit equal to 0.
-        """
+    I claim that this sequence has limit equal to 0.
+    """
     )
     return
 
@@ -252,12 +252,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        To see this, we need to let $\varepsilon\in\Bbb R^+$ be any positive real number, and show that $(a_k)$ is eventually within $\varepsilon$ of 0.  
+    To see this, we need to let $\varepsilon\in\Bbb R^+$ be any positive real number, and show that $(a_k)$ is eventually within $\varepsilon$ of 0.  
 
-        To show that, we need to find an $N\in\Bbb N$ such that the $N$th tail is within $\varepsilon$ of $L$.  
+    To show that, we need to find an $N\in\Bbb N$ such that the $N$th tail is within $\varepsilon$ of $L$.  
 
-        To show that, we need $|a_k-0|<\varepsilon$ for all $N\le k$.  (Keep in mind that the missing puzzle piece here is $N$.)
-        """
+    To show that, we need $|a_k-0|<\varepsilon$ for all $N\le k$.  (Keep in mind that the missing puzzle piece here is $N$.)
+    """
     )
     return
 
@@ -266,14 +266,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        This is equivalent to finding $N\in\Bbb N$ such that $\forall k\ge N$ we have $\frac 1 k<\varepsilon$.  
+    This is equivalent to finding $N\in\Bbb N$ such that $\forall k\ge N$ we have $\frac 1 k<\varepsilon$.  
 
-        The existence of such a $k$, for any choice of $\varepsilon$, is precisely guaranteed to exist by the `1/n approaches 0` theorem.  
+    The existence of such a $k$, for any choice of $\varepsilon$, is precisely guaranteed to exist by the `1/n approaches 0` theorem.  
 
-        This therefore tells us that $N$ exists, which ensures that $(a_k)$ is eventually within $\varepsilon$ of 0.  
+    This therefore tells us that $N$ exists, which ensures that $(a_k)$ is eventually within $\varepsilon$ of 0.  
 
-        Since $\varepsilon\in\Bbb R^+$ was chosen arbitrarily, this concludes the proof that $\lim_{k\to\infty} \frac 1 k = 0$.
-        """
+    Since $\varepsilon\in\Bbb R^+$ was chosen arbitrarily, this concludes the proof that $\lim_{k\to\infty} \frac 1 k = 0$.
+    """
     )
     return
 
@@ -282,10 +282,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Let's next see an exmaple sequence with no limit.  Let's consider the sequence given by $a_k=k$.  
+    Let's next see an exmaple sequence with no limit.  Let's consider the sequence given by $a_k=k$.  
 
-        Let's show that the limit of $a_k$ is not 1.  I am choosing 1 arbitrarily for demonstration purposes.  It will be an exercise for the reader, at the end of this notebook, to prove that $L$ is not the limit of $(a_k)$ for any $L\in\Bbb R$.
-        """
+    Let's show that the limit of $a_k$ is not 1.  I am choosing 1 arbitrarily for demonstration purposes.  It will be an exercise for the reader, at the end of this notebook, to prove that $L$ is not the limit of $(a_k)$ for any $L\in\Bbb R$.
+    """
     )
     return
 
@@ -294,14 +294,14 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        To show that 1 is not the limit of $(a_k)$, we can specifically show that no tail of $(a_k)$ is within $\varepsilon=1$ of $L=1$.
+    To show that 1 is not the limit of $(a_k)$, we can specifically show that no tail of $(a_k)$ is within $\varepsilon=1$ of $L=1$.
 
-        To prove this claim let $N\in\Bbb N$.  Any such tail contains a term $a_k$ with $2\le k$.  
+    To prove this claim let $N\in\Bbb N$.  Any such tail contains a term $a_k$ with $2\le k$.  
 
-        Then $a_k = k \ge 2$, and therefore 
+    Then $a_k = k \ge 2$, and therefore 
 
-        $$|a_k-1| = k-1 \ge 2-1 = 1$$
-        """
+    $$|a_k-1| = k-1 \ge 2-1 = 1$$
+    """
     )
     return
 
@@ -310,10 +310,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The above therefore shows that the $N$th tail of $(a_k)$ is not within 1, of 1.  
+    The above therefore shows that the $N$th tail of $(a_k)$ is not within 1, of 1.  
 
-        Since an $\varepsilon\in\Bbb R^+$ exists such that $(a_k)$ is not within $\varepsilon$ of 1, then $L$ does not satisfy the definition of the limit of $(a_k)$.
-        """
+    Since an $\varepsilon\in\Bbb R^+$ exists such that $(a_k)$ is not within $\varepsilon$ of 1, then $L$ does not satisfy the definition of the limit of $(a_k)$.
+    """
     )
     return
 
@@ -328,12 +328,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        The above definitions are the "standard" definitions for the limit of a sequence, for the most part.  
+    The above definitions are the "standard" definitions for the limit of a sequence, for the most part.  
 
-        However, in my experience, these definitions often confuse a new student.  It can be hard to draw motivating and intuitive pictures to illustrate these ideas.
+    However, in my experience, these definitions often confuse a new student.  It can be hard to draw motivating and intuitive pictures to illustrate these ideas.
 
-        While many mathematicians will scoff at the idea of trying to make mathematics more intuitive and easier for a student to learn, I think building intuitions is an important part of becoming a mathematician.
-        """
+    While many mathematicians will scoff at the idea of trying to make mathematics more intuitive and easier for a student to learn, I think building intuitions is an important part of becoming a mathematician.
+    """
     )
     return
 
@@ -342,10 +342,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        There is an equivalent characterization of limits, which we will develop below, in terms of "snug containers" -- a term I have coined for this purpose.
+    There is an equivalent characterization of limits, which we will develop below, in terms of "snug containers" -- a term I have coined for this purpose.
 
-        I hope that it is easier to understand "what is going on here", and that pictures and metaphors may be more motivating.
-        """
+    I hope that it is easier to understand "what is going on here", and that pictures and metaphors may be more motivating.
+    """
     )
     return
 
@@ -364,12 +364,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        For example, the snug cell of $(1/k)_{k=1}$ is the interval $[0,1]$.  It is the "smallest" closed interval, such that the sequence stays inside the interval.
+    For example, the snug cell of $(1/k)_{k=1}$ is the interval $[0,1]$.  It is the "smallest" closed interval, such that the sequence stays inside the interval.
 
-        The snug cell of $(1/k)_{k=2}$ is $[0,1/2]$.  In general the snug cell of $(1/k)_{k=m}$ is always $[0,1/m]$.
+    The snug cell of $(1/k)_{k=2}$ is $[0,1/2]$.  In general the snug cell of $(1/k)_{k=m}$ is always $[0,1/m]$.
 
-        For another example, the snug cell of $(k)_{k=1}$ is $[1,\infty)$, and the snug cell of $(k)_{k=2}$ is $[2,\infty]$.
-        """
+    For another example, the snug cell of $(k)_{k=1}$ is $[1,\infty)$, and the snug cell of $(k)_{k=2}$ is $[2,\infty]$.
+    """
     )
     return
 
@@ -395,12 +395,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        *Proof*:  Suppose that $\lim_{n\to\infty} a_n = L$.  We need to show that $\bigcap_{n=m}^\infty I_n = \{L\}$, and we start by showing that $L\in\bigcap_{n=m}^\infty I_n$.  
+    *Proof*:  Suppose that $\lim_{n\to\infty} a_n = L$.  We need to show that $\bigcap_{n=m}^\infty I_n = \{L\}$, and we start by showing that $L\in\bigcap_{n=m}^\infty I_n$.  
 
-        Let $m\le n$, and we will show that $L\in I_n$.  Let $I_n = [\alpha,\beta]$ and we have, by definition that $\alpha=\inf((a_k)_{k=n})$.
+    Let $m\le n$, and we will show that $L\in I_n$.  Let $I_n = [\alpha,\beta]$ and we have, by definition that $\alpha=\inf((a_k)_{k=n})$.
 
-        Let us now focus on showing $\alpha\le L$.
-        """
+    Let us now focus on showing $\alpha\le L$.
+    """
     )
     return
 
@@ -409,12 +409,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Assume for contradiction that $L < \alpha$.  Then with $\varepsilon=\frac{\alpha-L}2$, we must have that there is a $m\le p$ such that the $p$th tail stays within $\varepsilon$ of $L$.  
+    Assume for contradiction that $L < \alpha$.  Then with $\varepsilon=\frac{\alpha-L}2$, we must have that there is a $m\le p$ such that the $p$th tail stays within $\varepsilon$ of $L$.  
 
-        Set $q = \max\{n,p\}$, then we must have that the $q$th tail both stays above $\alpha$, but also stays within $\varepsilon$ of $L$.
+    Set $q = \max\{n,p\}$, then we must have that the $q$th tail both stays above $\alpha$, but also stays within $\varepsilon$ of $L$.
 
-        However, there are no points in the intersection $(L-\varepsilon,L+\varepsilon)\cap [\alpha,\infty) = \emptyset$.
-        """
+    However, there are no points in the intersection $(L-\varepsilon,L+\varepsilon)\cap [\alpha,\infty) = \emptyset$.
+    """
     )
     return
 
@@ -423,12 +423,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Since the points of the $q$th tail are in $\emptyset$, this is a contradiction.  We must therefore have $\alpha\le L$.
+    Since the points of the $q$th tail are in $\emptyset$, this is a contradiction.  We must therefore have $\alpha\le L$.
 
-        The proof that $L\le \beta$ is similar, and left as an exercise.  
+    The proof that $L\le \beta$ is similar, and left as an exercise.  
 
-        Therefore $L\in I_n$.
-        """
+    Therefore $L\in I_n$.
+    """
     )
     return
 
@@ -437,12 +437,12 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        Next we show that if $x\ne L$ then $x\notin I_n$.  Assume $x < L$ to begin.
+    Next we show that if $x\ne L$ then $x\notin I_n$.  Assume $x < L$ to begin.
 
-        Let $\varepsilon = \frac{L-x}2$, and let the $p$th tail be within $\varepsilon$ of $L$.  Then $I_p=[\alpha,\beta]$ must be such that $L-\varepsilon \le \alpha \le \beta\le L+\varepsilon$.  
+    Let $\varepsilon = \frac{L-x}2$, and let the $p$th tail be within $\varepsilon$ of $L$.  Then $I_p=[\alpha,\beta]$ must be such that $L-\varepsilon \le \alpha \le \beta\le L+\varepsilon$.  
 
-        But since $x\notin (L-\varepsilon,L+\varepsilon)$ then $x\notin I_n$ and therefore $x\notin \bigcap_{n=m}^\infty I_n$.
-        """
+    But since $x\notin (L-\varepsilon,L+\varepsilon)$ then $x\notin I_n$ and therefore $x\notin \bigcap_{n=m}^\infty I_n$.
+    """
     )
     return
 
@@ -451,10 +451,10 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        If $L < x$ the proof is nearly the same.  Therefore in general, if $x\ne L$ then $x\notin \bigcap_{I\in\mathcal G}I$.  
+    If $L < x$ the proof is nearly the same.  Therefore in general, if $x\ne L$ then $x\notin \bigcap_{I\in\mathcal G}I$.  
 
-        This shows that $\bigcap_{I\in\mathcal G}I\subseteq \{L\}$.  With inclusion proved in both directions, we have shown $\bigcap_{I\in\mathcal G}I = \{L\}$.
-        """
+    This shows that $\bigcap_{I\in\mathcal G}I\subseteq \{L\}$.  With inclusion proved in both directions, we have shown $\bigcap_{I\in\mathcal G}I = \{L\}$.
+    """
     )
     return
 
@@ -463,16 +463,16 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        All that now remains for us to show, is that if $\bigcap_{n=m}^\infty I_n$ is the singleton $\{x\}$, then $\lim_{n\to\infty}a_n$ exists.  
+    All that now remains for us to show, is that if $\bigcap_{n=m}^\infty I_n$ is the singleton $\{x\}$, then $\lim_{n\to\infty}a_n$ exists.  
 
-        Let $\varepsilon\in\Bbb R^+$.  There must be a first $I_n$ such that $I_n\subseteq (x-\varepsilon,x+\varepsilon)$.  Let $I_n = [\alpha,\beta]$.
+    Let $\varepsilon\in\Bbb R^+$.  There must be a first $I_n$ such that $I_n\subseteq (x-\varepsilon,x+\varepsilon)$.  Let $I_n = [\alpha,\beta]$.
 
-        Then for any $a_k$ in the $n$th tail, we must have $x-\varepsilon < \alpha\le a_k\le \beta < x+\varepsilon$.
+    Then for any $a_k$ in the $n$th tail, we must have $x-\varepsilon < \alpha\le a_k\le \beta < x+\varepsilon$.
 
-        This shows $\lim_{n\to\infty} a_n = x$.
+    This shows $\lim_{n\to\infty} a_n = x$.
 
-        $\Box$
-        """
+    $\Box$
+    """
     )
     return
 

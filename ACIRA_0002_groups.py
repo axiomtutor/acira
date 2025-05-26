@@ -9,7 +9,7 @@ def _():
     import marimo as mo
     import matplotlib.pyplot as plt
     import numpy as np
-    return mo, plt
+    return (mo,)
 
 
 @app.cell(hide_code=True)
@@ -316,69 +316,8 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(counter, plt):
-    r = 10
-    fig, ax = plt.subplots()
-    ax.set_xlim(-20, 20)
-    ax.set_ylim(-5, 25)
-    ax.set_aspect('equal')
-    ax.set_axis_off()
-
-    v1 = plt.Circle((-r, 0), 1, color="blue", fill=True, alpha=0.5)
-    v2 = plt.Circle((r, 0), 1, color="blue", fill=True, alpha=0.5)
-    v3 = plt.Circle((0, 1.7*r), 1, color="blue", fill=True, alpha=0.5)
-
-    l1 = plt.plot([-r,r], [0,0], color="black")
-    l2 = plt.plot([-r,0], [0,1.7*r], color="black")
-    l3 = plt.plot([0,r], [1.7*r,0], color="black")
-
-    ax.add_patch(v1)
-    ax.add_patch(v2)
-    ax.add_patch(v3)
-
-    locs = [(0,2*r), (-r-5,0), (r+5,0)]
-    shift = counter.value % 3
-    locs = locs[shift:] + locs[:shift]
-    aloc = locs[0]
-    bloc = locs[1]
-    cloc = locs[2]
-
-    plt.rcParams['text.usetex'] = True
-    ax.text(*aloc, "A")
-    ax.text(*bloc, "B")
-    ax.text(*cloc, "C")
-
-    if counter.value % 3 == 0:
-        rotstring = "Rotation by 0 degrees"
-    if counter.value % 3 == 1:
-        rotstring = "Rotation by 120 degrees"
-    if counter.value % 3 == 2:
-        rotstring = "Rotation by 240 degrees"
-
-    ax.text(5,20, rotstring)
-
-    ax
-    return
-
-
-@app.cell(hide_code=True)
 def _(mo):
-    counter = mo.ui.button(
-        value=0, on_click=lambda value: value + 1, label="rotate"
-    )
-    counter
-    return (counter,)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    Consider the symmetry of rotating $T$ about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$. Let us call this symmetry $R_{120^\circ}$, since it's a $120^\circ$ rotation.
-
-    You can perform the rotation above by clicking the button (which merely rotates the labels of the vertices).
-    """
-    )
+    mo.md(r"""Consider the symmetry of rotating $T$ about its center, sending $A$ to $B$, and $B$ to $C$, and $C$ to $A$. Let us call this symmetry $R_{120^\circ}$, since it's a $120^\circ$ rotation.""")
     return
 
 

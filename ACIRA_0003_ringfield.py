@@ -64,7 +64,7 @@ def _(mo):
 
     * $(\Bbb Z,+)$ forms a commutative group.
 
-    * $\times$ has an identity element, 1, which is not equal to 0.
+    * $\times$ has an identity element, 1.
 
     * $\times$ distributes over $+$, which means:
 
@@ -127,12 +127,55 @@ def _(mo):
 
     We say that $(R,+,\times)$ is a **ring** if the following conditions are met.
 
+    1. $+$ and $\times$ are associative.
+
     1. $(R,+)$ is a commutative group.  Its identity is denoted $0$.  
 
     2. $\times$ has an identity, $1$.
 
     3. $\times$ distributes over $+$.
     """), kind="success")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""### Exercise""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    Consider the integers mod 2.  This is the set $\{0,1\}$ with the operations $\oplus$ and $\otimes$ defined as follows.
+
+    $x\oplus y = (x+y) \mod 2$ and $x\otimes y = (xy) \mod 2$.  
+
+    Show that this is a ring.
+
+    Then repeat the exercise for the integers mod 4.
+
+    Note: In my solution, I will take for granted that modular plus and times are associative, commutative, and distributive operations.  The proofs of these facts is often encountered in a discrete math course.
+    """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// details | Solution. 
+
+    * Associative operations: Clearly $\oplus$ and $\otimes$ are operations, since their images are each subsets of $\{0,1\}$.  The fact that modular addition and multiplication are associative and commutative, is something we will take for granted.  
+
+    * Plus is a commutative group: Clearly 0 is an additive identity.  The inverse of 0 is 0, and the inverse of 1 is 1.  So this forms an additive group.  Since we take for granted that modular addition is commutative, then the additive group is commutative.
+
+    * Distribution: We will also take for granted, from discrete math, that modular multiplication distributes over addition.
+    ///
+    """
+    )
     return
 
 
@@ -146,13 +189,19 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    We have said that $(\Bbb Z^{2\times 2},+',\times')$ is a ring.
+    We have said that $(\Bbb Z^{2\times 2}, +, \cdot)$ is a ring.
 
-    However, it does lack some structure that we need for the real numbers.  That structure is: the existence of multiplicative invereses, for every nonzero number.  
+    Let's observe two properties of this example, which should not be properties of the real numbers.
 
-    For example, the matrix $\begin{bmatrix}0&1\\0&0\end{bmatrix}$ is nonzero but has no multiplicative inverse.
+    * Matrices are not commutative.  For example,
 
-    Not just that, but also multiplication of real numbers commutes:  $ab = ba$ for each $a,b\in \Bbb R$.
+        $$ \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} \begin{bmatrix} 4 & 5 \\ 6 & 0 \end{bmatrix} = \begin{bmatrix} 16 & 5 \\ 18 & 0  \end{bmatrix} $$
+  
+        but
+
+        $$ \begin{bmatrix} 4 & 5 \\ 6 & 0 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 0 & 3 \end{bmatrix} = \begin{bmatrix} 4 & 23 \\ 6 & 12  \end{bmatrix} $$
+
+    * Some nonzero matrices have no inverse.  For example, $\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ is nonzero and has no inverse.  
     """
     )
     return
@@ -160,7 +209,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Therefore we define the notion of a field to express these additional constraints.""")
+    mo.md(r"""The real numbers, however, should commute with multiplication, and every nonzero number should have an inverse.  These extra conditions are encoded in the definition of a field, below.""")
     return
 
 
@@ -187,7 +236,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-    Let $(F,+,\times)$ be a field.  Define the operation $+_2$ on vectors $\begin{bmatrix}a\\b\end{bmatrix},\begin{bmatrix}c\\d\end{bmatrix}\in F^2$ by
+    Let $(F,+,\times)$ be a field.  
+
+    Define the operation $+_2$ on vectors $\begin{bmatrix}a\\b\end{bmatrix},\begin{bmatrix}c\\d\end{bmatrix}\in F^2$ by
 
     $$ \begin{bmatrix} a\\b\end{bmatrix} +_2 \begin{bmatrix}c\\d\end{bmatrix} = \begin{bmatrix}a+c\\b+d\end{bmatrix} $$
 
@@ -217,7 +268,7 @@ def _(mo):
 
     Show that $(F,\oplus,\otimes)$ is a field.  
 
-    Show that $(\{0,1,2,3,4\}, \oplus,\otimes)$, with plus and times defined by addition and multiplication mod 4, is not a field.
+    Show that $(\{0,1,2,3\}, \oplus,\otimes)$, with plus and times defined by addition and multiplication mod 4, is not a field.
     """
     )
     return
