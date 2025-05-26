@@ -46,13 +46,13 @@
 
     <div class="thm">
       Theorem: <tt>Spec. monom. </tt>
-      For $x>1$ we have $\frac{1}{k^x}\to 0$.
+      For $x>0$ we have $\frac{1}{k^x}\to 0$.
     </div>
 
     <details>
       <summary>Statement and proof.</summary>
 
-      <i>Statement</i>: Let $x\in\Bbb Q$ and $x>1$.  <br>
+      <i>Statement</i>: Let $x\in\Bbb Q$ and $x>0$.  <br>
       
       For $\varepsilon\in\Bbb R^+$ let $\left(\frac{1}{k}\right)_{k=p}$ be within $\varepsilon^{1/x}$ of 0.  <br>
 
@@ -123,14 +123,16 @@
         After factoring, 
         $$ R(k) = \left(\frac{1}{k^{n-m}}\right)\cdot \left( \frac{a_0/k^m + a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^n+b_1/k^{n-1}+\cdots+b_{n-1}/k + 1} \right) $$
 
-        Then $\lim_{k\to\infty} R(k) = 0\cdot 1$.
+        Since $n-m > 0$ then $\frac{1}{k^{n-m}} \to 0$.  And $\lim_{k\to\infty} \frac{a_0/k^m + a_1/k^{m-1}+\cdots+a_{m-1}/k + 1}{b_0/k^n+b_1/k^{n-1}+\cdots+b_{n-1}/k + 1} = \frac{0+0+\cdots +1}{0+0+\cdots + 1}$.<br>
+
+        Therefore $\lim_{k\to\infty}R(k) = 0\cdot 1 = 0$.  
       </details>
 
       <details>
         <summary>If $m > n$ then $\lim_{k\to\infty}R(k) = \infty$.</summary>
 
         After factoring, 
-        $$ R(k) = ( n^{m-n} ) \cdot \left( \frac{a_0/k^m + a_1/k^{m-1} + \cdots+ a_{m-1}/k+1}{b_0/k^n + b_1/k^{n-1} + \cdots + b_{n-1}/k + 1} \right) $$
+        $$ R(k) = ( k^{m-n} ) \cdot \left( \frac{a_0/k^m + a_1/k^{m-1} + \cdots+ a_{m-1}/k+1}{b_0/k^n + b_1/k^{n-1} + \cdots + b_{n-1}/k + 1} \right) $$
         Then $\lim_{k\to\infty} R(k) = \infty \cdot 1 = \infty$.  
       </details>
 
