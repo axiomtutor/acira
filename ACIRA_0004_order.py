@@ -116,6 +116,32 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""### Exercise""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""Consider $X = \{1,2,3\}$.  Find the smallest relation $\preceq\subseteq X^2$, such that $\preceq$ is reflexive, anti-symmetric, and transitive.  """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    /// details | Solution 
+
+    $$ \preceq \quad = \quad \{ (1,1), (2,2), (3,3) \} $$
+
+    ///
+    """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.callout(mo.md(r"""
     Let $X$ be a nonempty set and $\preceq\subseteq X^2$ a relation.
 
@@ -152,9 +178,11 @@ def _(mo):
 
     We use the partial order discussed earlier, $U\preceq V \Leftrightarrow U\subseteq V$ for each $U,V\in Y$.  
 
-    Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  This is what we mean when we say that elements are incommensurable.
+    Note that neither $\{a\}\preceq \{b\}$ nor $\{b\} \preceq \{a\}$.  
 
-    But when it comes to natural numbers, integers, and rationals, if you pick any two elements, $x,y$ then one or the other of $x\preceq y$ or $y\preceq x$ must hold.
+    In a case like this, where neither direction of the ordering relation holds, we say that the elements are incommensurable.  
+
+    But when it comes to natural numbers, integers, and rationals, we expect every two number to be commensurable.  Whence the following definition of a total order, which has this further condition on an order.
     """
     )
     return
