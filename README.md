@@ -43,17 +43,21 @@ You can find the reference page at [ACIRA Reference Page](https://axiomtutor.git
 
 * [Lesson 0006: Function Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0006_boundfunc.py)
 
-  [Lesson 0005 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0006.py)
+  [Lesson 0006 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0006.py)
 
 ## Chapter 3: Ordered Fields, Completeness, and Real Numbers
 
 * [Lesson 0007: Ordered Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0007_ordfield.py)
 
+  [Lesson 0007 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0007.py)
+
 * [Lesson 0008: Completeness](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0008_completeness.py)
+
+  [Lesson 0008 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0008.py)
 
 * [Lesson 0009: Number Line](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0009_numberline.py)
 
-* [Unit 1 Reference](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_unit1_ref.py)
+  [Lesson 0009 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0009.py)
 
 # Unit 2: $\Bbb R$-valued Sequences and Series
 ## Chapter 4: Sequences
