@@ -25,7 +25,11 @@ You can find the reference page at [ACIRA Reference Page](https://axiomtutor.git
 
 * [Lesson 0002: Groups](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0002_groups.py)
 
+  [Lesson 0002 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0002.py)
+
 * [Lesson 0003: Rings and Fields](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0003_ringfield.py)
+
+  [Lesson 0003 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0003.py)
 
 ## Chapter 2: Order 
 
