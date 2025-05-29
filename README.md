@@ -39,7 +39,11 @@ You can find the reference page at [ACIRA Reference Page](https://axiomtutor.git
 
 * [Lesson 0005: Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0005_bounds.py)
 
+  [Lesson 0005 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0005.py)
+
 * [Lesson 0006: Function Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0006_boundfunc.py)
+
+  [Lesson 0005 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0006.py)
 
 ## Chapter 3: Ordered Fields, Completeness, and Real Numbers
 

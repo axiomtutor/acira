@@ -66,7 +66,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""## Exercise 4""")
+    mo.md(r"""# Exercise 4""")
     return
 
 
