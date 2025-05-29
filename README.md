@@ -35,6 +35,8 @@ You can find the reference page at [ACIRA Reference Page](https://axiomtutor.git
 
 * [Lesson 0004: Order](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0004_order.py) 
 
+  [Lesson 0004 Exercises](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=exercise_0004.py)
+
 * [Lesson 0005: Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0005_bounds.py)
 
 * [Lesson 0006: Function Bounds](https://marimo.app/gh/axiomtutor/acira/master?entrypoint=ACIRA_0006_boundfunc.py)
