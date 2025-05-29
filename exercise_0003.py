@@ -10,16 +10,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    return
-
-
-@app.cell(hide_code=True)
-def _():
-    import marimo as mo
-    return (mo,)
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(
@@ -120,6 +110,12 @@ def _(mo):
     """
     )
     return
+
+
+@app.cell(hide_code=True)
+def _():
+    import marimo as mo
+    return (mo,)
 
 
 if __name__ == "__main__":

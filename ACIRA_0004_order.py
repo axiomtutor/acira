@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.11"
+__generated_with = "0.13.14"
 app = marimo.App(width="medium")
 
 
@@ -122,7 +122,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""Consider $X = \{1,2,3\}$.  Find the smallest relation $\preceq\subseteq X^2$, such that $\preceq$ is reflexive, anti-symmetric, and transitive.  """)
+    mo.md(r"""Consider $X = \{1,2,3\}$.  Find the smallest relation $\preceq\subseteq X^2$, such that $\preceq$ is reflexive, anti-symmetric, and transitive.""")
     return
 
 
@@ -199,78 +199,6 @@ def _(mo):
 
     We also say, in this case, that $(X,\preceq)$ is a **totally ordered set**.
     """), kind="success")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.callout(mo.md(r"""
-    I recommend solving at least 5 problems on your own, without looking at solutions, and getting them correct.
-
-    For each problem that you get wrong, do another problem.  Repeat until you have successfully solved 5 problems on your own.  
-
-    If you need an extra bank of exercise problems, you may want to search the internet or use a textbook that discusses orders.
-
-    A text on discrete mathematics would probably be accessible, but may or may not have content about orders.  A text on orders and lattices will have relevant content, but may be more advanced than a student needs for the current topic.  
-
-    ---
-
-    I recommend spending at least an hour on a problem, before looking at its solution.  This recommendation is specifically for these problems, because they are meant to be easy.  For harder problems, like in the homeworks, you might need to spend several hours or days on them.
-
-    If you have to look at the solution of a problem, treat it as a problem that you did not solve correctly.  Therefore, if you look at the solution, then this does not count toward the 5 problems that you successfully solve on your own.  
-    """), kind="info")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## Exercise 1""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    If $\preceq$ is a partial order on $X$, show that the corresponding strict partial order $\prec$ is
-
-    1. Irreflexive: $\forall a\in X$ we have $a\not\prec a$.
-    2. Asymmetric: $\forall a,b\in X,$ if we have $a\prec b$ then $a\not\prec b$.
-    3. Transitive: $\forall a,b,c\in X$ if $a\prec b$ and $b\prec c$, then $a\prec c$.
-    """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## Exercise 2""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""Find all possible partial orders on the set $\{a,b,c\}$.  Of those partial orders, decide which are total orders.""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""## Exercise 3""")
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    Let $\preceq$ be a partial order on the set $X$, and $\prec$ the corresponding strict partial order.  
-
-    For $a,b\in X$ show that $a\not\preceq b$ is NOT equivalent to $b\prec a$.  
-
-    But if $\preceq$ is a total order, then $a \not\preceq b$ is equivalent to $b\prec a$.
-    """
-    )
     return
 
 
