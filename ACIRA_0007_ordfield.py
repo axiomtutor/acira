@@ -26,7 +26,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""# Lesson 0006: Ordered Fields""")
+    mo.md(r"""# Lesson 0007: Ordered Fields""")
     return
 
 

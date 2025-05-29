@@ -460,26 +460,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mprime = mo.ui.dropdown(["the minimality of m'", "the supremum is an upper bound","the supremum is a lower bound", "m is a natural number"], label="which contradicts ...")
