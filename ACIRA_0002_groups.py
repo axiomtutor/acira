@@ -62,7 +62,7 @@ def _(mo):
 
     The **rationals** are the elements of 
 
-    $$ \Bbb Q = \left\{\frac p q : p,q\in\Bbb Q, \text{ and } q\ne 0 \right\} $$
+    $$ \Bbb Q = \left\{\frac p q : p,q\in\Bbb Z, \text{ and } q\ne 0 \right\} $$
     """),
         kind="success",
     )
